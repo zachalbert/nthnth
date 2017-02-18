@@ -37,7 +37,6 @@
         "browsers": ["last 3 versions"]
       },
       "sass": {
-        "indentedSyntax": true,
         "includePaths": [
           "./node_modules/normalize.css"
         ]
