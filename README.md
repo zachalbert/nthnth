@@ -1,4 +1,15 @@
-### Forked from [Gulp Starter](https://github.com/vigetlabs/gulp-starter.git)
+Forked from [Gulp Starter](https://github.com/vigetlabs/gulp-starter.git), then
+stuff was changed and added:
+
+- Nunjucks for templating, located in `src/html`
+- Content editing is done in markdown on prose.io
+- Gulp will process all `*.md` docs in `src/content/*`
+- Continuous deployment is set up through host netlify, which is watching the
+repo for commits to `master`. So be careful when pushing to master.
+- As such, all dev should be done on branches and PR'ed into master. For now,
+let's use the main `dev` branch.
+
+What follows is stuff from the original readme.
 
 --
 

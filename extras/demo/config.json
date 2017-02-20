@@ -8,8 +8,7 @@
     "browserSync": {
       "server": {
         "baseDir": "public"
-      },
-      "browser": "google chrome"
+      }
     },
 
     "static": {
@@ -18,28 +17,28 @@
     },
 
     "js": {
-      "src": "js",
-      "dest": "js",
+      "src": "javascripts",
+      "dest": "javascripts",
+      "extractSharedJs": true,
       "entries": {
-        "app": ["./app.js"]
+        "app": ["./app.js"],
+        "page": ["./page.js"]
       },
       "extensions": ["js", "json"],
       "babel": {
         "presets": ["es2015", "stage-1"],
         "plugins": []
-      },
-      "extractSharedJs": false
+      }
     },
+
     "css": {
-      "src": "scss",
-      "dest": "css",
+      "src": "stylesheets",
+      "dest": "stylesheets",
       "autoprefixer": {
-        "browsers": ["last 3 versions"]
+        "browsers": ["last 3 version"]
       },
       "sass": {
-        "includePaths": [
-          "./node_modules/normalize.css"
-        ]
+        "indentedSyntax": true
       },
       "extensions": ["sass", "scss", "css"]
     },
@@ -53,19 +52,6 @@
       },
       "extensions": ["html", "json"],
       "excludeFolders": ["layouts", "shared", "macros", "data"]
-    },
-
-    "markdown": {
-      "src": "content",
-      "dest": "./",
-      "extensions": ["md", "markdown"]
-    },
-
-    "markdownToJSON": {
-      "src": "content",
-      "dest": "./",
-      "extensions": ["md", "markdown"],
-      "output": "content"
     },
 
     "images": {
