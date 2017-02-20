@@ -5,9 +5,13 @@ stuff was changed and added:
 - Content editing is done in markdown on prose.io
 - Gulp will process all `*.md` docs in `src/content/*`
 - Continuous deployment is set up through host netlify, which is watching the
-repo for commits to `master`. So be careful when pushing to master.
+repo for commits to `master`. `https://resolutebuilders.netlify.com/`
 - As such, all dev should be done on branches and PR'ed into master. For now,
 let's use the main `dev` branch.
+
+## TODO
+
+- Get markdownToJSON working so we can use the front matter
 
 What follows is stuff from the original readme.
 
