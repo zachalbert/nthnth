@@ -54,7 +54,6 @@
       },
       "extensions": ["html", "json"],
       "excludeFolders": [
-        "components",
         "layouts",
         "shared",
         "macros",
