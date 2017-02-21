@@ -1,23 +1,25 @@
-{#
-  ==============================================================================
+{#==============================================================================
   Component: Card
-  ==============================================================================
+--------------------------------------------------------------------------------
 
-  # Arguments
+## Arguments
 
-  - bg: hex value (default: "red")
-  - gridSize: a string of grid classes, pulled from flexboxgrid.css
+- bg: hex value (default: "red")
+- gridSize: a string of grid classes, pulled from flexboxgrid.css
 
-#}
+## TODO
 
-{# Include other components and macros necessary to render this component #}
+- [ ] Finish card component
+
+--------------------------------------------------------------------------------
+# Include other components and macros necessary to render this component ↓
+------------------------------------------------------------------------------#}
+
 {% from 'components/card/card--block.njk' import cardBlock %}
 
-{#
-  ==============================================================================
+{#==============================================================================
   BEGIN MACRO ↓
-  ==============================================================================
-#}
+==============================================================================#}
 
 {% macro card(
      bg = "red",
