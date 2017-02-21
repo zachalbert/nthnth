@@ -1,0 +1,131 @@
+
+
+html {
+  font-size: $type-scale;
+}
+
+body {
+  font-size: 100%;
+  line-height: $line-height;
+  font-family: $body-stack;
+  font-weight: $font-weight-normal;
+  font-style: normal;
+  text-align: left;
+}
+
+em     { font-weight: $font-weight-light; }
+strong { font-weight: $font-weight-bold; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $display-stack;
+  margin: 0;
+}
+
+h1,
+.h1 {
+  color: $display-font-color;
+  font-weight: $font-weight-bold;
+  line-height: $line-height * 2.5;
+  font-size: $type-scale-6;
+  letter-spacing: 0.1rem;
+  font-style: normal;
+  //margin: 0 0 $lead-single;
+}
+
+h2,
+.h2 {
+  color: $display-font-color;
+  font-weight: $font-weight-bold;
+  font-size: $type-scale-5;
+  line-height: $line-height*2;
+  font-style: normal;
+  //margin: 0 0 $lead-single;
+}
+
+h3,
+.h3 {
+  color: $display-font-color;
+  font-weight: $font-weight-bold;
+  font-size: $type-scale-4;
+  line-height: $line-height*1.5;
+  font-style: normal;
+}
+
+h4,
+.h4 {
+  color: $body-font-color;
+  font-size: $type-scale-3;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+}
+
+small,
+.small {
+  font-size: $type-scale-2;
+  color: $muted-font-color;
+  text-transform: uppercase;
+}
+
+p {
+  color: $body-font-color;
+}
+
+.meta-text {
+  @extend .small;
+  color: $theme-color-accent;
+  line-height: $line-height;
+}
+
+blockquote {
+  @extend .small;
+  font-size: $type-scale-1;
+  line-height: $line-height * 1.5;
+  font-style: italic;
+  text-align: justify;
+}
+
+cite {
+  @extend .small;
+}
+
+pre,
+code,
+tt {
+  font-family: $mono-stack;
+  font-size: 0.85rem;
+}
+
+tt {
+  padding: 0.3rem 0.5rem;
+  background: $muted-font-color;
+  border-radius: $radius-size-1;
+  margin: 0 0.1rem;
+  line-height: 1;
+}
+
+.caption {
+  color: $muted-font-color;
+  font-family: $display-stack;
+  font-size: $type-scale-1;
+  font-weight: $font-weight-bold;
+  letter-spacing: .5px;
+  line-height: $line-height;
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center!important;
+}
+
+.page-heading {
+  color: $page-heading-font-color;
+  text-align: center;
+}
+
+.page-subheading {
+  color: $page-subheading-font-color;
+  font-size: $type-scale-3;
+  font-style: italic;
+  line-height: $line-height;
+  text-align: center;
+}

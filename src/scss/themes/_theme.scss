@@ -1,0 +1,167 @@
+//////////////////////////////
+// THEME TYPOGRAPHY
+//////////////////////////////
+
+// FONT STACKS
+$display-stack:  'Source Sans Pro', sans-serif;
+$body-stack:     'Source Serif Pro', serif;
+$mono-stack:     'Source Code Pro', monospace;
+
+// TYPE SCALE
+$scale: 1.5;
+$type-scale: 20px;
+$base: strip-unit($type-scale);
+$line-height: $type-scale * $scale;
+
+$type-scale-1:   .5rem;
+$type-scale-2:   .75rem;
+$type-scale-3:   1rem;
+$type-scale-4:   1.5rem;
+$type-scale-5:   2.25rem;
+$type-scale-6:   3rem;
+
+// FONT WEIGHTS
+$font-weight-light:     300;
+$font-weight-normal:    400;
+$font-weight-bold:      700;
+
+// FONT SIZES
+$body-font-size:     $type-scale-3;
+
+
+//////////////////////////////
+// THEME LAYOUT SETTINGS
+//////////////////////////////
+
+// spacing
+$lead-third:        $line-height / 3;
+.lead-third       { margin-bottom: $line-height / 3; }
+
+$lead-half:        $line-height / 2;
+.lead-half       { margin-bottom: $line-height / 2; }
+
+$lead-single:      $line-height;
+.lead-single     { margin-bottom: $line-height; }
+
+$lead-double:      $line-height * 2;
+.lead-double     { margin-bottom: $line-height * 2; }
+
+$lead-triple:      $line-height * 3;
+.lead-triple     { margin-bottom: $line-height * 3; }
+
+$lead-quadruple:   $line-height * 4;
+.lead-quadruple  { margin-bottom: $line-height * 4; }
+
+$lead-quintuple:   $line-height * 5;
+.lead-quintuple  { margin-bottom: $line-height * 5; }
+
+// containers
+$container-max-width:     1200px;
+$container-pad:           $lead-half;
+
+// breakpoints
+$breakpoint-sm:           768px;
+$breakpoint-md:           1024px;
+$breakpoint-lg:           1200px;
+$breakpoint-xl:           1440px;
+
+
+//////////////////////////////
+// THEME RADII
+//////////////////////////////
+
+$radius-size-1:         3px;
+
+
+//////////////////////////////
+// THEME SHADOWS
+//////////////////////////////
+
+$shadow-1:              0 3px 6px rgba(0,0,0,.15);
+$shadow-2:              0 6px 12px rgba(0,0,0,.30);
+$button-shadow:         true;
+
+
+//////////////////////////////
+// THEME COLORS
+//////////////////////////////
+
+// THEME COLOR PALETTE
+$palettes: (
+  // DEFAULT
+  default:(
+    lightest:     #FAFAFA,
+    lighter:      #DEDEDE,
+    light:        #909799,
+    mid:          #535758,
+    dark:         #3D474A,
+    darker:       #242E30,
+    accent:       #897FFF,
+    dark-accent:  darken(#897FFF, 7%)
+  ),
+  state:(
+    error:        #FF5E3D,
+    error-dark:   darken(#FF5E3D, 20%),
+    warning:      #FFC247,
+    warning-dark: darken(#FFC247, 20%),
+    info:         #4FDBF0,
+    info-dark:    darken(#4FDBF0, 20%),
+    success:      #55E691,
+    success-dark: darken(#55E691, 20%)
+  )
+);
+
+@function palette($palette, $tone: 'default') {
+    @return map-get(map-get($palettes, $palette), $tone);
+}
+
+// MAIN COLORS
+$theme-color-accent:              palette(default, accent);
+$theme-color-accent-dark:         palette(default, dark-accent);
+$theme-color-body:                white;
+
+// BASE FONT SETTINGS
+$display-font-color:              palette(default, dark);
+$body-font-color:                 palette(default, mid);
+$muted-font-color:                palette(default, light);
+
+// FORM ELEMENT SETTINGS
+$form-input-bg-color:             palette(default, lightest);
+$form-input-font-color:           $body-font-color;
+$form-label-font-color:           $display-font-color;
+$form-input-box-shadow:           inset 0 0 0 1px palette(default, lighter), inset 0 1px 3px rgba(0,0,0,.1);
+
+// BUTTON SETTINGS
+$button-secondary-bg-color:       palette(default, light);
+$button-secondary-font-color:     white;
+
+$button-primary-bg-color:         $theme-color-accent;
+$button-primary-font-color:       white;
+
+// PAGE SETTINGS
+$page-heading-font-color:         palette(default, darker);
+$page-subheading-font-color:      palette(default, mid);
+
+// SECTION SETTINGS
+$section-border-color:            palette(default, lighter);
+$section-padding:                 $lead-triple;
+
+// HERO SETTINGS
+$hero-bg-color:                   palette(default, lightest);
+$hero-font-color:                 palette(default, darker);
+
+// ALERT SETTINGS
+$alert-font-color:                rgba(255,255,255,.8);
+
+// NAV SETTINGS
+$nav-logo-size:                   $line-height*2;
+$nav-bar-padding:                 $lead-half;
+$nav-bar-bg-color:                white;
+$nav-bar-link-color:              $theme-color-accent;
+$nav-bar-link-active-color:       palette(default, light);
+$nav-bar-link-active-line-height: 5px;
+$nav-bar-link-active-line-color:  $theme-color-accent;
+$nav-off-canvas-bg-color:         palette(default, dark);
+
+// CARD SETTINGS
+$card-autor-img-bg-color:         palette(default, accent);

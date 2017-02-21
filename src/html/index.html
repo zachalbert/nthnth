@@ -1,14 +1,10 @@
-{# Extend other layouts #}
 {% extends 'layouts/application.njk' %}
 
-{# Import component files to be called below #}
 {% from 'components/card/card.njk' import card %}
 
 {% block content %}
-
-  {{ card(
-       'bg' = 'teal',
-       'gridSize' = 'col-xs-2 col-sm-8 col-md-4 col-lg-9 col-xl-1'
-  )}}
+  <div class="col-xs-8">
+    {{card()}}
+  </div>
 
 {% endblock %}

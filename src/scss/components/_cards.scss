@@ -1,0 +1,31 @@
+.card {
+  background: white;
+  border-radius: $radius-size-1;
+  box-shadow: inset 0 0 0 1px palette(default, lighter), $shadow-1;
+  &__body {
+    padding: $lead-single;
+  }
+  &__head {
+    @extend .flex;
+    @extend .middle-xs;
+    padding: $lead-single;
+  }
+  &__title {
+    margin-bottom: 0;
+  }
+  &__image--avatar {
+    background: $card-autor-img-bg-color;
+    border-radius: $radius-size-1;
+    width: $line-height*2;
+    height: $line-height*2;
+    margin-right: $lead-half;
+    overflow: hidden;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.card__head + .card__body {
+  box-shadow: inset 0 1px 0 palette(default, lighter);
+}

@@ -1,34 +1,44 @@
-{#==============================================================================
-  Component: Card
---------------------------------------------------------------------------------
+{###############################################################################
 
-## Arguments
+Component: Card
+===============
+
+Arguments
+---------
 
 - bg: hex value (default: "red")
 - gridSize: a string of grid classes, pulled from flexboxgrid.css
 
-## TODO
+TODO
+----
 
 - [ ] Finish card component
 
---------------------------------------------------------------------------------
-# Include other components and macros necessary to render this component ↓
-------------------------------------------------------------------------------#}
+###############################################################################}
 
-{# Include other components and macros necessary to render this component #}
 {% from 'components/card/card__block.njk' import cardBlock %}
 
-{#==============================================================================
-  BEGIN MACRO ↓
-==============================================================================#}
-
+{# START MACRO #}
 {% macro card(
-     bg = "red",
-     gridSize = "col-xs-6 col-sm-5 col-md-4 col-lg-3 col-xl-2"
-  )
-%}
-  <div class="card {{bg}} {{gridSize}}">
-    Yay {{bg}}
-    {{cardBlock()}}
+     type     = "default",
+     title    = "Yay",
+     body     = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel sem ac elit molestie eleifend consequat nec orci. Nam vitae nisi sollicitudin, bibendum justo quis, viverra turpis.",
+     imageURL = "http://www.placekitten.com/500/500"
+  ) %}
+
+  {# START COMPONENT #}
+  <div class="card">
+    <div class="card__head">
+      {% if type == "profile" %}
+      <div class="card__image card__image--avatar">
+        <img src="{{imageUrl}}"/>
+      </div>
+      {% endif %}
+      <h3 class="card__title">{{title}}</h3>
+    </div>
+    {{ cardBlock(body) }}
   </div>
+  {# /COMPONENT #}
+
 {% endmacro %}
+{# /MACRO #}

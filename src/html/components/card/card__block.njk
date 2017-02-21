@@ -4,9 +4,9 @@
 #}
 
 {% macro cardBlock(
-    bg = "green"
+    content
   ) %}
-  <div class="card-block {{ bg }}">
-    Yay {{bg}}
+  <div class="card-block">
+    {{content}}
   </div>
 {% endmacro %}

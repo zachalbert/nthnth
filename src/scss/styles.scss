@@ -1,7 +1,29 @@
-@import "normalize";
-@import "flexboxgrid";
-@import "base/mixins";
+/* IMPORTING THEMES */
+/* TODO: Make sure theme at the bottom once variables are moved into vars folder. */
+@import 'themes/theme';
 
-@import "components/card";
+/* IMPORTING HELPERS */
+@import 'normalize';
+@import 'helpers/variables';
+@import 'helpers/mixins';
+@import 'helpers/helpers';
 
-@import "defaults/main";
+/* IMPORTING BASE */
+@import 'base/defaults';
+@import 'base/typography';
+@import 'fonts/juicons';
+
+/* IMPORTING LAYOUT */
+@import 'flexboxgrid';
+@import 'layout/spacing';
+
+/* IMPORTING COMPONENTS */
+@import 'components/alerts';
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/content-block';
+@import 'components/forms';
+@import 'components/hero';
+@import 'components/images';
+@import 'components/navs';
+@import 'components/sections';

@@ -1,0 +1,27 @@
+.image {
+  height: auto;
+  max-width: 100%;
+  &--bleed-left, &--bleed-right {
+    width: 125%;
+    max-width: 125%;
+  }
+  &--bleed-left {
+    margin-left: -25%;
+  }
+  &--bleed-right {
+    margin-right: -25%;
+  }
+  &--small {
+    max-height: $lead-double;
+  }
+  &--right {
+    float: right;
+    margin-left: $lead-double;
+    max-width: 33vw;
+  }
+  &--left {
+    float: left;
+    margin-right: $lead-double;
+    max-width: 33vw;
+  }
+}
