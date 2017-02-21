@@ -1,0 +1,31 @@
+{#
+  ==============================================================================
+  Component: Card
+  ==============================================================================
+
+  # Arguments
+
+  - bg: hex value (default: "red")
+  - gridSize: a string of grid classes, pulled from flexboxgrid.css
+
+#}
+
+{# Include other components and macros necessary to render this component #}
+{% from '_components/card--block.njk' import cardBlock %}
+
+{#
+  ==============================================================================
+  BEGIN MACRO ↓
+  ==============================================================================
+#}
+
+{% macro card(
+     bg = "red",
+     gridSize = "col-xs-6 col-sm-5 col-md-4 col-lg-3 col-xl-2"
+  )
+%}
+  <div class="card {{ bg }} {{gridSize}}">
+    Yay {{bg}}
+    {{ cardBlock() }}
+  </div>
+{% endmacro %}

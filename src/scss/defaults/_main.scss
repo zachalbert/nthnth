@@ -1,4 +1,13 @@
 body {
-  background: #f0f0f0;
-  color: #e0e0e0;
+  background: #fff;
+  color: #ccc;
 }
+
+$BLE: "p, strong, sup";
+#{$BLE} {
+  color: red;
+}
+
+.red { background: red; }
+.green { background: green; }
+.teal { background: teal; }

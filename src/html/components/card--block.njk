@@ -1,0 +1,12 @@
+{#
+  Card / Card Block:
+  - bg: hex value (default: "green")
+#}
+
+{% macro cardBlock(
+    bg = "green"
+  ) %}
+  <div class="card-block {{ bg }}">
+    Yay {{bg}}
+  </div>
+{% endmacro %}

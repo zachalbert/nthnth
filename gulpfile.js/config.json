@@ -38,7 +38,8 @@
       },
       "sass": {
         "includePaths": [
-          "./node_modules/normalize.css"
+          "./node_modules/normalize.css",
+          "./node_modules/flexboxgrid/dist"
         ]
       },
       "extensions": ["sass", "scss", "css"]
@@ -52,7 +53,13 @@
         "collapseWhitespace": true
       },
       "extensions": ["html", "json"],
-      "excludeFolders": ["layouts", "shared", "macros", "data"]
+      "excludeFolders": [
+        "components",
+        "layouts",
+        "shared",
+        "macros",
+        "data"
+      ]
     },
 
     "markdown": {

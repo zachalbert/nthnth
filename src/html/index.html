@@ -1,97 +1,14 @@
-{% extends 'layouts/application.html' %}
+{# Extend other layouts #}
+{% extends 'layouts/application.njk' %}
+
+{# Import component files to be called below #}
+{% from '_components/card.njk' import card %}
 
 {% block content %}
-  <h1 data-module="example">
-    Something
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
-    <strong>N<sup><u><small>TH</small></u></sup></strong>
 
-  </h1>
+  {{ card(
+       'bg' = 'teal',
+       'gridSize' = 'col-xs-2 col-sm-8 col-md-4 col-lg-9 col-xl-1'
+  )}}
+
 {% endblock %}
