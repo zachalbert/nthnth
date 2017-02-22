@@ -48,12 +48,13 @@
     "html": {
       "src": "html",
       "dest": "./",
-      "dataFile": "data/global.json",
+      "dataFile": "data/content.json",
       "htmlmin": {
         "collapseWhitespace": true
       },
-      "extensions": ["html", "json"],
+      "extensions": ["html", "json", "njk", "nunjucks"],
       "excludeFolders": [
+        "components",
         "layouts",
         "shared",
         "macros",
@@ -64,14 +65,18 @@
     "markdown": {
       "src": "content",
       "dest": "./",
-      "extensions": ["md", "markdown"]
+      "extensions": ["md", "markdown"],
+      "excludeFiles": [
+        "_*.md",
+        "_*.markdown"
+      ]
     },
 
     "markdownToJSON": {
       "src": "content",
       "dest": "./",
       "extensions": ["md", "markdown"],
-      "output": "content"
+      "output": "content.json"
     },
 
     "images": {

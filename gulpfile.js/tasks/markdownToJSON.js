@@ -25,7 +25,7 @@ var markdownToJSONTask = function() {
     .on('error', handleErrors)
     .pipe(gutil.buffer())
     .pipe(markdownToJSON(marked, config.tasks.markdownToJSON.output))
-    .pipe(gulp.dest(paths.dest))
+    .pipe(gulp.dest('./src/html/data'))
     .on('end', browserSync.reload)
 
 }
