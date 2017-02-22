@@ -3,6 +3,7 @@
 {% from 'components/section/section.njk' import section %}
 {% from 'components/button/button.njk' import button %}
 {% from 'components/card/card.njk' import card %}
+{% from 'components/content/content__block.njk' import contentBlock %}
 
 {% block content %}
 <div class="container">
@@ -46,7 +47,16 @@
 
 </div>
 {{section(
-    body = card(body="Hrm?"),
+    body = contentBlock(body="Hrm?")
+)}}
+
+{{section(
+    body = contentBlock(body="Hrm?"),
+    accent = true
+)}}
+
+{{section(
+    body = card(body=contentBlock(body=about.body)),
     accent = true
 )}}
 

@@ -3,11 +3,11 @@
   - bg: hex value (default: "green")
 #}
 
-{% macro cardBlock(
-    cardAccent = " derp",
+{% macro contentBlock(
+    accent = " derp",
     body
   ) %}
-  <div class="card__block{{ cardAccent }}">
+  <div class="content{{ accent }}">
     {{body | safe}}
   </div>
 {% endmacro %}
