@@ -21,22 +21,28 @@ TODO
 {# START MACRO #}
 {% macro card(
      type     = "default",
-     title    = "Yay",
-     body     = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel sem ac elit molestie eleifend consequat nec orci. Nam vitae nisi sollicitudin, bibendum justo quis, viverra turpis.",
-     imageURL = "http://www.placekitten.com/500/500"
+     title    = "",
+     body     = "",
+     imageURL = "http://www.placekitten.com/g/500/500"
   ) %}
 
   {# START COMPONENT #}
   <div class="card">
-    <div class="card__head">
-      {% if type == "profile" %}
-      <div class="card__image card__image--avatar">
-        <img src="{{imageUrl}}"/>
+    {% if type == "profile" or title %}
+      <div class="card__head">
+        {% if type == "profile" %}
+        <div class="card__image card__image--avatar">
+          <img src="{{imageURL}}"/>
+        </div>
+        {% endif %}
+        {% if title %}
+        <h3 class="card__title">{{title}}</h3>
+        {% endif %}
       </div>
-      {% endif %}
-      <h3 class="card__title">{{title}}</h3>
-    </div>
+    {% endif %}
+    {% if body %}
     {{ cardBlock(body) }}
+    {% endif %}
   </div>
   {# /COMPONENT #}
 

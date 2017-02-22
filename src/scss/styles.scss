@@ -1,23 +1,32 @@
-/* IMPORTING THEMES */
+/*------------------------------------*\
+  THEMES
+\*------------------------------------*/
 /* TODO: Make sure theme at the bottom once variables are moved into vars folder. */
 @import 'themes/theme';
 
-/* IMPORTING HELPERS */
+/*------------------------------------*\
+  HELPERS
+\*------------------------------------*/
 @import 'normalize';
 @import 'helpers/variables';
 @import 'helpers/mixins';
 @import 'helpers/helpers';
 
-/* IMPORTING BASE */
+/*------------------------------------*\
+  BASE
+\*------------------------------------*/
 @import 'base/defaults';
 @import 'base/typography';
 @import 'fonts/juicons';
 
-/* IMPORTING LAYOUT */
+/*------------------------------------*\  LAYOUT\*------------------------------------*/
 @import 'flexboxgrid';
 @import 'layout/spacing';
+@import 'layout/grid-overrides';
 
-/* IMPORTING COMPONENTS */
+/*------------------------------------*\
+  COMPONENTS
+\*------------------------------------*/
 @import 'components/alerts';
 @import 'components/buttons';
 @import 'components/cards';

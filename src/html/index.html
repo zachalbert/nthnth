@@ -3,8 +3,16 @@
 {% from 'components/card/card.njk' import card %}
 
 {% block content %}
-  <div class="col-xs-8">
-    {{card()}}
+  <div class="row">
+    <div class="col-xs-4">
+      {{card(type="profile", title="Jake Fleming")}}
+    </div>
+    <div class="col-xs-4">
+      {{card(body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.")}}
+    </div>
+    <div class="col-xs-4">
+      {{card(title="Jerp", body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh. In accumsan lorem eget tortor venenatis egestas. Donec iaculis dapibus sapien, a dapibus turpis.")}}
+    </div>
   </div>
 
 {% endblock %}
