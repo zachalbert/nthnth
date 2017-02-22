@@ -9,21 +9,22 @@ Component: Button
 
 Arguments
 ---------
-- text
-- type
-- URL
+- shadow    : boolean
+- text      : string
+- type      : string (primary, secondary, tertiary)
+- URL       : string
 
 #}
 
 {% macro button(
     shadow = true,
-    text,
-    type,
-    URL
+    text = "Gimme a value",
+    type = "primary",
+    URL = "#"
   ) %}
 
   {# START COMPONENT #}
-  <a href="{{URL if URL else "#"}}" class="button button--{{type}} {{"button--elevated" if shadow}}">
+  <a href="{{URL}}" class="button button--{{type}} {{"button--elevated" if shadow}}">
     {{text}}
   </a>
   {# /COMPONENT #}
