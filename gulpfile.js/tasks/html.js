@@ -10,8 +10,7 @@ var htmlmin      = require('gulp-htmlmin')
 var path         = require('path')
 var render       = require('gulp-nunjucks-render')
 var fs           = require('fs')
-
-var exclude = path.normalize('!**/{' + config.tasks.html.excludeFolders.join(',') + '}/**')
+var exclude      = path.normalize('!**/{' + config.tasks.html.excludeFolders.join(',') + '}/**')
 
 var paths = {
   src: [path.join(config.root.src, config.tasks.html.src, '/**/*.{' + config.tasks.html.extensions + '}'), exclude],

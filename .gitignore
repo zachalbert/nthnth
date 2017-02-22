@@ -5,3 +5,4 @@ public
 Desktop.ini
 node_modules
 npm-debug.log
+src/html/data/*
