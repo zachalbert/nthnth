@@ -25,6 +25,10 @@
     background: $button-secondary-bg-color;
     color: $button-secondary-font-color;
   }
+  &--tertiary {
+    background: $button-tertiary-bg-color;
+    color: $button-tertiary-font-color;
+  }
   &:active {
     box-shadow: none;
   }

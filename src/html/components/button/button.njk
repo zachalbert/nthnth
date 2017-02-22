@@ -1,0 +1,32 @@
+{###############################################################################
+
+Component: Button
+===============
+
+###############################################################################}
+
+{# START MACRO
+
+Arguments
+---------
+- text
+- type
+- URL
+
+#}
+
+{% macro button(
+    shadow = true,
+    text,
+    type,
+    URL
+  ) %}
+
+  {# START COMPONENT #}
+  <a href="{{URL if URL else "#"}}" class="button button--{{type}} {{"button--elevated" if shadow}}">
+    {{text}}
+  </a>
+  {# /COMPONENT #}
+
+{% endmacro %}
+{# /MACRO #}

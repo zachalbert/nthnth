@@ -4,9 +4,10 @@
 #}
 
 {% macro cardBlock(
+    accent = " derp",
     content
   ) %}
-  <div class="card__block">
+  <div class="card__block{{ accent }}">
     {{content | safe}}
   </div>
 {% endmacro %}

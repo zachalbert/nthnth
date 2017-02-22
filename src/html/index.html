@@ -1,9 +1,11 @@
 {% extends 'layouts/application.njk' %}
 
 {% from 'components/section/section.njk' import section %}
+{% from 'components/button/button.njk' import button %}
 {% from 'components/card/card.njk' import card %}
 
 {% block content %}
+<div class="container">
   <div class="row">
     <div class="col-xs-6">
       {{card(
@@ -24,11 +26,28 @@
     </div>
   </div>
 
-  <div class="row">
-    {{section(
-        body = card(body="Hrm?"),
-        accent = true
+  {{button(
+    text = "Primary Button",
+    type = "primary",
+    URL = "http://jakeflem.com"
     )}}
-  </div>
+
+  {{button(
+    text = "Secondary Button",
+    type = "secondary",
+    URL = "http://jakeflem.com"
+    )}}
+
+  {{button(
+    text = "Tertiary Button",
+    type = "tertiary",
+    URL = "http://jakeflem.com"
+    )}}
+
+</div>
+{{section(
+    body = card(body="Hrm?"),
+    accent = true
+)}}
 
 {% endblock %}
