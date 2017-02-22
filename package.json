@@ -47,6 +47,7 @@
     "gulp-markdown-to-json": "^1.0.3",
     "gulp-notify": "2.2.0",
     "gulp-nunjucks-render": "2.0.0",
+    "gulp-pretty-url": "^0.1.1",
     "gulp-rename": "1.2.2",
     "gulp-rev": "7.0.0",
     "gulp-rev-napkin": "0.1.0",
