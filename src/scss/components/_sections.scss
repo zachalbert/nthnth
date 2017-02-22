@@ -1,16 +1,22 @@
 .section {
-  postion: relative;
+  position: relative;
+  width: 100%;
+
   + .section--separated {
     box-shadow: inset 0 1px 0 0 $section-border-color;
   }
+
   &--accent {
     background: $theme-color-accent;
+
     &::after {
       background: transparentize((darken($theme-color-accent, 70%)),.3);
     }
+
     h1,h2,h3,h4,h5,h6 {
       color: white;
     }
+
     p {
       color: rgba(255,255,255,.8);
     }

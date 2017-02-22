@@ -1,0 +1,41 @@
+{###############################################################################
+
+Component: Section
+===============
+
+TODO
+----
+
+- [ ]
+
+###############################################################################}
+
+{#% from 'components/card/card__block.njk' import cardBlock %#}
+
+{# START MACRO
+
+Arguments
+---------
+- body          : * (string, other component, etc)
+- accent        : boolean (if true, will use the site's accent color as a background)
+
+TODO:
+- imageURL
+- bg-type
+- overlay-type
+
+#}
+
+{% macro section(
+    body,
+    accent = false
+  ) %}
+
+  {# START COMPONENT #}
+  <section class="section{{" section--accent" if accent}}">
+    {{body}}
+  </section>
+  {# /COMPONENT #}
+
+{% endmacro %}
+{# /MACRO #}

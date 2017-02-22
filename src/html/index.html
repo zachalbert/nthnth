@@ -1,5 +1,6 @@
 {% extends 'layouts/application.njk' %}
 
+{% from 'components/section/section.njk' import section %}
 {% from 'components/card/card.njk' import card %}
 
 {% block content %}
@@ -21,6 +22,13 @@
         body=about.body
         )}}
     </div>
+  </div>
+
+  <div class="row">
+    {{section(
+        body = card(body="Hrm?"),
+        accent = true
+    )}}
   </div>
 
 {% endblock %}
