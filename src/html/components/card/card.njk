@@ -3,12 +3,6 @@
 Component: Card
 ===============
 
-Arguments
----------
-
-- bg: hex value (default: "red")
-- gridSize: a string of grid classes, pulled from flexboxgrid.css
-
 TODO
 ----
 
@@ -18,21 +12,33 @@ TODO
 
 {% from 'components/card/card__block.njk' import cardBlock %}
 
-{# START MACRO #}
+{# START MACRO
+
+Arguments
+---------
+- title         : string
+- body          : string
+- imageURL      : string
+- bg-type
+- overlay-type
+
+#}
+
 {% macro card(
-     type     = "default",
-     title    = "",
-     body     = "",
-     imageURL = "http://www.placekitten.com/g/500/500"
+    avatarURL,
+    bgType,
+    bgURL,
+    body,
+    title
   ) %}
 
   {# START COMPONENT #}
   <div class="card">
-    {% if type == "profile" or title %}
+    {% if avatarURL or title %}
       <div class="card__head">
-        {% if type == "profile" %}
+        {% if avatarURL %}
         <div class="card__image card__image--avatar">
-          <img src="{{imageURL}}"/>
+          <img src="{{avatarURL}}"/>
         </div>
         {% endif %}
         {% if title %}

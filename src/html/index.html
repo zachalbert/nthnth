@@ -4,21 +4,21 @@
 
 {% block content %}
   <div class="row">
-    <div class="col-xs-4">
+    <div class="col-xs-6">
       {{card(
-        type="profile",
         title="Jake Fleming"
         )}}
     </div>
-    <div class="col-xs-4">
+    <div class="col-xs-6">
       {{card(
         body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh."
         )}}
     </div>
-    <div class="col-xs-4">
+    <div class="col-xs-8 col-xs-offset-2">
       {{card(
-        title="Jerp",
-        body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh. In accumsan lorem eget tortor venenatis egestas. Donec iaculis dapibus sapien, a dapibus turpis."
+        avatarURL="http://www.placekitten.com/g/500/500",
+        title="Russ Klusas",
+        body=about.body
         )}}
     </div>
   </div>
