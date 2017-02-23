@@ -60,4 +60,30 @@
     accent = true
 )}}
 
+  <div class="row">
+
+    {% if staff.length > 10 %}
+    Lots of staff.
+    {% else %}
+    {% for person in staff %}
+      {% set skillList %}
+        {% set comma = joiner() %}
+        {% for skill in person.skills -%}
+          {{ comma() }} {{ skill }}
+        {%- endfor %}
+      {% endset %}
+
+      <div class="col-xs-12 col-sm-4">
+      {{ card(
+           title = person.name,
+           body  = skillList
+      )}}
+    </div>
+
+    {% else %}
+      No staff :(
+    {% endfor %}
+    {% endif %}
+  </div>
+
 {% endblock %}
