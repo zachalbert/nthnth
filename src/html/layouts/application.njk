@@ -1,4 +1,12 @@
-{% from 'components/helpers.njk' import sprite %}
+{% from 'components/helpers/sprite.njk' import sprite %}
+{% from 'components/section/section.njk' import section %}
+{% from 'components/button/button.njk' import button %}
+{% from 'components/card/card.njk' import card %}
+{% from 'components/content/content__block.njk' import contentBlock %}
+{% from 'components/helpers/repeat__staff.njk' import repeatStaff %}
+
+{# Global component globbing pattern, see last comment here: https://github.com/mozilla/nunjucks/issues/309 #}
+
 <!doctype html>
 <html>
   <head>

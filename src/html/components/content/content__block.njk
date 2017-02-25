@@ -4,10 +4,28 @@
 #}
 
 {% macro contentBlock(
-    accent = " derp",
-    body
+    accent = false,
+    title,
+    titleType = "tertiary",
+    body,
+    CTA,
+    gridClasses
   ) %}
-  <div class="content{{ accent }}">
-    {{body | safe}}
+  <div class="content-block {{ " content-block--accent" if accent }}{{ gridClasses if gridClasses }}">
+
+    {% if titleType == "primary" %}<h1>
+    {% elif titleType == "secondary" %}<h2>
+    {% elif titleType == "tertiary" %}<h3>
+    {% endif -%}
+      {{ title | safe }}
+    {% if titleType == "primary" %}</h1>
+    {% elif titleType == "secondary" %}</h2>
+    {% elif titleType == "tertiary" %}</h3>
+    {%- endif %}
+
+    {{ body | safe }}
+
+    {{ CTA if CTA }}
+
   </div>
 {% endmacro %}

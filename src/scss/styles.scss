@@ -14,9 +14,8 @@
 @import 'fonts/juicons';
 
 /*------------------------------------*\  LAYOUT\*------------------------------------*/
-@import 'flexboxgrid';
+@import 'layout/grid';
 @import 'layout/spacing';
-@import 'layout/grid-overrides';
 
 /*------------------------------------*\
   COMPONENTS
@@ -29,4 +28,5 @@
 @import 'components/hero';
 @import 'components/images';
 @import 'components/navs';
+@import 'components/overlays';
 @import 'components/sections';

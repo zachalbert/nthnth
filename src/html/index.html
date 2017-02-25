@@ -1,89 +1,37 @@
 {% extends 'layouts/application.njk' %}
 
-{% from 'components/section/section.njk' import section %}
-{% from 'components/button/button.njk' import button %}
-{% from 'components/card/card.njk' import card %}
-{% from 'components/content/content__block.njk' import contentBlock %}
-
 {% block content %}
-<div class="container">
-  <div class="row">
-    <div class="col-xs-6">
-      {{card(
-        title="Jake Fleming"
-        )}}
-    </div>
-    <div class="col-xs-6">
-      {{card(
-        body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh."
-        )}}
-    </div>
-    <div class="col-xs-8 col-xs-offset-2">
-      {{card(
-        avatarURL="http://www.placekitten.com/g/500/500",
-        title="Russ Klusas",
-        body=about.body
-        )}}
-    </div>
-  </div>
 
-  {{button(
-    text = "Primary Button",
-    type = "primary",
-    URL = "http://jakeflem.com"
-    )}}
+{{ section(
+  body = contentBlock(
+    title = "Derp",
+    titleType = "primary",
+    body = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel sem ac elit molestie eleifend consequat nec orci. Nam vitae nisi sollicitudin, bibendum justo quis, viverra turpis.</p>",
+    CTA = button(
+      text = "Primary Button",
+      type = "primary",
+      URL = "http://jakeflem.com"
+    ),
+    gridClasses = "col-xs-12 col-sm-6 col-md-5"
+  ),
+  bgURL = "http://www.fillmurray.com/1920/1080",
+  bgOverlay = "dark",
+  row = true,
+  rowClasses = "center-xs text-center"
+) }}
 
-  {{button(
-    text = "Secondary Button",
-    type = "secondary",
-    URL = "http://jakeflem.com"
-    )}}
-
-  {{button(
-    text = "Tertiary Button",
-    type = "tertiary",
-    URL = "http://jakeflem.com"
-    )}}
-
-</div>
-{{section(
-    body = contentBlock(body="Hrm?")
-)}}
-
-{{section(
-    body = contentBlock(body="Hrm?"),
-    accent = true
-)}}
-
-{{section(
+{{ section(
     body = card(body=contentBlock(body=about.body)),
     accent = true
 )}}
 
-  <div class="row">
-
-    {% if staff.length > 10 %}
-    Lots of staff.
-    {% else %}
-    {% for person in staff %}
-      {% set skillList %}
-        {% set comma = joiner() %}
-        {% for skill in person.skills -%}
-          {{ comma() }} {{ skill }}
-        {%- endfor %}
-      {% endset %}
-
-      <div class="col-xs-12 col-sm-4">
-      {{ card(
-           title = person.name,
-           body  = skillList
-      )}}
-    </div>
-
-    {% else %}
-      No staff :(
-    {% endfor %}
-    {% endif %}
-  </div>
+{{ section(
+  body = repeatStaff(
+    data            = staff,
+    gridWrapper     = "col-xs-12 col-sm-4 col-md-3"
+  ),
+  accent = true,
+  row = true
+) }}
 
 {% endblock %}

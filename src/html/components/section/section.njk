@@ -29,13 +29,23 @@ TODO:
 
 {% macro section(
     body,
-    accent = false
+    accent = false,
+    row = false,
+    bgURL,
+    bgOverlay,
+    rowClasses
   ) %}
 
+  {% if bgOverlay %}
+    {% set overlayClasses = " bg-overlay bg-overlay--" + bgOverlay %}
+  {% endif %}
+
   {# START COMPONENT #}
-  <section class="section{{ " section__accent" if accent }}">
+  <section class="section{{ " section--accent" if accent }}{{ overlayClasses }}"{% if bgURL %} style="background-image: url('{{ bgURL }}');"{% endif %}>
     <div class="container">
+      {% if row %}<div class="row {{ rowClasses }}">{% endif %}
       {{ body }}
+      {% if row %}</div>{% endif %}
     </div>
   </section>
   {# /COMPONENT #}
