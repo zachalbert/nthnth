@@ -11,8 +11,13 @@ let's use the main `dev` branch.
 
 ## TODO
 
-[ ] Get markdownToJSON working so we can use the front matter
+[ ] Implement contentful to replace the markdown files using [contentful-data](https://www.npmjs.com/package/contentful-data)
 [ ] Implement [smartcrop.js](https://github.com/jwagner/smartcrop.js) for image centering
+
+## Components
+[x] Section
+[x] Content blocks
+[ ] Form builder; port forms from the base project to start
 
 What follows is stuff from the original readme.
 
