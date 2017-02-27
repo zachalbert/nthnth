@@ -62,6 +62,11 @@ $lead-quadruple:   $line-height * 4;
 $lead-quintuple:   $line-height * 5;
 .lead-quintuple  { margin-bottom: $line-height * 5; }
 
+$z-index: (
+  navigation: 500,
+  modal: 200
+);
+
 /*------------------------------------*\
   CONTAINERS
 \*------------------------------------*/

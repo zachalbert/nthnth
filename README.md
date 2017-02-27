@@ -11,7 +11,8 @@ let's use the main `dev` branch.
 
 ## TODO
 
-- Get markdownToJSON working so we can use the front matter
+[ ] Get markdownToJSON working so we can use the front matter
+[ ] Implement [smartcrop.js](https://github.com/jwagner/smartcrop.js) for image centering
 
 What follows is stuff from the original readme.
 
