@@ -1,5 +1,7 @@
-{% extends 'layouts/application.html' %}
+{% extends 'layouts/application.njk' %}
 
 {% block content %}
-  <h1 data-module="example">This is a page</h1>
+  {{ nav() }}
+
+  {{ body }}
 {% endblock %}
