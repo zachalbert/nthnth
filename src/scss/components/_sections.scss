@@ -14,13 +14,8 @@
     &::after {
       background: transparentize((darken($theme-color-accent, 70%)),.3);
     }
-
-    // h1,h2,h3,h4,h5,h6 {
-    //   color: white;
-    // }
-    //
-    // p {
-    //   color: rgba(255,255,255,.8);
-    // }
+  }
+  &__title {
+    margin-bottom: 0;
   }
 }

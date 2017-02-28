@@ -89,6 +89,12 @@
   + .nav__brand-text {
     display: none;
   }
+  #light {
+    fill: white;
+  }
+  #dark {
+    fill: $display-font-color;
+  }
 }
 
 @mixin off-canvas-nav($screen-size: 'xs') {

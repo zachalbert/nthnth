@@ -35,8 +35,9 @@ $body-font-size:     $type-scale-3;
 /*------------------------------------*\
   TAG GROUPS
 \*------------------------------------*/
-$headlineCopyTags:   "h1, h2, h3, h4, h5, h6";
+$headlineCopyTags:   "h1, h2, h3, h4, h5, h6,.h1, .h2, .h3, .h4, .h5, .h6";
 $bodyCopyTags:       "p, tt, ul, ol, dl, blockquote";
+$inlineCopyTags:     "a, span";
 
 /*------------------------------------*\
   SPACING

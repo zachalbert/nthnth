@@ -1,0 +1,210 @@
+{% extends 'layouts/application.njk' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{{ nav() }}
+
+<section class="section bg-overlay bg-overlay--dark" style="background-image: url('http://www.fillmurray.com/1920/1080');">
+  <div class="container">
+    <div class="row center-xs text-center">
+      <div class="col-xs-12">
+        <h1>The Best Words</h1>
+        <h3 class="subtitle">Nobody has better words than me.</h3>
+        <a href="http://asdf.com" class="button button--primary button--elevated">
+          Learn more
+        </a>
+        <p><em>100% money back guarantee!</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--separated">
+  <div class="container">
+    <h2 class="section__title h1 text-center">Our Plans</h2>
+    <p class="subtitle text-center">Buy the plan that is in purple or everyone will laugh at you.</p>
+    <div class="row">
+      <div class="col-xs-12 col-sm-3 grid-card">
+        <div class="card">
+          <div class="card__head">
+            <h3 class="card__title text-center">
+              Personal
+            </h3>
+          </div>
+          <div class="card__block flex middle-xs center-xs card__block--separated">
+            <span class="h1">$18</span>
+            <span>/mo</span>
+          </div>
+          <div class="card__block card__block--separated flex between-xs card__block--small">
+            <h4 class="text-muted">Memory</h4>
+            <p>256 MB</p>
+          </div>
+          <div class="card__block card__block--separated flex between-xs card__block--small">
+            <h4 class="text-muted">SSD Space</h4>
+            <p>10 GB</p>
+          </div>
+          <div class="card__block card__block--separated flex between-xs card__block--small">
+            <h4 class="text-muted">Bandwidth</h4>
+            <p>Unmetered</p>
+          </div>
+          <div class="card__block card__block--separated flex between-xs card__block--small">
+            <a href="#" class="button button--tertiary button--full">Purchase Plan</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-3 grid-card">
+        <div class="card">
+          <div class="card__head card__block card__block--accent">
+            <h3 class="card__title text-center">
+              Professional
+            </h3>
+          </div>
+          <div class="card__block flex middle-xs center-xs card__block--separated card__block--accent">
+            <span class="h1">$24</span>
+            <span>/mo</span>
+          </div>
+          <div class="card__block card__block--separated flex between-xs card__block--small">
+            <h4 class="text-muted">Memory</h4>
+            <p>512 MB</p>
+          </div>
+          <div class="card__block card__block--separated flex between-xs card__block--small">
+            <h4 class="text-muted">SSD Space</h4>
+            <p>30 GB</p>
+          </div>
+          <div class="card__block card__block--separated flex between-xs card__block--small">
+            <h4 class="text-muted">Bandwidth</h4>
+            <p>Unmetered</p>
+          </div>
+          <div class="card__block card__block--separated flex between-xs card__block--small">
+            <a href="#" class="button button--primary button--full">Purchase Plan</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-3 grid-card">
+        <div class="card">
+          <div class="card__head">
+            <h3 class="card__title text-center">
+              Corporate
+            </h3>
+          </div>
+          <div class="card__block flex middle-xs center-xs card__block--separated">
+            <span class="h1">$38</span>
+            <span>/mo</span>
+          </div>
+          <div class="card__block card__block--separated flex between-xs card__block--small">
+            <h4 class="text-muted">Memory</h4>
+            <p>1024 MB</p>
+          </div>
+          <div class="card__block card__block--separated flex between-xs card__block--small">
+            <h4 class="text-muted">SSD Space</h4>
+            <p>60 GB</p>
+          </div>
+          <div class="card__block card__block--separated flex between-xs card__block--small">
+            <h4 class="text-muted">Bandwidth</h4>
+            <p>Unmetered</p>
+          </div>
+          <div class="card__block card__block--separated flex between-xs card__block--small">
+            <a href="#" class="button button--tertiary button--full">Purchase Plan</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-3 grid-card">
+        <div class="card">
+          <div class="card__head">
+            <h3 class="card__title text-center">
+              Enterprise
+            </h3>
+          </div>
+          <div class="card__block flex middle-xs center-xs card__block--separated">
+            <span class="h1">$54</span>
+            <span>/mo</span>
+          </div>
+          <div class="card__block card__block--separated flex between-xs card__block--small">
+            <h4 class="text-muted">Memory</h4>
+            <p>2048 MB</p>
+          </div>
+          <div class="card__block card__block--separated flex between-xs card__block--small">
+            <h4 class="text-muted">SSD Space</h4>
+            <p>120 GB</p>
+          </div>
+          <div class="card__block card__block--separated flex between-xs card__block--small">
+            <h4 class="text-muted">Bandwidth</h4>
+            <p>Unmetered</p>
+          </div>
+          <div class="card__block card__block--separated flex between-xs card__block--small">
+            <a href="#" class="button button--tertiary button--full">Purchase Plan</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--separated">
+  <div class="container">
+    <div class="row center-xs">
+      <div class="col-xs-12 col-sm-4 col-md-4 grid-card">
+        <div class="card">
+          <div class="card__image card__image--top">
+            <div class="card__image-caption">
+              Some good stuff
+            </div>
+            <img src="http://www.fillmurray.com/1920/1080">
+          </div>
+          <div class="card__block">
+            <h4>Product Design</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4 grid-card">
+        <div class="card">
+          <div class="card__image card__image--top">
+            <div class="card__image-caption">
+              Some good stuff
+            </div>
+            <img src="http://www.fillmurray.com/1920/1080">
+          </div>
+          <div class="card__block">
+            <h4>Product Design</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4 grid-card">
+        <div class="card">
+          <div class="card__image card__image--top">
+            <div class="card__image-caption">
+              Some good stuff
+            </div>
+            <img src="http://www.fillmurray.com/1920/1080">
+          </div>
+          <div class="card__block">
+            <h4>Product Design</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--separated">
+
+</section>
+
+{% call section(
+  accent = true,
+  bgOverlayModifierClass = "dark",
+  row = true,
+  rowClasses = "center-xs"
+  ) %}
+  {{ contentBlock(
+    body = "<p>&copy; Stuff</p>",
+    gridClasses = "col-xs-12 col-sm-6 col-md-5 text-center"
+    ) }}
+    {% endcall %}
+
+    {% endblock %}
