@@ -1,0 +1,14 @@
+{##
+ # Page subtitle
+ #
+ # @param {string} [text] The text to display
+ #
+ # @return {string} HTML
+ #
+ # @example
+ #   {{ subtitle( "Subtitle Text" )) }}
+ #}
+
+{% macro subtitle( text ) %}
+<h3 class="subtitle">{{ text }}</h3>
+{% endmacro %}

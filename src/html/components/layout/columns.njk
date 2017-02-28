@@ -1,0 +1,30 @@
+{##
+ # Set up grid columns
+ #
+ # @param {string} [text] The text to display
+ # @default [col-xs-12]
+ #
+ # @return {string} HTML
+ #
+ # @example
+ #   {{ subtitle( "Subtitle Text" )) }}
+ #}
+
+{% macro columns(
+  xs = 12,
+  sm,
+  md,
+  lg,
+  xl
+  ) -%}
+
+  {# TODO get this working #}
+
+  {% set colClasses = ['col-xs-'+xs, ' col-sm-'+sm] %}
+
+  {{ colClasses | join }}
+
+<div class="col-xs-12">
+  {{ caller() }}
+</div>
+{%- endmacro %}

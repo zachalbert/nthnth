@@ -1,18 +1,19 @@
-{% from 'components/helpers/sprite.njk' import sprite %}
-{% from 'components/section/section.njk' import section %}
-{% from 'components/button/button.njk' import button %}
-{% from 'components/card/card.njk' import card %}
-{% from 'components/content/content__block.njk' import contentBlock %}
-{% from 'components/helpers/repeat__staff.njk' import repeatStaff %}
-{% from 'components/nav/nav.njk' import nav %}
-
-{# Global component globbing pattern, see last comment here: https://github.com/mozilla/nunjucks/issues/309 #}
-
+{%- from 'components/helpers/sprite.njk' import sprite %}
+{%- from 'components/layout/section.njk' import section %}
+{%- from 'components/layout/columns.njk' import columns %}
+{%- from 'components/button/button.njk' import button %}
+{%- from 'components/card/card.njk' import card %}
+{%- from 'components/content/content__block.njk' import contentBlock %}
+{%- from 'components/helpers/repeat__staff.njk' import repeatStaff %}
+{%- from 'components/nav/nav.njk' import nav %}
+{%- from 'components/text/title.njk' import title %}
+{%- from 'components/text/subtitle.njk' import subtitle %}
+{#- Global component globbing pattern, see last comment here: https://github.com/mozilla/nunjucks/issues/309 -#}
 <!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>{% block title %}{{title}}{% endblock %}</title>
+    <title>{% block title %}{{ _site.title }}{% endblock %}</title>
     <link rel="stylesheet" href="css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% include "shared/app-icons.njk" %}

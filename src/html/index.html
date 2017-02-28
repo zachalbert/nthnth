@@ -1,40 +1,62 @@
 {% extends 'layouts/application.njk' %}
 
+{% block title %}Home{% endblock %}
+
 {% block content %}
 
 {{ nav() }}
 
-{{ section(
-  body = contentBlock(
-    title = "Derp",
+{%- call section(
+  bgURL = "http://www.fillmurray.com/1920/1080",
+  bgOverlayModifierClass = "dark",
+  row = true,
+  rowClasses = "center-xs text-center"
+)%}
+
+  {% call columns(
+    xs = 10,
+    sm = 8
+  ) %}
+  {{ title("The Best Words") }}
+  {{ subtitle("Nobody has better words than me.") }}
+  {{ button(
+    text = "Learn more",
+    type = "primary",
+    URL = "http://asdf.com",
+    helpText = "100% money back guarantee!"
+  )}}
+  {% endcall %}
+
+  {#{ contentBlock(
+    title = "The Best Words",
     titleType = "primary",
     body = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel sem ac elit molestie eleifend consequat nec orci. Nam vitae nisi sollicitudin, bibendum justo quis, viverra turpis.</p>",
+    gridClasses = "col-xs-12 col-sm-6 col-md-5",
     CTA = button(
       text = "Primary Button",
       type = "primary",
       URL = "http://jakeflem.com"
-    ),
-    gridClasses = "col-xs-12 col-sm-6 col-md-5"
-  ),
-  bgURL = "http://www.fillmurray.com/1920/1080",
-  bgOverlay = "dark",
-  row = true,
-  rowClasses = "center-xs text-center"
-) }}
+    )
+  )}#}
+{% endcall -%}
 
-{{ section(
-    body = card(body=contentBlock(body=about.body)),
-    accent = true
-)}}
+{% call section( accent = true ) %}
+  {{ card(body=contentBlock(body=about.body)) }}
+{% endcall %}
 
-{{ section(
-  body = repeatStaff(
-    data            = staff,
-    gridWrapper     = "col-xs-12 col-sm-4 col-md-4"
-  ),
+{% call section() %}
+  {{ about.body }}
+{% endcall %}
+
+{% call section(
   accent = false,
   row = true
+) %}
+{{ repeatStaff(
+  data            = staff,
+  gridWrapper     = "col-xs-12 col-sm-4 col-md-4"
 ) }}
+{% endcall %}
 
 <section>
   <div class="container">
@@ -57,15 +79,16 @@
   </div>
 </section>
 
-{{ section(
-  body = contentBlock(
-    body = "<p>&copy; Stuff</p>",
-    gridClasses = "col-xs-12 col-sm-6 col-md-5 text-center"
-  ),
+{% call section(
   accent = true,
-  bgOverlay = "dark",
+  bgOverlayModifierClass = "dark",
   row = true,
   rowClasses = "center-xs"
+) %}
+{{ contentBlock(
+  body = "<p>&copy; Stuff</p>",
+  gridClasses = "col-xs-12 col-sm-6 col-md-5 text-center"
 ) }}
+{% endcall %}
 
 {% endblock %}

@@ -3,7 +3,7 @@
   - bg: hex value (default: "green")
 #}
 
-{% macro contentBlock(
+{%- macro contentBlock(
     accent = false,
     title,
     titleType = "tertiary",
@@ -11,16 +11,16 @@
     CTA,
     gridClasses
   ) %}
-  <div class="content-block {{ " content-block--accent" if accent }}{{ gridClasses if gridClasses }}">
+  <div class="content-block{{ " content-block--accent" if accent }} {{ gridClasses if gridClasses }}">
 
-    {% if titleType == "primary" %}<h1>
-    {% elif titleType == "secondary" %}<h2>
-    {% elif titleType == "tertiary" %}<h3>
-    {% endif -%}
-      {{ title | safe }}
-    {% if titleType == "primary" %}</h1>
-    {% elif titleType == "secondary" %}</h2>
-    {% elif titleType == "tertiary" %}</h3>
+    {% if titleType == "primary" -%}<h1>
+    {% elif titleType == "secondary" -%}<h2>
+    {% elif titleType == "tertiary" -%}<h3>
+    {% endif %}
+      {{ title }}
+    {%- if titleType == "primary" %}</h1>
+    {%- elif titleType == "secondary" %}</h2>
+    {%- elif titleType == "tertiary" %}</h3>
     {%- endif %}
 
     {{ body | safe }}
