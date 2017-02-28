@@ -2,16 +2,23 @@
   background: white;
   border-radius: $radius-size-1;
   box-shadow: inset 0 0 0 1px palette(default, lighter), $shadow-1;
+  display: flex;
+  flex-direction: column;
   [class*="col-"] & {
     height: 100%;
   }
   &__block {
+    flex: 1;
     padding: $lead-single;
     box-sizing: border-box;
+    &--accent {
+      background-color: $theme-color-accent;
+    }
   }
   &__head {
     @extend .flex;
     @extend .middle-xs;
+    flex-shrink: 1;
     padding: $lead-single;
   }
   &__title {
