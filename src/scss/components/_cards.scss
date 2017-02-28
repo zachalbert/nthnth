@@ -32,6 +32,15 @@
   &--small {
     padding: $lead-half;
   }
+  &--lightest {
+    background-color: palette(default, lightest);
+  }
+  &--lighter {
+    background-color: palette(default, lighter);
+  }
+  &--light {
+    background-color: palette(default, light);
+  }
   &--accent {
     background-color: $theme-color-accent;
     #{$inlineCopyTags}{
@@ -62,6 +71,15 @@
 
 .card__head + .card__block.card__block--accent, .card__block--accent + .card__block--separated {
   box-shadow: inset 0 1px 0 0 $theme-color-accent-dark;
+}
+.card__head + .card__block.card__block--lightest, .card__block--lightest + .card__block--separated {
+  box-shadow: inset 0 1px 0 0 darken(palette(default, lightest),10%);
+}
+.card__head + .card__block.card__block--lighter, .card__block--lighter + .card__block--separated {
+  box-shadow: inset 0 1px 0 0 darken(palette(default, lighter),10%);
+}
+.card__head + .card__block.card__block--light, .card__block--light + .card__block--separated {
+  box-shadow: inset 0 1px 0 0 darken(palette(default, light),10%);
 }
 
 .card__title {
