@@ -1,3 +1,9 @@
+// ZERO OUT TOP MARGINS
+
+#{$headlineCopyTags}, #{$bodyCopyTags} {
+  margin-top: 0;
+}
+
 // MARGIN BOTTOM ZERO
 h4, .h4, .form-element__wrap {
   .form-element--text {
