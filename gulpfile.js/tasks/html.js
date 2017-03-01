@@ -1,9 +1,6 @@
 var config       = require('../config')
 if(!config.tasks.html) return
 
-var cdata        = require('contentful-data')
-var entries      = null
-var util         = require('util')
 var browserSync  = require('browser-sync')
 var data         = require('gulp-data')
 var fs           = require('fs')
@@ -25,63 +22,7 @@ var getData = function(file) {
   return JSON.parse(fs.readFileSync(dataPath, 'utf8'))
 }
 
-gulp.task('cdata', function(cb){
-  // Only get entries once per build. Prevents numerous API calls if build run often after a gulp watch, for example.
-  if (!entries) {
-
-    var params = {
-      apiKey: '11074babe73772987909a59f76eb49bd6c847599d04181087892d6c1049ed1d7',
-      spaceId: 'g4u24h1d3en6',
-      opts: {
-        level: 2
-      }
-    };
-
-    return cdata(params, function(err, data){
-      if(!err) {
-        entries = data;
-        for( var x in entries ) {
-          console.log(util.inspect(x, {showHidden: true, depth: 3}));
-        }
-        cb();
-      } else {
-        console.error('error:' + err);
-      }
-    });
-  } else {
-    cb();
-  }
-})
-//
-// gulp.task('html', ['data'], function(cb){
-//   for (var pageId in entries.page){
-//
-//     // Assign nav and page data to template
-//     var locals = {
-//       navs: entries.navList,
-//       page: entries.page[pageId]
-//     }
-//
-//     // Get pug template to use.
-//     var template = entries.page[pageId].fields.template;
-//
-//     // Compile pug template
-//     var compiled = pug.compileFile('./src/templates/' + template + '.pug')(locals);
-//
-//     // Define path to output template
-//     var path = 'path/to/output/compiled/template';
-//     path = path + '/' + locals.page.fields.slug;
-//     mkpath.sync(path);
-//
-//     // Write compiled pug template
-//     var filename = path + '/index.html';
-//     fs.writeFileSync(filename,  compiled);
-//   }
-//
-//   cb();
-// });
-
-var htmlTask = function( entries ) {
+var htmlTask = function() {
 
   return gulp.src(paths.src)
     .pipe(data(getData))
@@ -100,7 +41,5 @@ var htmlTask = function( entries ) {
 
 }
 
-
-
-gulp.task('html', ['cdata'], htmlTask)
+gulp.task('html', htmlTask)
 module.exports = htmlTask

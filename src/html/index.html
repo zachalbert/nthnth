@@ -8,14 +8,14 @@
 
 {%- call section(
   bgURL = "http://www.fillmurray.com/1920/1080",
-  bgOverlayModifierClass = "dark",
-  row = true,
-  rowClasses = "center-xs text-center"
+  bgOverlayModifierClass = "dark"
 )%}
 
   {% call columns(
+    rowClasses = "center-xs text-center",
     xs = 10,
-    sm = 8
+    sm = 8,
+    lg = 7
   ) %}
   {{ title("The Best Words") }}
   {{ subtitle("Nobody has better words than me.") }}
