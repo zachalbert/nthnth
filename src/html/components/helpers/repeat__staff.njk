@@ -10,8 +10,8 @@
 {%- from 'components/card/card.njk' import card %}
 {%- from 'components/layout/columns.njk' import columns %}
 {% macro repeatStaff(
-    data            = {},
-    dataLimit       = 10
+  data            = {},
+  dataLimit       = 10
 ) %}
 {% for item in data %}
 {% call columns(
