@@ -7,7 +7,7 @@ var fs           = require('fs')
 var gulp         = require('gulp')
 var gulpif       = require('gulp-if')
 var handleErrors = require('../lib/handleErrors')
-var htmlmin      = require('gulp-htmlmin')
+var prettify    = require('gulp-jsbeautifier')
 var path         = require('path')
 var render       = require('gulp-nunjucks-render')
 var exclude      = path.normalize('!**/{' + config.tasks.html.excludeFolders.join(',') + '}/**')
@@ -35,7 +35,11 @@ var htmlTask = function() {
       }
     }))
     .on('error', handleErrors)
-    .pipe(gulpif(global.production, htmlmin(config.tasks.html.htmlmin)))
+    .pipe(prettify({
+      "indent_size": 2,
+      "preserve_newlines": true,
+      "max_preserve_newlines": 0
+    }))
     .pipe(gulp.dest(paths.dest))
     .on('end', browserSync.reload)
 

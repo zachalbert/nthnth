@@ -17,9 +17,7 @@
   URL = "#",
   helpText
 ) %}
-<a href="{{URL}}" class="button button--{{type}} {{"button--elevated" if shadow}}">
-  {{text}}
-</a>
+<a href="{{URL}}" class="button button--{{type}} {{"button--elevated" if shadow}}">{{text}}</a>
 {% if helpText %}
 <p><em>{{ helpText }}</em></p>
 {% endif %}
