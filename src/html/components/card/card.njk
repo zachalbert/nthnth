@@ -3,16 +3,14 @@
  #
  # @param {string} [title] - Larger heading at the top of the card
  # @param {string} [avatarURL] - Image URL that will appear next to the title, if present
- # @param {*}      [body] - Content that goes inside the card
  #
  # @example
- # {{ card(title="Card title", avatarURL="http://abc.xyz/pic.jpg", body="<p>Card content</p>") }}
+ # {{ card(title="Card title", avatarURL="http://abc.xyz/pic.jpg") }}
  #}
 {% from 'components/card/card__block.njk' import cardBlock %}
 {% macro card(
   title,
-  avatarURL,
-  body
+  avatarURL
 ) %}
 <div class="card">
   {% if avatarURL or title %}
@@ -27,8 +25,8 @@
     {% endif %}
   </div>
   {% endif %}
-  {% if body %}
-  {{ cardBlock(body) }}
-  {% endif %}
+  {% call cardBlock() %}
+  {{ caller() }}
+  {% endcall %}
 </div>
 {% endmacro %}
