@@ -5,12 +5,11 @@
  # @param {string}  [text=Learn more] - Text of the button
  # @param {string}  [type=primary] - Button style (primary, secondary, tertiary)
  # @param {string}  [URL=#] - URL to visit when clicked
- # @param {string}  helpText - Text to display underneath the button
+ # @param {string}  [helpText] - Text to display underneath the button
  #
  # @example
- # {{ button(shadow = false, text = "Click me", type = "secondary", URL = "http://www.google.com/", helpText = "Learn more") }}
+ # {{ button(shadow=false, text="Click me", type="secondary", URL="http://www.google.com/", helpText="Learn more") }}
  #}
-
 {% macro button(
   shadow = true,
   text = "Learn more",

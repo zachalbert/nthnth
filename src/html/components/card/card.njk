@@ -1,64 +1,34 @@
-{###############################################################################
-
-Component: Card
-===============
-
-TODO
-----
-
-- [ ] Extend card for modals
-
-###############################################################################}
-
+{##
+ # Set up card UI
+ #
+ # @param {string} [title] - Larger heading at the top of the card
+ # @param {string} [avatarURL] - Image URL that will appear next to the title, if present
+ # @param {*}      [body] - Content that goes inside the card
+ #
+ # @example
+ # {{ card(title="Card title", avatarURL="http://abc.xyz/pic.jpg", body="<p>Card content</p>") }}
+ #}
 {% from 'components/card/card__block.njk' import cardBlock %}
-
-{# START MACRO
-
-Arguments
----------
-- avatarURL     : string
-- bgType        : string
-- bgURL         : string
-- body          : string
-- borderSize    : number
-- borderColor   : number
-- padding       : number
-- shadow        : number
-- title         : string
-
-#}
-
 {% macro card(
-    avatarURL,
-    bgType,
-    bgURL,
-    body,
-    borderSize,
-    borderColor,
-    padding,
-    shadow,
-    title
-  ) %}
-
-  {# START COMPONENT #}
-  <div class="card">
-    {% if avatarURL or title %}
-      <div class="card__head">
-        {% if avatarURL %}
-        <div class="card__image card__image--avatar">
-          <img src="{{avatarURL}}"/>
-        </div>
-        {% endif %}
-        {% if title %}
-        <h3 class="card__title">{{title}}</h3>
-        {% endif %}
-      </div>
+  title,
+  avatarURL,
+  body
+) %}
+<div class="card">
+  {% if avatarURL or title %}
+  <div class="card__head">
+    {% if avatarURL %}
+    <div class="card__image card__image--avatar">
+      <img src="{{avatarURL}}"/>
+    </div>
     {% endif %}
-    {% if body %}
-    {{ cardBlock(body) }}
+    {% if title %}
+    <h3 class="card__title">{{title}}</h3>
     {% endif %}
   </div>
-  {# /COMPONENT #}
-
+  {% endif %}
+  {% if body %}
+  {{ cardBlock(body) }}
+  {% endif %}
+</div>
 {% endmacro %}
-{# /MACRO #}
