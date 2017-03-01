@@ -41,7 +41,5 @@ var htmlTask = function() {
 
 }
 
-
-
 gulp.task('html', htmlTask)
 module.exports = htmlTask

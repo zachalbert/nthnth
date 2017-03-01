@@ -11,20 +11,24 @@
  #}
 
 {% macro columns(
-  xs = 12,
+  row = true,
+  rowClasses,
+  xs,
   sm,
   md,
   lg,
-  xl
+  xl,
+  xsOffset,
+  smOffset,
+  mdOffset,
+  lgOffset,
+  xlOffset
   ) -%}
 
-  {# TODO get this working #}
-
-  {% set colClasses = ['col-xs-'+xs, ' col-sm-'+sm] %}
-
-  {{ colClasses | join }}
-
-<div class="col-xs-12">
+{% if row %}<div class="row{{ ' '+rowClasses if rowClasses }}">{% endif %}
+<div class="{{ "col-xs-" + xs if xs else "col-xs" }}{{ " col-sm-" + sm if sm }}{{ " col-md-" + md if md }}{{ " col-lg-" + lg if lg }}{{ " col-xl-" + xl if xl }}{{ " col-xs-offset-" + xsOffset if xsOffset }}{{ " col-sm-offset-" + smOffset if smOffset }}{{ " col-md-offset-" + mdOffset if mdOffset }}{{ " col-lg-offset-" + lgOffset if lgOffset }}{{ " col-xl-offset-" + xlOffset if xlOffset }}">
   {{ caller() }}
 </div>
+{% if row %}</div>{% endif %}
+
 {%- endmacro %}

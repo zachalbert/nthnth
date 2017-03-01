@@ -8,7 +8,7 @@
 {%- from 'components/nav/nav.njk' import nav %}
 {%- from 'components/text/title.njk' import title %}
 {%- from 'components/text/subtitle.njk' import subtitle %}
-{#- Global component globbing pattern, see last comment here: https://github.com/mozilla/nunjucks/issues/309 -#}
+{#- TODO: Global component globbing pattern, see last comment here: https://github.com/mozilla/nunjucks/issues/309 -#}
 <!doctype html>
 <html>
   <head>
@@ -16,7 +16,6 @@
     <title>{% block title %}{{ _site.title }}{% endblock %}</title>
     <link rel="stylesheet" href="css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% include "shared/app-icons.njk" %}
     {% block head %}{% endblock %}
   </head>
   <body>

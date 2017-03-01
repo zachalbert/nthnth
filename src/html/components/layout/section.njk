@@ -32,7 +32,8 @@ TODO:
     row = false,
     rowClasses,
     bgURL,
-    bgOverlayModifierClass
+    bgOverlayModifierClass,
+    container = true
   ) %}
 
   {% if bgOverlayModifierClass %}
@@ -41,11 +42,11 @@ TODO:
 
   {# START COMPONENT #}
   <section class="section{{ " section--accent" if accent }}{{ overlayClasses }}"{% if bgURL %} style="background-image: url('{{ bgURL }}');"{% endif %}>
-    <div class="container">
-      {% if row %}<div class="row {{ rowClasses }}">{% endif %}
+    {% if container %}<div class="container">{% endif %}
+      {% if row %}<div class="row{{ ' '+rowClasses if rowClasses }}">{% endif %}
       {{ caller() }}
       {% if row %}</div>{% endif %}
-    </div>
+    {% if container %}</div>{% endif %}
   </section>
   {# /COMPONENT #}
 
