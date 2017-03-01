@@ -1,11 +1,11 @@
 // ZERO OUT TOP MARGINS
 
-#{$headlineCopyTags}, #{$bodyCopyTags} {
-  margin-top: 0;
+#{$bodyCopyTags}, #{$headlineCopyTags}, #{$inlineCopyTags}{
+  margin: 0;
 }
 
 // MARGIN BOTTOM ZERO
-h4, .h4, .form-element__wrap {
+.form-element__wrap {
   .form-element--text {
     margin: 0;
   }
@@ -15,7 +15,6 @@ h4, .h4, .form-element__wrap {
 
 // MARGIN BOTTOM HALF
 
-h3,
 .section--hero .page-heading,
 .hero__heading,
 legend.label,
@@ -29,9 +28,6 @@ legend.label,
 
 // MARGIN BOTTOM SINGLE
 
-h1,
-h2,
-p,
 .card, .form-element-group,
 .form-element__wrap,
 .hero__subheading {
@@ -41,7 +37,7 @@ p,
 // MARGIN BOTTOM DOUBLE
 
 .hero__subheading,
-.content-block
+.content-block, .section__subtitle
 {
   margin-bottom: $lead-double;
 }

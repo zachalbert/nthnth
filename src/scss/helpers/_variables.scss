@@ -109,11 +109,35 @@ $palettes: (
     mid:          #535758,
     dark:         #3D474A,
     darker:       #242E30,
-    accent:       #897FFF,
+    accent:       #6772e5,
     dark-accent:  darken(#897FFF, 7%)
   ),
   state:(
     error:        #FF5E3D,
+    error-dark:   darken(#FF5E3D, 20%),
+    warning:      #FFC247,
+    warning-dark: darken(#FFC247, 20%),
+    info:         #4FDBF0,
+    info-dark:    darken(#4FDBF0, 20%),
+    success:      #55E691,
+    success-dark: darken(#55E691, 20%)
+  )
+);
+
+$palettes: (
+  // DEFAULT
+  default:(
+    lightest:     #FAFAFA,
+    lighter:      #DEDEDE,
+    light:        #909799,
+    mid:          #535758,
+    dark:         #3D474A,
+    darker:       #242E30,
+    accent:       #6772e5,
+    dark-accent:  darken(#6772e5, 7%)
+  ),
+  state:(
+    error:        change-color($color: #6772e5, $hue: 50, $saturation: 50, $lightness: 50),
     error-dark:   darken(#FF5E3D, 20%),
     warning:      #FFC247,
     warning-dark: darken(#FFC247, 20%),

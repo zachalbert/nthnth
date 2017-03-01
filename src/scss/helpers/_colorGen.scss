@@ -1,0 +1,62 @@
+$theme-color-accent:              yellow;
+
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function getColor($color, $fromPrimaryColor: $theme-color-accent ) {
+  // Orange
+
+  $red-min:     0;
+  $red-max:     20;
+  $red-min2:    341;
+  $red-max2:    360;
+  $orange-min:  21;
+  $orange-max:  40;
+  $yellow-min:  41;
+  $yellow-max:  65;
+  $green-min:   66;
+  $green-max:   150;
+  $blue-min:    150;
+  $blue-max:    250;
+  $indigo-min:  251;
+  $indigo-max:  270;
+  $purple-min:  271;
+  $purple-max:  290;
+  $pink-min:    291;
+  $pink-max:    340;
+
+  @if $color == "orange" {
+    @if (hue($fromPrimaryColor) >= $red-min and hue($fromPrimaryColor) <= $red-max) or (hue($fromPrimaryColor) >= $red-min2 and hue($fromPrimaryColor) <= $red-max2) { //if primary is red
+      @return adjust-hue($fromPrimaryColor, (hue(orange) - hue(red)));
+    } @else if hue($fromPrimaryColor) >= $orange-min and hue($fromPrimaryColor) <= $orange-max { //if primary is orange
+      @return $fromPrimaryColor;
+    } @else if hue($fromPrimaryColor) >= $yellow-min and hue($fromPrimaryColor) <= $yellow-max { //if primary is yellow
+      @return adjust-hue($fromPrimaryColor, -(hue($fromPrimaryColor) - hue(orange)));
+    } @else if hue($fromPrimaryColor) >= $green-min and hue($fromPrimaryColor) <= $green-max { //if primary is green
+      @return adjust-hue($fromPrimaryColor, -(hue($fromPrimaryColor) - hue(orange)));
+    } @else if hue($fromPrimaryColor) >= $blue-min and hue($fromPrimaryColor) <= $blue-max { //if primary is blue
+      @return adjust-hue($fromPrimaryColor, -(hue($fromPrimaryColor) - hue(orange)));
+    } @else if hue($fromPrimaryColor) >= $indigo-min and hue($fromPrimaryColor) <= $indigo-max { //if primary is indigo
+      @return adjust-hue($fromPrimaryColor, -(hue($fromPrimaryColor) - hue(orange)));
+    } @else if hue($fromPrimaryColor) >= $purple-min and hue($fromPrimaryColor) <= $purple-max { //if primary is purple
+      @return adjust-hue($fromPrimaryColor, -(hue($fromPrimaryColor) - hue(orange)));
+    } @else if hue($fromPrimaryColor) >= $pink-min and hue($fromPrimaryColor) <= $pink-max { //if primary is pink
+      @return adjust-hue($fromPrimaryColor, -(hue($fromPrimaryColor) - hue(orange)));
+    }
+  } @else {
+    @error "Sorry, you must enter 'red, orange, yellow, green, blue, indigo, purple, pink'";
+  }
+  @return red;
+}
+
+.h1 {
+  color: getColor("orange")!important;
+}

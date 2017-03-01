@@ -18,4 +18,8 @@
   &__title {
     margin-bottom: 0;
   }
+  &__subtitle {
+    color: $muted-font-color;
+    font-style: italic;
+  }
 }
