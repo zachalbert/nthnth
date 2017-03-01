@@ -1,13 +1,17 @@
-{#
-  Card / Card Block:
-  - bg: hex value (default: "green")
-#}
-
+{##
+ # Block with padding intended to live as sections within a div.card wrapper
+ #
+ # @param {boolean} [accent=false] - Give the block an accented background
+ # @param {*}       [body] - Content that goes inside the card block
+ #
+ # @example
+ # {{ card(title="Card title", avatarURL="http://abc.xyz/pic.jpg", body="<p>Card content</p>") }}
+ #}
 {% macro cardBlock(
-    accent = false,
-    body
-  ) %}
-  <div class="card__block{{ " card__block--accent" if accent }}">
-    {{ body | safe }}
-  </div>
+  accent = false,
+  body
+) %}
+<div class="card__block{{ " card__block--accent" if accent }}">
+  {{ body }}
+</div>
 {% endmacro %}

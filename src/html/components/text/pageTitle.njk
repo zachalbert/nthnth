@@ -1,0 +1,11 @@
+{##
+ # Page title (outputs an H1, only use once per page)
+ #
+ # @param {string} [text] The text to display
+ #
+ # @example
+ #   {{ pageTitle( "Title Text" )) }}
+ #}
+{% macro pageTitle( text ) %}
+<h1>{{ text }}</h1>
+{% endmacro %}

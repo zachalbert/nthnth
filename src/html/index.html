@@ -26,22 +26,10 @@
     helpText = "100% money back guarantee!"
   )}}
   {% endcall %}
-
-  {#{ contentBlock(
-    title = "The Best Words",
-    titleType = "primary",
-    body = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel sem ac elit molestie eleifend consequat nec orci. Nam vitae nisi sollicitudin, bibendum justo quis, viverra turpis.</p>",
-    gridClasses = "col-xs-12 col-sm-6 col-md-5",
-    CTA = button(
-      text = "Primary Button",
-      type = "primary",
-      URL = "http://jakeflem.com"
-    )
-  )}#}
 {% endcall -%}
 
 {% call section( accent = true ) %}
-  {{ card(body=contentBlock(body=about.body)) }}
+  {{ card(body=about.body) }}
 {% endcall %}
 
 {% call section() %}
@@ -85,10 +73,7 @@
   row = true,
   rowClasses = "center-xs"
 ) %}
-{{ contentBlock(
-  body = "<p>&copy; Stuff</p>",
-  gridClasses = "col-xs-12 col-sm-6 col-md-5 text-center"
-) }}
+<p>&copy; Stuff</p>
 {% endcall %}
 
 {% endblock %}

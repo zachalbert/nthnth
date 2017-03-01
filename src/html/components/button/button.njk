@@ -1,37 +1,26 @@
-{###############################################################################
-
-Component: Button
-===============
-
-###############################################################################}
-
-{# START MACRO
-
-Arguments
----------
-- shadow    : boolean
-- text      : string
-- type      : string (primary, secondary, tertiary)
-- URL       : string
-
-#}
-
+{##
+ # Button component
+ #
+ # @param {boolean} [shadow=true] - Show a shadow under the button?
+ # @param {string}  [text=Learn more] - Text of the button
+ # @param {string}  [type=primary] - Button style (primary, secondary, tertiary)
+ # @param {string}  [URL=#] - URL to visit when clicked
+ # @param {string}  [helpText] - Text to display underneath the button
+ #
+ # @example
+ # {{ button(shadow=false, text="Click me", type="secondary", URL="http://www.google.com/", helpText="Learn more") }}
+ #}
 {% macro button(
-    shadow = true,
-    text = "Gimme a value",
-    type = "primary",
-    URL = "#",
-    helpText
-  ) %}
-
-  {# START COMPONENT #}
-  <a href="{{URL}}" class="button button--{{type}} {{"button--elevated" if shadow}}">
-    {{text}}
-  </a>
-  {% if helpText %}
-  <p><em>{{ helpText }}</em></p>
-  {% endif %}
-  {# /COMPONENT #}
-
+  shadow = true,
+  text = "Learn more",
+  type = "primary",
+  URL = "#",
+  helpText
+) %}
+<a href="{{URL}}" class="button button--{{type}} {{"button--elevated" if shadow}}">
+  {{text}}
+</a>
+{% if helpText %}
+<p><em>{{ helpText }}</em></p>
+{% endif %}
 {% endmacro %}
-{# /MACRO #}

@@ -1,17 +1,9 @@
 {##
- # Navigation bars
- #
- # @param {array}  [data] Array of JSON objects to be iterated through
- # @param {int}    [dataLimit] TODO: Number of objects in array to show before switching to an alternate view which has a read more link
- # @param {string} [gridWrapper] List of grid classes to wrap the output object
- # @param {string} [outputComponent] Name of the component to pass single array object to
- #
- # @return {string} A concatenated list of HTML for each object in array
+ # Main navigation
  #
  # @example
- #   {% repeatStaff( staff, card(title="Card title") ) %}
+ #   {{ nav() }}
  #}
-
 {% macro nav() %}
 <nav class="nav nav--top nav--fixed nav--off-canvas-sm">
   <div class="nav__body">

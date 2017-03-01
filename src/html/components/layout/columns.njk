@@ -1,15 +1,14 @@
 {##
- # Set up grid columns
+ # Set up grid columns, including a row
  #
- # @param {string} [text] The text to display
- # @default [col-xs-12]
- #
- # @return {string} HTML
+ # @param {string} [row=true] - Wrap a div.row around the div containing grid classes
+ # @param {string} [rowClasses] - Add additional classes to div.row
+ # @param {number} [(xs, sm, md, lg, xl)] - Number of grid columns at each breakpoint
+ # @param {number} [(xsOffset, smOffset, mdOffset, lgOffset, xlOffset)] - Number of grid columns to offset from the left at each breakpoint
  #
  # @example
- #   {{ subtitle( "Subtitle Text" )) }}
+ #   {{ columns(rowClasses="text-center accent", xs=6, lg=4, mdOffset=2) }}
  #}
-
 {% macro columns(
   row = true,
   rowClasses,
@@ -23,12 +22,10 @@
   mdOffset,
   lgOffset,
   xlOffset
-  ) -%}
-
+) %}
 {% if row %}<div class="row{{ ' '+rowClasses if rowClasses }}">{% endif %}
 <div class="{{ "col-xs-" + xs if xs else "col-xs" }}{{ " col-sm-" + sm if sm }}{{ " col-md-" + md if md }}{{ " col-lg-" + lg if lg }}{{ " col-xl-" + xl if xl }}{{ " col-xs-offset-" + xsOffset if xsOffset }}{{ " col-sm-offset-" + smOffset if smOffset }}{{ " col-md-offset-" + mdOffset if mdOffset }}{{ " col-lg-offset-" + lgOffset if lgOffset }}{{ " col-xl-offset-" + xlOffset if xlOffset }}">
   {{ caller() }}
 </div>
 {% if row %}</div>{% endif %}
-
-{%- endmacro %}
+{% endmacro %}

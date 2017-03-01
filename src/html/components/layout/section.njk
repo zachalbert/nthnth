@@ -1,54 +1,36 @@
-{###############################################################################
-
-Component: Section
-===============
-
-TODO
-----
-
-- [ ]
-
-###############################################################################}
-
-{#% from 'components/card/card__block.njk' import cardBlock %#}
-
-{# START MACRO
-
-Arguments
----------
-- body          : * (string, other component, etc)
-- accent        : boolean (if true, will use the site's accent color as a background)
-- bgURL         : string
-
-TODO:
-- imageURL
-- bg-type
-- overlay-type
-
-#}
-
+{##
+ # Main content sections on a page
+ #
+ # @param {boolean} [accent=false] - Accented background
+ # @param {boolean} [container=true] - Wrap a div.container around the content
+ # @param {boolean} [row=false] - Wrap a div.row around the content (usually best to use the row parameter on the columns() component)
+ # @param {string}  [rowClasses] - Add additional classes to div.row
+ # @param {string}  [bgURL] - URL to image, which will replace the background
+ # @param {string}  [bgOverlayModifierClass(dark, light)] - Overlay pseudo element that takes up the full width and height of the section
+ #
+ # @example
+ # {% call section(row=true, bgURL="http://abc.xyz/bg.jpg", bgOverlayModifierClass="dark") %}
+ # <p>
+ #   Section content.
+ # </p>
+ # {% endcall %}
+ #}
 {% macro section(
-    accent = false,
-    row = false,
-    rowClasses,
-    bgURL,
-    bgOverlayModifierClass,
-    container = true
-  ) %}
-
-  {% if bgOverlayModifierClass %}
-    {% set overlayClasses = " bg-overlay bg-overlay--" + bgOverlayModifierClass %}
-  {% endif %}
-
-  {# START COMPONENT #}
-  <section class="section{{ " section--accent" if accent }}{{ overlayClasses }}"{% if bgURL %} style="background-image: url('{{ bgURL }}');"{% endif %}>
-    {% if container %}<div class="container">{% endif %}
-      {% if row %}<div class="row{{ ' '+rowClasses if rowClasses }}">{% endif %}
-      {{ caller() }}
-      {% if row %}</div>{% endif %}
-    {% if container %}</div>{% endif %}
-  </section>
-  {# /COMPONENT #}
-
+  accent = false,
+  container = true,
+  row = false,
+  rowClasses,
+  bgURL,
+  bgOverlayModifierClass
+) %}
+{% if bgOverlayModifierClass %}
+  {% set overlayClasses = " bg-overlay bg-overlay--" + bgOverlayModifierClass %}
+{% endif %}
+<section class="section{{ " section--accent" if accent }}{{ overlayClasses }}"{% if bgURL %} style="background-image: url('{{ bgURL }}');"{% endif %}>
+  {% if container %}<div class="container">{% endif %}
+    {% if row %}<div class="row{{ ' '+rowClasses if rowClasses }}">{% endif %}
+    {{ caller() }}
+    {% if row %}</div>{% endif %}
+  {% if container %}</div>{% endif %}
+</section>
 {% endmacro %}
-{# /MACRO #}
