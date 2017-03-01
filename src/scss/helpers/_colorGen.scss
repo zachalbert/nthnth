@@ -35,7 +35,7 @@ $pink:            hsl(330, 100%, 50%);
 $pink-red:        hsl(340, 100%, 50%);
 $red-pink:        hsl(350, 100%, 50%);
 
-$theme-color-accent:              yellow;
+$theme-color-accent:              red;
 
 /// Remove the unit of a length
 /// @param {Number} $number - Number to remove unit from
@@ -75,8 +75,8 @@ $theme-color-accent:              yellow;
   // }
 
   @if $color == "orange" {
-    @if (hue($fromPrimaryColor) >= $red-min and hue($fromPrimaryColor) <= $red-max) or (hue($fromPrimaryColor) >= $red-min2 and hue($fromPrimaryColor) <= $red-max2) { //if primary is red
-      @return adjust-hue($fromPrimaryColor, (hue(orange) - hue(red)));
+    @if (hue($fromPrimaryColor) >= hue($red) and hue($fromPrimaryColor) <= hue($orange-red)) or (hue($fromPrimaryColor) >= $red-min2 and hue($fromPrimaryColor) <= $red-max2) { //if primary is red
+      @return adjust-hue($fromPrimaryColor, (hue(orange) - (hue($orange-red)/2 )));
     } @else if hue($fromPrimaryColor) >= $orange-min and hue($fromPrimaryColor) <= $orange-max { //if primary is orange
       @return $fromPrimaryColor;
     } @else if hue($fromPrimaryColor) >= $yellow-min and hue($fromPrimaryColor) <= $yellow-max { //if primary is yellow
