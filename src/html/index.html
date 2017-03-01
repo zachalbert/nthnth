@@ -10,15 +10,14 @@
   bgURL = "http://www.fillmurray.com/1920/1080",
   bgOverlayModifierClass = "dark"
 )%}
-
   {% call columns(
     rowClasses = "center-xs text-center",
     xs = 10,
     sm = 8,
     lg = 7
   ) %}
-  {{ title("The Best Words") }}
-  {{ subtitle("Nobody has better words than me.") }}
+  {{ pageTitle("The Best Words") }}
+  {{ pageSubtitle("Nobody has better words than me.") }}
   {{ button(
     text = "Learn more",
     type = "primary",
@@ -29,7 +28,9 @@
 {% endcall -%}
 
 {% call section( accent = true ) %}
-  {{ card(body=about.body) }}
+  {% call card() %}
+  {{ about.body }}
+  {% endcall %}
 {% endcall %}
 
 {% call section() %}
@@ -40,13 +41,10 @@
   accent = false,
   row = true
 ) %}
-{{ repeatStaff(
-  data            = staff,
-  gridWrapper     = "col-xs-12 col-sm-4 col-md-4"
-) }}
+  {{ repeatStaff(data=staff) }}
 {% endcall %}
 
-<section>
+<section class="section">
   <div class="container">
     <div class="row center-xs">
       <div class="col-xs-12 col-sm-4 col-md-4 grid-card">
@@ -73,7 +71,7 @@
   row = true,
   rowClasses = "center-xs"
 ) %}
-<p>&copy; Stuff</p>
+<p>&copy; Farbenkugels Unite!</p>
 {% endcall %}
 
 {% endblock %}

@@ -1,0 +1,7 @@
+{# TODO: Turn into a tiny component, joiner()
+{% set skillList %}
+  {% set comma = joiner() %}
+  {% for skill in item.skills -%}
+    {{ comma() }} {{ skill }}
+  {%- endfor %}
+{% endset %} #}

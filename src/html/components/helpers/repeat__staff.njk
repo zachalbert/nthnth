@@ -1,47 +1,31 @@
 {##
  # A repeater that iterates through an array
  #
- # @param {array}  [data] Array of JSON objects to be iterated through
- # @param {int}    [dataLimit] TODO: Number of objects in array to show before switching to an alternate view which has a read more link
- # @param {string} [gridWrapper] List of grid classes to wrap the output object
- # @param {string} [outputComponent] Name of the component to pass single array object to
- #
- # @return {string} A concatenated list of HTML for each object in array
+ # @param {array}  data - Array of JSON objects to be iterated through
+ # @param {number} [dataLimit=10] TODO: Number of objects in array to show before switching to an alternate view which has a read more… link
  #
  # @example
- #   {% repeatStaff( staff, card(title="Card title") ) %}
+ # {% repeatStaff( data=staff ) %}
  #}
-
-{% from 'components/card/card.njk' import card %}
-
+{%- from 'components/card/card.njk' import card %}
+{%- from 'components/layout/columns.njk' import columns %}
 {% macro repeatStaff(
     data            = {},
-    dataLimit       = 10,
-    gridWrapper     = ""
+    dataLimit       = 10
+) %}
+{% for item in data %}
+{% call columns(
+  row = false,
+  xs  = 12,
+  sm  = 4,
+  lg  = 3
+) %}
+  {% call card(
+    avatarURL = item.avatarURL,
+    title = item.name
   ) %}
-
-  {% for item in data %}
-
-    {# TODO: Turn into a tiny component, joiner()
-    {% set skillList %}
-      {% set comma = joiner() %}
-      {% for skill in item.skills -%}
-        {{ comma() }} {{ skill }}
-      {%- endfor %}
-    {% endset %} #}
-
-  {% if gridWrapper != "" %}
-  <div class="{{ gridWrapper }} grid-card">
-  {% endif %}
-    {{ card(
-      avatarURL = item.avatarURL,
-      title = item.name,
-      body  = item.description
-    ) }}
-  {% if gridWrapper != "" %}
-  </div>
-  {% endif %}
-
-  {% endfor %}
-
+  {{ item.description }}
+  {% endcall %}
+{% endcall %}
+{% endfor %}
 {% endmacro %}
