@@ -36,7 +36,35 @@ $pink-red:        hsl(340, 100%, 50%);
 $red-pink:        hsl(350, 100%, 50%);
 $red-red:         hsl(360, 100%, 50%);
 
-$theme-color-accent:              #FBAB39;
+$theme-color-accent:              #f6682F;
+
+@function newHue($newHue, $baseHue){
+  @if $baseHue >= hue($red) and $baseHue < hue($orange-red) { //if primary is red
+    @return $newHue;
+  } @else if $baseHue >= hue($orange-red) and $baseHue < hue($yellow-orange) { //if primary is orange
+    @return $newHue;
+  } @else if $baseHue >= hue($yellow-orange) and $baseHue < hue($lime-yellow) { //if primary is yellow
+    @return $newHue;
+  } @else if $baseHue >= hue($lime-yellow) and $baseHue < hue($green-teal) { //if primary is green
+    @return $newHue;
+  } @else if $baseHue >= hue($green-teal) and $baseHue < hue($teal-cyan) { //if primary is teal
+    @return $newHue;
+  } @else if $baseHue >= hue($teal-cyan) and $baseHue < hue($cyan-azure) { //if primary is cyan
+    @return $newHue;
+  } @else if $baseHue >= hue($cyan-azure) and $baseHue < hue($azure-blue) { //if primary is azure
+    @return $newHue;
+  } @else if $baseHue >= hue($azure-blue) and $baseHue < hue($blue-violet) { //if primary is blue
+    @return $newHue;
+  } @else if $baseHue >= hue($blue-violet) and $baseHue < hue($violet-magenta) { //if primary is violet
+    @return $newHue;
+  } @else if $baseHue >= hue($violet-magenta) and $baseHue < hue($magenta-pink) { //if primary is magenta
+    @return $newHue;
+  } @else if $baseHue >= hue($magenta-pink) and $baseHue < hue($pink-red) { //if primary is pink
+    @return $newHue;
+  } @else if $baseHue >= hue($pink-red) and $baseHue < hue($red-red) { //if primary is red
+    @return $newHue;
+  }
+}
 
 //Need to know what type of color we're going to be adjusting
 //Need to know what color we're starting from so we can adjust accordingly
@@ -52,32 +80,7 @@ $theme-color-accent:              #FBAB39;
 
     //set new hue values to be calculated for error
     $newHue: adjust-hue($fromPrimaryColor, -($baseHue - hue($red-orange)));
-
-    @if $baseHue >= hue($red) and $baseHue < hue($orange-red) { //if primary is red
-      @return $fromPrimaryColor;
-    } @else if $baseHue >= hue($orange-red) and $baseHue < hue($yellow-orange) { //if primary is orange
-      @return $newHue;
-    } @else if $baseHue >= hue($yellow-orange) and $baseHue < hue($lime-yellow) { //if primary is yellow
-      @return $newHue;
-    } @else if $baseHue >= hue($lime-yellow) and $baseHue < hue($green-teal) { //if primary is green
-      @return $newHue;
-    } @else if $baseHue >= hue($green-teal) and $baseHue < hue($teal-cyan) { //if primary is teal
-      @return $newHue;
-    } @else if $baseHue >= hue($teal-cyan) and $baseHue < hue($cyan-azure) { //if primary is cyan
-      @return $newHue;
-    } @else if $baseHue >= hue($cyan-azure) and $baseHue < hue($azure-blue) { //if primary is azure
-      @return $newHue;
-    } @else if $baseHue >= hue($azure-blue) and $baseHue < hue($blue-violet) { //if primary is blue
-      @return $newHue;
-    } @else if $baseHue >= hue($blue-violet) and $baseHue < hue($violet-magenta) { //if primary is violet
-      @return $newHue;
-    } @else if $baseHue >= hue($violet-magenta) and $baseHue < hue($magenta-pink) { //if primary is magenta
-      @return $newHue;
-    } @else if $baseHue >= hue($magenta-pink) and $baseHue < hue($pink-red) { //if primary is pink
-      @return $newHue;
-    } @else if $baseHue >= hue($pink-red) and $baseHue < hue($red-red) { //if primary is red
-      @return $newHue;
-    }
+    @return newHue($newHue, $baseHue);
   }
 
   //if type equals warning adjust starting color hue to fall within the yellow-orange range
@@ -85,30 +88,7 @@ $theme-color-accent:              #FBAB39;
 
     //set new hue values to be calculated for warning
     $newHue: adjust-hue($fromPrimaryColor, -($baseHue - hue($yellow-orange)));
-
-    @if ($baseHue >= hue($red) and $baseHue < hue($orange-red)) { //if primary is red
-      @return $newHue;
-    } @else if $baseHue >= hue($orange-red) and $baseHue < hue($yellow-orange) { //if primary is orange
-      @return $newHue;
-    } @else if $baseHue >= hue($yellow-orange) and $baseHue < hue($lime-yellow) { //if primary is yellow
-      @return $newHue;
-    } @else if $baseHue >= hue($lime-yellow) and $baseHue < hue($green-teal) { //if primary is green
-      @return $fromPrimaryColor;
-    } @else if $baseHue >= hue($green-teal) and $baseHue < hue($teal-cyan) { //if primary is teal
-      @return $fromPrimaryColor;
-    } @else if $baseHue >= hue($teal-cyan) and $baseHue < hue($cyan-azure) { //if primary is cyan
-      @return $newHue;
-    } @else if $baseHue >= hue($cyan-azure) and $baseHue < hue($azure-blue) { //if primary is azure
-      @return $newHue;
-    } @else if $baseHue >= hue($azure-blue) and $baseHue < hue($blue-violet) { //if primary is blue
-      @return $newHue;
-    } @else if $baseHue >= hue($blue-violet) and $baseHue < hue($violet-magenta) { //if primary is violet
-      @return $newHue;
-    } @else if $baseHue >= hue($violet-magenta) and $baseHue < hue($magenta-pink) { //if primary is magenta
-      @return $newHue;
-    } @else if $baseHue >= hue($magenta-pink) and $baseHue < hue($pink-red) { //if primary is pink
-      @return $newHue;
-    }
+    @return newHue($newHue, $baseHue);
   }
 
   //if type equals info adjust starting color hue to fall within the cyan-azure range
@@ -116,103 +96,68 @@ $theme-color-accent:              #FBAB39;
 
     //set new hue values to be calculated for info
     $newHue: adjust-hue($fromPrimaryColor, -($baseHue - hue($azure-blue)));
-
-    @if ($baseHue >= hue($red) and $baseHue < hue($orange-red)) { //if primary is red
-      @return $newHue;
-    } @else if $baseHue >= hue($orange-red) and $baseHue < hue($yellow-orange) { //if primary is orange
-      @return $newHue;
-    } @else if $baseHue >= hue($yellow-orange) and $baseHue < hue($lime-yellow) { //if primary is yellow
-      @return $newHue;
-    } @else if $baseHue >= hue($lime-yellow) and $baseHue < hue($green-teal) { //if primary is green
-      @return $newHue;
-    } @else if $baseHue >= hue($green-teal) and $baseHue < hue($teal-cyan) { //if primary is teal
-      @return $newHue;
-    } @else if $baseHue >= hue($teal-cyan) and $baseHue < hue($cyan-azure) { //if primary is cyan
-      @return $newHue;
-    } @else if $baseHue >= hue($cyan-azure) and $baseHue < hue($azure-blue) { //if primary is azure
-      @return $fromPrimaryColor;
-    } @else if $baseHue >= hue($azure-blue) and $baseHue < hue($blue-violet) { //if primary is blue
-      @return $newHue;
-    } @else if $baseHue >= hue($blue-violet) and $baseHue < hue($violet-magenta) { //if primary is violet
-      @return $newHue;
-    } @else if $baseHue >= hue($violet-magenta) and $baseHue < hue($magenta-pink) { //if primary is magenta
-      @return $newHue;
-    } @else if $baseHue >= hue($magenta-pink) and $baseHue < hue($pink-red) { //if primary is pink
-      @return $newHue;
-    }
+    @return newHue($newHue, $baseHue);
   }
 
   //if type equals success adjust starting color hue to fall within the green range
   @else if $colorType == "success" {
 
     //set new hue values to be calculated for info
-    $newHue: adjust-hue($fromPrimaryColor, -($baseHue - hue($green)));
-
-    @if ($baseHue >= hue($red) and $baseHue < hue($orange-red)) { //if primary is red
-      @return $newHue;
-    } @else if $baseHue >= hue($orange-red) and $baseHue < hue($yellow-orange) { //if primary is orange
-      @return $newHue;
-    } @else if $baseHue >= hue($yellow-orange) and $baseHue < hue($lime-yellow) { //if primary is yellow
-      @return $newHue;
-    } @else if $baseHue >= hue($lime-yellow) and $baseHue < hue($green-teal) { //if primary is green
-      @return $newHue;
-    } @else if $baseHue >= hue($green-teal) and $baseHue < hue($teal-cyan) { //if primary is teal
-      @return $newHue;
-    } @else if $baseHue >= hue($teal-cyan) and $baseHue < hue($cyan-azure) { //if primary is cyan
-      @return $newHue;
-    } @else if $baseHue >= hue($cyan-azure) and $baseHue < hue($azure-blue) { //if primary is azure
-      @return $fromPrimaryColor;
-    } @else if $baseHue >= hue($azure-blue) and $baseHue < hue($blue-violet) { //if primary is blue
-      @return $newHue;
-    } @else if $baseHue >= hue($blue-violet) and $baseHue < hue($violet-magenta) { //if primary is violet
-      @return $newHue;
-    } @else if $baseHue >= hue($violet-magenta) and $baseHue < hue($magenta-pink) { //if primary is magenta
-      @return $newHue;
-    } @else if $baseHue >= hue($magenta-pink) and $baseHue < hue($pink-red) { //if primary is pink
-      @return $newHue;
-    }
+    $newHue: adjust-hue($fromPrimaryColor, -($baseHue - hue($green-teal)));
+    @return newHue($newHue, $baseHue);
   }
 
-  //if type equals accent
-  @else if $colorType == "accent" {
+  //if type equals accent hard
+  @else if $colorType == "accent-hard" {
 
     //rotate 180deg
     @return adjust-hue($fromPrimaryColor, 180);
 
   }
 
-  //check lightness value
+  //if type equals accent
+  @else if $colorType == "accent-soft" {
+
+    //rotate 180deg
+    @return adjust-hue($fromPrimaryColor, -90);
+
+  }
 
   //Give some help to enter a valid value
   @else {
-    @error "Sorry, you must enter 'accent', 'error', 'warning', 'info', or 'success'";
+    @error "Sorry, you must enter 'accent-hard','accent-soft', 'error', 'warning', 'info', or 'success'";
   }
   @return cyan;
 }
 
+
+
+
+//for testing
 .swatch {
   background: gray;
   height: 90px;
   margin-bottom: 30px;
   width: 100%;
-  &--primary {
-    background: $theme-color-accent;
-  }
-  &--accent {
-    background: getColor("accent");
-  }
-  &--c1 {
-    background: getColor("warning");
-  }
-  &--c2 {
-    background: getColor("error");
-  }
-  &--c3 {
-    background: getColor("info");
-  }
-  &--c4 {
-    background: getColor("success");
-  }
 }
-
-//$orange:  getSpecificColor("orange");
+.swatch--primary {
+  background: $theme-color-accent;
+}
+.swatch--accent-hard {
+  background: getColor("accent-hard");
+}
+.swatch--accent-soft {
+  background: getColor("accent-soft");
+}
+.swatch--c1 {
+  background: getColor("warning");
+}
+.swatch--c2 {
+  background: getColor("error");
+}
+.swatch--c3 {
+  background: getColor("info");
+}
+.swatch--c4 {
+  background: getColor("success");
+}
