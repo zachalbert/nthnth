@@ -22,7 +22,7 @@ legend.label,
 .form-element--radio,
 .alert,
 .image,
-.button  {
+.button, .section__title  {
   margin-bottom: $lead-half;
 }
 
@@ -30,7 +30,8 @@ legend.label,
 
 .card, .form-element-group,
 .form-element__wrap,
-.hero__subheading {
+.hero__subheading,
+.text-block {
   margin-bottom: $lead-single;
 }
 

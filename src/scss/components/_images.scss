@@ -11,17 +11,27 @@
   &--bleed-right {
     margin-right: -25%;
   }
-  &--small {
+  &--small, &.image--small img {
     max-height: $lead-double;
   }
-  &--right {
+  &--right, &.image--right img {
     float: right;
     margin-left: $lead-double;
     max-width: 33vw;
   }
-  &--left {
+  &--left, &.image--left img {
     float: left;
     margin-right: $lead-double;
     max-width: 33vw;
+  }
+  &--full, &.image--full img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.row.flex-columns > [class^="col-"] {
+  > .image {
+    align-self: auto;
   }
 }

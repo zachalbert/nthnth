@@ -16,10 +16,19 @@
     }
   }
   &__title {
-    margin-bottom: 0;
+    //margin-bottom: 0;
   }
   &__subtitle {
     color: $muted-font-color;
     font-style: italic;
+  }
+  &--light {
+    background: palette(default, light);
+  }
+  &--lighter {
+    background: palette(default, lighter);
+  }
+  &--lightest {
+    background: palette(default, lightest);
   }
 }

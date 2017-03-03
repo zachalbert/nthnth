@@ -34,6 +34,7 @@
 
 .row.flex-columns > [class^="col-"] {
   display: flex;
+  flex-direction: column;
 }
 
 .row.reverse {
