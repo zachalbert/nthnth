@@ -32,6 +32,10 @@
   }
 }
 
+.row.flex-columns > [class^="col-"] {
+  display: flex;
+}
+
 .row.reverse {
   flex-direction: row-reverse;
 }

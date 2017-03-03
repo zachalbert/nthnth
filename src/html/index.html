@@ -38,8 +38,9 @@
 {% endcall %}
 
 {% call section(
-  accent = false,
-  row = true
+  accent = true,
+  row = true,
+  rowClasses = "flex-columns"
 ) %}
   {{ repeatStaff(data=staff) }}
 {% endcall %}
