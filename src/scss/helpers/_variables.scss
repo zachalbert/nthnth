@@ -12,12 +12,12 @@ $type-scale:     20px;
 $scale:          1.5;
 $line-height:    $type-scale * $scale;
 
-$type-scale-1:   $type-scale * .5;
-$type-scale-2:   $type-scale * .75;
-$type-scale-3:   $type-scale * 1;
-$type-scale-4:   $type-scale * $scale;
-$type-scale-5:   $type-scale * $scale * $scale;
-$type-scale-6:   $type-scale * $scale * $scale * $scale;
+$type-scale-1:   round($type-scale * .5);
+$type-scale-2:   round($type-scale * .75);
+$type-scale-3:   round($type-scale * 1);
+$type-scale-4:   round($type-scale * $scale);
+$type-scale-5:   round($type-scale * $scale * $scale);
+$type-scale-6:   round($type-scale * $scale * $scale * $scale);
 
 /*------------------------------------*\
   FONT WEIGHTS
