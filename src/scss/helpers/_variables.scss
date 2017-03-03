@@ -8,17 +8,16 @@ $mono-stack:     'Source Code Pro', monospace;
 /*------------------------------------*\
   TYPE SCALE
 \*------------------------------------*/
-$scale: 1.5;
-$type-scale: 20px;
-$base: strip-unit($type-scale);
-$line-height: $type-scale * $scale;
+$type-scale:     20px;
+$scale:          1.5;
+$line-height:    $type-scale * $scale;
 
-$type-scale-1:   .5rem;
-$type-scale-2:   .75rem;
-$type-scale-3:   1rem;
-$type-scale-4:   1.5rem;
-$type-scale-5:   2.25rem;
-$type-scale-6:   3rem;
+$type-scale-1:   round($type-scale * .5);
+$type-scale-2:   round($type-scale * .75);
+$type-scale-3:   round($type-scale * 1);
+$type-scale-4:   round($type-scale * $scale);
+$type-scale-5:   round($type-scale * $scale * $scale);
+$type-scale-6:   round($type-scale * $scale * $scale * $scale);
 
 /*------------------------------------*\
   FONT WEIGHTS
@@ -35,7 +34,7 @@ $body-font-size:     $type-scale-3;
 /*------------------------------------*\
   TAG GROUPS
 \*------------------------------------*/
-$headlineCopyTags:   "h1, h2, h3, h4, h5, h6,.h1, .h2, .h3, .h4, .h5, .h6";
+$headlineCopyTags:   "h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6";
 $bodyCopyTags:       "p, tt, ul, ol, dl, blockquote";
 $inlineCopyTags:     "a, span";
 

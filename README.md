@@ -1,3 +1,12 @@
+# Getting started
+
+```bash
+cp config.json.example config.json
+# Edit and add contentful keys
+npm install
+npm start
+```
+
 Forked from [Gulp Starter](https://github.com/vigetlabs/gulp-starter.git), then
 stuff was changed and added:
 
