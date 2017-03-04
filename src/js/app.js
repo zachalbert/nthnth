@@ -1,5 +1,5 @@
 import './modules'
-
+import './modules/ambient-light'
 /*
  * Replace all SVG images with inline SVG
  */

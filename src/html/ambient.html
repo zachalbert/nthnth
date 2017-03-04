@@ -1,0 +1,46 @@
+{% extends 'layouts/application.njk' %}
+
+{% block title %}Home{% endblock %}
+{% block bodyClasses %}ambient{% endblock %}
+
+{% block content %}
+
+{{ nav() }}
+
+{%- call section(
+)%}
+  {% call columns(
+    rowClasses = "center-xs text-center",
+    xs = 10,
+    sm = 8,
+    lg = 7
+  ) %}
+  <h1>The Best Words</h1>
+  {{ pageSubtitle("Nobody has better words than me.") }}
+  {{ button(
+    text = "Learn more",
+    type = "primary",
+    URL = "http://asdf.com",
+    helpText = "100% money back guarantee!"
+  )}}
+  {% endcall %}
+{% endcall -%}
+
+{% call section( bgType = light ) %}
+  {% call columns( sm = 8, rowClasses = "center-xs" ) %}
+    <h3 class="section__title text-center">
+      Ligula Nec Maruis Aliquam
+    </h3>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel sem ac elit molestie eleifend consequat nec orci. Nam vitae nisi sollicitudin, bibendum justo quis, viverra turpis. Donec dui dui, tincidunt quis quam in, malesuada pulvinar mi. Mauris eleifend, nulla vulputate eleifend venenatis, libero eros consequat libero, ut bibendum augue ipsum eget leo. Vivamus rutrum convallis lectus, ut cursus diam dapibus eu. Sed vel eleifend ante. Maecenas cursus molestie elit et tincidunt.
+    Suspendisse suscipit ligula nec mauris aliquam, sit amet congue ipsum lacinia. Sed fermentum iaculis commodo. Ut elementum ultrices mattis. Curabitur id odio metus. Aenean pellentesque justo in risus varius dictum. Aliquam sit amet elit a nisi fringilla pharetra. Proin nisi sapien, volutpat nec neque ut, accumsan placerat ligula. Proin eu nulla quis dolor malesuada efficitur sed vitae nunc. Aliquam varius arcu nec quam mattis, eu pharetra enim mattis. Nunc sit amet aliquet felis.
+  {% endcall %}
+{% endcall %}
+
+{% call section(
+  row = true,
+  rowClasses = "center-xs"
+) %}
+<p>&copy;</p>
+{% endcall %}
+
+{% endblock %}

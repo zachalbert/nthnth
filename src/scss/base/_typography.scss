@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1,
 .h1 {
-  color: $display-font-color;
+  //color: $display-font-color;
   font-weight: $font-weight-bold;
   line-height: $line-height * 2.5;
   font-size: $type-scale-6;
@@ -33,7 +33,7 @@ h1,
 
 h2,
 .h2 {
-  color: $display-font-color;
+  //color: $display-font-color;
   font-weight: $font-weight-bold;
   font-size: $type-scale-5;
   line-height: $line-height*2;
@@ -43,7 +43,7 @@ h2,
 
 h3,
 .h3 {
-  color: $display-font-color;
+  //color: $display-font-color;
   font-weight: $font-weight-bold;
   font-size: $type-scale-4;
   line-height: $line-height*1.5;
@@ -66,7 +66,7 @@ small,
 }
 
 p {
-  color: $body-font-color;
+  // color: $body-font-color;
 }
 
 .meta-text {
@@ -125,12 +125,12 @@ tt {
 }
 
 .page-heading {
-  color: $page-heading-font-color;
+  // color: $page-heading-font-color;
   text-align: center;
 }
 
 .page-subheading {
-  color: $page-subheading-font-color;
+  // color: $page-subheading-font-color;
   font-size: $type-scale-3;
   font-style: italic;
   line-height: $line-height;
@@ -140,4 +140,15 @@ tt {
 .text-large {
   font-size: $type-scale-4;
   line-height: $line-height*1.5;
+}
+
+.page {
+  &__title {
+    @extend .page-heading;
+  }
+
+  &__subtitle {
+    @extend .page-subheading;
+    margin-bottom: $lead-single;
+  }
 }
