@@ -14,6 +14,9 @@
   &--small, &.image--small img {
     max-height: $lead-double;
   }
+  &--medium, &.image--medium img {
+    max-height: $lead-quintuple;
+  }
   &--right, &.image--right img {
     float: right;
     margin-left: $lead-double;
@@ -27,6 +30,16 @@
   &--full, &.image--full img {
     width: 100%;
     height: auto;
+  }
+}
+
+.image-grid {
+  &__image,
+  &__image-sizer {
+    width: 20%;
+  }
+  &:nth-child(3) {
+    width: 40%;
   }
 }
 
