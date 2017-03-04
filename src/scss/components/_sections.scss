@@ -16,7 +16,11 @@
     }
   }
   &__title {
-    //margin-bottom: 0;
+    font-family: $display-stack;
+    font-size: $type-scale-5;
+    &--large {
+      font-size: $type-scale-6;
+    }
   }
   &__subtitle {
     color: $muted-font-color;

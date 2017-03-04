@@ -114,6 +114,10 @@ tt {
 
 .text-center {
   text-align: center!important;
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .text-muted {
