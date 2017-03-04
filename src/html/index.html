@@ -27,7 +27,9 @@
   {% endcall %}
 {% endcall -%}
 
-{% call section( accent = true ) %}
+{% call section(
+  bgType = "accent"
+) %}
   {% call card() %}
   {{ about.body }}
   {% endcall %}
@@ -38,7 +40,7 @@
 {% endcall %}
 
 {% call section(
-  accent = true,
+  bgType = "accent",
   row = true,
   rowClasses = "flex-columns"
 ) %}
@@ -72,7 +74,7 @@
   row = true,
   rowClasses = "center-xs"
 ) %}
-<p>&copy; Farbenkugels Unite!</p>
+<p>&copy; RESOLUTE</p>
 {% endcall %}
 
 {% endblock %}

@@ -7,7 +7,7 @@
 {%- from 'components/text/pageTitle.njk' import pageTitle %}
 {%- from 'components/text/pageSubtitle.njk' import pageSubtitle %}
 <!doctype html>
-<html>
+<html class="{% block htmlClasses %}{% endblock %}">
   <head>
     <meta charset="utf-8">
     <title>{% block title %}{{ _site.title }}{% endblock %}</title>
