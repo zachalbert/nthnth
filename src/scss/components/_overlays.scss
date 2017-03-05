@@ -25,11 +25,26 @@
     }
 
     &:before {
-      background-color: rgba(0,0,0,0.65);
+      background-color: rgba($theme-color-accent-dark,0.7);
     }
   }
 
   &--light {
 
+  }
+
+  &--gradient {
+    #{$headlineCopyTags},
+    #{$bodyCopyTags} {
+      color: #fff;
+      text-shadow: 0 1px 1px $theme-color-accent-dark;
+    }
+
+    &:before {
+      background: $theme-color-gradient-end;
+      background: -webkit-linear-gradient(top left, $theme-color-gradient-start 0%, $theme-color-gradient-end 68.2%);
+      background: -o-linear-gradient(top left, $theme-color-gradient-start 0%, $theme-color-gradient-end 68.2%);
+      background: linear-gradient(to bottom right, $theme-color-gradient-start 0%, $theme-color-gradient-end 68.2%);
+    }
   }
 }

@@ -7,8 +7,8 @@
 {{ nav() }}
 
 {%- call section(
-  bgURL = "http://www.fillmurray.com/1920/1080",
-  bgOverlayModifierClass = "dark"
+  bgURL = "http://lorempixel.com/1920/1080/city",
+  bgOverlayModifierClass = "gradient"
 )%}
   {% call columns(
     rowClasses = "center-xs text-center",
@@ -27,10 +27,14 @@
   {% endcall %}
 {% endcall -%}
 
-{% call section( accent = true ) %}
-  {% call card() %}
-  {{ about.body }}
+{% call section(
+  bgType = "accent"
+) %}
+
+  {% call columns(sm = 8) %}
+    {{ about.body }}
   {% endcall %}
+
 {% endcall %}
 
 {% call section() %}
@@ -38,7 +42,7 @@
 {% endcall %}
 
 {% call section(
-  accent = true,
+  bgType = "accent",
   row = true,
   rowClasses = "flex-columns"
 ) %}
@@ -67,12 +71,12 @@
 </section>
 
 {% call section(
-  accent = true,
+  bgType = "accent",
   bgOverlayModifierClass = "dark",
   row = true,
   rowClasses = "center-xs"
 ) %}
-<p>&copy; Farbenkugels Unite!</p>
+<p>&copy; RESOLUTE</p>
 {% endcall %}
 
 {% endblock %}

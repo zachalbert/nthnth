@@ -82,6 +82,7 @@
 
 .nav__logo {
   width: auto;
+  margin: 0.3rem 0 0.4rem 0.4rem;
   height: $nav-logo-size;
   svg, img {
     height: $nav-logo-size;
@@ -93,7 +94,7 @@
     fill: white;
   }
   #dark {
-    fill: $display-font-color;
+    fill: $theme-color-accent;
   }
 }
 

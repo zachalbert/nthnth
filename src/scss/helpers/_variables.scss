@@ -108,8 +108,8 @@ $palettes: (
     mid:          #535758,
     dark:         #3D474A,
     darker:       #242E30,
-    accent:       #6772e5,
-    dark-accent:  darken(#6772e5, 7%)
+    accent:       hsla(224, 29%, 40%, 1),
+    dark-accent:  hsla(224, 60%, 10%, 1)
   ),
   state:(
     error:        change-color($color: #6772e5, $hue: 50, $saturation: 50, $lightness: 50),
@@ -132,7 +132,12 @@ $palettes: (
 \*------------------------------------*/
 $theme-color-accent:              palette(default, accent);
 $theme-color-accent-dark:         palette(default, dark-accent);
+$theme-color-accent-text:         white;
 $theme-color-body:                white;
+$theme-color-highlight:           lighten(saturate(adjust-hue($theme-color-accent, 165), 80%), 10%);
+$theme-color-highlight-dark:      lighten(saturate(adjust-hue($theme-color-accent, 162), 100%), 6%);
+$theme-color-gradient-start:      rgba($theme-color-highlight, 0.4);
+$theme-color-gradient-end:        rgba($theme-color-accent-dark, 0.5);
 
 /*------------------------------------*\
   BASE FONTS
@@ -152,13 +157,16 @@ $form-input-box-shadow:           inset 0 0 0 1px palette(default, lighter), ins
 /*------------------------------------*\
   BUTTONS
 \*------------------------------------*/
-$button-primary-bg-color:         $theme-color-accent;
+$button-primary-bg-color:         $theme-color-highlight;
+$button-primary-bg-color-hover:   $theme-color-highlight-dark;
 $button-primary-font-color:       white;
 
 $button-secondary-bg-color:       palette(default, mid);
+$button-secondary-bg-color-hover: palette(default, dark);
 $button-secondary-font-color:     white;
 
 $button-tertiary-bg-color:        palette(default, light);
+$button-tertiary-bg-color-hover:  palette(default, mid);
 $button-tertiary-font-color:      white;
 
 /*------------------------------------*\
@@ -187,7 +195,7 @@ $alert-font-color:                rgba(255,255,255,.8);
 /*------------------------------------*\
   NAVS
 \*------------------------------------*/
-$nav-logo-size:                   $line-height*2;
+$nav-logo-size:                   40px;
 $nav-bar-padding:                 $lead-half;
 $nav-bar-bg-color:                white;
 $nav-bar-link-color:              $theme-color-accent;

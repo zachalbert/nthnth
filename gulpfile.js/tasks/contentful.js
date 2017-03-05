@@ -1,4 +1,3 @@
-
 var Promise      = require("bluebird")
 var contentful   = require('contentful')
 var config       = require("../../config")

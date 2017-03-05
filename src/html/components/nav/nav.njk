@@ -4,25 +4,28 @@
  # @example
  #   {{ nav() }}
  #}
+
 {% macro nav() %}
+
 <nav class="nav nav--top nav--fixed nav--off-canvas-sm">
   <div class="nav__body">
     <div class="nav__content">
       <div class="nav__brand">
         <div class="nav__logo">
-          <img class="svg" src="images/catface.svg">
+          <a href="/"><img class="svg" src="images/resolute-logo.svg"></a>
         </div>
         <div class="nav__brand-text">
           NthNth
         </div>
       </div>
       <ul class="nav__links">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
+        <li><a href="/component-library.html">Components</a></li>
+        <li><a href="/colorGen.html">Color</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </div>
   </div>
   <div class="nav__menu-toggle"></div>
 </nav>
+
 {% endmacro %}

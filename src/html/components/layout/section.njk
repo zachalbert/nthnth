@@ -15,22 +15,38 @@
  # </p>
  # {% endcall %}
  #}
+
 {% macro section(
-  accent = false,
+  bgType,
   container = true,
   row = false,
   rowClasses,
   bgURL,
   bgOverlayModifierClass
 ) %}
+
 {% if bgOverlayModifierClass %}
   {% set overlayClasses = " bg-overlay bg-overlay--" + bgOverlayModifierClass %}
 {% endif %}
-<section class="section{{ " section--accent" if accent }}{{ overlayClasses }}"{% if bgURL %} style="background-image: url('{{ bgURL }}');"{% endif %}>
-  {% if container %}<div class="container">{% endif %}
-    {% if row %}<div class="row{{ ' '+rowClasses if rowClasses }}">{% endif %}
-    {{ caller() }}
-    {% if row %}</div>{% endif %}
-  {% if container %}</div>{% endif %}
+
+<section class="section section--{{ bgType if bgType else 'default' }}{{ overlayClasses }}"{% if bgURL %} style="background-image: url('{{ bgURL }}');"{% endif %}>
+  {% if container %}
+  <div class="container">
+  {% endif %}
+
+    {% if row %}
+    <div class="row{{ ' '+rowClasses if rowClasses }}">
+    {% endif %}
+
+      {{ caller() }}
+
+    {% if row %}
+    </div>
+    {% endif %}
+
+  {% if container %}
+  </div>
+  {% endif %}
 </section>
+
 {% endmacro %}
