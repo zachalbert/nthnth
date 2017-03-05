@@ -132,6 +132,7 @@ $palettes: (
 \*------------------------------------*/
 $theme-color-accent:              palette(default, accent);
 $theme-color-accent-dark:         palette(default, dark-accent);
+$theme-color-accent-text:         white;
 $theme-color-body:                white;
 $theme-color-highlight:           lighten(saturate(adjust-hue($theme-color-accent, 165), 80%), 10%);
 $theme-color-highlight-dark:      lighten(saturate(adjust-hue($theme-color-accent, 162), 100%), 6%);

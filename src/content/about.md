@@ -13,10 +13,7 @@ description: "About us and stuff"
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel sem ac elit molestie eleifend consequat nec orci. Nam vitae nisi sollicitudin, bibendum justo quis, viverra turpis. Donec dui dui, tincidunt quis quam in, malesuada pulvinar mi.
 
-<div class="row">
-  <div class="col-xs-1" style="font-size: 16px;"><img src="/images/magnet.svg" class="image svg"></div>
-  <div class="col-xs-11"><h3>Subtitle</h3></div>
-</div>
+<h3>Subtitle</h3>
 
 Suspendisse suscipit ligula nec mauris aliquam, sit amet congue ipsum lacinia. Sed fermentum iaculis commodo
 . Ut elementum ultrices mattis. Curabitur id odio metus. Aenean pellentesque justo in risus varius dictum. Aliquam sit amet elit a nisi fringilla pharetra. Proin nisi sapien, volutpat nec neque ut, accumsan placerat ligula. Proin eu nulla quis dolor malesuada efficitur sed vitae nunc. Aliquam varius arcu nec quam mattis, eu pharetra enim mattis. Nunc sit amet aliquet felis.

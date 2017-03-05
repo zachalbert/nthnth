@@ -10,6 +10,7 @@
 
   &--accent {
     background: $theme-color-accent;
+    color: $theme-color-accent-text;
 
     &::after {
       background: transparentize((darken($theme-color-accent, 70%)),.3);
