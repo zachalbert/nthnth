@@ -1,11 +1,12 @@
-{%- from 'components/layout/section.njk' import section %}
-{%- from 'components/layout/columns.njk' import columns %}
-{%- from 'components/button/button.njk' import button %}
-{%- from 'components/card/card.njk' import card %}
-{%- from 'components/helpers/repeat__staff.njk' import repeatStaff %}
-{%- from 'components/nav/nav.njk' import nav %}
-{%- from 'components/text/pageTitle.njk' import pageTitle %}
-{%- from 'components/text/pageSubtitle.njk' import pageSubtitle %}
+{% from 'components/layout/section.njk' import section %}
+{% from 'components/layout/columns.njk' import columns %}
+{% from 'components/button/button.njk' import button %}
+{% from 'components/card/card.njk' import card %}
+{% from 'components/helpers/repeat__staff.njk' import repeatStaff %}
+{% from 'components/nav/nav.njk' import nav %}
+{% from 'components/text/pageTitle.njk' import pageTitle %}
+{% from 'components/text/pageSubtitle.njk' import pageSubtitle %}
+
 <!doctype html>
 <html class="{% block htmlClasses %}{% endblock %}">
   <head>
@@ -15,7 +16,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block head %}{% endblock %}
   </head>
+
   <body class="{% block bodyClasses %}{% endblock %}">
+
     {% block content %}{% endblock %}
 
     {% block javascript %}

@@ -9,7 +9,9 @@
 {% macro cardBlock(
   accent = false
 ) %}
+
 <div class="card__block{{ " card__block--accent" if accent }}">
   {{ caller() }}
 </div>
+
 {% endmacro %}

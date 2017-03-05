@@ -10,6 +10,7 @@
  # @example
  # {{ button(shadow=false, text="Click me", type="secondary", URL="http://www.google.com/", helpText="Learn more") }}
  #}
+
 {% macro button(
   shadow = true,
   text = "Learn more",
@@ -17,8 +18,11 @@
   URL = "#",
   helpText
 ) %}
+
 <a href="{{URL}}" class="button button--{{type}} {{"button--elevated" if shadow}}">{{text}}</a>
+
 {% if helpText %}
-<p><em>{{ helpText }}</em></p>
+  <p><em>{{ helpText }}</em></p>
 {% endif %}
+
 {% endmacro %}

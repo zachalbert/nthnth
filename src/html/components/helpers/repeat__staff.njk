@@ -7,25 +7,33 @@
  # @example
  # {% repeatStaff( data=staff ) %}
  #}
-{%- from 'components/card/card.njk' import card %}
-{%- from 'components/layout/columns.njk' import columns %}
+
+{% from 'components/card/card.njk' import card %}
+{% from 'components/layout/columns.njk' import columns %}
+
 {% macro repeatStaff(
   data            = {},
   dataLimit       = 10
 ) %}
+
 {% for item in data %}
-{% call columns(
-  row = false,
-  xs  = 12,
-  sm  = 4,
-  lg  = 3
-) %}
-  {% call card(
-    avatarURL = item.avatarURL,
-    title = item.name
+
+  {% call columns(
+    row = false,
+    xs  = 12,
+    sm  = 4,
+    lg  = 3
   ) %}
-  {{ item.description }}
+
+    {% call card(
+      avatarURL = item.avatarURL,
+      title = item.name
+    ) %}
+      {{ item.description }}
+    {% endcall %}
+
   {% endcall %}
-{% endcall %}
+
 {% endfor %}
+
 {% endmacro %}
