@@ -1,5 +1,6 @@
 .card {
   background: white;
+  color: $body-font-color;
   border-radius: $radius-size-1;
   box-shadow: inset 0 0 0 1px palette(default, lighter), $shadow-1;
   display: flex;
