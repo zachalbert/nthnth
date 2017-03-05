@@ -7,8 +7,8 @@
 {{ nav() }}
 
 {%- call section(
-  bgURL = "http://www.fillmurray.com/1920/1080",
-  bgOverlayModifierClass = "dark"
+  bgURL = "http://lorempixel.com/1920/1080/city",
+  bgOverlayModifierClass = "gradient"
 )%}
   {% call columns(
     rowClasses = "center-xs text-center",
@@ -69,7 +69,7 @@
 </section>
 
 {% call section(
-  accent = true,
+  bgType = "accent",
   bgOverlayModifierClass = "dark",
   row = true,
   rowClasses = "center-xs"

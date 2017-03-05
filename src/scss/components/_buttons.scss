@@ -14,25 +14,34 @@
   text-transform: uppercase;
   transition: all .33s;
   vertical-align: top;
+  &:active {
+    box-shadow: none;
+  }
+  &--full {
+    width: 100%;
+  }
   &--elevated {
     @include shadow-1;
   }
   &--primary {
     background: $button-primary-bg-color;
     color: $button-primary-font-color;
+    &:hover {
+      background: $button-primary-bg-color-hover;
+    }
   }
   &--secondary {
     background: $button-secondary-bg-color;
     color: $button-secondary-font-color;
+    &:hover {
+      background: $button-secondary-bg-color-hover;
+    }
   }
   &--tertiary {
     background: $button-tertiary-bg-color;
     color: $button-tertiary-font-color;
-  }
-  &:active {
-    box-shadow: none;
-  }
-  &--full {
-    width: 100%;
+    &:hover {
+      background: $button-tertiary-bg-color-hover;
+    }
   }
 }
