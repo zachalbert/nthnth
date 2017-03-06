@@ -4,6 +4,8 @@ var grid = document.querySelector('.image-grid');
 var masonry = new Masonry( grid, {
   // options...
   itemSelector: '.image-grid__image',
-  columnWidth: '.image-grid__image-sizer',
+  columnWidth: '200',
   percentPosition: true
 });
+
+console.log('asdf');
