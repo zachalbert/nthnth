@@ -1,4 +1,4 @@
-import JQuery from '../../node_modules/jquery/dist/jquery.min.js';
+import '../../node_modules/jquery/dist/jquery.min.js';
 import '../../node_modules/mediaelement/build/mediaelement-and-player.min.js';
 import './modules'
 import './modules/site'
