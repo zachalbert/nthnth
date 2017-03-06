@@ -38,7 +38,9 @@
 {% endcall %}
 
 {% call section() %}
-  {{ about.body }}
+  {% call columns(sm = 8) %}
+    {{ about.body }}
+  {% endcall %}
 {% endcall %}
 
 {% call section(
