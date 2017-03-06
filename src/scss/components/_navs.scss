@@ -29,6 +29,9 @@
       letter-spacing: .5px;
       text-transform: uppercase;
       text-decoration: none;
+      &:hover {
+        color: $nav-bar-link-hover-color;
+      }
     }
     li {
       flex-shrink: 1;

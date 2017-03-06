@@ -73,6 +73,7 @@ a {
   transition: $transition-off;
 
   &:hover {
+    color: red;
     transition: $transition-on;
     text-decoration: none;
   }

@@ -150,6 +150,8 @@ $theme-color-gradient-end:        rgba($theme-color-accent-dark, 0.65);
 $display-font-color:              palette(default, dark);
 $body-font-color:                 palette(default, mid);
 $muted-font-color:                palette(default, light);
+$link-color:                      $theme-color-highlight;
+$link-hover-color:                $theme-color-highlight-dark;
 
 /*------------------------------------*\
   FORM ELEMENTS
@@ -205,6 +207,7 @@ $nav-bar-padding:                 $lead-half;
 $nav-bar-height:                  84px; /* TODO: This is a magic number, prone to breaking. Need something more bulletproof. */
 $nav-bar-bg-color:                white;
 $nav-bar-link-color:              $theme-color-accent;
+$nav-bar-link-hover-color:        $theme-color-accent-dark;
 $nav-bar-link-active-color:       palette(default, light);
 $nav-bar-link-active-line-height: 5px;
 $nav-bar-link-active-line-color:  $theme-color-accent;
