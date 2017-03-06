@@ -2,7 +2,7 @@
   HELPERS
 \*------------------------------------*/
 @import 'normalize';
-@import 'mediaelement';
+@import 'mediaelementplayer';
 @import 'helpers/colorGen';
 @import 'helpers/variables';
 @import 'helpers/mixins';
@@ -31,6 +31,7 @@
 @import 'components/forms';
 @import 'components/hero';
 @import 'components/images';
+@import 'components/media';
 @import 'components/navs';
 @import 'components/overlays';
 @import 'components/sections';

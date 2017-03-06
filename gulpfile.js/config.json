@@ -38,9 +38,8 @@
       },
       "sass": {
         "includePaths": [
-          "./node_modules/mediaelement/build/mediaelementplayer.css",
-          "./node_modules/normalize.css",
-          "./node_modules/flexboxgrid/dist"
+          "./node_modules/normalize.css/",
+          "./node_modules/mediaelement/build/"
         ]
       },
       "extensions": ["sass", "scss", "css"]
