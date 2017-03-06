@@ -1,0 +1,19 @@
+.sidebar {
+  background: palette(default, mid);
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  a {
+    color: palette(default, lighter);
+    display: block;
+    padding: $lead-half;
+
+    &:hover {
+      background: rgba(palette(default, dark), 0.5);
+      color: palette(default, lightest);
+    }
+  }
+}

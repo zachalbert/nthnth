@@ -69,6 +69,15 @@ p {
   // color: $body-font-color;
 }
 
+a {
+  transition: $transition-off;
+
+  &:hover {
+    transition: $transition-on;
+    text-decoration: none;
+  }
+}
+
 .meta-text {
   @extend .small;
   color: $theme-color-accent;
@@ -145,6 +154,7 @@ tt {
 .page {
   &__title {
     @extend .page-heading;
+    margin: $lead-double 0 $lead-single;
   }
 
   &__subtitle {

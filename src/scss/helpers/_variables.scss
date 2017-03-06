@@ -87,6 +87,11 @@ $breakpoint-xl:           1440px;
 \*------------------------------------*/
 $radius-size-1:         3px;
 
+/*------------------------------------*\
+  TRANSITIONS
+\*------------------------------------*/
+$transition-on:         all 0.15s ease-in;
+$transition-off:        all 0.25s ease-out;
 
 /*------------------------------------*\
   SHADOWS
@@ -137,7 +142,7 @@ $theme-color-body:                white;
 $theme-color-highlight:           lighten(saturate(adjust-hue($theme-color-accent, 165), 80%), 10%);
 $theme-color-highlight-dark:      lighten(saturate(adjust-hue($theme-color-accent, 162), 100%), 6%);
 $theme-color-gradient-start:      rgba($theme-color-highlight, 0.4);
-$theme-color-gradient-end:        rgba($theme-color-accent-dark, 0.5);
+$theme-color-gradient-end:        rgba($theme-color-accent-dark, 0.65);
 
 /*------------------------------------*\
   BASE FONTS
@@ -197,6 +202,7 @@ $alert-font-color:                rgba(255,255,255,.8);
 \*------------------------------------*/
 $nav-logo-size:                   40px;
 $nav-bar-padding:                 $lead-half;
+$nav-bar-height:                  84px; /* TODO: This is a magic number, prone to breaking. Need something more bulletproof. */
 $nav-bar-bg-color:                white;
 $nav-bar-link-color:              $theme-color-accent;
 $nav-bar-link-active-color:       palette(default, light);

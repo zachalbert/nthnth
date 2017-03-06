@@ -41,6 +41,13 @@
   flex-direction: row-reverse;
 }
 
+.col {
+  &--no-padding {
+    &:first-child { padding-right: 0; }
+    &:last-child  { padding-left: 0; }
+  }
+}
+
 .col.reverse {
   flex-direction: column-reverse;
 }

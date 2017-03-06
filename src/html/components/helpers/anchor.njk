@@ -1,0 +1,17 @@
+{##
+ # An internal anchor, which can be adjusted to compensate for any navs
+ #
+ # @param {array}  data - Array of JSON objects to be iterated through
+ # @param {number} [dataLimit=10] TODO: Number of objects in array to show before switching to an alternate view which has a read more… link
+ #
+ # @example
+ # {% repeatStaff( data=staff ) %}
+ #}
+
+{% macro anchor(
+  id
+) %}
+<span class="internal-anchor">
+  <span class="internal-anchor__offset"{{ ' id="'+ id +'"' if id }}></span>
+</span>
+{% endmacro %}

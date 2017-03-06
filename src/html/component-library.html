@@ -6,34 +6,49 @@
 
 {{ nav() }}
 
-<section class="section bg-overlay bg-overlay--dark" style="background-image: url('http://www.fillmurray.com/1920/1080');">
-  <div class="container">
-    <div class="row center-xs text-center">
-      <div class="col-xs-12">
-        <h1 class="section__title section__title--large">The Best Words</h1>
-        <p class="section__subtitle">Nobody has better words than me.</p>
-        <a href="http://asdf.com" class="button button--primary button--elevated">
-          Learn more
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+{% call section(
+  bgURL = "https://source.unsplash.com/category/buildings/1920x1080",
+  bgOverlayModifierClass = "gradient"
+)%}
+  {% call columns(
+    rowClasses = "center-xs text-center"
+  ) %}
+  {{ pageTitle("Component Library") }}
+  {% endcall %}
+{% endcall %}
 
-<section class="section section--separated">
-  <div class="container">
-    <div class="row center-xs">
-      <div class="col-xs-12 col-sm-8">
-        <h2 class="section__title text-center">
-          Section Heading
-        </h2>
-        <p class="text-center">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="row content-start">
+{% call columns(xs = 2, sm = 2, row = false, colClasses = "sidebar col--no-padding") %}
+
+<div class="sidebar--fixed">
+  <ul>
+    <li><a data-scroll href="#sections">Sections</a></li>
+    <li><a data-scroll href="#content">Content</a></li>
+    <li><a data-scroll href="#features">Features</a></li>
+    <li><a data-scroll href="#pricing">Pricing</a></li>
+    <li><a data-scroll href="#cards">Cards</a></li>
+  </ul>
+</div>
+
+{% endcall %}
+{% call columns(xs = 10, sm = 10, row = false, colClasses = "col--no-padding") %}
+
+{{ anchor('sections') }}
+
+{% call section(
+  bgType = "separated"
+) %}
+
+  {% call columns() %}
+    <h2 class="section__title text-center">
+      Section Heading
+    </h2>
+    <p class="text-center">
+      Lorem ipsum dolor sit amet, <a href="#">consectetur adipiscing elit</a>. Ut eget justo quis erat maximus accumsan in ut nibh.
+    </p>
+  {% endcall %}
+
+{% endcall %}
 
 <section class="section section--separated section--lightest">
   <div class="container">
@@ -133,6 +148,8 @@
   </div>
 </section>
 
+{{ anchor('content') }}
+
 <section class="section section--separated">
   <div class="container">
     <div class="row bottom-xs">
@@ -166,6 +183,8 @@
     </div>
   </div>
 </section>
+
+{{ anchor('features') }}
 
 <section class="section section--separated">
   <div class="container">
@@ -287,6 +306,8 @@
     </div>
   </div>
 </section>
+
+{{ anchor('pricing') }}
 
 <section class="section section--separated section--lightest">
   <div class="container">
@@ -405,6 +426,8 @@
   </div>
 </section>
 
+{{ anchor('cards') }}
+
 <section class="section section--separated">
   <div class="container">
     <div class="row center-xs">
@@ -457,5 +480,8 @@
 <section class="section section--separated">
 
 </section>
+
+{% endcall %}
+</div>
 
 {% endblock %}

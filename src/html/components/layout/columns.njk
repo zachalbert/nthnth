@@ -13,6 +13,7 @@
 {% macro columns(
   row = true,
   rowClasses = "center-xs",
+  colClasses,
   xs,
   sm,
   md,
@@ -29,7 +30,7 @@
   <div class="row{{ ' '+rowClasses if rowClasses }}">
 {% endif %}
 
-<div class="{{ "col-xs-" + xs if xs else "col-xs" }}{{ " col-sm-" + sm if sm }}{{ " col-md-" + md if md }}{{ " col-lg-" + lg if lg }}{{ " col-xl-" + xl if xl }}{{ " col-xs-offset-" + xsOffset if xsOffset }}{{ " col-sm-offset-" + smOffset if smOffset }}{{ " col-md-offset-" + mdOffset if mdOffset }}{{ " col-lg-offset-" + lgOffset if lgOffset }}{{ " col-xl-offset-" + xlOffset if xlOffset }}">
+<div class="{{ colClasses if colClasses}}{{ " col-xs-" + xs if xs else " col-xs" }}{{ " col-sm-" + sm if sm else " col-sm-8" }}{{ " col-md-" + md if md }}{{ " col-lg-" + lg if lg }}{{ " col-xl-" + xl if xl }}{{ " col-xs-offset-" + xsOffset if xsOffset }}{{ " col-sm-offset-" + smOffset if smOffset }}{{ " col-md-offset-" + mdOffset if mdOffset }}{{ " col-lg-offset-" + lgOffset if lgOffset }}{{ " col-xl-offset-" + xlOffset if xlOffset }}">
   {{ caller() }}
 </div>
 

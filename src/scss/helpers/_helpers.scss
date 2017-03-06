@@ -267,3 +267,14 @@
 .flex {
   display: flex;
 }
+
+// Internal anchors
+
+.internal-anchor {
+  position: relative;
+
+  &__offset {
+    position: absolute;
+    top: -$nav-bar-height;
+  }
+}
