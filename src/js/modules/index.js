@@ -2,7 +2,6 @@
   Automatically instantiates modules based on data-attrubiutes
   specifying module file-names.
 */
-console.log('yay');
 const moduleElements = document.querySelectorAll('[data-module]')
 
 for (var i = 0; i < moduleElements.length; i++) {

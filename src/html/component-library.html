@@ -17,21 +17,24 @@
   {% endcall %}
 {% endcall %}
 
-<div class="row content-start">
-{% call columns(xs = 2, sm = 2, row = false, colClasses = "sidebar col--no-padding") %}
+<div class="flexible-container flexible-container--collapsed">
+
+<div class="flexible-container__side sidebar content-start">
 
 <div class="sidebar--fixed">
   <ul>
-    <li><a data-scroll href="#sections">Sections</a></li>
-    <li><a data-scroll href="#content">Content</a></li>
-    <li><a data-scroll href="#features">Features</a></li>
-    <li><a data-scroll href="#pricing">Pricing</a></li>
-    <li><a data-scroll href="#cards">Cards</a></li>
+    <li><a data-scroll href="#sections"><i class="icon icon--dashboard"></i><span class="sidebar__nav-link">Sections</span></a></li>
+    <li><a data-scroll href="#content"><i class="icon icon--grid-uneven"></i><span class="sidebar__nav-link">Content</span></a></li>
+    <li><a data-scroll href="#features"><i class="icon icon--blocks"></i><span class="sidebar__nav-link">Features</span></a></li>
+    <li><a data-scroll href="#pricing"><i class="icon icon--documents-group"></i><span class="sidebar__nav-link">Pricing</span></a></li>
+    <li><a data-scroll href="#cards"><i class="icon icon--profile-landscape"></i><span class="sidebar__nav-link">Cards</span></a></li>
   </ul>
 </div>
 
-{% endcall %}
-{% call columns(xs = 10, sm = 10, row = false, colClasses = "col--no-padding") %}
+<div class="sidebar__close"><a href="#" class="sidebar__close-trigger"><i class="icon icon--chevron-right"></i></a></div>
+
+</div>
+<div class="flexible-container__main">
 
 {{ anchor('sections') }}
 
@@ -481,7 +484,8 @@
 
 </section>
 
-{% endcall %}
+</div>
+
 </div>
 
 {% endblock %}
