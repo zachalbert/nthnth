@@ -8,7 +8,8 @@
   }
 
   &__side {
-    width: 240px;
+    width: 200px;
+    min-width: 200px;
   }
 
   &__main {
@@ -24,6 +25,7 @@
 
     .flexible-container__side {
       width: 50px;
+      min-width: 50px;
     }
 
     .flexible-container__main {
@@ -61,7 +63,6 @@
     z-index: 50;
 
     a {
-      width: 180px;
     }
   }
 
@@ -108,7 +109,7 @@
     }
 
     &:hover {
-      background: rgba(palette(default, dark), 0.8);
+      background: palette(default, dark);
       color: palette(default, lightest);
     }
   }

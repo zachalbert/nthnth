@@ -34,13 +34,23 @@
   }
 }
 
+.text-center.image-grid img {
+  margin: 0 ($lead-half/2) $lead-half;
+}
+
 .image-grid {
-  &__image,
-  &__image-sizer {
-    width: 20%;
-  }
-  &:nth-child(3) {
-    width: 40%;
+  &__image {
+    width: 15%;
+    @media only screen and (min-width: ($breakpoint-sm) ) {
+      width: 20%;
+    }
+
+    &--double {
+      width: 32%;
+      @media only screen and (min-width: ($breakpoint-sm) ) {
+        width: 42%;
+      }
+    }
   }
 }
 

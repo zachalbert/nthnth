@@ -26,6 +26,7 @@
   &__subtitle {
     color: $muted-font-color;
     font-style: italic;
+    margin-bottom: $lead-double;
   }
   &--light {
     background: palette(default, light);
