@@ -1,4 +1,4 @@
-
+/* BASE */
 
 html {
   font-size: $type-scale;
@@ -20,6 +20,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $display-stack;
 }
 
+/* HEADLINES */
+
 h1,
 .h1 {
   //color: $display-font-color;
@@ -28,7 +30,6 @@ h1,
   font-size: $type-scale-6;
   letter-spacing: 0.1rem;
   font-style: normal;
-  //margin: 0 0 $lead-single;
 }
 
 h2,
@@ -58,12 +59,38 @@ h4,
   text-transform: uppercase;
 }
 
-small,
-.small {
-  font-size: $type-scale-2;
-  color: $muted-font-color;
-  text-transform: uppercase;
+.page {
+  &__title {
+    @extend .h1;
+    text-align: center;
+  }
+
+  &__subtitle {
+    @extend .h2;
+    font-size: $type-scale-3;
+    font-style: italic;
+    line-height: $line-height;
+    text-align: center;
+  }
 }
+
+.section {
+  &__title {
+    @extend .h2;
+    font-family: $display-stack;
+    font-size: $type-scale-5;
+    &--large {
+      font-size: $type-scale-6;
+    }
+  }
+  &__subtitle {
+    color: $muted-font-color;
+    font-style: italic;
+    margin-bottom: $lead-double;
+  }
+}
+
+/* BODY */
 
 p {
   // color: $body-font-color;
@@ -80,14 +107,8 @@ a {
   }
 }
 
-.meta-text {
-  @extend .small;
-  color: $theme-color-accent;
-  line-height: $line-height;
-}
-
 blockquote {
-  @extend .small;
+  @extend .text-small;
   font-size: $type-scale-1;
   line-height: $line-height * 1.5;
   font-style: italic;
@@ -95,7 +116,7 @@ blockquote {
 }
 
 cite {
-  @extend .small;
+  @extend .text-small;
 }
 
 pre,
@@ -123,6 +144,27 @@ tt {
   text-transform: uppercase;
 }
 
+/* MODIFIERS */
+
+small,
+.text-small {
+  font-size: $type-scale-2;
+  color: $muted-font-color;
+  text-transform: uppercase;
+}
+
+.text-large {
+  font-size: $type-scale-4;
+  line-height: $line-height*1.5;
+}
+
+
+.meta-text {
+  @extend .text-small;
+  color: $theme-color-accent;
+  line-height: $line-height;
+}
+
 .text-center {
   text-align: center!important;
   img {
@@ -133,34 +175,4 @@ tt {
 
 .text-muted {
   opacity: .5;
-}
-
-.page-heading {
-  // color: $page-heading-font-color;
-  text-align: center;
-}
-
-.page-subheading {
-  // color: $page-subheading-font-color;
-  font-size: $type-scale-3;
-  font-style: italic;
-  line-height: $line-height;
-  text-align: center;
-}
-
-.text-large {
-  font-size: $type-scale-4;
-  line-height: $line-height*1.5;
-}
-
-.page {
-  &__title {
-    @extend .page-heading;
-    margin: $lead-double 0 $lead-single;
-  }
-
-  &__subtitle {
-    @extend .page-subheading;
-    margin-bottom: $lead-single;
-  }
 }

@@ -14,7 +14,8 @@
     sm = 10,
     rowClasses = "center-xs text-center"
   ) %}
-  {{ pageTitle("Component Library") }}
+  {{ title('<i class="icon icon--grid-uneven icon--xs"></i>Components', type = "page") }}
+  {{ subtitle('Collections of <a href="/elements.html">elements</a>', type = 'page') }}
   {% endcall %}
 {% endcall %}
 
@@ -38,17 +39,12 @@
 <div class="flexible-container__main">
 
 {{ anchor('sections') }}
-
 <section class="section section--separated section--lightest">
   <div class="container">
     <div class="row center-xs">
       <div class="col-xs-12 col-sm-10 text-center">
-        <h2 class="section__title">
-          Section Heading
-        </h2>
-        <p class="section__subtitle">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
-        </p>
+        {{ title("Section Heading") }}
+        {{ subtitle("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.") }}
 
         <div class="row center-xs bottom-xs text-center image-grid">
           <img src="https://source.unsplash.com/category/buildings/566x330" class="image-grid__image--double">

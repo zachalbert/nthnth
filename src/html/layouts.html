@@ -1,0 +1,56 @@
+{% extends 'layouts/application.njk' %}
+
+{% block title %}Component Library{% endblock %}
+
+{% block content %}
+
+{{ nav() }}
+
+{% call section(
+  bgURL = "https://source.unsplash.com/category/buildings/1920x1080",
+  bgOverlayModifierClass = "gradient"
+)%}
+  {% call columns(
+    sm = 10,
+    rowClasses = "center-xs text-center"
+  ) %}
+  {{ title('<i class="icon icon--dashboard icon--xs"></i>Layouts', type = 'page') }}
+  {% endcall %}
+{% endcall %}
+
+<div class="flexible-container flexible-container--collapsed">
+  <div class="flexible-container__side sidebar content-start">
+
+    <div class="sidebar--fixed">
+      <ul>
+        <li><a data-scroll href="#sections"><i class="icon icon--dashboard"></i><span class="sidebar__nav-link">Sections</span></a></li>
+        <li><a data-scroll href="#content"><i class="icon icon--grid-uneven"></i><span class="sidebar__nav-link">Content</span></a></li>
+        <li><a data-scroll href="#features"><i class="icon icon--blocks"></i><span class="sidebar__nav-link">Features</span></a></li>
+        <li><a data-scroll href="#pricing"><i class="icon icon--documents-group"></i><span class="sidebar__nav-link">Pricing</span></a></li>
+        <li><a data-scroll href="#cards"><i class="icon icon--profile-landscape"></i><span class="sidebar__nav-link">Cards</span></a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar__close"><a href="#" class="sidebar__close-trigger"><i class="icon icon--chevron-right"></i></a></div>
+
+  </div>
+  <div class="flexible-container__main">
+
+    {% call section() %}
+      {{ anchor('sections') }}
+      {{ title('Collections of components (organisms) go here') }}
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    {% endcall %}
+
+  </div>
+
+</div>
+
+{% endblock %}

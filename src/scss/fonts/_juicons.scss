@@ -23,6 +23,13 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon--xs { font-size: 50%; bottom: 0.15em; }
+.icon--sm { font-size: 75%; }
+
+[class*="__title"] .icon {
+  margin: 0 $lead-single;
+}
+
 .icon--dropbox:before {
     content: "\e900";
 }

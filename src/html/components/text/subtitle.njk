@@ -1,0 +1,21 @@
+{##
+ # Page subtitle (outputs an H2)
+ #
+ # @param {string} [text] The text to display
+ #
+ # @example
+ #   {{ subtitle( "Subtitle Text" )) }}
+ #}
+
+{% macro subtitle(
+  text,
+  type = "section"
+) %}
+
+  {% if type == "page" %}
+    <h2 class="page__subtitle">{{ text }}</h2>
+  {% else %}
+    <p class="section__subtitle">{{ text }}</p>
+  {% endif %}
+
+{% endmacro %}

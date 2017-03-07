@@ -37,7 +37,7 @@
     #{$headlineCopyTags},
     #{$bodyCopyTags} {
       color: #fff;
-      text-shadow: 0 1px 1px $theme-color-accent-dark;
+      text-shadow: 0 1px 0 rgba($theme-color-accent-dark, 0.35);
     }
 
     &:before {

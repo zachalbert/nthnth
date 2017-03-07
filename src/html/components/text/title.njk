@@ -1,0 +1,22 @@
+{##
+ # Page title (outputs an H1, only use once per page)
+ #
+ # @param {string} [text] The text to display
+ # @param {string} [text] Whether or not this is a page title (H1), or a section title (H2)
+ #
+ # @example
+ #   {{ title( "Title Text", type = "page" )) }}
+ #}
+
+{% macro title(
+  text,
+  type = "section"
+) %}
+
+{% if type == "page" %}
+  <h1 class="page__title">{{ text }}</h1>
+{% else %}
+  <h2 class="section__title">{{ text }}</h2>
+{% endif %}
+
+{% endmacro %}

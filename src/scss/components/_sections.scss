@@ -16,18 +16,6 @@
       background: transparentize((darken($theme-color-accent, 70%)),.3);
     }
   }
-  &__title {
-    font-family: $display-stack;
-    font-size: $type-scale-5;
-    &--large {
-      font-size: $type-scale-6;
-    }
-  }
-  &__subtitle {
-    color: $muted-font-color;
-    font-style: italic;
-    margin-bottom: $lead-double;
-  }
   &--light {
     background: palette(default, light);
   }
