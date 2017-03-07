@@ -2,6 +2,7 @@ var config       = require('../config')
 if(!config.tasks.html) return
 
 var browserSync  = require('browser-sync')
+var contentfulSync = require("../lib/contentfulSync")
 var data         = require('gulp-data')
 var fs           = require('fs')
 var gulp         = require('gulp')
@@ -25,6 +26,7 @@ var getData = function(file) {
 var htmlTask = function() {
 
   return gulp.src(paths.src)
+    .pipe(data(contentfulSync))
     .pipe(data(getData))
     .on('error', handleErrors)
     .pipe(render({

@@ -26,7 +26,7 @@
   ) %}
 
     {% call card(
-      avatarURL = item.avatarURL,
+      avatarURL = item.avatar.fields.file.url,
       title = item.name
     ) %}
       {{ item.description }}
