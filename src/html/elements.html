@@ -14,7 +14,8 @@
     sm = 10,
     rowClasses = "center-xs text-center"
   ) %}
-  {{ title("<i class='icon icon--blocks icon--xs'></i>Elements", type='page') }}
+  {{ title('<i class="icon icon--blocks icon--xs"></i>Elements', level = 1) }}
+  {{ subtitle(level = 1, 'Irreducible elements which are the building blocks for <a href="/components.html">components</a>', type = 'page') }}
   {% endcall %}
 {% endcall %}
 
@@ -36,17 +37,44 @@
   </div>
   <div class="flexible-container__main">
 
+    {{ anchor('buttons') }}
     {% call section() %}
-      {{ anchor('sections') }}
-      {{ title('Individual elements (atoms) go here') }}
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+      {% call columns() %}
+        {{ title('Buttons') }}
+        {{ subtitle(level = 5, 'For clicking.')}}
+
+        {{ subtitle('Primary alj alij awlij aw') }}
+        {{ button() }}
+
+        {% call code() %}
+          {% raw %}
+          {{ button() }}
+
+          // Alternatively…
+
+          {{ button( type="primary" ) }}
+          {% endraw %}
+        {% endcall %}
+
+        {{ subtitle('Secondary') }}
+        {{ button(type='secondary') }}
+
+        {% call code() %}
+          {% raw %}
+          {{ button( type="secondary" ) }}
+          {% endraw %}
+        {% endcall %}
+
+        {{ subtitle('Tertiary') }}
+        {{ button(type='tertiary') }}
+
+        {% call code() %}
+          {% raw %}
+          {{ button( type="tertiary" ) }}
+          {% endraw %}
+        {% endcall %}
+
+      {% endcall %}
     {% endcall %}
 
   </div>

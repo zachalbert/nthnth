@@ -1,0 +1,22 @@
+{##
+ # Block for displaying code and other monospace copy
+ #
+ # @param {string} [text] The text to display
+ # @param {number} [level] Choose the tags and visual style to set the text in
+ #
+ # @example
+ #   {{ subtitle( "Subtitle Text" )) }}
+ #}
+
+{% macro code(
+  text,
+  language = "handlebars"
+) %}
+
+{% if text %}
+<code class="language-{{ language }}">{{ text }}</code>
+{% else %}
+<pre class="language-{{ language }}"><code>{{ caller() }}</code></pre>
+{% endif %}
+
+{% endmacro %}

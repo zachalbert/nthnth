@@ -2,6 +2,7 @@
  # Page subtitle (outputs an H2)
  #
  # @param {string} [text] The text to display
+ # @param {number} [level] Choose the tags and visual style to set the text in
  #
  # @example
  #   {{ subtitle( "Subtitle Text" )) }}
@@ -9,11 +10,17 @@
 
 {% macro subtitle(
   text,
-  type = "section"
+  level = "3"
 ) %}
 
-  {% if type == "page" %}
+  {% if level == "1" %}
     <h2 class="page__subtitle">{{ text }}</h2>
+  {% elif level == "2" %}
+    <h3 class="section__subtitle">{{ text }}</h3>
+  {% elif level == "3" %}
+    <h3>{{ text }}</h3>
+  {% elif level == "4" %}
+    <h4>{{ text }}</h4>
   {% else %}
     <p class="section__subtitle">{{ text }}</p>
   {% endif %}

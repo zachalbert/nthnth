@@ -2,7 +2,7 @@
  # Page title (outputs an H1, only use once per page)
  #
  # @param {string} [text] The text to display
- # @param {string} [text] Whether or not this is a page title (H1), or a section title (H2)
+ # @param {number} [level] Choose the tags and visual style to set the text in
  #
  # @example
  #   {{ title( "Title Text", type = "page" )) }}
@@ -10,10 +10,10 @@
 
 {% macro title(
   text,
-  type = "section"
+  level = "2"
 ) %}
 
-{% if type == "page" %}
+{% if level == "1" %}
   <h1 class="page__title">{{ text }}</h1>
 {% else %}
   <h2 class="section__title">{{ text }}</h2>

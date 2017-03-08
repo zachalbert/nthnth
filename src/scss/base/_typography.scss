@@ -69,6 +69,7 @@ h4,
     @extend .h2;
     font-size: $type-scale-3;
     font-style: italic;
+    font-weight: $font-weight-normal;
     line-height: $line-height;
     text-align: center;
   }
@@ -79,6 +80,7 @@ h4,
     @extend .h2;
     font-family: $display-stack;
     font-size: $type-scale-5;
+    text-align: center;
     &--large {
       font-size: $type-scale-6;
     }
@@ -87,6 +89,7 @@ h4,
     color: $muted-font-color;
     font-style: italic;
     margin-bottom: $lead-double;
+    text-align: center;
   }
 }
 

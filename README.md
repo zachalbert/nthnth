@@ -22,6 +22,7 @@ let's use the main `dev` branch.
 
 [ ] Implement contentful to replace the markdown files using [contentful-data](https://www.npmjs.com/package/contentful-data)
 [ ] Implement [smartcrop.js](https://github.com/jwagner/smartcrop.js) for image centering
+[ ] More robust image overlays that do color grading and correction
 
 ## Components
 [x] Section
