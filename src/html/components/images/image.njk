@@ -1,0 +1,37 @@
+{##
+ # Show an image, with fancy attributes for lazy loading
+ #
+ # @param {string} [source] - Path to image resource, specified with data-source
+ # @param {string} [sourceRetina] - Same as above, but for @2x resources
+ # @param {string} [sourceSrcSet] - Same as above, using [srcset syntax](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset)
+ # @param {string} [class] - Add additional classes to the image tag
+ # @param {string} [description] - Description, used in the alt attribute, which is exposed for screen readers and on image errors
+ #
+ # @example
+ # {{ image(
+     source="http://abc.xyz/image.jpg",
+     sourceRetina="http://abc.xyz/image@2x.jpg",
+     description="Used for screen readers",
+     class="additional-class"
+   ) }}
+ #}
+
+{% macro image(
+  source,
+  sourceRetina,
+  sourceSrcSet,
+  class,
+  description,
+  width = 300,
+  height = 200
+) %}
+
+{% if width and height %}
+{% set aspectRatio = ( 100 * ( height / width ) ) %}
+{% endif %}
+
+<div class="image__wrapper"{{ ' style="padding-top: '+ aspectRatio +'%;"' if aspectRatio }}>
+  <img data-normal="{{ source }}"{% if sourceRetina %} data-retina="{{ sourceRetina }}"{% endif %}{% if sourceSrcSet %} data-srcset="{{ sourceSrcSet }}"{% endif %} alt="{{ description }}" class="image{{ ' '+class if class }}" />
+</div>
+
+{% endmacro %}

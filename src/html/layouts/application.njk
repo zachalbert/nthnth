@@ -4,6 +4,7 @@
 {% from 'components/card/card.njk'             import card %}
 {% from 'components/helpers/repeat__staff.njk' import repeatStaff %}
 {% from 'components/helpers/anchor.njk'        import anchor %}
+{% from 'components/images/image.njk'          import image %}
 {% from 'components/nav/nav.njk'               import nav %}
 {% from 'components/text/title.njk'            import title %}
 {% from 'components/text/subtitle.njk'         import subtitle %}
@@ -15,6 +16,14 @@
     <meta charset="utf-8">
     <title>{% block title %}{{ _site.title }}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="canonical" href="########">
+
+    {# [Prebrowsing](https://css-tricks.com/prefetching-preloading-prebrowsing/) #}
+    <link rel="preconnect" href="//cdn.jsdelivr.net">
+    {# For demo images #}
+    <link rel="preconnect" href="//source.unsplash.com">
+
     <link href="https://cdn.jsdelivr.net/mediaelement/latest/mediaelementplayer.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     {% block head %}{% endblock %}

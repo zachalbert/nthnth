@@ -1,0 +1,33 @@
+{% extends 'layouts/application.njk' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{{ nav() }}
+
+{% call section(
+  bgURL = "https://source.unsplash.com/category/buildings/1920x1080",
+  bgOverlayModifierClass = "gradient"
+)%}
+  {% call columns(
+    rowClasses = "center-xs text-center content-start",
+    xs = 10,
+    sm = 8,
+    lg = 7
+  ) %}
+  {{ title("404") }}
+  {{ subtitle(":(") }}
+  {% endcall %}
+{% endcall %}
+
+{% call section(
+  bgType = "accent",
+  bgOverlayModifierClass = "dark",
+  row = true,
+  rowClasses = "center-xs"
+) %}
+<p>&copy; RESOLUTE</p>
+{% endcall %}
+
+{% endblock %}

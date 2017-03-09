@@ -47,15 +47,16 @@
         {{ subtitle(level = '5', "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.") }}
 
         <div class="row center-xs bottom-xs text-center image-grid">
-          <img src="https://source.unsplash.com/category/buildings/566x330" class="image-grid__image--double">
-          <img src="https://source.unsplash.com/category/buildings/275x200" class="image-grid__image">
-          <img src="https://source.unsplash.com/category/buildings/275x280" class="image-grid__image">
+          {{ image(source="https://source.unsplash.com/category/buildings/566x330", class="image-grid__image--double") }}
+          {{ image(source="https://source.unsplash.com/category/buildings/886x330", class="image-grid__image") }}
+          {{ image(source="https://source.unsplash.com/category/buildings/275x200", class="image-grid__image") }}
+          {{ image(source="https://source.unsplash.com/category/buildings/275x280", class="image-grid__image") }}
         </div>
         <div class="row center-xs top-xs text-center image-grid">
-          <img src="https://source.unsplash.com/category/buildings/275x260" class="image-grid__image">
-          <img src="https://source.unsplash.com/category/buildings/275x220" class="image-grid__image">
-          <img src="https://source.unsplash.com/category/buildings/275x140" class="image-grid__image">
-          <img src="https://source.unsplash.com/category/buildings/275x320" class="image-grid__image">
+          {{ image(source="https://source.unsplash.com/category/buildings/275x260", class="image-grid__image") }}
+          {{ image(source="https://source.unsplash.com/category/buildings/275x220", class="image-grid__image") }}
+          {{ image(source="https://source.unsplash.com/category/buildings/275x140", class="image-grid__image") }}
+          {{ image(source="https://source.unsplash.com/category/buildings/275x320", class="image-grid__image") }}
         </div>
 
       </div>
@@ -83,7 +84,7 @@
   <div class="container">
     <div class="row center-xs">
       <div class="col-xs-12 col-sm-8 text-center">
-        <img src="https://www.fillmurray.com/300/300" class="image image--small">
+        {{ image(source="https://source.unsplash.com/random/300x300", class="image--small") }}
         <h2 class="section__title">
           Section Heading
         </h2>
@@ -99,7 +100,7 @@
   <div class="container">
     <div class="row center-xs">
       <div class="col-xs-12 col-sm-8 text-center">
-        <img src="https://www.fillmurray.com/300/300" class="image image--small">
+        {{ image(source="https://source.unsplash.com/random/300x300", class="image--small") }}
         <p class="text-large text-muted">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
         </p>
@@ -120,7 +121,7 @@
         </p>
       </div>
     </div>
-    <img src="https://www.fillmurray.com/1024/512" class="image image--full">
+    {{ image(source="https://source.unsplash.com/random/1024x512", class="image--full") }}
   </div>
 </section>
 
@@ -136,13 +137,13 @@
         </p>
         <div class="row center-xs">
           <div class="col-xs-12 col-sm-6">
-            <img src="https://www.fillmurray.com/512/512" class="image image--full">
+            {{ image(source="https://source.unsplash.com/random/512x512", class="image--full") }}
           </div>
           <div class="col-xs-12 col-sm-6">
-            <img src="https://www.fillmurray.com/640/640" class="image image--full">
+            {{ image(source="https://source.unsplash.com/random/640x640", class="image--full") }}
           </div>
           <div class="col-xs-12">
-            <img src="https://www.fillmurray.com/1024/512" class="image image--full">
+            {{ image(source="https://source.unsplash.com/random/1024x512", class="image--full") }}
           </div>
         </div>
       </div>
@@ -199,7 +200,7 @@
         </p>
       </div>
       <div class="col-xs-12 col-sm-6">
-        <img src="https://www.fillmurray.com/1024/512" class="image image--full">
+        {{ image(source="https://source.unsplash.com/random/900x450", class="image--full") }}
       </div>
     </div>
   </div>
@@ -208,7 +209,7 @@
 <section class="section section--separated">
   <div class="row">
     <div class="col-xs-12 col-sm-6">
-      <img src="https://www.fillmurray.com/1024/512" class="image image--full">
+      {{ image(source="https://source.unsplash.com/random/800x400", class="image--full") }}
     </div>
     <div class="col-xs-12 col-sm-5">
       <h2 class="section__title">
@@ -270,33 +271,25 @@
   <div class="container">
     <div class="row center-xs flex-columns">
       <div class="col-xs-12 col-sm-6">
-        <div class="image image--small">
-          <img src="https://www.fillmurray.com/300/300">
-        </div>
+        {{ image(source="https://source.unsplash.com/random/300x300", class="image--small") }}
         <p class="text-block">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
         </p>
       </div>
       <div class="col-xs-12 col-sm-6">
-        <div class="image image--small">
-          <img src="https://www.fillmurray.com/300/300">
-        </div>
+        {{ image(source="https://source.unsplash.com/random/500x500", class="image--small") }}
         <p class="text-block">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
         </p>
       </div>
       <div class="col-xs-12 col-sm-6">
-        <div class="image image--small">
-          <img src="https://www.fillmurray.com/300/300">
-        </div>
+        {{ image(source="https://source.unsplash.com/random/700x700", class="image--small") }}
         <p class="text-block">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
         </p>
       </div>
       <div class="col-xs-12 col-sm-6">
-        <div class="image image--small">
-          <img src="https://www.fillmurray.com/300/300">
-        </div>
+        {{ image(source="https://source.unsplash.com/random/900x900", class="image--small") }}
         <p class="text-block">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
         </p>
@@ -309,33 +302,25 @@
   <div class="container">
     <div class="row center-xs flex-columns">
       <div class="col-xs-12 col-sm-6 text-center">
-        <div class="image image--small">
-          <img src="https://www.fillmurray.com/300/300">
-        </div>
+        {{ image(source="https://source.unsplash.com/random/300x300", class="image--small") }}
         <p class="text-block">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
         </p>
       </div>
       <div class="col-xs-12 col-sm-6 text-center">
-        <div class="image image--small">
-          <img src="https://www.fillmurray.com/300/300">
-        </div>
+        {{ image(source="https://source.unsplash.com/random/500x500", class="image--small") }}
         <p class="text-block">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
         </p>
       </div>
       <div class="col-xs-12 col-sm-6 text-center">
-        <div class="image image--small">
-          <img src="https://www.fillmurray.com/300/300">
-        </div>
+        {{ image(source="https://source.unsplash.com/random/700x700", class="image--small") }}
         <p class="text-block">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
         </p>
       </div>
       <div class="col-xs-12 col-sm-6 text-center">
-        <div class="image image--small">
-          <img src="https://www.fillmurray.com/300/300">
-        </div>
+        {{ image(source="https://source.unsplash.com/random/900x900", class="image--small") }}
         <p class="text-block">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
         </p>
