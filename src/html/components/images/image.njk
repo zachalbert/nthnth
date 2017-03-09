@@ -11,6 +11,7 @@
  # {{ image(
      source="http://abc.xyz/image.jpg",
      sourceRetina="http://abc.xyz/image@2x.jpg",
+     data-srcset="images/image.jpg 320w, images/image@2x.jpg 640w, images/image@3x.jpg 960w">
      description="Used for screen readers",
      class="additional-class"
    ) }}
@@ -22,8 +23,8 @@
   sourceSrcSet,
   class,
   description,
-  width = 300,
-  height = 200
+  width,
+  height
 ) %}
 
 {% if width and height %}
