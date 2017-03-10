@@ -27,7 +27,7 @@
 .icon--sm { font-size: 75%; }
 
 [class*="__title"] .icon {
-  margin: 0 $lead-single;
+  margin: 0 $lead-single 0 -($lead-double);
 }
 
 .icon--dropbox:before {
