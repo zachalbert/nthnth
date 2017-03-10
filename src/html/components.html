@@ -9,7 +9,7 @@
 {% call section(
   bgURL = "https://source.unsplash.com/featured/1920x1080",
   bgOverlayModifierClass = "gradient",
-  sectionClasses = "section--hero"
+  class = "section--hero"
 )%}
   {% call columns(
     sm = 10,
@@ -40,318 +40,261 @@
 <div class="flexible-container__main">
 
 {{ anchor('sections') }}
-<section class="section section--separated section--lightest">
-  <div class="container">
-    <div class="row center-xs">
-      <div class="col-xs-12 col-sm-10 text-center">
-        {{ title("<faker-lorem-words/>") }}
-        {{ subtitle(level = '5', "<faker-lorem-sentences/>") }}
-
-        {% call row() %}
-          {% call columns( row=false, sm=4 ) %}
-            {{ image(source="https://source.unsplash.com/featured/618x382", description="Lorem ipsum dolor sit amet", width="618", height="382", class="") }}
-          {% endcall %}
-          {% call columns( row=false, sm=4 ) %}
-            {{ image(source="https://source.unsplash.com/featured/556x344", description="Lorem ipsum dolor sit amet", width="556", height="344", class="") }}
-          {% endcall %}
-          {% call columns( row=false, sm=4 ) %}
-            {{ image(source="https://source.unsplash.com/featured/494x306", description="Lorem ipsum dolor sit amet", width="494", height="306", class="") }}
-          {% endcall %}
-        {% endcall %}
-        {% call row() %}
-          {% call columns( row=false, sm=4 ) %}
-            {{ image(source="https://source.unsplash.com/featured/600x600", description="Lorem ipsum dolor sit amet", width="600", height="600", class="") }}
-          {% endcall %}
-          {% call columns( row=false, sm=4 ) %}
-            {{ image(source="https://source.unsplash.com/featured/500x500", description="Lorem ipsum dolor sit amet", width="500", height="500", class="") }}
-          {% endcall %}
-          {% call columns( row=false, sm=4 ) %}
-            {{ image(source="https://source.unsplash.com/featured/450x450", description="Lorem ipsum dolor sit amet", width="450", height="450", class="") }}
-          {% endcall %}
-        {% endcall %}
-        {% call row() %}
-          {% call columns( row=false, sm=4 ) %}
-            {{ image(source="https://source.unsplash.com/featured/420x680", description="Lorem ipsum dolor sit amet", width="420", height="680", class="") }}
-          {% endcall %}
-          {% call columns( row=false, sm=4 ) %}
-            {{ image(source="https://source.unsplash.com/featured/458x742", description="Lorem ipsum dolor sit amet", width="458", height="742", class="") }}
-          {% endcall %}
-          {% call columns( row=false, sm=4 ) %}
-            {{ image(source="https://source.unsplash.com/featured/229x371", description="Lorem ipsum dolor sit amet", width="229", height="371", class="") }}
-          {% endcall %}
-        {% endcall %}
-
-      </div>
-    </div>
-
-  </div>
-</section>
 
 {% call section(
-  bgType = "separated"
+  bgType = 'lightest',
+  class  = 'section--separated'
+) %}
+  {% call columns() %}
+    {{ title("<faker-lorem-words/>") }}
+    {{ subtitle(level = '5', "<faker-lorem-sentences/>") }}
+
+    {% call row() %}
+      {% call columns( row=false, sm=4 ) %}
+        {{ image(source="https://source.unsplash.com/featured/618x382", description="Lorem ipsum dolor sit amet", width="618", height="382", class="") }}
+      {% endcall %}
+      {% call columns( row=false, sm=4 ) %}
+        {{ image(source="https://source.unsplash.com/featured/556x344", description="Lorem ipsum dolor sit amet", width="556", height="344", class="") }}
+      {% endcall %}
+      {% call columns( row=false, sm=4 ) %}
+        {{ image(source="https://source.unsplash.com/featured/494x306", description="Lorem ipsum dolor sit amet", width="494", height="306", class="") }}
+      {% endcall %}
+    {% endcall %}
+    {% call row() %}
+      {% call columns( row=false, sm=4 ) %}
+        {{ image(source="https://source.unsplash.com/featured/600x600", description="Lorem ipsum dolor sit amet", width="600", height="600", class="") }}
+      {% endcall %}
+      {% call columns( row=false, sm=4 ) %}
+        {{ image(source="https://source.unsplash.com/featured/500x500", description="Lorem ipsum dolor sit amet", width="500", height="500", class="") }}
+      {% endcall %}
+      {% call columns( row=false, sm=4 ) %}
+        {{ image(source="https://source.unsplash.com/featured/450x450", description="Lorem ipsum dolor sit amet", width="450", height="450", class="") }}
+      {% endcall %}
+    {% endcall %}
+    {% call row() %}
+      {% call columns( row=false, sm=4 ) %}
+        {{ image(source="https://source.unsplash.com/featured/420x680", description="Lorem ipsum dolor sit amet", width="420", height="680", class="") }}
+      {% endcall %}
+      {% call columns( row=false, sm=4 ) %}
+        {{ image(source="https://source.unsplash.com/featured/458x742", description="Lorem ipsum dolor sit amet", width="458", height="742", class="") }}
+      {% endcall %}
+      {% call columns( row=false, sm=4 ) %}
+        {{ image(source="https://source.unsplash.com/featured/229x371", description="Lorem ipsum dolor sit amet", width="229", height="371", class="") }}
+      {% endcall %}
+    {% endcall %}
+
+  {% endcall %}
+{% endcall %}
+
+{% call section(
+  class = 'section--separated'
 ) %}
 
   {% call columns() %}
-    <h2 class="section__title text-center">
-      Section Heading
-    </h2>
-    <p class="text-center">
-      Lorem ipsum dolor sit amet, <a href="#">consectetur adipiscing elit</a>. Ut eget justo quis erat maximus accumsan in ut nibh.
+    {{ title("<faker-lorem-words/>") }}
+    <p>
+      Lorem ipsum dolor sit amet, <a href="#">consectetur adipiscing elit</a>. Ut eget justo quis erat maximus accumsan in ut nibh. <faker-lorem-paragraph/>
+    </p>
+    <p>
+      <faker-lorem-paragraph/>
     </p>
   {% endcall %}
-
 {% endcall %}
 
-<section class="section section--separated section--lightest">
-  <div class="container">
-    <div class="row center-xs">
-      <div class="col-xs-12 col-sm-8 text-center">
-        {{ image(source="https://source.unsplash.com/random/300x300", description="Lorem ipsum dolor sit amet", width="300", height="300", class="") }}
-        <h2 class="section__title">
-          Section Heading
-        </h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+{% call section(
+  bgType = 'lightest',
+  class  = 'section--separated'
+) %}
+  {% call columns() %}
+    {{ image(source="https://source.unsplash.com/random/618x382", description="Lorem ipsum dolor sit amet", width="618", height="382", class="") }}
+    {{ title("<faker-lorem-words/>") }}
+    {{ subtitle(level = '5', '<faker-lorem-sentences/>', class='strip-bottom') }}
+  {% endcall %}
+{% endcall %}
 
-<section class="section section--separated">
-  <div class="container">
-    {% call columns( xs=10, sm=3 ) %}
-      {{ image(source="https://source.unsplash.com/random/800x800", description="Lorem ipsum dolor sit amet", width="800", height="800", round=true, class="") }}
+{% call section(
+  class  = 'section--separated'
+) %}
+  {% call columns( xs = 8, sm = 3) %}
+    {{ image(source="https://source.unsplash.com/random/800x800", description="Lorem ipsum dolor sit amet", width="800", height="800", round=true, class="") }}
+  {% endcall %}
+  {% call columns() %}
+    <p class="text-large text-muted text-center">
+      <faker-lorem-paragraph/>
+    </p>
+  {% endcall %}
+{% endcall %}
+
+{% call section(
+  bgType = 'lightest',
+  class  = 'section--separated'
+) %}
+  {% call columns() %}
+
+    {{ title('Full width image') }}
+    {{ subtitle('<faker-lorem-sentences/>', level=5) }}
+
+  {% endcall %}
+  {{ image(source="https://source.unsplash.com/random/1024x512", full=true, description="Lorem ipsum dolor sit amet", width="1024", height="512", class="") }}
+{% endcall %}
+
+{% call section(
+  class  = 'section--separated'
+) %}
+  {% call columns() %}
+
+    {{ title('<faker-lorem-words/>') }}
+    {{ subtitle('<faker-lorem-sentences/>', level=5) }}
+
+    {% call row() %}
+      {% call columns( row=false, xs=12, sm=6 ) %}
+        {{ image(source="https://source.unsplash.com/random/512x512", description="Lorem ipsum dolor sit amet", width="512", height="512", class="") }}
+      {% endcall %}
+      {% call columns( row=false, xs=12, sm=6 ) %}
+        {{ image(source="https://source.unsplash.com/random/640x640", description="Lorem ipsum dolor sit amet", width="640", height="640", class="") }}
+      {% endcall %}
+      {% call columns( row=false, xs=12, sm=12 ) %}
+        {{ image(source="https://source.unsplash.com/random/1024x512", caption="<h5><faker-lorem-words/>:</h5><faker-lorem-sentences/>", description="Lorem ipsum dolor sit amet", width="1024", height="512", class="") }}
+      {% endcall %}
     {% endcall %}
-    <div class="row center-xs">
-      <div class="col-xs-12 col-sm-8 text-center">
-        <p class="text-large text-muted">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section--separated section--lightest">
-  <div class="container">
-    <div class="row center-xs">
-      <div class="col-xs-12 col-sm-8 text-center">
-        <h2 class="section__title">
-          Section Heading
-        </h2>
-        <p class="section__subtitle">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
-        </p>
-      </div>
-    </div>
-    {{ image(source="https://source.unsplash.com/random/1024x512", description="Lorem ipsum dolor sit amet", width="1024", height="512", class="image--full") }}
-  </div>
-</section>
-
-<section class="section section--separated section--lightest">
-  <div class="container">
-    <div class="row center-xs">
-      <div class="col-xs-12 col-sm-8 text-center">
-        <h2 class="section__title">
-          Section Heading
-        </h2>
-        <p class="section__subtitle">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
-        </p>
-        <div class="row center-xs">
-          <div class="col-xs-12 col-sm-6">
-            {{ image(source="https://source.unsplash.com/random/512x512", description="Lorem ipsum dolor sit amet", width="512", height="512", class="image--full") }}
-          </div>
-          <div class="col-xs-12 col-sm-6">
-            {{ image(source="https://source.unsplash.com/random/640x640", description="Lorem ipsum dolor sit amet", width="640", height="640", class="image--full") }}
-          </div>
-          <div class="col-xs-12">
-            {{ image(source="https://source.unsplash.com/random/1024x512", caption="<faker-lorem-sentences/>", description="Lorem ipsum dolor sit amet", width="1024", height="512", class="image--full") }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  {% endcall %}
+{% endcall %}
 
 {{ anchor('content') }}
 
-<section class="section section--separated">
-  <div class="container">
-    <div class="row center-xs text-center">
-      <div class="col-xs-12 col-sm-8">
-        <h2 class="section__title">Video Player</h2>
-        <video class="media mejs__player">
-          <source src="https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" />
-        </video>
-      </div>
-    </div>
-  </div>
-</section>
+{% call section(
+  bgType = 'lightest',
+  class  = 'section--separated'
+) %}
+  {% call columns() %}
 
-<section class="section section--separated section--lightest">
-  <div class="container">
-    <div class="row center-xs text-center">
-      <div class="col-xs-12 col-sm-8">
-        <h2 class="section__title">Audio Player</h2>
-        <audio src="https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" class="media mejs__player"></audio>
-      </div>
-    </div>
-  </div>
-</section>
+    {{ title('Video player') }}
+    <video class="media mejs__player">
+      <source src="https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" />
+    </video>
+  {% endcall %}
+{% endcall %}
 
-<section class="section section--separated">
-  <div class="container">
-    <div class="row center-xs text-center">
-      <div class="col-xs-12 col-sm-8">
-        <h2 class="section__title">Youtube Player</h2>
-        <iframe class="media mejs__player" width="640" height="360" src="https://www.youtube.com/embed/frdj1zb9sMY?rel=0" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-</section>
+{% call section(
+  class  = 'section--separated'
+) %}
+  {% call columns() %}
 
-<section class="section section--separated">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <h2 class="section__title text-left">
-          <faker-lorem-word/>
-        </h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh. In accumsan lorem eget tortor venenatis egestas. Donec iaculis dapibus sapien, a dapibus turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse potenti. Aliquam gravida velit metus, id pulvinar eros scelerisque id. Mauris erat elit, scelerisque a rhoncus quis, vehicula vel odio. Mauris nec ipsum aliquam, euismod sapien vitae, eleifend nunc. Sed vitae neque eget dolor ullamcorper vestibulum ac in urna. Mauris mollis nisl sed dignissim aliquam.
-        </p>
-      </div>
-      <div class="col-xs-12 col-sm-6">
-        {{ image(source="https://source.unsplash.com/random/450x600", description="Lorem ipsum dolor sit amet", width="450", height="600", class="image--full") }}
-      </div>
-    </div>
-  </div>
-</section>
+    {{ title('Audio player') }}
+    <audio src="https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" class="media mejs__player"></audio>
+  {% endcall %}
+{% endcall %}
 
-<section class="section section--separated">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      {{ image(source="https://source.unsplash.com/random/800x500", caption="<faker-lorem-sentences/>", description="Lorem ipsum dolor sit amet", width="800", height="500", class="image--full") }}
-    </div>
-    <div class="col-xs-12 col-sm-5">
-      <h2 class="section__title text-left">
-        <faker-lorem-word/>
-      </h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh. In accumsan lorem eget tortor venenatis egestas. Donec iaculis dapibus sapien, a dapibus turpis.
-      </p>
-    </div>
-  </div>
-</section>
+{% call section(
+  bgType = 'lightest',
+  class  = 'section--separated'
+) %}
+  {% call columns() %}
+
+    {{ title('YouTube player') }}
+    <iframe class="media mejs__player" width="640" height="360" src="https://www.youtube.com/embed/frdj1zb9sMY?rel=0" frameborder="0" allowfullscreen></iframe>
+  {% endcall %}
+{% endcall %}
+
+{% call section(
+  class  = 'section--separated'
+) %}
+  {% call row() %}
+    {% call columns( row=false, xs=12, sm=6 ) %}
+      {{ title('<faker-lorem-word/>', class='text-left') }}
+      <faker-lorem-paragraphs/>
+    {% endcall %}
+    {% call columns( row=false, xs=12, sm=6 ) %}
+      {{ image(source="https://source.unsplash.com/random/450x600", description="Lorem ipsum dolor sit amet", width="450", height="600", class="") }}
+    {% endcall %}
+  {% endcall %}
+{% endcall %}
+
+{% call section(
+  bgType = 'lightest',
+  class  = 'section--separated'
+) %}
+  {% call row() %}
+    {% call columns( row=false, xs=12, sm=6 ) %}
+      {{ image(source="https://source.unsplash.com/random/800x500", caption="<h5>Figure 2:</h5><faker-lorem-sentences/>", description="Lorem ipsum dolor sit amet", width="800", height="500", class="") }}
+    {% endcall %}
+    {% call columns( row=false, xs=12, sm=6 ) %}
+      {{ title('<faker-lorem-word/>', class='text-left') }}
+      <faker-lorem-paragraphs/>
+    {% endcall %}
+  {% endcall %}
+{% endcall %}
 
 {{ anchor('features') }}
 
-<section class="section section--separated">
-  <div class="container">
-    <div class="row center-xs flex-columns">
-      <div class="col-xs-12 col-sm-5">
-        <h4>Thingy McJibber</h4>
-        <p class="text-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh. In accumsan lorem eget tortor venenatis egestas. Donec iaculis dapibus sapien, a dapibus turpis.
-        </p>
-      </div>
-      <div class="col-xs-12 col-sm-5">
-        <h4>Thingy McJibber</h4>
-        <p class="text-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
-        </p>
-      </div>
-      <div class="col-xs-12 col-sm-5">
-        <h4>Thingy McJibber</h4>
-        <p class="text-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
-        </p>
-      </div>
-      <div class="col-xs-12 col-sm-5">
-        <h4>Thingy McJibber</h4>
-        <p class="text-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
-        </p>
-      </div>
-      <div class="col-xs-12 col-sm-5">
-        <h4>Thingy McJibber</h4>
-        <p class="text-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh. In accumsan lorem eget tortor venenatis egestas. Donec iaculis dapibus sapien, a dapibus turpis.
-        </p>
-      </div>
-      <div class="col-xs-12 col-sm-5">
-        <h4>Thingy McJibber</h4>
-        <p class="text-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+{% call section(
+  class  = 'section--separated'
+) %}
+  {% call row( class='center-xs flex-columns') %}
+    {% call columns( row=false, xs=12, sm=5 ) %}
+      <h4><faker-name-jobTitle/></h4>
+      <p class="text-block">
+        <faker-lorem-sentences/>
+      </p>
+    {% endcall %}
+    {% call columns( row=false, xs=12, sm=5 ) %}
+      <h4><faker-name-jobTitle/></h4>
+      <p class="text-block">
+        <faker-lorem-sentences/>
+      </p>
+    {% endcall %}
+    {% call columns( row=false, xs=12, sm=5 ) %}
+      <h4><faker-name-jobTitle/></h4>
+      <p class="text-block">
+        <faker-lorem-sentences/>
+      </p>
+    {% endcall %}
+    {% call columns( row=false, xs=12, sm=5 ) %}
+      <h4><faker-name-jobTitle/></h4>
+      <p class="text-block">
+        <faker-lorem-sentences/>
+      </p>
+    {% endcall %}
+    {% call columns( row=false, xs=12, sm=5 ) %}
+      <h4><faker-name-jobTitle/></h4>
+      <p class="text-block">
+        <faker-lorem-sentences/>
+      </p>
+    {% endcall %}
+    {% call columns( row=false, xs=12, sm=5 ) %}
+      <h4><faker-name-jobTitle/></h4>
+      <p class="text-block">
+        <faker-lorem-sentences/>
+      </p>
+    {% endcall %}
+  {% endcall %}
+{% endcall %}
 
-<section class="section section--separated section--lightest">
-  <div class="container">
-    <div class="row center-xs flex-columns">
-      <div class="col-xs-12 col-sm-6">
-        {{ image(source="https://source.unsplash.com/random/300x300", description="Lorem ipsum dolor sit amet", width="300", height="300", class="") }}
-        <p class="text-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
-        </p>
-      </div>
-      <div class="col-xs-12 col-sm-6">
-        {{ image(source="https://source.unsplash.com/random/500x500", description="Lorem ipsum dolor sit amet", width="500", height="500", class="") }}
-        <p class="text-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
-        </p>
-      </div>
-      <div class="col-xs-12 col-sm-6">
-        {{ image(source="https://source.unsplash.com/random/700x700", description="Lorem ipsum dolor sit amet", width="700", height="700", class="") }}
-        <p class="text-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
-        </p>
-      </div>
-      <div class="col-xs-12 col-sm-6">
-        {{ image(source="https://source.unsplash.com/random/900x900", description="Lorem ipsum dolor sit amet", width="900", height="900", class="") }}
-        <p class="text-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section--separated">
-  <div class="container">
-    <div class="row center-xs flex-columns">
-      <div class="col-xs-12 col-sm-6 text-center">
-        {{ image(source="https://source.unsplash.com/random/300x300", description="Lorem ipsum dolor sit amet", width="300", height="300", class="") }}
-        <p class="text-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
-        </p>
-      </div>
-      <div class="col-xs-12 col-sm-6 text-center">
-        {{ image(source="https://source.unsplash.com/random/500x500", description="Lorem ipsum dolor sit amet", width="500", height="500", class="") }}
-        <p class="text-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
-        </p>
-      </div>
-      <div class="col-xs-12 col-sm-6 text-center">
-        {{ image(source="https://source.unsplash.com/random/700x700", description="Lorem ipsum dolor sit amet", width="700", height="700", class="") }}
-        <p class="text-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
-        </p>
-      </div>
-      <div class="col-xs-12 col-sm-6 text-center">
-        {{ image(source="https://source.unsplash.com/random/900x900", description="Lorem ipsum dolor sit amet", width="900", height="900", class="") }}
-        <p class="text-block">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+{% call section(
+  bgType = 'lightest',
+  class  = 'section--separated'
+) %}
+  {% call row( class='center-xs flex-columns') %}
+    {% call columns( row=false, xs=12, sm=6 ) %}
+      {{ image(source="https://source.unsplash.com/random/300x300", description="Lorem ipsum dolor sit amet", width="300", height="300", class="") }}
+      <p class="text-block"><faker-lorem-sentences/></p>
+    {% endcall %}
+    {% call columns( row=false, xs=12, sm=6 ) %}
+      {{ image(source="https://source.unsplash.com/random/500x500", description="Lorem ipsum dolor sit amet", width="500", height="500", class="") }}
+      <p class="text-block"><faker-lorem-sentences/></p>
+    {% endcall %}
+  {% endcall %}
+  {% call row( class='center-xs flex-columns') %}
+    {% call columns( row=false, xs=12, sm=6 ) %}
+      {{ image(source="https://source.unsplash.com/random/700x700", description="Lorem ipsum dolor sit amet", width="700", height="700", class="") }}
+      <p class="text-block"><faker-lorem-sentences/></p>
+    {% endcall %}
+    {% call columns( row=false, xs=12, sm=6 ) %}
+      {{ image(source="https://source.unsplash.com/random/900x900", description="Lorem ipsum dolor sit amet", width="900", height="900", class="") }}
+      <p class="text-block"><faker-lorem-sentences/></p>
+    {% endcall %}
+  {% endcall %}
+{% endcall %}
 
 {{ anchor('pricing') }}
 

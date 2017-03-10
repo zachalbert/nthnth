@@ -10,10 +10,10 @@
  #}
 
 {% macro row(
-  rowClasses = "center-xs"
+  class = "center-xs"
 ) %}
 
-<div class="row{{ ' '+rowClasses if rowClasses }}">
+<div class="row{{ ' '+class if class }}">
   {{ caller() }}
 </div>
 

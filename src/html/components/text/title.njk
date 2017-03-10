@@ -10,13 +10,14 @@
 
 {% macro title(
   text,
-  level = "2"
+  level = "2",
+  class
 ) %}
 
 {% if level == "1" %}
-  <h1 class="page__title">{{ text }}</h1>
+  <h1 class="page__title{{ ' '+class if class}}">{{ text }}</h1>
 {% else %}
-  <h2 class="section__title">{{ text }}</h2>
+  <h2 class="section__title{{ ' '+class if class}}">{{ text }}</h2>
 {% endif %}
 
 {% endmacro %}

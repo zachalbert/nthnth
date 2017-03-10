@@ -10,19 +10,20 @@
 
 {% macro subtitle(
   text,
-  level = "3"
+  level = "3",
+  class
 ) %}
 
   {% if level == "1" %}
-    <h2 class="page__subtitle">{{ text }}</h2>
+    <h2 class="page__subtitle{{ ' '+class if class}}">{{ text }}</h2>
   {% elif level == "2" %}
-    <h3 class="section__subtitle">{{ text }}</h3>
+    <h3 class="section__subtitle{{ ' '+class if class}}">{{ text }}</h3>
   {% elif level == "3" %}
-    <h3>{{ text }}</h3>
+    <h3 class="{{ ' '+class if class}}">{{ text }}</h3>
   {% elif level == "4" %}
-    <h4>{{ text }}</h4>
+    <h4 class="{{ ' '+class if class}}">{{ text }}</h4>
   {% else %}
-    <p class="section__subtitle">{{ text }}</p>
+    <p class="section__subtitle{{ ' '+class if class}}">{{ text }}</p>
   {% endif %}
 
 {% endmacro %}

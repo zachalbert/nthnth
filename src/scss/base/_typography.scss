@@ -60,6 +60,17 @@ h4,
   text-transform: uppercase;
 }
 
+h5,
+.h5 {
+  color: $body-font-color;
+  font-size: $type-scale-1;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  font-style: italic;
+  display: inline-block;
+  padding-right: $lead-third;
+}
+
 .page {
   &__title {
     @extend .h1;
@@ -152,7 +163,8 @@ tt {
 
 small,
 .text-small {
-  font-size: $type-scale-2;
+  font-family: $display-stack;
+  font-size: $type-scale-1;
   color: $muted-font-color;
   text-transform: uppercase;
 }

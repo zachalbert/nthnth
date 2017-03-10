@@ -5,6 +5,7 @@
  # @param {boolean} [container=true] - Wrap a div.container around the content
  # @param {boolean} [row=false] - Wrap a div.row around the content (usually best to use the row parameter on the columns() component)
  # @param {string}  [rowClasses] - Add additional classes to div.row
+ # @param {string}  [class] - Add additional classes to div.section
  # @param {string}  [bgURL] - URL to image, which will replace the background
  # @param {string}  [bgOverlayModifierClass(dark, light)] - Overlay pseudo element that takes up the full width and height of the section
  #
@@ -22,7 +23,7 @@
   container = true,
   row = false,
   rowClasses,
-  sectionClasses,
+  class,
   bgURL,
   bgOverlayModifierClass
 ) %}
@@ -31,7 +32,7 @@
   {% set overlayClasses = " bg-overlay bg-overlay--" + bgOverlayModifierClass %}
 {% endif %}
 
-<section{{ ' id="'+name+'"' if name }} class="section{{ ' '+sectionClasses if sectionClasses }} section--{{ bgType if bgType else 'default' }}{{ overlayClasses }}"{% if bgURL %} style="background-image: url('{{ bgURL }}');"{% endif %}>
+<section{{ ' id="'+name+'"' if name }} class="section{{ ' '+class if class }} section--{{ bgType if bgType else 'default' }}{{ overlayClasses }}"{% if bgURL %} style="background-image: url('{{ bgURL }}');"{% endif %}>
   {% if container %}
   <div class="container">
   {% endif %}

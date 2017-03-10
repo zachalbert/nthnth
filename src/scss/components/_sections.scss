@@ -4,7 +4,7 @@
   background-size: cover;
   background-position: center;
 
-  + .section--separated {
+  &--separated {
     box-shadow: inset 0 1px 0 0 $section-border-color;
   }
 

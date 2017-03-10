@@ -37,6 +37,10 @@ legend.label,
   margin-bottom: $lead-single;
 }
 
+p + p {
+  margin-top: $lead-single;
+}
+
 // MARGIN BOTTOM DOUBLE
 
 .content-block
