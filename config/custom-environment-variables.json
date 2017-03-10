@@ -1,0 +1,6 @@
+{
+  "contentful": {
+    "space": "CONTENTFUL_SPACE",
+    "accessToken": "CONTENTFUL_ACCESSTOKEN"
+  }
+}

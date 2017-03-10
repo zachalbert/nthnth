@@ -1,7 +1,7 @@
 var Promise           = require("bluebird")
+var config            = require('config')
 var contentful        = require('contentful')
-var config            = require("../../config")
-var memoize           = require('memoizee');
+var memoize           = require('memoizee')
 
 // Get some userfriendly names out of the types (can sometimes be ids)
 var getTypeNames = function(result) {
@@ -28,7 +28,10 @@ var buildData = function(result) {
 }
 
 var getData = memoize(function(cb) {
-  var client = contentful.createClient(config.contentful)
+  var client = contentful.createClient({
+    "space": config.get("contentful.space"),
+    "accessToken": config.get("contentful.accessToken")
+  })
 
   Promise.props({
     "entries": client.getEntries(),

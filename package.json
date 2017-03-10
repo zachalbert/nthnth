@@ -28,6 +28,7 @@
     "browser-sync": "2.11.1",
     "clipboard": "^1.6.1",
     "compression": "1.6.1",
+    "config": "1.25.1",
     "contentful": "3.8.1",
     "del": "2.2.0",
     "express": "4.13.4",
