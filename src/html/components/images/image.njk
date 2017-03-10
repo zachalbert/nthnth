@@ -34,19 +34,19 @@
 {% set aspectRatio = ( 100 * ( height / width ) ) %}
 {% endif %}
 
-<div class="image__wrapper{{ ' image--round' if round }}"{{ ' style="padding-top: '+ aspectRatio +'%;"' if aspectRatio }}>
-  {{ '<figure>' if caption }}
-  <img
-    alt="{{ description }}"
-    class="image{{ ' '+class if class }}"
-    data-normal="{{ source }}"
-    {% if sourceRetina %} data-retina="{{ sourceRetina }}"{% endif %}
-    {% if sourceSrcSet %} data-srcset="{{ sourceSrcSet }}"{% endif %}
-    {% if width %} width="{{ width }}"{% endif %}
-    {% if height %} height="{{ height }}"{% endif %}
-  >
+{{ '<figure>' if caption }}
+  <div class="image__wrapper{{ ' image--round' if round }}"{{ ' style="padding-top: '+ aspectRatio +'%;"' if aspectRatio }}>
+    <img
+      alt="{{ description }}"
+      class="image{{ ' '+class if class }}"
+      data-normal="{{ source }}"
+      {% if sourceRetina %} data-retina="{{ sourceRetina }}"{% endif %}
+      {% if sourceSrcSet %} data-srcset="{{ sourceSrcSet }}"{% endif %}
+      {% if width %} width="{{ width }}"{% endif %}
+      {% if height %} height="{{ height }}"{% endif %}
+    >
+  </div>
   {{ '<figcaption>'+caption+'</figcaption>' if caption }}
-  {{ '</figure>' if caption }}
-</div>
+{{ '</figure>' if caption }}
 
 {% endmacro %}
