@@ -21,16 +21,20 @@
     }
 
     #{$bodyCopyTags} {
-      color: #ccc;
+      color: rgba(white, 0.65);
     }
 
     &:before {
-      background-color: rgba($theme-color-accent-dark,0.7);
+      background-color: rgba($theme-color-accent-dark,0.65);
+      mix-blend-mode: multiply;
     }
   }
 
   &--light {
-
+    &:before {
+      background-color: rgba(white, 0.75);
+      mix-blend-mode: hard-light;
+    }
   }
 
   &--gradient {
@@ -42,9 +46,10 @@
 
     &:before {
       background: $theme-color-gradient-end;
-      background: -webkit-linear-gradient(top left, $theme-color-gradient-start 0%, $theme-color-gradient-end 68.2%);
-      background: -o-linear-gradient(top left, $theme-color-gradient-start 0%, $theme-color-gradient-end 68.2%);
-      background: linear-gradient(to bottom right, $theme-color-gradient-start 0%, $theme-color-gradient-end 68.2%);
+      background: -webkit-linear-gradient(top left, $theme-color-gradient-start 0%, $theme-color-gradient-end 61.8%);
+      background: -o-linear-gradient(top left, $theme-color-gradient-start 0%, $theme-color-gradient-end 61.8%);
+      background: linear-gradient(to bottom right, $theme-color-gradient-start 0%, $theme-color-gradient-end 61.8%);
+      mix-blend-mode: luminosity;
     }
   }
 }

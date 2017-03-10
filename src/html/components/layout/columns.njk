@@ -1,5 +1,5 @@
 {##
- # Set up grid columns, including a row
+ # Set up grid columns, includes a row by default
  #
  # @param {string} [row=true] - Wrap a div.row around the div containing grid classes
  # @param {string} [rowClasses] - Add additional classes to div.row
@@ -7,7 +7,9 @@
  # @param {number} [(xsOffset, smOffset, mdOffset, lgOffset, xlOffset)] - Number of grid columns to offset from the left at each breakpoint
  #
  # @example
- #   {{ columns(rowClasses="text-center accent", xs=6, lg=4, mdOffset=2) }}
+ # {% call columns(rowClasses="text-center accent", xs=6, lg=4, mdOffset=2) %}
+ # ...
+ # {% endcall %}
  #}
 
 {% macro columns(

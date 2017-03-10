@@ -1,0 +1,20 @@
+{##
+ # Create a row, for wrapping multiple column calls
+ #
+ # @param {string} [rowClasses] - Add additional classes to div.row
+ #
+ # @example
+ # {% call row() %}
+ # ...
+ # {% endcall %}
+ #}
+
+{% macro row(
+  rowClasses = "center-xs"
+) %}
+
+<div class="row{{ ' '+rowClasses if rowClasses }}">
+  {{ caller() }}
+</div>
+
+{% endmacro %}

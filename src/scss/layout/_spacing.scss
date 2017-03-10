@@ -31,6 +31,7 @@ legend.label,
 .card, .form-element-group,
 .form-element__wrap,
 .hero__subheading,
+.section--hero .page__subtitle,
 .text-block,
 .image__wrapper {
   margin-bottom: $lead-single;
@@ -38,7 +39,6 @@ legend.label,
 
 // MARGIN BOTTOM DOUBLE
 
-.hero__subheading,
 .content-block
 {
   margin-bottom: $lead-double;

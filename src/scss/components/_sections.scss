@@ -25,4 +25,8 @@
   &--lightest {
     background: palette(default, lightest);
   }
+  &--hero {
+    padding-top: ( $section-padding * 2 ) + $nav-logo-size + $nav-bar-padding;
+    padding-bottom: ( $section-padding * 2 );
+  }
 }

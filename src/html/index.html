@@ -7,8 +7,9 @@
 {{ nav() }}
 
 {% call section(
-  bgURL = "https://source.unsplash.com/category/buildings/1920x1080",
-  bgOverlayModifierClass = "gradient"
+  bgURL = "https://source.unsplash.com/featured/1920x1080",
+  bgOverlayModifierClass = "light",
+  sectionClasses = "section--hero"
 )%}
   {% call columns(
     rowClasses = "center-xs text-center content-start",
@@ -16,8 +17,8 @@
     sm = 8,
     lg = 7
   ) %}
-  {{ title("The Best Words", type = "page") }}
-  {{ subtitle("Nobody has better words than me.") }}
+  {{ title('The Best Words', level = '1') }}
+  {{ subtitle('Nobody has more respect for words than me', level = '1') }}
   {{ button(
     text = "Learn more",
     type = "primary",

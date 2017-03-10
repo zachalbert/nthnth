@@ -22,6 +22,7 @@
   container = true,
   row = false,
   rowClasses,
+  sectionClasses,
   bgURL,
   bgOverlayModifierClass
 ) %}
@@ -30,7 +31,7 @@
   {% set overlayClasses = " bg-overlay bg-overlay--" + bgOverlayModifierClass %}
 {% endif %}
 
-<section{{ ' id="'+name+'"' if name }} class="section section--{{ bgType if bgType else 'default' }}{{ overlayClasses }}"{% if bgURL %} style="background-image: url('{{ bgURL }}');"{% endif %}>
+<section{{ ' id="'+name+'"' if name }} class="section{{ ' '+sectionClasses if sectionClasses }} section--{{ bgType if bgType else 'default' }}{{ overlayClasses }}"{% if bgURL %} style="background-image: url('{{ bgURL }}');"{% endif %}>
   {% if container %}
   <div class="container">
   {% endif %}

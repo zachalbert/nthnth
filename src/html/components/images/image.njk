@@ -1,6 +1,6 @@
 {##
  # Display an image, with lazy loading and a proportional wrapper to maintain
- # space in the layout while the image is loading. 
+ # space in the layout while the image is loading.
  #
  # @param {string} [source] - Path to image resource, specified with data-source
  # @param {string} [sourceRetina] - Same as above, but for @2x resources
@@ -19,20 +19,21 @@
  #}
 
 {% macro image(
+  class,
+  description = "",
+  height,
+  round,
   source,
   sourceRetina,
   sourceSrcSet,
-  class,
-  description,
-  width,
-  height
+  width
 ) %}
 
 {% if width and height %}
 {% set aspectRatio = ( 100 * ( height / width ) ) %}
 {% endif %}
 
-<div class="image__wrapper"{{ ' style="padding-top: '+ aspectRatio +'%;"' if aspectRatio }}>
+<div class="image__wrapper{{ ' image--round' if round }}"{{ ' style="padding-top: '+ aspectRatio +'%;"' if aspectRatio }}>
   <img
     alt="{{ description }}"
     class="image{{ ' '+class if class }}"
