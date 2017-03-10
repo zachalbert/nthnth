@@ -1,17 +1,18 @@
-var config       = require('../config')
+var config         = require('../config')
 if(!config.tasks.html) return
 
-var browserSync  = require('browser-sync')
+var browserSync    = require('browser-sync')
 var contentfulSync = require("../lib/contentfulSync")
-var data         = require('gulp-data')
-var fs           = require('fs')
-var gulp         = require('gulp')
-var gulpif       = require('gulp-if')
-var handleErrors = require('../lib/handleErrors')
-var prettify    = require('gulp-jsbeautifier')
-var path         = require('path')
-var render       = require('gulp-nunjucks-render')
-var exclude      = path.normalize('!**/{' + config.tasks.html.excludeFolders.join(',') + '}/**')
+var data           = require('gulp-data')
+var faker          = require('gulp-faker');
+var fs             = require('fs')
+var gulp           = require('gulp')
+var gulpif         = require('gulp-if')
+var handleErrors   = require('../lib/handleErrors')
+var prettify       = require('gulp-jsbeautifier')
+var path           = require('path')
+var render         = require('gulp-nunjucks-render')
+var exclude        = path.normalize('!**/{' + config.tasks.html.excludeFolders.join(',') + '}/**')
 
 var paths = {
   src: [path.join(config.root.src, config.tasks.html.src, '/**/*.{' + config.tasks.html.extensions + '}'), exclude],
@@ -28,6 +29,7 @@ var htmlTask = function() {
   return gulp.src(paths.src)
     .pipe(data(contentfulSync))
     .pipe(data(getData))
+    .pipe(faker())
     .on('error', handleErrors)
     .pipe(render({
       path: [path.join(config.root.src, config.tasks.html.src)],

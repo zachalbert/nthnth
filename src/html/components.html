@@ -44,8 +44,8 @@
   <div class="container">
     <div class="row center-xs">
       <div class="col-xs-12 col-sm-10 text-center">
-        {{ title("Section Heading") }}
-        {{ subtitle(level = '5', "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.") }}
+        {{ title("<faker-lorem-words/>") }}
+        {{ subtitle(level = '5', "<faker-lorem-sentences/>") }}
 
         {% call row() %}
           {% call columns( row=false, sm=4 ) %}
@@ -56,6 +56,17 @@
           {% endcall %}
           {% call columns( row=false, sm=4 ) %}
             {{ image(source="https://source.unsplash.com/featured/494x306", description="Lorem ipsum dolor sit amet", width="494", height="306", class="") }}
+          {% endcall %}
+        {% endcall %}
+        {% call row() %}
+          {% call columns( row=false, sm=4 ) %}
+            {{ image(source="https://source.unsplash.com/featured/600x600", description="Lorem ipsum dolor sit amet", width="600", height="600", class="") }}
+          {% endcall %}
+          {% call columns( row=false, sm=4 ) %}
+            {{ image(source="https://source.unsplash.com/featured/500x500", description="Lorem ipsum dolor sit amet", width="500", height="500", class="") }}
+          {% endcall %}
+          {% call columns( row=false, sm=4 ) %}
+            {{ image(source="https://source.unsplash.com/featured/450x450", description="Lorem ipsum dolor sit amet", width="450", height="450", class="") }}
           {% endcall %}
         {% endcall %}
         {% call row() %}
@@ -172,7 +183,7 @@
       <div class="col-xs-12 col-sm-8">
         <h2 class="section__title">Video Player</h2>
         <video class="media mejs__player">
-          <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" />
+          <source src="https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" />
         </video>
       </div>
     </div>
@@ -184,7 +195,7 @@
     <div class="row center-xs text-center">
       <div class="col-xs-12 col-sm-8">
         <h2 class="section__title">Audio Player</h2>
-        <audio src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" class="media mejs__player"></audio>
+        <audio src="https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" class="media mejs__player"></audio>
       </div>
     </div>
   </div>
