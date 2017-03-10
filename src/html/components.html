@@ -47,16 +47,26 @@
         {{ subtitle(level = '5', "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.") }}
 
         <div class="row center-xs bottom-xs text-center image-grid">
-          {{ image(source="https://source.unsplash.com/category/buildings/566x330", description="Lorem ipsum dolor sit amet", width="566", height="330", class="") }}
-          {{ image(source="https://source.unsplash.com/category/buildings/886x330", description="Lorem ipsum dolor sit amet", width="886", height="330", class="") }}
-          {{ image(source="https://source.unsplash.com/category/buildings/275x200", description="Lorem ipsum dolor sit amet", width="275", height="200", class="") }}
-          {{ image(source="https://source.unsplash.com/category/buildings/275x280", description="Lorem ipsum dolor sit amet", width="275", height="280", class="") }}
+          {% call columns( row=false, sm=4 ) %}
+            {{ image(source="https://source.unsplash.com/featured/382x618", description="Lorem ipsum dolor sit amet", width="382", height="618", class="") }}
+          {% endcall %}
+          {% call columns( row=false, sm=4 ) %}
+            {{ image(source="https://source.unsplash.com/featured/344x556", description="Lorem ipsum dolor sit amet", width="344", height="556", class="") }}
+          {% endcall %}
+          {% call columns( row=false, sm=4 ) %}
+            {{ image(source="https://source.unsplash.com/featured/306x494", description="Lorem ipsum dolor sit amet", width="306", height="494", class="") }}
+          {% endcall %}
         </div>
         <div class="row center-xs top-xs text-center image-grid">
-          {{ image(source="https://source.unsplash.com/category/buildings/275x260", description="Lorem ipsum dolor sit amet", width="275", height="260", class="") }}
-          {{ image(source="https://source.unsplash.com/category/buildings/275x220", description="Lorem ipsum dolor sit amet", width="275", height="220", class="") }}
-          {{ image(source="https://source.unsplash.com/category/buildings/275x140", description="Lorem ipsum dolor sit amet", width="275", height="140", class="") }}
-          {{ image(source="https://source.unsplash.com/category/buildings/275x320", description="Lorem ipsum dolor sit amet", width="275", height="320", class="") }}
+          {% call columns( row=false, sm=4 ) %}
+            {{ image(source="https://source.unsplash.com/featured/420x680", description="Lorem ipsum dolor sit amet", width="420", height="680", class="") }}
+          {% endcall %}
+          {% call columns( row=false, sm=4 ) %}
+            {{ image(source="https://source.unsplash.com/featured/458x742", description="Lorem ipsum dolor sit amet", width="458", height="742", class="") }}
+          {% endcall %}
+          {% call columns( row=false, sm=4 ) %}
+            {{ image(source="https://source.unsplash.com/featured/229x371", description="Lorem ipsum dolor sit amet", width="229", height="371", class="") }}
+          {% endcall %}
         </div>
 
       </div>

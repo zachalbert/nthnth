@@ -1,5 +1,6 @@
 {##
- # Show an image, with fancy attributes for lazy loading
+ # Display an image, with lazy loading and a proportional wrapper to maintain
+ # space in the layout while the image is loading. 
  #
  # @param {string} [source] - Path to image resource, specified with data-source
  # @param {string} [sourceRetina] - Same as above, but for @2x resources
@@ -32,7 +33,15 @@
 {% endif %}
 
 <div class="image__wrapper"{{ ' style="padding-top: '+ aspectRatio +'%;"' if aspectRatio }}>
-  <img data-normal="{{ source }}"{% if sourceRetina %} data-retina="{{ sourceRetina }}"{% endif %}{% if sourceSrcSet %} data-srcset="{{ sourceSrcSet }}"{% endif %} alt="{{ description }}" class="image{{ ' '+class if class }}" />
+  <img
+    alt="{{ description }}"
+    class="image{{ ' '+class if class }}"
+    data-normal="{{ source }}"
+    {% if sourceRetina %} data-retina="{{ sourceRetina }}"{% endif %}
+    {% if sourceSrcSet %} data-srcset="{{ sourceSrcSet }}"{% endif %}
+    {% if width %} width="{{ width }}"{% endif %}
+    {% if height %} height="{{ height }}"{% endif %}
+  >
 </div>
 
 {% endmacro %}

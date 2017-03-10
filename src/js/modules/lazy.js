@@ -1,3 +1,9 @@
+/**
+ *
+ * Lazy loading via layzr.js
+ *
+**/
+
 import Layzr from 'layzr.js'
 
 const instance = Layzr({
