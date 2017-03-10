@@ -46,10 +46,10 @@
 
     &:before {
       background: $theme-color-gradient-end;
-      background: -webkit-linear-gradient(top left, $theme-color-gradient-start 0%, $theme-color-gradient-end 61.8%);
-      background: -o-linear-gradient(top left, $theme-color-gradient-start 0%, $theme-color-gradient-end 61.8%);
-      background: linear-gradient(to bottom right, $theme-color-gradient-start 0%, $theme-color-gradient-end 61.8%);
-      mix-blend-mode: luminosity;
+      background: -webkit-linear-gradient(top left, $theme-color-gradient-start 0%, $theme-color-gradient-end 100%);
+      background: -o-linear-gradient(top left, $theme-color-gradient-start 0%, $theme-color-gradient-end 100%);
+      background: linear-gradient(to bottom right, $theme-color-gradient-start 0%, $theme-color-gradient-end 100%);
+      mix-blend-mode: multiply;
     }
   }
 }
