@@ -6,10 +6,9 @@ var sidebarTrigger = $('.content-start').offset().top - $('.nav--top').outerHeig
 
 if( sidebarTrigger ) {
   var fixSidebar = new ScrollMagic.Scene({
-      offset: sidebarTrigger        // start this scene after scrolling for 50px
-      // triggerElement: "#sections" // thing to pin
+      offset: sidebarTrigger        // start this scene once sidebarTrigger has been reached
     })
-    .setPin(".sidebar--fixed"); // pins the element for the the scene's duration
+    .setPin(".sidebar--fixed");     // pins the element for the the scene's duration
 
   // Add one or more scenes to the controller
   controller.addScene([
