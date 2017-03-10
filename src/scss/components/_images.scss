@@ -87,3 +87,16 @@
     align-self: auto;
   }
 }
+
+figure {
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  figcaption {
+    @extend .text-small;
+    padding: 0 $lead-half $lead-single;
+  }
+}

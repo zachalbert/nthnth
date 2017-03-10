@@ -169,11 +169,19 @@ small,
   line-height: $line-height;
 }
 
-.text-center {
-  text-align: center!important;
-  img {
-    margin-left: auto;
-    margin-right: auto;
+.text {
+  &-center {
+    text-align: center!important;
+    img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  &-left {
+    text-align: left!important;
+  }
+  &-right {
+    text-align: right!important;
   }
 }
 

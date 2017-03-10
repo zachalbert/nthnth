@@ -19,6 +19,7 @@
  #}
 
 {% macro image(
+  caption,
   class,
   description = "",
   height,
@@ -34,6 +35,7 @@
 {% endif %}
 
 <div class="image__wrapper{{ ' image--round' if round }}"{{ ' style="padding-top: '+ aspectRatio +'%;"' if aspectRatio }}>
+  {{ '<figure>' if caption }}
   <img
     alt="{{ description }}"
     class="image{{ ' '+class if class }}"
@@ -43,6 +45,8 @@
     {% if width %} width="{{ width }}"{% endif %}
     {% if height %} height="{{ height }}"{% endif %}
   >
+  {{ '<figcaption>'+caption+'</figcaption>' if caption }}
+  {{ '</figure>' if caption }}
 </div>
 
 {% endmacro %}
