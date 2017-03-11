@@ -1,4 +1,4 @@
-import ScrollMagic from '../../../node_modules/scrollmagic/';
+import ScrollMagic from 'scrollmagic';
 
 // init controller
 var controller       = new ScrollMagic.Controller();

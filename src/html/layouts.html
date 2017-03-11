@@ -21,23 +21,23 @@
 {% endcall %}
 
 <div class="flexible-container flexible-container--collapsed">
-  <div class="flexible-container__side sidebar fixed-scroll-offset">
+  <div class="flexible-container__side sidebar fixed-scroll-offset hide-xs">
 
     <div class="sidebar--fixed">
       <ul>
-        <li><a data-scroll href="#sections"><i class="icon icon--dashboard"></i><span class="sidebar__nav-link">Sections</span></a></li>
-        <li><a data-scroll href="#content"><i class="icon icon--grid-uneven"></i><span class="sidebar__nav-link">Content</span></a></li>
-        <li><a data-scroll href="#features"><i class="icon icon--blocks"></i><span class="sidebar__nav-link">Features</span></a></li>
-        <li><a data-scroll href="#pricing"><i class="icon icon--documents-group"></i><span class="sidebar__nav-link">Pricing</span></a></li>
-        <li><a data-scroll href="#cards"><i class="icon icon--profile-landscape"></i><span class="sidebar__nav-link">Cards</span></a></li>
+        <li><a data-scroll class="sidebar__nav-link" href="#sections"><i class="icon icon--dashboard"></i><span class="text">Sections</span></a></li>
+        <li><a data-scroll class="sidebar__nav-link" href="#content"><i class="icon icon--grid-uneven"></i><span class="text">Content</span></a></li>
+        <li><a data-scroll class="sidebar__nav-link" href="#features"><i class="icon icon--blocks"></i><span class="text">Features</span></a></li>
+        <li><a data-scroll class="sidebar__nav-link" href="#pricing"><i class="icon icon--documents-group"></i><span class="text">Pricing</span></a></li>
+        <li><a data-scroll class="sidebar__nav-link" href="#cards"><i class="icon icon--profile-landscape"></i><span class="text">Cards</span></a></li>
       </ul>
     </div>
 
-    <div class="sidebar__close"><a href="#" class="sidebar__close-trigger"><i class="icon icon--chevron-right"></i></a></div>
+    <div class="sidebar__closer"><a href="#" class="sidebar__nav-link sidebar__closer__trigger"><i class="icon icon--chevron-right"></i></a></div>
 
   </div>
   <div class="flexible-container__main">
-
+    
     {% call section() %}
       {{ anchor('sections') }}
       {{ title('Collections of components (organisms) go here') }}

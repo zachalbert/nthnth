@@ -21,457 +21,451 @@
 {% endcall %}
 
 <div class="flexible-container flexible-container--collapsed">
+  <div class="flexible-container__side sidebar fixed-scroll-offset hide-xs">
 
-<div class="flexible-container__side sidebar fixed-scroll-offset">
-
-<div class="sidebar--fixed">
-  <ul>
-    <li><a data-scroll href="#sections"><i class="icon icon--dashboard"></i><span class="sidebar__nav-link">Sections</span></a></li>
-    <li><a data-scroll href="#content"><i class="icon icon--grid-uneven"></i><span class="sidebar__nav-link">Content</span></a></li>
-    <li><a data-scroll href="#features"><i class="icon icon--blocks"></i><span class="sidebar__nav-link">Features</span></a></li>
-    <li><a data-scroll href="#pricing"><i class="icon icon--documents-group"></i><span class="sidebar__nav-link">Pricing</span></a></li>
-    <li><a data-scroll href="#cards"><i class="icon icon--profile-landscape"></i><span class="sidebar__nav-link">Cards</span></a></li>
-  </ul>
-</div>
-
-<div class="sidebar__close"><a href="#" class="sidebar__close-trigger"><i class="icon icon--chevron-right"></i></a></div>
-
-</div>
-<div class="flexible-container__main">
-
-{{ anchor('sections') }}
-
-{% call section(
-  bgType = 'lightest',
-  class  = 'section--separated'
-) %}
-  {% call columns() %}
-    {{ title("<faker-lorem-words/>") }}
-    {{ subtitle(level = '5', "<faker-lorem-sentences/>") }}
-
-    {% call row() %}
-      {% call columns( row=false, sm=4 ) %}
-        {{ image(source="https://source.unsplash.com/featured/618x382", description="Lorem ipsum dolor sit amet", width="618", height="382", class="") }}
-      {% endcall %}
-      {% call columns( row=false, sm=4 ) %}
-        {{ image(source="https://source.unsplash.com/featured/556x344", description="Lorem ipsum dolor sit amet", width="556", height="344", class="") }}
-      {% endcall %}
-      {% call columns( row=false, sm=4 ) %}
-        {{ image(source="https://source.unsplash.com/featured/494x306", description="Lorem ipsum dolor sit amet", width="494", height="306", class="") }}
-      {% endcall %}
-    {% endcall %}
-    {% call row() %}
-      {% call columns( row=false, sm=4 ) %}
-        {{ image(source="https://source.unsplash.com/featured/600x600", description="Lorem ipsum dolor sit amet", width="600", height="600", class="") }}
-      {% endcall %}
-      {% call columns( row=false, sm=4 ) %}
-        {{ image(source="https://source.unsplash.com/featured/500x500", description="Lorem ipsum dolor sit amet", width="500", height="500", class="") }}
-      {% endcall %}
-      {% call columns( row=false, sm=4 ) %}
-        {{ image(source="https://source.unsplash.com/featured/450x450", description="Lorem ipsum dolor sit amet", width="450", height="450", class="") }}
-      {% endcall %}
-    {% endcall %}
-    {% call row() %}
-      {% call columns( row=false, sm=4 ) %}
-        {{ image(source="https://source.unsplash.com/featured/420x680", description="Lorem ipsum dolor sit amet", width="420", height="680", class="") }}
-      {% endcall %}
-      {% call columns( row=false, sm=4 ) %}
-        {{ image(source="https://source.unsplash.com/featured/458x742", description="Lorem ipsum dolor sit amet", width="458", height="742", class="") }}
-      {% endcall %}
-      {% call columns( row=false, sm=4 ) %}
-        {{ image(source="https://source.unsplash.com/featured/229x371", description="Lorem ipsum dolor sit amet", width="229", height="371", class="") }}
-      {% endcall %}
-    {% endcall %}
-
-  {% endcall %}
-{% endcall %}
-
-{% call section(
-  class = 'section--separated'
-) %}
-
-  {% call columns() %}
-    {{ title("<faker-lorem-words/>") }}
-    <p>
-      Lorem ipsum dolor sit amet, <a href="#">consectetur adipiscing elit</a>. Ut eget justo quis erat maximus accumsan in ut nibh. <faker-lorem-paragraph/>
-    </p>
-    <p>
-      <faker-lorem-paragraph/>
-    </p>
-  {% endcall %}
-{% endcall %}
-
-{% call section(
-  bgType = 'lightest',
-  class  = 'section--separated'
-) %}
-  {% call columns() %}
-    {{ image(source="https://source.unsplash.com/random/618x382", description="Lorem ipsum dolor sit amet", width="618", height="382", class="") }}
-    {{ title("<faker-lorem-words/>") }}
-    {{ subtitle(level = '5', '<faker-lorem-sentences/>', class='strip-bottom') }}
-  {% endcall %}
-{% endcall %}
-
-{% call section(
-  class  = 'section--separated'
-) %}
-  {% call columns( xs = 8, sm = 3) %}
-    {{ image(source="https://source.unsplash.com/random/800x800", description="Lorem ipsum dolor sit amet", width="800", height="800", round=true, class="") }}
-  {% endcall %}
-  {% call columns() %}
-    <p class="text-large text-muted text-center">
-      <faker-lorem-paragraph/>
-    </p>
-  {% endcall %}
-{% endcall %}
-
-{% call section(
-  bgType = 'lightest',
-  class  = 'section--separated'
-) %}
-  {% call columns() %}
-
-    {{ title('Full width image') }}
-    {{ subtitle('<faker-lorem-sentences/>', level=5) }}
-
-  {% endcall %}
-  {{ image(source="https://source.unsplash.com/random/1024x512", full=true, description="Lorem ipsum dolor sit amet", width="1024", height="512", class="") }}
-{% endcall %}
-
-{% call section(
-  class  = 'section--separated'
-) %}
-  {% call columns() %}
-
-    {{ title('<faker-lorem-words/>') }}
-    {{ subtitle('<faker-lorem-sentences/>', level=5) }}
-
-    {% call row() %}
-      {% call columns( row=false, xs=12, sm=6 ) %}
-        {{ image(source="https://source.unsplash.com/random/512x512", description="Lorem ipsum dolor sit amet", width="512", height="512", class="") }}
-      {% endcall %}
-      {% call columns( row=false, xs=12, sm=6 ) %}
-        {{ image(source="https://source.unsplash.com/random/640x640", description="Lorem ipsum dolor sit amet", width="640", height="640", class="") }}
-      {% endcall %}
-      {% call columns( row=false, xs=12, sm=12 ) %}
-        {{ image(source="https://source.unsplash.com/random/1024x512", caption="<h5><faker-lorem-words/>:</h5><faker-lorem-sentences/>", description="Lorem ipsum dolor sit amet", width="1024", height="512", class="") }}
-      {% endcall %}
-    {% endcall %}
-  {% endcall %}
-{% endcall %}
-
-{{ anchor('content') }}
-
-{% call section(
-  bgType = 'lightest',
-  class  = 'section--separated'
-) %}
-  {% call columns() %}
-
-    {{ title('Video player') }}
-    <video class="media mejs__player">
-      <source src="https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" />
-    </video>
-  {% endcall %}
-{% endcall %}
-
-{% call section(
-  class  = 'section--separated'
-) %}
-  {% call columns() %}
-
-    {{ title('Audio player') }}
-    <audio src="https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" class="media mejs__player"></audio>
-  {% endcall %}
-{% endcall %}
-
-{% call section(
-  bgType = 'lightest',
-  class  = 'section--separated'
-) %}
-  {% call columns() %}
-
-    {{ title('YouTube player') }}
-    <iframe class="media mejs__player" width="640" height="360" src="https://www.youtube.com/embed/frdj1zb9sMY?rel=0" frameborder="0" allowfullscreen></iframe>
-  {% endcall %}
-{% endcall %}
-
-{% call section(
-  class  = 'section--separated'
-) %}
-  {% call row() %}
-    {% call columns( row=false, xs=12, sm=6 ) %}
-      {{ title('<faker-lorem-word/>', class='text-left') }}
-      <faker-lorem-paragraphs/>
-    {% endcall %}
-    {% call columns( row=false, xs=12, sm=6 ) %}
-      {{ image(source="https://source.unsplash.com/random/450x600", description="Lorem ipsum dolor sit amet", width="450", height="600", class="") }}
-    {% endcall %}
-  {% endcall %}
-{% endcall %}
-
-{% call section(
-  bgType = 'lightest',
-  class  = 'section--separated'
-) %}
-  {% call row() %}
-    {% call columns( row=false, xs=12, sm=6 ) %}
-      {{ image(source="https://source.unsplash.com/random/800x500", caption="<h5>Figure 2:</h5><faker-lorem-sentences/>", description="Lorem ipsum dolor sit amet", width="800", height="500", class="") }}
-    {% endcall %}
-    {% call columns( row=false, xs=12, sm=6 ) %}
-      {{ title('<faker-lorem-word/>', class='text-left') }}
-      <faker-lorem-paragraphs/>
-    {% endcall %}
-  {% endcall %}
-{% endcall %}
-
-{{ anchor('features') }}
-
-{% call section(
-  class  = 'section--separated'
-) %}
-  {% call row( class='center-xs flex-columns') %}
-    {% call columns( row=false, xs=12, sm=5 ) %}
-      <h4><faker-name-jobTitle/></h4>
-      <p class="text-block">
-        <faker-lorem-sentences/>
-      </p>
-    {% endcall %}
-    {% call columns( row=false, xs=12, sm=5 ) %}
-      <h4><faker-name-jobTitle/></h4>
-      <p class="text-block">
-        <faker-lorem-sentences/>
-      </p>
-    {% endcall %}
-    {% call columns( row=false, xs=12, sm=5 ) %}
-      <h4><faker-name-jobTitle/></h4>
-      <p class="text-block">
-        <faker-lorem-sentences/>
-      </p>
-    {% endcall %}
-    {% call columns( row=false, xs=12, sm=5 ) %}
-      <h4><faker-name-jobTitle/></h4>
-      <p class="text-block">
-        <faker-lorem-sentences/>
-      </p>
-    {% endcall %}
-    {% call columns( row=false, xs=12, sm=5 ) %}
-      <h4><faker-name-jobTitle/></h4>
-      <p class="text-block">
-        <faker-lorem-sentences/>
-      </p>
-    {% endcall %}
-    {% call columns( row=false, xs=12, sm=5 ) %}
-      <h4><faker-name-jobTitle/></h4>
-      <p class="text-block">
-        <faker-lorem-sentences/>
-      </p>
-    {% endcall %}
-  {% endcall %}
-{% endcall %}
-
-{% call section(
-  bgType = 'lightest',
-  class  = 'section--separated'
-) %}
-  {% call row( class='center-xs flex-columns') %}
-    {% call columns( row=false, xs=12, sm=6 ) %}
-      {{ image(source="https://source.unsplash.com/random/300x300", description="Lorem ipsum dolor sit amet", width="300", height="300", class="") }}
-      <p class="text-block"><faker-lorem-sentences/></p>
-    {% endcall %}
-    {% call columns( row=false, xs=12, sm=6 ) %}
-      {{ image(source="https://source.unsplash.com/random/500x500", description="Lorem ipsum dolor sit amet", width="500", height="500", class="") }}
-      <p class="text-block"><faker-lorem-sentences/></p>
-    {% endcall %}
-  {% endcall %}
-  {% call row( class='center-xs flex-columns') %}
-    {% call columns( row=false, xs=12, sm=6 ) %}
-      {{ image(source="https://source.unsplash.com/random/700x700", description="Lorem ipsum dolor sit amet", width="700", height="700", class="") }}
-      <p class="text-block"><faker-lorem-sentences/></p>
-    {% endcall %}
-    {% call columns( row=false, xs=12, sm=6 ) %}
-      {{ image(source="https://source.unsplash.com/random/900x900", description="Lorem ipsum dolor sit amet", width="900", height="900", class="") }}
-      <p class="text-block"><faker-lorem-sentences/></p>
-    {% endcall %}
-  {% endcall %}
-{% endcall %}
-
-{{ anchor('pricing') }}
-
-<section class="section section--separated section--lightest">
-  <div class="container">
-    <h2 class="section__title text-center">Our Plans</h2>
-    <p class="section__subtitle text-center">Buy the plan that is in purple or everyone will laugh at you.</p>
-    <div class="row flex-columns">
-      <div class="col-xs-12 col-sm-3 grid-card">
-        <div class="card">
-          <div class="card__head card__block card__block--lighter">
-            <h3 class="card__title text-center">
-              Personal
-            </h3>
-          </div>
-          <div class="card__block card__block--lighter flex middle-xs center-xs card__block--separated">
-            <span class="h1">$18</span>
-            <span>/mo</span>
-          </div>
-          <div class="card__block card__block--separated flex between-xs card__block--small">
-            <h4 class="text-muted">Memory</h4>
-            <p>256 MB</p>
-          </div>
-          <div class="card__block card__block--separated flex between-xs card__block--small">
-            <h4 class="text-muted">SSD Space</h4>
-            <p>10 GB</p>
-          </div>
-          <div class="card__block card__block--separated flex between-xs card__block--small">
-            <h4 class="text-muted">Bandwidth</h4>
-            <p>Unmetered</p>
-          </div>
-          <div class="card__block card__block--separated flex between-xs card__block--small">
-            <a href="#" class="button button--tertiary button--full">Purchase Plan</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-3 grid-card">
-        <div class="card">
-          <div class="card__head card__block card__block--accent">
-            <h3 class="card__title text-center">
-              Professional
-            </h3>
-          </div>
-          <div class="card__block flex middle-xs center-xs card__block--separated card__block--accent">
-            <span class="h1">$24</span>
-            <span>/mo</span>
-          </div>
-          <div class="card__block card__block--separated flex between-xs card__block--small">
-            <h4 class="text-muted">Memory</h4>
-            <p>512 MB</p>
-          </div>
-          <div class="card__block card__block--separated flex between-xs card__block--small">
-            <h4 class="text-muted">SSD Space</h4>
-            <p>30 GB</p>
-          </div>
-          <div class="card__block card__block--separated flex between-xs card__block--small">
-            <h4 class="text-muted">Bandwidth</h4>
-            <p>Unmetered</p>
-          </div>
-          <div class="card__block card__block--separated flex between-xs card__block--small">
-            <a href="#" class="button button--primary button--full">Purchase Plan</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-3 grid-card">
-        <div class="card">
-          <div class="card__head card__block card__block--lighter">
-            <h3 class="card__title text-center">
-              Corporate
-            </h3>
-          </div>
-          <div class="card__block card__block--lighter flex middle-xs center-xs card__block--separated">
-            <span class="h1">$38</span>
-            <span>/mo</span>
-          </div>
-          <div class="card__block card__block--separated flex between-xs card__block--small">
-            <h4 class="text-muted">Memory</h4>
-            <p>1024 MB</p>
-          </div>
-          <div class="card__block card__block--separated flex between-xs card__block--small">
-            <h4 class="text-muted">SSD Space</h4>
-            <p>60 GB</p>
-          </div>
-          <div class="card__block card__block--separated flex between-xs card__block--small">
-            <h4 class="text-muted">Bandwidth</h4>
-            <p>Unmetered</p>
-          </div>
-          <div class="card__block card__block--separated flex between-xs card__block--small">
-            <a href="#" class="button button--tertiary button--full">Purchase Plan</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-3 grid-card">
-        <div class="card">
-          <div class="card__head card__block card__block--lighter">
-            <h3 class="card__title text-center">
-              Enterprise
-            </h3>
-          </div>
-          <div class="card__block card__block--lighter flex middle-xs center-xs card__block--separated">
-            <span class="h1">$54</span>
-            <span>/mo</span>
-          </div>
-          <div class="card__block card__block--separated flex between-xs card__block--small">
-            <h4 class="text-muted">Memory</h4>
-            <p>2048 MB</p>
-          </div>
-          <div class="card__block card__block--separated flex between-xs card__block--small">
-            <h4 class="text-muted">SSD Space</h4>
-            <p>120 GB</p>
-          </div>
-          <div class="card__block card__block--separated flex between-xs card__block--small">
-            <a href="#" class="button button--tertiary button--full">Purchase Plan</a>
-          </div>
-        </div>
-      </div>
+    <div class="sidebar--fixed">
+      <ul>
+        <li><a data-scroll class="sidebar__nav-link" href="#sections"><i class="icon icon--dashboard"></i><span class="text">Sections</span></a></li>
+        <li><a data-scroll class="sidebar__nav-link" href="#content"><i class="icon icon--grid-uneven"></i><span class="text">Content</span></a></li>
+        <li><a data-scroll class="sidebar__nav-link" href="#features"><i class="icon icon--blocks"></i><span class="text">Features</span></a></li>
+        <li><a data-scroll class="sidebar__nav-link" href="#pricing"><i class="icon icon--documents-group"></i><span class="text">Pricing</span></a></li>
+        <li><a data-scroll class="sidebar__nav-link" href="#cards"><i class="icon icon--profile-landscape"></i><span class="text">Cards</span></a></li>
+      </ul>
     </div>
+
+    <div class="sidebar__closer"><a href="#" class="sidebar__nav-link sidebar__closer__trigger"><i class="icon icon--chevron-right"></i></a></div>
+
   </div>
-</section>
+  <div class="flexible-container__main">
 
-{{ anchor('cards') }}
+    {{ anchor('sections') }}
 
-<section class="section section--separated">
-  <div class="container">
-    <div class="row center-xs">
-      <div class="col-xs-12 col-sm-4 col-md-4 grid-card">
-        <div class="card">
-          <div class="card__image card__image--top">
-            <div class="card__image-caption">
-              Some good stuff
+    {% call section(
+      bgType = 'lightest',
+      class  = 'section--separated'
+    ) %}
+      {% call columns() %}
+        {{ title("<faker-lorem-words/>") }}
+        {{ subtitle(level = '5', "<faker-lorem-sentences/>") }}
+
+        {% call row() %}
+          {% call columns( row=false, sm=4 ) %}
+            {{ image(source="https://source.unsplash.com/featured/618x382", description="Lorem ipsum dolor sit amet", width="618", height="382", class="") }}
+          {% endcall %}
+          {% call columns( row=false, sm=4 ) %}
+            {{ image(source="https://source.unsplash.com/featured/556x344", description="Lorem ipsum dolor sit amet", width="556", height="344", class="") }}
+          {% endcall %}
+          {% call columns( row=false, sm=4 ) %}
+            {{ image(source="https://source.unsplash.com/featured/494x306", description="Lorem ipsum dolor sit amet", width="494", height="306", class="") }}
+          {% endcall %}
+        {% endcall %}
+        {% call row() %}
+          {% call columns( row=false, sm=4 ) %}
+            {{ image(source="https://source.unsplash.com/featured/600x600", description="Lorem ipsum dolor sit amet", width="600", height="600", class="") }}
+          {% endcall %}
+          {% call columns( row=false, sm=4 ) %}
+            {{ image(source="https://source.unsplash.com/featured/500x500", description="Lorem ipsum dolor sit amet", width="500", height="500", class="") }}
+          {% endcall %}
+          {% call columns( row=false, sm=4 ) %}
+            {{ image(source="https://source.unsplash.com/featured/450x450", description="Lorem ipsum dolor sit amet", width="450", height="450", class="") }}
+          {% endcall %}
+        {% endcall %}
+        {% call row() %}
+          {% call columns( row=false, sm=4 ) %}
+            {{ image(source="https://source.unsplash.com/featured/420x680", description="Lorem ipsum dolor sit amet", width="420", height="680", class="") }}
+          {% endcall %}
+          {% call columns( row=false, sm=4 ) %}
+            {{ image(source="https://source.unsplash.com/featured/458x742", description="Lorem ipsum dolor sit amet", width="458", height="742", class="") }}
+          {% endcall %}
+          {% call columns( row=false, sm=4 ) %}
+            {{ image(source="https://source.unsplash.com/featured/229x371", description="Lorem ipsum dolor sit amet", width="229", height="371", class="") }}
+          {% endcall %}
+        {% endcall %}
+
+      {% endcall %}
+    {% endcall %}
+
+    {% call section(
+      class = 'section--separated'
+    ) %}
+
+      {% call columns() %}
+        {{ title("<faker-lorem-words/>") }}
+        <p>
+          Lorem ipsum dolor sit amet, <a href="#">consectetur adipiscing elit</a>. Ut eget justo quis erat maximus accumsan in ut nibh. <faker-lorem-paragraph/>
+        </p>
+        <p>
+          <faker-lorem-paragraph/>
+        </p>
+      {% endcall %}
+    {% endcall %}
+
+    {% call section(
+      bgType = 'lightest',
+      class  = 'section--separated'
+    ) %}
+      {% call columns() %}
+        {{ image(source="https://source.unsplash.com/random/618x382", description="Lorem ipsum dolor sit amet", width="618", height="382", class="") }}
+        {{ title("<faker-lorem-words/>") }}
+        {{ subtitle(level = '5', '<faker-lorem-sentences/>', class='strip-bottom') }}
+      {% endcall %}
+    {% endcall %}
+
+    {% call section(
+      class  = 'section--separated'
+    ) %}
+      {% call columns( xs = 8, sm = 3) %}
+        {{ image(source="https://source.unsplash.com/random/800x800", description="Lorem ipsum dolor sit amet", width="800", height="800", round=true, class="") }}
+      {% endcall %}
+      {% call columns() %}
+        <p class="text-large text-muted text-center">
+          <faker-lorem-paragraph/>
+        </p>
+      {% endcall %}
+    {% endcall %}
+
+    {% call section(
+      bgType = 'lightest',
+      class  = 'section--separated'
+    ) %}
+      {% call columns() %}
+
+        {{ title('Full width image') }}
+        {{ subtitle('<faker-lorem-sentences/>', level=5) }}
+
+      {% endcall %}
+      {{ image(source="https://source.unsplash.com/random/1024x512", full=true, description="Lorem ipsum dolor sit amet", width="1024", height="512", class="") }}
+    {% endcall %}
+
+    {% call section(
+      class  = 'section--separated'
+    ) %}
+      {% call columns() %}
+
+        {{ title('<faker-lorem-words/>') }}
+        {{ subtitle('<faker-lorem-sentences/>', level=5) }}
+
+        {% call row() %}
+          {% call columns( row=false, xs=12, sm=6 ) %}
+            {{ image(source="https://source.unsplash.com/random/512x512", description="Lorem ipsum dolor sit amet", width="512", height="512", class="") }}
+          {% endcall %}
+          {% call columns( row=false, xs=12, sm=6 ) %}
+            {{ image(source="https://source.unsplash.com/random/640x640", description="Lorem ipsum dolor sit amet", width="640", height="640", class="") }}
+          {% endcall %}
+          {% call columns( row=false, xs=12, sm=12 ) %}
+            {{ image(source="https://source.unsplash.com/random/1024x512", caption="<h5><faker-lorem-words/>:</h5><faker-lorem-sentences/>", description="Lorem ipsum dolor sit amet", width="1024", height="512", class="") }}
+          {% endcall %}
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    {{ anchor('content') }}
+
+    {% call section(
+      bgType = 'lightest',
+      class  = 'section--separated'
+    ) %}
+      {% call columns() %}
+
+        {{ title('Video player') }}
+        <video class="media mejs__player">
+          <source src="https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" />
+        </video>
+      {% endcall %}
+    {% endcall %}
+
+    {% call section(
+      class  = 'section--separated'
+    ) %}
+      {% call columns() %}
+
+        {{ title('Audio player') }}
+        <audio src="https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" class="media mejs__player"></audio>
+      {% endcall %}
+    {% endcall %}
+
+    {% call section(
+      bgType = 'lightest',
+      class  = 'section--separated'
+    ) %}
+      {% call columns() %}
+
+        {{ title('YouTube player') }}
+        <iframe class="media mejs__player" width="640" height="360" src="https://www.youtube.com/embed/frdj1zb9sMY?rel=0" frameborder="0" allowfullscreen></iframe>
+      {% endcall %}
+    {% endcall %}
+
+    {% call section(
+      class  = 'section--separated'
+    ) %}
+      {% call row() %}
+        {% call columns( row=false, xs=12, sm=6 ) %}
+          {{ title('<faker-lorem-word/>', class='text-left') }}
+          <faker-lorem-paragraphs/>
+        {% endcall %}
+        {% call columns( row=false, xs=12, sm=6 ) %}
+          {{ image(source="https://source.unsplash.com/random/450x600", description="Lorem ipsum dolor sit amet", width="450", height="600", class="") }}
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    {% call section(
+      bgType = 'lightest',
+      class  = 'section--separated'
+    ) %}
+      {% call row() %}
+        {% call columns( row=false, xs=12, sm=6 ) %}
+          {{ image(source="https://source.unsplash.com/random/800x500", caption="<h5>Figure 2:</h5><faker-lorem-sentences/>", description="Lorem ipsum dolor sit amet", width="800", height="500", class="") }}
+        {% endcall %}
+        {% call columns( row=false, xs=12, sm=6 ) %}
+          {{ title('<faker-lorem-word/>', class='text-left') }}
+          <faker-lorem-paragraphs/>
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    {{ anchor('features') }}
+
+    {% call section(
+      class  = 'section--separated'
+    ) %}
+      {% call row( class='center-xs flex-columns') %}
+        {% call columns( row=false, xs=12, sm=5 ) %}
+          <h4><faker-name-jobTitle/></h4>
+          <p class="text-block">
+            <faker-lorem-sentences/>
+          </p>
+        {% endcall %}
+        {% call columns( row=false, xs=12, sm=5 ) %}
+          <h4><faker-name-jobTitle/></h4>
+          <p class="text-block">
+            <faker-lorem-sentences/>
+          </p>
+        {% endcall %}
+        {% call columns( row=false, xs=12, sm=5 ) %}
+          <h4><faker-name-jobTitle/></h4>
+          <p class="text-block">
+            <faker-lorem-sentences/>
+          </p>
+        {% endcall %}
+        {% call columns( row=false, xs=12, sm=5 ) %}
+          <h4><faker-name-jobTitle/></h4>
+          <p class="text-block">
+            <faker-lorem-sentences/>
+          </p>
+        {% endcall %}
+        {% call columns( row=false, xs=12, sm=5 ) %}
+          <h4><faker-name-jobTitle/></h4>
+          <p class="text-block">
+            <faker-lorem-sentences/>
+          </p>
+        {% endcall %}
+        {% call columns( row=false, xs=12, sm=5 ) %}
+          <h4><faker-name-jobTitle/></h4>
+          <p class="text-block">
+            <faker-lorem-sentences/>
+          </p>
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    {% call section(
+      bgType = 'lightest',
+      class  = 'section--separated'
+    ) %}
+      {% call row( class='center-xs flex-columns') %}
+        {% call columns( row=false, xs=12, sm=6 ) %}
+          {{ image(source="https://source.unsplash.com/random/300x300", description="Lorem ipsum dolor sit amet", width="300", height="300", class="") }}
+          <p class="text-block"><faker-lorem-sentences/></p>
+        {% endcall %}
+        {% call columns( row=false, xs=12, sm=6 ) %}
+          {{ image(source="https://source.unsplash.com/random/500x500", description="Lorem ipsum dolor sit amet", width="500", height="500", class="") }}
+          <p class="text-block"><faker-lorem-sentences/></p>
+        {% endcall %}
+      {% endcall %}
+      {% call row( class='center-xs flex-columns') %}
+        {% call columns( row=false, xs=12, sm=6 ) %}
+          {{ image(source="https://source.unsplash.com/random/700x700", description="Lorem ipsum dolor sit amet", width="700", height="700", class="") }}
+          <p class="text-block"><faker-lorem-sentences/></p>
+        {% endcall %}
+        {% call columns( row=false, xs=12, sm=6 ) %}
+          {{ image(source="https://source.unsplash.com/random/900x900", description="Lorem ipsum dolor sit amet", width="900", height="900", class="") }}
+          <p class="text-block"><faker-lorem-sentences/></p>
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
+
+    {{ anchor('pricing') }}
+
+    <section class="section section--separated section--lightest">
+      <div class="container">
+        <h2 class="section__title text-center">Our Plans</h2>
+        <p class="section__subtitle text-center">Buy the plan that is in purple or everyone will laugh at you.</p>
+        <div class="row flex-columns">
+          <div class="col-xs-12 col-sm-3 grid-card">
+            <div class="card">
+              <div class="card__head card__block card__block--lighter">
+                <h3 class="card__title text-center">
+                  Personal
+                </h3>
+              </div>
+              <div class="card__block card__block--lighter flex middle-xs center-xs card__block--separated">
+                <span class="h1">$18</span>
+                <span>/mo</span>
+              </div>
+              <div class="card__block card__block--separated flex between-xs card__block--small">
+                <h4 class="text-muted">Memory</h4>
+                <p>256 MB</p>
+              </div>
+              <div class="card__block card__block--separated flex between-xs card__block--small">
+                <h4 class="text-muted">SSD Space</h4>
+                <p>10 GB</p>
+              </div>
+              <div class="card__block card__block--separated flex between-xs card__block--small">
+                <h4 class="text-muted">Bandwidth</h4>
+                <p>Unmetered</p>
+              </div>
+              <div class="card__block card__block--separated flex between-xs card__block--small">
+                <a href="#" class="button button--tertiary button--full">Purchase Plan</a>
+              </div>
             </div>
-            {{ image(source="https://source.unsplash.com/random/1920x1080", description="Lorem ipsum dolor sit amet", width="1920", height="1080", class="") }}
           </div>
-          <div class="card__block">
-            <h4>Product Design</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.</p>
+          <div class="col-xs-12 col-sm-3 grid-card">
+            <div class="card">
+              <div class="card__head card__block card__block--accent">
+                <h3 class="card__title text-center">
+                  Professional
+                </h3>
+              </div>
+              <div class="card__block flex middle-xs center-xs card__block--separated card__block--accent">
+                <span class="h1">$24</span>
+                <span>/mo</span>
+              </div>
+              <div class="card__block card__block--separated flex between-xs card__block--small">
+                <h4 class="text-muted">Memory</h4>
+                <p>512 MB</p>
+              </div>
+              <div class="card__block card__block--separated flex between-xs card__block--small">
+                <h4 class="text-muted">SSD Space</h4>
+                <p>30 GB</p>
+              </div>
+              <div class="card__block card__block--separated flex between-xs card__block--small">
+                <h4 class="text-muted">Bandwidth</h4>
+                <p>Unmetered</p>
+              </div>
+              <div class="card__block card__block--separated flex between-xs card__block--small">
+                <a href="#" class="button button--primary button--full">Purchase Plan</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 grid-card">
+            <div class="card">
+              <div class="card__head card__block card__block--lighter">
+                <h3 class="card__title text-center">
+                  Corporate
+                </h3>
+              </div>
+              <div class="card__block card__block--lighter flex middle-xs center-xs card__block--separated">
+                <span class="h1">$38</span>
+                <span>/mo</span>
+              </div>
+              <div class="card__block card__block--separated flex between-xs card__block--small">
+                <h4 class="text-muted">Memory</h4>
+                <p>1024 MB</p>
+              </div>
+              <div class="card__block card__block--separated flex between-xs card__block--small">
+                <h4 class="text-muted">SSD Space</h4>
+                <p>60 GB</p>
+              </div>
+              <div class="card__block card__block--separated flex between-xs card__block--small">
+                <h4 class="text-muted">Bandwidth</h4>
+                <p>Unmetered</p>
+              </div>
+              <div class="card__block card__block--separated flex between-xs card__block--small">
+                <a href="#" class="button button--tertiary button--full">Purchase Plan</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-3 grid-card">
+            <div class="card">
+              <div class="card__head card__block card__block--lighter">
+                <h3 class="card__title text-center">
+                  Enterprise
+                </h3>
+              </div>
+              <div class="card__block card__block--lighter flex middle-xs center-xs card__block--separated">
+                <span class="h1">$54</span>
+                <span>/mo</span>
+              </div>
+              <div class="card__block card__block--separated flex between-xs card__block--small">
+                <h4 class="text-muted">Memory</h4>
+                <p>2048 MB</p>
+              </div>
+              <div class="card__block card__block--separated flex between-xs card__block--small">
+                <h4 class="text-muted">SSD Space</h4>
+                <p>120 GB</p>
+              </div>
+              <div class="card__block card__block--separated flex between-xs card__block--small">
+                <a href="#" class="button button--tertiary button--full">Purchase Plan</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-4 col-md-4 grid-card">
-        <div class="card">
-          <div class="card__image card__image--top">
-            <div class="card__image-caption">
-              Some good stuff
+    </section>
+
+    {{ anchor('cards') }}
+
+    <section class="section section--separated">
+      <div class="container">
+        <div class="row center-xs">
+          <div class="col-xs-12 col-sm-4 col-md-4 grid-card">
+            <div class="card">
+              <div class="card__image card__image--top">
+                <div class="card__image-caption">
+                  Some good stuff
+                </div>
+                {{ image(source="https://source.unsplash.com/random/1920x1080", description="Lorem ipsum dolor sit amet", width="1920", height="1080", class="") }}
+              </div>
+              <div class="card__block">
+                <h4>Product Design</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.</p>
+              </div>
             </div>
-            {{ image(source="https://source.unsplash.com/random/1720x980", description="Lorem ipsum dolor sit amet", width="1720", height="980", class="") }}
           </div>
-          <div class="card__block">
-            <h4>Product Design</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.</p>
+          <div class="col-xs-12 col-sm-4 col-md-4 grid-card">
+            <div class="card">
+              <div class="card__image card__image--top">
+                <div class="card__image-caption">
+                  Some good stuff
+                </div>
+                {{ image(source="https://source.unsplash.com/random/1720x980", description="Lorem ipsum dolor sit amet", width="1720", height="980", class="") }}
+              </div>
+              <div class="card__block">
+                <h4>Product Design</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4 grid-card">
+            <div class="card">
+              <div class="card__image card__image--top">
+                <div class="card__image-caption">
+                  Some good stuff
+                </div>
+                {{ image(source="https://source.unsplash.com/random/1440x900", description="Lorem ipsum dolor sit amet", width="1440", height="900", class="") }}
+              </div>
+              <div class="card__block">
+                <h4>Product Design</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-4 col-md-4 grid-card">
-        <div class="card">
-          <div class="card__image card__image--top">
-            <div class="card__image-caption">
-              Some good stuff
-            </div>
-            {{ image(source="https://source.unsplash.com/random/1440x900", description="Lorem ipsum dolor sit amet", width="1440", height="900", class="") }}
-          </div>
-          <div class="card__block">
-            <h4>Product Design</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget justo quis erat maximus accumsan in ut nibh.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    </section>
+
   </div>
-</section>
-
-<section class="section section--separated">
-
-</section>
-
-</div>
-
 </div>
 
 {% endblock %}

@@ -1,3 +1,3 @@
-import smoothScroll from '../../../node_modules/smooth-scroll/dist/js/smooth-scroll.min.js';
+import smoothScroll from 'smooth-scroll';
 
 smoothScroll.init();

@@ -18,6 +18,10 @@
     text-transform: none;
     line-height: 1;
 
+    &:before {
+      transition: $transition-off;
+    }
+
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -25,6 +29,11 @@
 
 .icon--xs { font-size: 50%; bottom: 0.15em; }
 .icon--sm { font-size: 75%; }
+.icon--flipped:before {
+  transition: $transition-on;
+  display: block;
+  transform: rotate(-180deg);
+}
 
 [class*="__title"] .icon {
   margin: 0 $lead-single 0 -($lead-double);
