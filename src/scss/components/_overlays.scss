@@ -52,4 +52,19 @@
       mix-blend-mode: multiply;
     }
   }
+
+  &--people {
+    #{$headlineCopyTags} {
+      color: #fff;
+    }
+
+    #{$bodyCopyTags} {
+      color: rgba(white, 0.65);
+    }
+
+    &:before {
+      background-color: hsla(170, 87%, 5%, 0.4);
+      mix-blend-mode: darken;
+    }
+  }
 }

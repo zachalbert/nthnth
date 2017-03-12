@@ -52,6 +52,27 @@
   flex-direction: column-reverse;
 }
 
+.hide-xs,
+.hide-sm,
+.hide-md,
+.hide-lg,
+.hide-xl {
+  display: none;
+}
+
+.show-xs,
+.show-sm,
+.show-md,
+.show-lg,
+.show-xl {
+  display: block;
+}
+
+@media only screen and (min-width: $breakpoint-xs) {
+  .hide-xs,
+  .show-xs { display: block; }
+}
+
 .col-xs,
 .col-xs-1,
 .col-xs-2,
