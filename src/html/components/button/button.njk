@@ -12,6 +12,7 @@
  #}
 
 {% macro button(
+  class,
   shadow = true,
   text = "Learn more",
   type = "primary",
@@ -19,7 +20,7 @@
   helpText
 ) %}
 
-<a href="{{URL}}" class="button button--{{type}} {{"button--elevated" if shadow}}">{{text}}</a>
+<a href="{{URL}}" class="button button--{{type}}{{' button--elevated' if shadow}}{{ ' ' +class if class}}">{{text}}</a>
 
 {% if helpText %}
   <p><em>{{ helpText }}</em></p>

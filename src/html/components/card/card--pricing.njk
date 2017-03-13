@@ -1,0 +1,66 @@
+{##
+ # Set up card UI
+ #
+ # @param {string} [title] - Larger heading at the top of the card
+ # @param {string} [avatarURL] - Image URL that will appear next to the title, if present
+ #
+ # @example
+ # {{ card(title="Card title", avatarURL="http://abc.xyz/pic.jpg") }}
+ #}
+
+{% from 'components/card/card__block.njk' import cardBlock %}
+{% from 'components/layout/columns.njk' import columns %}
+{% from 'components/button/button.njk' import button %}
+
+{% macro cardPricing(
+  data = {},
+  name,
+  denomination = "$",
+  price,
+  per = "mo"
+) %}
+
+{% for plan in data %}
+  {% call columns(
+    row = false,
+    xs  = 12,
+    sm  = 4,
+    lg  = 3
+  ) %}
+
+  <div class="card card--pricing">
+    <div class="card__head card__block card__block--lighter{{ ' card__block--accent' if plan.featured}}">
+      <h3 class="card__title text-center">
+        {{plan.name}}
+      </h3>
+    </div>
+    <div class="card__block card__block--lighter flex middle-xs center-xs card__block--separated{{ ' card__block--accent' if plan.featured}}">
+      <span class="h1">{{denomination}}{{plan.price}}</span>
+      <span>/{{per}}</span>
+    </div>
+    {% set featureList %}
+      {% set comma = joiner() %}
+      {% for item in plan.features -%}
+        {% for key, value in item %}
+        <div class="card__block card__block--separated flex between-xs card__block--small">
+          <h4 class="text-muted">{{ key }}</h4>
+          <p>{{ value }}</p>
+        </div>
+        {% endfor %}
+      {%- endfor %}
+    {% endset %}
+    {{featureList}}
+    <div class="card__block card__block--separated flex between-xs card__block--small">
+      {% if plan.featured %}
+        {{ button(text="Purchase Plan", type="primary", class="button--full") }}
+      {% else %}
+        {{ button(text="Purchase Plan", type="tertiary", class="button--full") }}
+      {% endif %}
+    </div>
+  </div>
+
+  {% endcall %}
+
+{% endfor %}
+
+{% endmacro %}
