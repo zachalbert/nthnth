@@ -2,5 +2,6 @@
   "contentful": {
     "space": "none",
     "accessToken": "none"
-  }
+  },
+  "debug": true
 }

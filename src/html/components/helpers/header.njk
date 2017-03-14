@@ -1,0 +1,44 @@
+{##
+ # A simple header component that takes a site object and returns the header.
+ #
+ # @param {object} data - site object from contentful
+ # @param {string} path - path for the current template
+ #
+ # @example
+ # {% header( data=contentful.site[0], path=path ) %}
+ #}
+
+{% macro header(
+  data        = {},
+  path        = ""
+) %}
+
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}{{ data.title }}{% endblock %}</title>
+  <meta name="twitter:title" content="{{ data.title }}">
+  <meta property="og:title" content="{{ data.title }}">
+
+  <meta name="description" content="{{ data.description }}">
+  <meta name="twitter:description" content="{{ data.description }}">
+  <meta property="og:description" content="{{ data.description }}">
+
+  <meta name="twitter:site" content="{{ data.twitterUsername }}">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="canonical" href="{{ getCanonicalLink(data, path) }}">
+  <meta name="dcterms.Identifier" content="{{ getCanonicalLink(data, path) }}">
+
+  {# [Prebrowsing](https://css-tricks.com/prefetching-preloading-prebrowsing/) #}
+  <link rel="preconnect" href="//cdn.jsdelivr.net">
+  {# For demo images #}
+  <link rel="preconnect" href="//source.unsplash.com">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+
+  <link href="https://cdn.jsdelivr.net/mediaelement/latest/mediaelementplayer.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  {% block head %}{% endblock %}
+</head>
+
+{% endmacro %}
