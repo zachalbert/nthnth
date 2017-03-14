@@ -73,6 +73,11 @@
   </div>
 </section>
 
+{# Example to get stuff from contentful #}
+{% for item in contentful.Hero %}
+{{ item.name }}
+{% endfor %}
+
 {% call section(
   bgType = "accent",
   bgOverlayModifierClass = "dark",
