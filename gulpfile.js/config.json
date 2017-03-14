@@ -30,6 +30,7 @@
       },
       "extractSharedJs": false
     },
+
     "css": {
       "src": "scss",
       "dest": "css",

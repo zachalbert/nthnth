@@ -1,6 +1,6 @@
 var Promise           = require("bluebird")
 var config            = require('config')
-var contentful        = require('contentful')
+var contentful        = require('contentful-management')
 var memoize           = require('memoizee')
 
 // Get some userfriendly names out of the types (can sometimes be ids)
@@ -29,15 +29,21 @@ var buildData = function(result) {
 
 var getData = memoize(function(cb) {
   var client = contentful.createClient({
-    "space": config.get("contentful.space"),
-    "accessToken": config.get("contentful.accessToken")
+    "accessToken": config.get("contentful.manageToken")
   })
 
-  Promise.props({
-    "entries": client.getEntries(),
-    "types": client.getContentTypes()
-  }).then(function(result) { cb(undefined, { contentful: buildData(result) })})
-}, { async: true })
+  client.getSpace(config.get("contentful.space")).then(function(space) {
+    Promise.props({
+      "entries": space.getEntries(),
+      "types": space.getContentTypes()
+    }).then(function(result) {
+      cb(undefined, { contentful: buildData(result) })})
+  })
+
+}, {
+  async: true,
+  maxAge: 500
+})
 
 module.exports = function(file, cb) {
   getData(cb)

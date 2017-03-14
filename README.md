@@ -1,5 +1,9 @@
 # Getting started
 
+- Get the keys from:
+    - `APIs -> Content delivery / preview keys -> Website key`
+    - [Management Key](https://www.contentful.com/developers/docs/references/authentication/#the-content-management-api) -> Getting OAuth Token
+
 ```bash
 cp config/default.json config/development.json
 # Edit and add contentful keys
