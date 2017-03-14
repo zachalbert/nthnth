@@ -22,8 +22,8 @@ module.exports = function(env) {
     context: jsSrc,
     plugins: [
       new webpack.ProvidePlugin({
-          $: "vendor/jquery",
-          jQuery: "vendor/jquery"
+          $: "jquery",
+          jQuery: "jquery"
       })
     ],
     resolve: {
