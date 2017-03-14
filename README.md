@@ -7,6 +7,13 @@ npm install
 npm start
 ```
 
+# Debugging
+
+## How do I see what variables are in the templates?
+
+- When in development mode, you can access `__config__` from the console to see all defined variables at the top level.
+- Are you in a macro or partial? Use `{{ this | dump }}` to see it on the page.
+
 # Contentful Data Model
 
 - site
