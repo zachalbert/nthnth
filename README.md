@@ -1,11 +1,22 @@
 # Getting started
 
 ```bash
-cp config.json.example config.json
+cp config/default.json config/development.json
 # Edit and add contentful keys
 npm install
 npm start
 ```
+
+# Contentful Data Model
+
+- site
+  - title
+  - description
+  - styleClasses - added to `<body></body>`
+  - canonicalLink - should be the hostname, used to construct a link for every page (based off path)
+  - twitterUsername - username of the page (or site's) author
+
+# Overview
 
 Forked from [Gulp Starter](https://github.com/vigetlabs/gulp-starter.git), then
 stuff was changed and added:
