@@ -14,7 +14,9 @@ npm start
 - When in development mode, you can access `__config__` from the console to see all defined variables at the top level.
 - Are you in a macro or partial? Use `{{ this | dump }}` to see it on the page.
 
-# Contentful Data Model
+# Contentful
+
+## Data Model
 
 - site
   - title
@@ -23,6 +25,11 @@ npm start
   - canonicalLink - should be the hostname, used to construct a link for every page (based off path)
   - twitterUsername - username of the page (or site's) author
   - favicon - upload of the favicon
+
+## Integration with Netlify
+
+- Create a webhook in Netlify, copy the url
+- Go to `Settings -> Webhooks` in Contentful, paste the url
 
 # Overview
 
