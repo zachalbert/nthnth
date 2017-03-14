@@ -1,4 +1,4 @@
-import './vendor/mediaelement-and-player'
+import 'mediaelement'
 
 import './modules'
 import './modules/prism'

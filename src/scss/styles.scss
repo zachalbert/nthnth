@@ -2,6 +2,7 @@
   HELPERS
 \*------------------------------------*/
 @import 'normalize';
+@import 'mediaelementplayer';
 @import 'vendor/prism';
 @import 'helpers/colorGen';
 @import 'helpers/variables';
@@ -17,7 +18,9 @@
 @import 'base/typography';
 @import 'fonts/juicons';
 
-/*------------------------------------*\  LAYOUT\*------------------------------------*/
+/*------------------------------------*\
+  LAYOUT
+\*------------------------------------*/
 @import 'layout/grid';
 @import 'layout/spacing';
 
@@ -36,3 +39,17 @@
 @import 'components/overlays';
 @import 'components/sections';
 @import 'components/sidebars';
+
+/*------------------------------------*\
+  HACKS
+\*------------------------------------*/
+
+.mejs__overlay-button {
+    background: url("/images/mejs-controls.svg") no-repeat;
+}
+.mejs__overlay-loading-bg-img {
+    background: transparent url("/images/mejs-controls.svg") -160px -40px no-repeat;
+}
+.mejs__button > button {
+    background: transparent url("/images/mejs-controls.svg") no-repeat;
+}
