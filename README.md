@@ -15,6 +15,7 @@ npm start
   - styleClasses - added to `<body></body>`
   - canonicalLink - should be the hostname, used to construct a link for every page (based off path)
   - twitterUsername - username of the page (or site's) author
+  - favicon - upload of the favicon
 
 # Overview
 
