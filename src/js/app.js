@@ -1,3 +1,5 @@
+import './vendor/mediaelement-and-player'
+
 import './modules'
 import './modules/prism'
 import './modules/site'
