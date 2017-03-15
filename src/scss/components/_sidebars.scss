@@ -48,7 +48,7 @@
 
 .sidebar {
   padding-top: $lead-half;
-  background: palette(neutral, C3);
+  background: $bg-color-sidebar;
   position: relative;
 
   ul {
@@ -64,7 +64,7 @@
 
   &__nav-link {
     @extend .clear;
-    color: palette(neutral, C2);
+    color: $font-color-sidebar-link;
     display: block;
     text-decoration: none;
     text-align: center;
@@ -82,7 +82,7 @@
     .icon {
       font-size: 80%;
       width: $width-side-nav-collapsed;
-      background: palette(neutral, C3);
+      background: $bg-color-sidebar;
       position: relative;
       z-index: 2;
     }
@@ -98,8 +98,8 @@
     &:hover,
     &:hover .icon,
     &:hover .text {
-      background: palette(neutral, C4);
-      color: palette(neutral, C1);
+      background: $bg-color-sidebar-link-hover;
+      color: $font-color-sidebar-link-hover;
       transition: $transition-on;
     }
 

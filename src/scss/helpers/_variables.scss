@@ -32,6 +32,36 @@ $font-weight-bold:      700;
 $body-font-size:     $type-scale-3;
 
 /*------------------------------------*\
+  MAIN COLORS
+\*------------------------------------*/
+$theme-color-neutral:               palette(neutral, C3);
+$theme-color-neutral-dark:          palette(neutral, C4);
+$theme-color-primary:               palette(teal, C6);
+$theme-color-primary-dark:          palette(teal, C8);
+$theme-color-secondary:             palette(cyan, C6);
+$theme-color-secondary-dark:        palette(cyan, C8);
+$theme-color-accent:                palette(orange, C6);
+$theme-color-accent-dark:           palette(orange, C6);
+
+/*------------------------------------*\
+  ALERT COLORS
+\*------------------------------------*/
+$bg-color-alert-error:        palette(red, C5);
+$bg-color-alert-success:      palette(green, C5);
+$bg-color-alert-info:         palette(blue, C5);
+$bg-color-alert-warning:      palette(yellow, C5);
+
+$border-color-alert-error:    palette(red, C6);
+$border-color-alert-success:  palette(green, C6);
+$border-color-alert-info:     palette(blue, C6);
+$border-color-alert-warning:  palette(yellow, C6);
+
+$font-color-alert-error:      palette(red, C8);
+$font-color-alert-success:    palette(green, C8);
+$font-color-alert-info:       palette(blue, C8);
+$font-color-alert-warning:    palette(yellow, C8);
+
+/*------------------------------------*\
   TAG GROUPS
 \*------------------------------------*/
 $headlineCopyTags:   "h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6";
@@ -97,97 +127,9 @@ $transition-off:        all 0.25s ease-out;
 /*------------------------------------*\
   SHADOWS
 \*------------------------------------*/
-$shadow-1:              0 3px 6px rgba(0,0,0,.15);
+$shadow-1:                        0 3px 6px rgba(0,0,0,.15);
 $shadow-2:              0 6px 12px rgba(0,0,0,.30);
 $button-shadow:         true;
-
-/*------------------------------------*\
-  COLORS
-\*------------------------------------*/
-
-$palettes: (
-  // DEFAULT
-  neutral:(
-    C1:  hsla(224, 2%, 90%, 1),
-    C2:  hsla(224, 2%, 80%, 1),
-    C3:  hsla(224, 3%, 60%, 1),
-    C4:  hsla(224, 5%, 40%, 1),
-    C5:  hsla(224, 7%, 30%, 1),
-    C6:  hsla(224, 9%, 20%, 1)
-  ),
-  primary:(
-    C1:  hsla(224, 10%, 60%, 1),
-    C2:  hsla(224, 20%, 50%, 1),
-    C3:  hsla(224, 30%, 40%, 1),
-    C4:  hsla(224, 40%, 30%, 1),
-    C5:  hsla(224, 50%, 20%, 1),
-    C6:  hsla(224, 60%, 10%, 1)
-  ),
-  secondary:(
-    C1:  hsla(204, 10%, 60%, 1),
-    C2:  hsla(204, 20%, 50%, 1),
-    C3:  hsla(204, 30%, 40%, 1),
-    C4:  hsla(204, 40%, 30%, 1),
-    C5:  hsla(204, 50%, 20%, 1),
-    C6:  hsla(204, 60%, 10%, 1)
-  ),
-  accent:(
-    C1:  hsla(404, 50%, 70%, 1),
-    C2:  hsla(404, 60%, 60%, 1),
-    C3:  hsla(404, 70%, 50%, 1),
-    C4:  hsla(404, 80%, 40%, 1),
-    C5:  hsla(404, 90%, 30%, 1),
-    C6:  hsla(404, 100%, 20%, 1)
-  ),
-  success:(
-    C1:  hsla(100, 10%, 60%, 1),
-    C2:  hsla(100, 20%, 50%, 1),
-    C3:  hsla(100, 30%, 40%, 1),
-    C4:  hsla(100, 40%, 30%, 1),
-    C5:  hsla(100, 50%, 20%, 1),
-    C6:  hsla(100, 60%, 10%, 1)
-  ),
-  error:(
-    C1:  hsla(10, 50%, 70%, 1),
-    C2:  hsla(10, 60%, 60%, 1),
-    C3:  hsla(10, 70%, 50%, 1),
-    C4:  hsla(10, 80%, 40%, 1),
-    C5:  hsla(10, 90%, 30%, 1),
-    C6:  hsla(10, 100%, 20%, 1)
-  ),
-  info:(
-    C1:  hsla(180, 10%, 60%, 1),
-    C2:  hsla(180, 20%, 50%, 1),
-    C3:  hsla(180, 30%, 40%, 1),
-    C4:  hsla(180, 40%, 30%, 1),
-    C5:  hsla(180, 50%, 20%, 1),
-    C6:  hsla(180, 60%, 10%, 1)
-  ),
-  warning:(
-    C1:  hsla(30, 40%, 70%, 1),
-    C2:  hsla(30, 50%, 60%, 1),
-    C3:  hsla(30, 60%, 50%, 1),
-    C4:  hsla(30, 70%, 40%, 1),
-    C5:  hsla(30, 80%, 30%, 1),
-    C6:  hsla(30, 90%, 20%, 1)
-  )
-);
-
-@function palette($palette, $tone: 'neutral') {
-  @return map-get(map-get($palettes, $palette), $tone);
-}
-
-/*------------------------------------*\
-  MAIN COLORS
-\*------------------------------------*/
-$theme-color-neutral:               palette(neutral, C3);
-$theme-color-neutral-dark:          palette(neutral, C4);
-$theme-color-primary:               palette(primary, C3);
-$theme-color-primary-dark:          palette(primary, C4);
-$theme-color-secondary:             palette(secondary, C3);
-$theme-color-secondary-dark:        palette(secondary, C4);
-$theme-color-accent:                palette(accent, C3);
-$theme-color-accent-dark:           palette(accent, C4);
 
 /*------------------------------------*\
   GRADIENTS
@@ -198,19 +140,19 @@ $theme-color-gradient-end:          rgba($theme-color-accent-dark, 0.75);
 /*------------------------------------*\
   BASE FONTS
 \*------------------------------------*/
-$font-color-display:                palette(neutral, C4);
-$font-color-body:                   palette(neutral, C3);
-$font-color-muted:                  palette(neutral, C2);
+$font-color-display:                palette(neutral, C9);
+$font-color-body:                   palette(neutral, C7);
+$font-color-muted:                  palette(neutral, C5);
 $font-color-link:                   $theme-color-accent;
 $font-color-link-hover:             $theme-color-accent-dark;
 
 /*------------------------------------*\
   FORM ELEMENTS
 \*------------------------------------*/
-$bg-color-input:                    palette(neutral, C1);
+$bg-color-input:                    palette(neutral, C2);
 $font-color-input:                  $font-color-body;
 $font-color-label:                  $font-color-display;
-$box-shadow-input:                  inset 0 0 0 1px palette(neutral, C2), inset 0 1px 3px rgba(0,0,0,.1);
+$box-shadow-input:                  inset 0 0 0 1px palette(neutral, C3), inset 0 1px 3px rgba(0,0,0,.1);
 
 /*------------------------------------*\
   BUTTONS
@@ -234,20 +176,20 @@ $font-color-button-accent:          white;
 /*------------------------------------*\
   PAGES
 \*------------------------------------*/
-$font-color-page-heading:           palette(neutral, C5);
-$font-color-page-subheading:        palette(neutral, C3);
+$font-color-page-heading:           $font-color-display;
+$font-color-page-subheading:        $font-color-body;
 
 /*------------------------------------*\
   SECTIONS
 \*------------------------------------*/
-$border-color-section:              palette(neutral, C2);
+$border-color-section:              palette(neutral, C1);
 $padding-section:                   $lead-triple;
 
 /*------------------------------------*\
   HEROES
 \*------------------------------------*/
 $bg-color-hero:                     palette(neutral, C1);
-$font-color-hero:                   palette(neutral, C5);
+$font-color-hero:                   palette(neutral, C9);
 
 /*------------------------------------*\
   ALERTS
@@ -263,13 +205,18 @@ $height-navbar:                     84px; /* TODO: This is a magic number, prone
 $bg-color-navbar:                   white;
 $font-color-navbar-link:            $theme-color-accent;
 $font-color-navbar-link-hover:      $theme-color-accent-dark;
-$font-color-navbar-link-active:     palette(neutral, C3);
+$font-color-navbar-link-active:     palette(neutral, C5);
 $height-navbar-link-active-line:    5px;
 $bg-color-navbar-link-active-line:  $theme-color-accent;
-$bg-color-nav-off-canvas:           palette(neutral, C5);
+$bg-color-nav-off-canvas:           palette(neutral, C9);
 
 $width-side-nav:                    200px;
 $width-side-nav-collapsed:          50px;
+
+$bg-color-sidebar:                  palette(neutral, C9);
+$font-color-sidebar-link:           palette(neutral, C1);
+$font-color-sidebar-link-hover:     palette(neutral, C2);
+$bg-color-sidebar-link-hover:       palette(neutral, C10);
 
 /*------------------------------------*\
   CARDS

@@ -30,7 +30,7 @@
   //checkboxes & radios
   &--check, &--radio {
     appearance: none;
-    background: palette(neutral, C1);
+    background: $bg-color-input;
     border: 0;
     cursor: pointer;
     display: inline-block;
@@ -162,10 +162,10 @@
     .form-element--check,
     .form-element--radio,
     .form-element--select {
-      box-shadow: 0 0 0 1px palette(error, C5), 0 0 3px 3px transparentize(palette(error, C3), .5);
+      box-shadow: 0 0 0 1px $border-color-alert-error, 0 0 3px 3px transparentize($bg-color-alert-error, .5);
     }
     .caption, .label {
-      color: palette(error, C5);
+      color: $font-color-alert-error;
     }
   }
 }

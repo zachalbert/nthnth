@@ -23,15 +23,15 @@
     }
   }
   &--error {
-    background: palette(error, c3);
+    background: $bg-color-alert-error;
   }
   &--warning {
-    background: palette(warning, c3);
+    background: $bg-color-alert-warning;
   }
   &--info {
-    background: palette(info, c3);
+    background: $bg-color-alert-info;
   }
   &--success {
-    background: palette(success, c3);
+    background: $bg-color-alert-success;
   }
 }
