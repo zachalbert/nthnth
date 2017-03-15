@@ -22,7 +22,7 @@ var isEntry = function(item) {
 // {
 //   "entry_name": [ fields, fields]
 // }
-var buildData = function(space, result) {
+var buildData = function(space, entries) {
 
   var opts = {
     promise: true,
@@ -60,12 +60,9 @@ var buildData = function(space, result) {
       })
   }
 
-  var typeNames = getTypeNames(result)
-  return Promise.map(result.entries.items, function(item) {
-    var name = typeNames[item.sys.contentType.sys.id]
-
+  return Promise.map(entries.items, function(item) {
     return handleEntry(item).then(function(entry) {
-      return [name, entry]
+      return [item.sys.contentType.sys.id, entry]
     })
   })
 }
@@ -78,11 +75,8 @@ var getData = memoize(function(cb) {
 
   client.getSpace(config.get("contentful.space")).then(function(space) {
 
-    Promise.props({
-      "entries": space.getEntries(),
-      "types": space.getContentTypes()
-    }).then(function(result) {
-      buildData(space, result).then(function(data) {
+    space.getEntries().then(function(entries) {
+      buildData(space, entries).then(function(data) {
         var actual = data.reduce(function(acc, [name, val]) {
           acc[name] = _.get(acc, name, []).concat([val])
           return acc
