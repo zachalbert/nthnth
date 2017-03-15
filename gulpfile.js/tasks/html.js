@@ -4,6 +4,7 @@ if(!config.tasks.html) return
 var browserSync    = require('browser-sync')
 var theConfig      = require('config')
 var contentfulSync = require("../lib/contentfulSync")
+var contentfulPages = require("../lib/contentfulPages")
 var data           = require('gulp-data')
 var faker          = require('gulp-faker');
 var fs             = require('fs')
@@ -16,7 +17,14 @@ var render         = require('gulp-nunjucks-render')
 var exclude        = path.normalize('!**/{' + config.tasks.html.excludeFolders.join(',') + '}/**')
 
 var paths = {
-  src: [path.join(config.root.src, config.tasks.html.src, '/**/*.{' + config.tasks.html.extensions + '}'), exclude],
+  src: [
+    path.join(
+      config.root.src,
+      config.tasks.html.src,
+      '/**/*.{' + config.tasks.html.extensions + '}'
+    ),
+    exclude
+  ],
   dest: path.join(config.root.dest, config.tasks.html.dest),
 }
 
@@ -28,6 +36,7 @@ var getData = function(file) {
 var htmlTask = function() {
 
   return gulp.src(paths.src)
+    .pipe(contentfulPages())
     .pipe(data(contentfulSync))
     .pipe(data(getData))
     .pipe(data(function(file) {

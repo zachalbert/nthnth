@@ -29,6 +29,13 @@ npm start
   - canonicalLink - should be the hostname, used to construct a link for every page (based off path)
   - twitterUsername - username of the page (or site's) author
   - favicon - upload of the favicon
+  - pages - the top level pages for the site
+
+## Navigation
+
+The navigation is constructed via. links from the root site object and goes down via. children.
+
+    site -> pages -> children(pages)
 
 ## Integration with Netlify
 

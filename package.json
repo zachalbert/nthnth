@@ -76,6 +76,7 @@
     "require-dir": "0.3.0",
     "scrollmagic": "^2.0.5",
     "smooth-scroll": "github:cferdinandi/smooth-scroll",
+    "through2": "2.0.3",
     "webpack": "1.12.14",
     "webpack-dev-middleware": "1.5.1",
     "webpack-hot-middleware": "2.10.0"
