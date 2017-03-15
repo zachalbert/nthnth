@@ -18,47 +18,51 @@ var isEntry = function(item) {
   return _.has(item, 'sys')
 }
 
-var handleEntry = function(space, entry) {
-  return Promise.reduce(Object.entries(entry.fields),
-    function(acc, [name, field]) {
-      var val = field[locale];
-
-      var getLink = function(val) {
-        return space[`get${val.sys.linkType}`](val.sys.id).then(
-          _.curry(handleEntry)(space))
-      }
-
-      if (isEntry(val)) {
-        return getLink(val).then(function(entry) {
-          return Object.assign(acc, { [name]: entry })
-        })
-      }
-
-      if (_.isArray(val) && val.length > 0 && isEntry(val[0])) {
-        return Promise.map(val, getLink).then(function(entries) {
-          return Object.assign(acc, { [name]: entries })
-        })
-      }
-
-      return Object.assign(acc, { [name]: val })
-    }, {}).catch(function() {
-      console.log(arguments)
-    })
-}
-
-
 // Produce a data set that has all the items to be rendered:
 // {
 //   "entry_name": [ fields, fields]
 // }
-var buildData = function(space, result) {
+var buildData = function(space, entries) {
 
-  var typeNames = getTypeNames(result)
-  return Promise.map(result.entries.items, function(item) {
-    var name = typeNames[item.sys.contentType.sys.id]
+  var opts = {
+    promise: true,
+    maxAge: 500
+  }
+  var fns = {
+    "Asset": memoize(space.getAsset, opts),
+    "Entry": memoize(space.getEntry, opts)
+  }
 
-    return handleEntry(space, item).then(function(entry) {
-      return [name, entry]
+  var handleEntry = function(entry) {
+    return Promise.reduce(Object.entries(entry.fields),
+      function(acc, [name, field]) {
+        var val = field[locale];
+
+        var getLink = function(val) {
+          return fns[val.sys.linkType](val.sys.id).then(handleEntry)
+        }
+
+        if (isEntry(val)) {
+          return getLink(val).then(function(entry) {
+            return Object.assign(acc, { [name]: entry })
+          })
+        }
+
+        if (_.isArray(val) && val.length > 0 && isEntry(val[0])) {
+          return Promise.map(val, getLink).then(function(entries) {
+            return Object.assign(acc, { [name]: entries })
+          })
+        }
+
+        return Object.assign(acc, { [name]: val })
+      }, {}).catch(function() {
+        console.log(arguments)
+      })
+  }
+
+  return Promise.map(entries.items, function(item) {
+    return handleEntry(item).then(function(entry) {
+      return [item.sys.contentType.sys.id, entry]
     })
   })
 }
@@ -71,11 +75,8 @@ var getData = memoize(function(cb) {
 
   client.getSpace(config.get("contentful.space")).then(function(space) {
 
-    Promise.props({
-      "entries": space.getEntries(),
-      "types": space.getContentTypes()
-    }).then(function(result) {
-      buildData(space, result).then(function(data) {
+    space.getEntries().then(function(entries) {
+      buildData(space, entries).then(function(data) {
         var actual = data.reduce(function(acc, [name, val]) {
           acc[name] = _.get(acc, name, []).concat([val])
           return acc
