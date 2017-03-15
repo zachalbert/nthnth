@@ -1,11 +1,11 @@
 .form-element {
   appearance: none;
-  background: $form-input-bg-color;
+  background: $bg-color-input;
   border: 0;
-  box-shadow: $form-input-box-shadow;
+  box-shadow: $box-shadow-input;
   border-radius: $radius-size-1;
   box-sizing: border-box;
-  color: $form-input-font-color;
+  color: $font-color-input;
   display: inline-block;
   font-weight: $font-weight-normal;
   letter-spacing: 1px;
@@ -30,7 +30,7 @@
   //checkboxes & radios
   &--check, &--radio {
     appearance: none;
-    background: palette(default, lightest);
+    background: palette(neutral, C1);
     border: 0;
     cursor: pointer;
     display: inline-block;
@@ -118,7 +118,7 @@
 }
 
 .label {
-  color: $form-label-font-color;
+  color: $font-color-label;
   display: inline-block;
   font-family: $display-stack;
   font-size: $type-scale-2;
@@ -162,10 +162,10 @@
     .form-element--check,
     .form-element--radio,
     .form-element--select {
-      box-shadow: 0 0 0 1px palette(state, error-dark), 0 0 3px 3px transparentize(palette(state, error), .5);
+      box-shadow: 0 0 0 1px palette(error, C5), 0 0 3px 3px transparentize(palette(error, C3), .5);
     }
     .caption, .label {
-      color: palette(state, error-dark);
+      color: palette(error, C5);
     }
   }
 }

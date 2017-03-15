@@ -54,7 +54,7 @@ h3,
 
 h4,
 .h4 {
-  color: $body-font-color;
+  color: $font-color-body;
   font-size: $type-scale-3;
   font-weight: $font-weight-bold;
   text-transform: uppercase;
@@ -62,7 +62,7 @@ h4,
 
 h5,
 .h5 {
-  color: $body-font-color;
+  color: $font-color-body;
   font-size: $type-scale-1;
   font-weight: $font-weight-bold;
   text-transform: uppercase;
@@ -98,7 +98,7 @@ h5,
     }
   }
   &__subtitle {
-    color: $muted-font-color;
+    color: $font-color-muted;
     font-style: italic;
     margin-bottom: $lead-double;
     text-align: center;
@@ -112,11 +112,11 @@ p {
 }
 
 a {
-  color: $link-color;
+  color: $font-color-link;
   transition: $transition-off;
 
   &:hover {
-    color: $link-hover-color;
+    color: $font-color-link-hover;
     transition: $transition-on;
     text-decoration: none;
   }
@@ -143,14 +143,14 @@ tt {
 
 tt {
   padding: 0.3rem 0.5rem;
-  background: $muted-font-color;
+  background: $font-color-muted;
   border-radius: $radius-size-1;
   margin: 0 0.1rem;
   line-height: 1;
 }
 
 .caption {
-  color: $muted-font-color;
+  color: $font-color-muted;
   font-family: $display-stack;
   font-size: $type-scale-1;
   font-weight: $font-weight-bold;
@@ -165,7 +165,7 @@ small,
 .text-small {
   font-family: $display-stack;
   font-size: $type-scale-1;
-  color: $muted-font-color;
+  color: $font-color-muted;
   text-transform: uppercase;
 }
 

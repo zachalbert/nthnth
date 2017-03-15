@@ -1,6 +1,6 @@
 .alert {
   border-radius: $radius-size-1;
-  color: $alert-font-color;
+  color: $font-color-alert;
   font-family: $display-stack;
   padding: $lead-half;
   position: relative;
@@ -23,15 +23,15 @@
     }
   }
   &--error {
-    background: palette(state, error);
+    background: palette(error, c3);
   }
   &--warning {
-    background: palette(state, warning);
+    background: palette(warning, c3);
   }
   &--info {
-    background: palette(state, info);
+    background: palette(info, c3);
   }
   &--success {
-    background: palette(state, success);
+    background: palette(success, c3);
   }
 }

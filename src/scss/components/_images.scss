@@ -6,7 +6,7 @@
   &__wrapper {
     position: relative;
     width: 100%;
-    background: rgba(palette(default, darker), 0.1);
+    background: rgba(palette(neutral, C5), 0.1);
 
     & > img,
     & > figure > img {
@@ -32,7 +32,7 @@
       width: $lead-single;
       height: $lead-single;
       border: round($lead-half/2) solid rgba(white, 0.1);
-      border-top-color: rgba(palette(default, darker), 0.15);
+      border-top-color: rgba(palette(neutral, C5), 0.15);
       position: absolute;
       top: calc(50% - 15px);
       left: calc(50% - 15px);
@@ -96,7 +96,7 @@ figure {
 
   figcaption {
     @extend .text-small;
-    background-color: rgba(palette(default, darker), 0.03);
+    background-color: rgba(palette(neutral, C5), 0.03);
     padding: $lead-half $lead-half $lead-single;
   }
 }

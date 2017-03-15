@@ -23,25 +23,32 @@
   &--elevated {
     @include shadow-1;
   }
-  &--primary {
-    background: $button-primary-bg-color;
-    color: $button-primary-font-color;
+  &--neutral {
+    background: $bg-color-button-neutral;
+    color: $font-color-button-neutral;
     &:hover {
-      background: $button-primary-bg-color-hover;
+      background: $bg-color-button-neutral-hover;
+    }
+  }
+  &--primary {
+    background: $bg-color-button-primary;
+    color: $font-color-button-primary;
+    &:hover {
+      background: $bg-color-button-primary-hover;
     }
   }
   &--secondary {
-    background: $button-secondary-bg-color;
-    color: $button-secondary-font-color;
+    background: $bg-color-button-secondary;
+    color: $font-color-button-secondary;
     &:hover {
-      background: $button-secondary-bg-color-hover;
+      background: $bg-color-button-secondary-hover;
     }
   }
-  &--tertiary {
-    background: $button-tertiary-bg-color;
-    color: $button-tertiary-font-color;
+  &--accent {
+    background: $bg-color-button-accent;
+    color: $font-color-button-accent;
     &:hover {
-      background: $button-tertiary-bg-color-hover;
+      background: $bg-color-button-accent-hover;
     }
   }
 }

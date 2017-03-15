@@ -107,117 +107,171 @@ $button-shadow:         true;
 
 $palettes: (
   // DEFAULT
-  default:(
-    lightest:     #FAFAFA,
-    lighter:      #DEDEDE,
-    light:        #909799,
-    mid:          #535758,
-    dark:         #3D474A,
-    darker:       #242E30,
-    accent:       hsla(224, 29%, 40%, 1),
-    dark-accent:  hsla(224, 60%, 10%, 1)
+  neutral:(
+    C1:  hsla(224, 2%, 90%, 1),
+    C2:  hsla(224, 2%, 80%, 1),
+    C3:  hsla(224, 3%, 60%, 1),
+    C4:  hsla(224, 5%, 40%, 1),
+    C5:  hsla(224, 7%, 30%, 1),
+    C6:  hsla(224, 9%, 20%, 1)
   ),
-  state:(
-    error:        change-color($color: #6772e5, $hue: 50, $saturation: 50, $lightness: 50),
-    error-dark:   darken(#FF5E3D, 20%),
-    warning:      #FFC247,
-    warning-dark: darken(#FFC247, 20%),
-    info:         #4FDBF0,
-    info-dark:    darken(#4FDBF0, 20%),
-    success:      #55E691,
-    success-dark: darken(#55E691, 20%)
+  primary:(
+    C1:  hsla(224, 10%, 60%, 1),
+    C2:  hsla(224, 20%, 50%, 1),
+    C3:  hsla(224, 30%, 40%, 1),
+    C4:  hsla(224, 40%, 30%, 1),
+    C5:  hsla(224, 50%, 20%, 1),
+    C6:  hsla(224, 60%, 10%, 1)
+  ),
+  secondary:(
+    C1:  hsla(204, 10%, 60%, 1),
+    C2:  hsla(204, 20%, 50%, 1),
+    C3:  hsla(204, 30%, 40%, 1),
+    C4:  hsla(204, 40%, 30%, 1),
+    C5:  hsla(204, 50%, 20%, 1),
+    C6:  hsla(204, 60%, 10%, 1)
+  ),
+  accent:(
+    C1:  hsla(404, 50%, 70%, 1),
+    C2:  hsla(404, 60%, 60%, 1),
+    C3:  hsla(404, 70%, 50%, 1),
+    C4:  hsla(404, 80%, 40%, 1),
+    C5:  hsla(404, 90%, 30%, 1),
+    C6:  hsla(404, 100%, 20%, 1)
+  ),
+  success:(
+    C1:  hsla(100, 10%, 60%, 1),
+    C2:  hsla(100, 20%, 50%, 1),
+    C3:  hsla(100, 30%, 40%, 1),
+    C4:  hsla(100, 40%, 30%, 1),
+    C5:  hsla(100, 50%, 20%, 1),
+    C6:  hsla(100, 60%, 10%, 1)
+  ),
+  error:(
+    C1:  hsla(10, 50%, 70%, 1),
+    C2:  hsla(10, 60%, 60%, 1),
+    C3:  hsla(10, 70%, 50%, 1),
+    C4:  hsla(10, 80%, 40%, 1),
+    C5:  hsla(10, 90%, 30%, 1),
+    C6:  hsla(10, 100%, 20%, 1)
+  ),
+  info:(
+    C1:  hsla(180, 10%, 60%, 1),
+    C2:  hsla(180, 20%, 50%, 1),
+    C3:  hsla(180, 30%, 40%, 1),
+    C4:  hsla(180, 40%, 30%, 1),
+    C5:  hsla(180, 50%, 20%, 1),
+    C6:  hsla(180, 60%, 10%, 1)
+  ),
+  warning:(
+    C1:  hsla(30, 40%, 70%, 1),
+    C2:  hsla(30, 50%, 60%, 1),
+    C3:  hsla(30, 60%, 50%, 1),
+    C4:  hsla(30, 70%, 40%, 1),
+    C5:  hsla(30, 80%, 30%, 1),
+    C6:  hsla(30, 90%, 20%, 1)
   )
 );
 
-@function palette($palette, $tone: 'default') {
+@function palette($palette, $tone: 'neutral') {
   @return map-get(map-get($palettes, $palette), $tone);
 }
 
 /*------------------------------------*\
   MAIN COLORS
 \*------------------------------------*/
-$theme-color-accent:              palette(default, accent);
-$theme-color-accent-dark:         palette(default, dark-accent);
-$theme-color-accent-text:         white;
-$theme-color-body:                white;
-$theme-color-highlight:           lighten(saturate(adjust-hue($theme-color-accent, 165), 80%), 10%);
-$theme-color-highlight-dark:      lighten(saturate(adjust-hue($theme-color-accent, 162), 100%), 6%);
-$theme-color-gradient-start:      rgba($theme-color-highlight, 0.5);
-$theme-color-gradient-end:        rgba($theme-color-accent-dark, 0.75);
+$theme-color-neutral:               palette(neutral, C3);
+$theme-color-neutral-dark:          palette(neutral, C4);
+$theme-color-primary:               palette(primary, C3);
+$theme-color-primary-dark:          palette(primary, C4);
+$theme-color-secondary:             palette(secondary, C3);
+$theme-color-secondary-dark:        palette(secondary, C4);
+$theme-color-accent:                palette(accent, C3);
+$theme-color-accent-dark:           palette(accent, C4);
+
+/*------------------------------------*\
+  GRADIENTS
+\*------------------------------------*/
+$theme-color-gradient-start:        rgba($theme-color-accent, 0.5);
+$theme-color-gradient-end:          rgba($theme-color-accent-dark, 0.75);
 
 /*------------------------------------*\
   BASE FONTS
 \*------------------------------------*/
-$display-font-color:              palette(default, dark);
-$body-font-color:                 palette(default, mid);
-$muted-font-color:                palette(default, light);
-$link-color:                      $theme-color-highlight;
-$link-hover-color:                $theme-color-highlight-dark;
+$font-color-display:                palette(neutral, C4);
+$font-color-body:                   palette(neutral, C3);
+$font-color-muted:                  palette(neutral, C2);
+$font-color-link:                   $theme-color-accent;
+$font-color-link-hover:             $theme-color-accent-dark;
 
 /*------------------------------------*\
   FORM ELEMENTS
 \*------------------------------------*/
-$form-input-bg-color:             palette(default, lightest);
-$form-input-font-color:           $body-font-color;
-$form-label-font-color:           $display-font-color;
-$form-input-box-shadow:           inset 0 0 0 1px palette(default, lighter), inset 0 1px 3px rgba(0,0,0,.1);
+$bg-color-input:                    palette(neutral, C1);
+$font-color-input:                  $font-color-body;
+$font-color-label:                  $font-color-display;
+$box-shadow-input:                  inset 0 0 0 1px palette(neutral, C2), inset 0 1px 3px rgba(0,0,0,.1);
 
 /*------------------------------------*\
   BUTTONS
 \*------------------------------------*/
-$button-primary-bg-color:         $theme-color-highlight;
-$button-primary-bg-color-hover:   $theme-color-highlight-dark;
-$button-primary-font-color:       white;
+$bg-color-button-neutral:           $theme-color-neutral;
+$bg-color-button-neutral-hover:     $theme-color-neutral-dark;
+$font-color-button-neutral:         white;
 
-$button-secondary-bg-color:       palette(default, mid);
-$button-secondary-bg-color-hover: palette(default, dark);
-$button-secondary-font-color:     white;
+$bg-color-button-primary:           $theme-color-primary;
+$bg-color-button-primary-hover:     $theme-color-primary-dark;
+$font-color-button-primary:         white;
 
-$button-tertiary-bg-color:        palette(default, light);
-$button-tertiary-bg-color-hover:  palette(default, mid);
-$button-tertiary-font-color:      white;
+$bg-color-button-secondary:         $theme-color-secondary;
+$bg-color-button-secondary-hover:   $theme-color-secondary-dark;
+$font-color-button-secondary:       white;
+
+$bg-color-button-accent:            $theme-color-accent;
+$bg-color-button-accent-hover:      $theme-color-accent-dark;
+$font-color-button-accent:          white;
 
 /*------------------------------------*\
   PAGES
 \*------------------------------------*/
-$page-heading-font-color:         palette(default, darker);
-$page-subheading-font-color:      palette(default, mid);
+$font-color-page-heading:           palette(neutral, C5);
+$font-color-page-subheading:        palette(neutral, C3);
 
 /*------------------------------------*\
   SECTIONS
 \*------------------------------------*/
-$section-border-color:            palette(default, lighter);
-$section-padding:                 $lead-triple;
+$border-color-section:              palette(neutral, C2);
+$padding-section:                   $lead-triple;
 
 /*------------------------------------*\
   HEROES
 \*------------------------------------*/
-$hero-bg-color:                   palette(default, lightest);
-$hero-font-color:                 palette(default, darker);
+$bg-color-hero:                     palette(neutral, C1);
+$font-color-hero:                   palette(neutral, C5);
 
 /*------------------------------------*\
   ALERTS
 \*------------------------------------*/
-$alert-font-color:                rgba(255,255,255,.8);
+$font-color-alert:                  rgba(255,255,255,.8);
 
 /*------------------------------------*\
   NAVS
 \*------------------------------------*/
-$nav-logo-size:                   40px;
-$nav-bar-padding:                 $lead-half;
-$nav-bar-height:                  84px; /* TODO: This is a magic number, prone to breaking. Need something more bulletproof. */
-$nav-bar-bg-color:                white;
-$nav-bar-link-color:              $theme-color-accent;
-$nav-bar-link-hover-color:        $theme-color-accent-dark;
-$nav-bar-link-active-color:       palette(default, light);
-$nav-bar-link-active-line-height: 5px;
-$nav-bar-link-active-line-color:  $theme-color-accent;
-$nav-off-canvas-bg-color:         palette(default, dark);
+$size-nav-logo:                     40px;
+$padding-navbar:                    $lead-half;
+$height-navbar:                     84px; /* TODO: This is a magic number, prone to breaking. Need something more bulletproof. */
+$bg-color-navbar:                   white;
+$font-color-navbar-link:            $theme-color-accent;
+$font-color-navbar-link-hover:      $theme-color-accent-dark;
+$font-color-navbar-link-active:     palette(neutral, C3);
+$height-navbar-link-active-line:    5px;
+$bg-color-navbar-link-active-line:  $theme-color-accent;
+$bg-color-nav-off-canvas:           palette(neutral, C5);
 
-$side-nav-width:                  200px;
-$side-nav-width-collapsed:        50px;
+$width-side-nav:                    200px;
+$width-side-nav-collapsed:          50px;
 
 /*------------------------------------*\
   CARDS
 \*------------------------------------*/
-$card-autor-img-bg-color:         palette(default, accent);
+$bg-color-card-author-img:          $theme-color-accent;

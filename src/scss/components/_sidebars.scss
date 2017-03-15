@@ -24,16 +24,16 @@
     }
 
     .flexible-container__side {
-      width: $side-nav-width-collapsed;
-      min-width: $side-nav-width-collapsed;
+      width: $width-side-nav-collapsed;
+      min-width: $width-side-nav-collapsed;
     }
 
     .sidebar--fixed {
-      width: $side-nav-width-collapsed !important;
+      width: $width-side-nav-collapsed !important;
     }
 
     .sidebar__nav-link .text {
-      left: -$side-nav-width;
+      left: -$width-side-nav;
     }
 
     .sidebar__closer__trigger {
@@ -48,7 +48,7 @@
 
 .sidebar {
   padding-top: $lead-half;
-  background: palette(default, mid);
+  background: palette(neutral, C3);
   position: relative;
 
   ul {
@@ -58,13 +58,13 @@
 
   &--fixed {
     z-index: 50;
-    width: $side-nav-width !important;
+    width: $width-side-nav !important;
     margin-left: 0 !important;
   }
 
   &__nav-link {
     @extend .clear;
-    color: palette(default, lighter);
+    color: palette(neutral, C2);
     display: block;
     text-decoration: none;
     text-align: center;
@@ -81,31 +81,31 @@
 
     .icon {
       font-size: 80%;
-      width: $side-nav-width-collapsed;
-      background: palette(default, mid);
+      width: $width-side-nav-collapsed;
+      background: palette(neutral, C3);
       position: relative;
       z-index: 2;
     }
 
     .text {
-      width: $side-nav-width - $side-nav-width-collapsed;
+      width: $width-side-nav - $width-side-nav-collapsed;
       text-align: left;
       position: absolute;
       z-index: 1;
-      left: $side-nav-width-collapsed;
+      left: $width-side-nav-collapsed;
     }
 
     &:hover,
     &:hover .icon,
     &:hover .text {
-      background: palette(default, dark);
-      color: palette(default, lightest);
+      background: palette(neutral, C4);
+      color: palette(neutral, C1);
       transition: $transition-on;
     }
 
     &:hover {
       .text {
-        left: $side-nav-width-collapsed;
+        left: $width-side-nav-collapsed;
       }
     }
   }
@@ -122,7 +122,7 @@
       left: 0;
       bottom: 0;
       pointer-events: all;
-      padding-right: $side-nav-width - $side-nav-width-collapsed;
+      padding-right: $width-side-nav - $width-side-nav-collapsed;
     }
   }
 }

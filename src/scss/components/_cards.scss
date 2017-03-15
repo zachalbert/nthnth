@@ -1,8 +1,8 @@
 .card {
   background: white;
-  color: $body-font-color;
+  color: $font-color-body;
   border-radius: $radius-size-1;
-  box-shadow: inset 0 0 0 1px palette(default, lighter), $shadow-1;
+  box-shadow: inset 0 0 0 1px palette(neutral, C2), $shadow-1;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -33,13 +33,13 @@
     padding: $lead-half;
   }
   &--lightest {
-    background-color: palette(default, lightest);
+    background-color: palette(neutral, C1);
   }
   &--lighter {
-    background-color: palette(default, lighter);
+    background-color: palette(neutral, C2);
   }
   &--light {
-    background-color: palette(default, light);
+    background-color: palette(neutral, C3);
   }
   &--accent {
     background-color: $theme-color-accent;
@@ -67,7 +67,7 @@
 }
 
 .card__block + .card__block--separated {
-  box-shadow: inset 0 1px 0 0 $section-border-color;
+  box-shadow: inset 0 1px 0 0 $border-color-section;
 }
 
 .card__block + .card__block {
@@ -75,17 +75,17 @@
 }
 
 .card__head + .card__block {
-  box-shadow: inset 0 1px 0 palette(default, lighter);
+  box-shadow: inset 0 1px 0 palette(neutral, C2);
 }
 
 .card__head + .card__block.card__block--lightest, .card__block--lightest + .card__block--separated {
-  box-shadow: inset 0 1px 0 0 darken(palette(default, lightest),10%);
+  box-shadow: inset 0 1px 0 0 darken(palette(neutral, C1),10%);
 }
 .card__head + .card__block.card__block--lighter, .card__block--lighter + .card__block--separated {
-  box-shadow: inset 0 1px 0 0 darken(palette(default, lighter),10%);
+  box-shadow: inset 0 1px 0 0 darken(palette(neutral, C2),10%);
 }
 .card__head + .card__block.card__block--light, .card__block--light + .card__block--separated {
-  box-shadow: inset 0 1px 0 0 darken(palette(default, light),10%);
+  box-shadow: inset 0 1px 0 0 darken(palette(neutral, C3),10%);
 }
 .card__head + .card__block.card__block--accent, .card__block--accent + .card__block--separated {
   box-shadow: inset 0 1px 0 0 $theme-color-accent-dark;
@@ -109,7 +109,7 @@
 }
 
 .card__image--avatar {
-  background: $card-autor-img-bg-color;
+  background: $bg-color-card-author-img;
   border-radius: $radius-size-1;
   width: $line-height*1.5;
   height: $line-height*1.5;

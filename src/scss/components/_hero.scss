@@ -1,8 +1,8 @@
 .hero {
-  background-color: $hero-bg-color;
+  background-color: $bg-color-hero;
   background-position: center center;
   background-size: cover;
-  color: $hero-font-color;
+  color: $font-color-hero;
   position: relative;
   &__subheading {
     font-size: $type-scale-4;
@@ -31,7 +31,7 @@
 
 .hero--dark {
   &::after {
-    background: transparentize((darken($theme-color-accent, 70%)),.3);
+    background: transparentize($theme-color-accent-dark,.3);
   }
   .hero__heading, .hero__subheading {
     color: white;

@@ -8,7 +8,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: palette(default, dark);
+    background: palette(neutral, C4);
     z-index: 5;
     opacity: 0;
     display: none;
@@ -27,7 +27,7 @@
   .nav__menu-toggle {
     &:before {
       content: "\e969" !important;
-      color: palette(default, lighter);
+      color: palette(neutral, C2);
       transform: rotate(180deg);
       transition: all 0.35s ease-out;
       display: block;
@@ -36,7 +36,7 @@
 }
 
 .nav.nav--top {
-  background-color: $nav-bar-bg-color;
+  background-color: $bg-color-navbar;
   @extend .middle-xs;
   .nav__links {
     @extend .middle-xs;
@@ -47,14 +47,14 @@
     z-index: 10;
     .button {
       &--primary {
-        color: $button-primary-font-color;
+        color: $font-color-button-primary;
       }
       &--secondary {
-        color: $button-secondary-font-color;
+        color: $font-color-button-secondary;
       }
     }
     li, a {
-      color: $nav-bar-link-color;
+      color: $font-color-navbar-link;
       display: inline-block;
       font-family: $display-stack;
       font-size: $type-scale-2;
@@ -63,7 +63,7 @@
       text-transform: uppercase;
       text-decoration: none;
       &:hover {
-        color: $nav-bar-link-hover-color;
+        color: $font-color-navbar-link-hover;
       }
     }
     li {
@@ -74,13 +74,13 @@
       position: relative;
     }
     a.is-active {
-      color: $nav-bar-link-active-color;
+      color: $font-color-navbar-link-active;
       &:before {
-        background: $nav-bar-link-active-line-color;
+        background: $bg-color-navbar-link-active-line;
         content: '';
         width: 100%;
-        height: $nav-bar-link-active-line-height;
-        bottom: -($nav-logo-size/2);
+        height: $height-navbar-link-active-line;
+        bottom: -($size-nav-logo/2);
         left: 0;
         position: absolute;
       }
@@ -114,9 +114,9 @@
 .nav__logo {
   width: auto;
   margin: 0.3rem 0 0.4rem 0.4rem;
-  height: $nav-logo-size;
+  height: $size-nav-logo;
   svg, img {
-    height: $nav-logo-size;
+    height: $size-nav-logo;
   }
   + .nav__brand-text {
     display: none;
@@ -133,7 +133,7 @@
   &.nav--top.nav--off-canvas#{'-' + $screen-size} {
     //display: block;
     .nav__links {
-      background: $nav-off-canvas-bg-color;
+      background: $bg-color-nav-off-canvas;
       bottom: 0;
       display: block;
       position: fixed;
@@ -148,9 +148,9 @@
         margin-bottom: $lead-half;
       }
       a.is-active {
-        color: $nav-bar-link-active-color;
+        color: $font-color-navbar-link-active;
         &:before {
-          width: $nav-bar-link-active-line-height;
+          width: $height-navbar-link-active-line;
           height: 100%;
           bottom: 0;
           left: -$lead-half;
