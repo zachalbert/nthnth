@@ -2,6 +2,7 @@ var config         = require('../config')
 if(!config.tasks.html) return
 
 var browserSync    = require('browser-sync')
+var theConfig      = require('config')
 var contentfulSync = require("../lib/contentfulSync")
 var data           = require('gulp-data')
 var faker          = require('gulp-faker');
@@ -29,6 +30,9 @@ var htmlTask = function() {
   return gulp.src(paths.src)
     .pipe(data(contentfulSync))
     .pipe(data(getData))
+    .pipe(data(function(file) {
+      return { path: file.relative }
+    }))
     .pipe(faker())
     .on('error', handleErrors)
     .pipe(render({
@@ -36,6 +40,15 @@ var htmlTask = function() {
       envOptions: {
         watch: false,
         autoescape: false
+      },
+      manageEnv: function(environment) {
+        environment.addGlobal('getContext', function() {
+          return this.ctx;
+        });
+        environment.addGlobal('getCanonicalLink', function(site, path) {
+          return `//${ site.canonicalLink }/${ path }`
+        })
+        environment.addGlobal('config', theConfig);
       }
     }))
     .on('error', handleErrors)

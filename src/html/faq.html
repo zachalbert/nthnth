@@ -1,0 +1,54 @@
+{% extends 'layouts/application.njk' %}
+
+{% block title %}Home TEST{% endblock %}
+
+{% block content %}
+
+{{ nav() }}
+{#
+> ↑ Probably the main stuff if you have limited time.
+> However, would also love help with ↓
+> Show me an example of a meta query for auto generating nav links, ie. return
+> all `pageSlugs` where contentType is `page`
+
+`contentful.page.map(function(i) { return i.pageSlugs })` #}
+
+{% set page = contentful.categoryPage[0] %}
+{% set itemList  = contentful.faq %}
+{% set hero = page.hero %}
+
+{% if hero %}
+  {% call section(
+    bgURL = hero.backgroundMedia.fields.file.url,
+    bgOverlayModifierClass = "people",
+    class = "section--hero"
+  )%}
+    {% call columns(
+      rowClasses = "center-xs text-center",
+      xs = 10,
+      sm = 8,
+      lg = 7
+    ) %}
+    {{ title('FAQ', level = '1') }}
+    {{ subtitle('Nobody has more respect for words than me.', level = '1') }}
+    {% endcall %}
+  {% endcall %}
+{% endif %}
+
+{% for item in itemList %}
+<h2>{{ item.title }}</h2>
+<p>By {{ item.author }}</p>
+{{ item.text }}
+{% endfor %}
+
+
+{% call section(
+  bgType = "accent",
+  bgOverlayModifierClass = "dark",
+  row = true,
+  rowClasses = "center-xs"
+) %}
+<p>&copy; RESOLUTE</p>
+{% endcall %}
+
+{% endblock %}

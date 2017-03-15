@@ -1,3 +1,5 @@
+import 'mediaelement'
+
 import './modules'
 import './modules/prism'
 import './modules/site'

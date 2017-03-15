@@ -1,11 +1,41 @@
 # Getting started
 
+- Get the keys from:
+    - `APIs -> Content delivery / preview keys -> Website key`
+    - [Management Key](https://www.contentful.com/developers/docs/references/authentication/#the-content-management-api) -> Getting OAuth Token
+
 ```bash
-cp config.json.example config.json
+cp config/default.json config/development.json
 # Edit and add contentful keys
 npm install
 npm start
 ```
+
+# Debugging
+
+## How do I see what variables are in the templates?
+
+- When in development mode, you can access `__config__` from the console to see all defined variables at the top level.
+- Are you in a macro or partial? Use `{{ this | dump }}` to see it on the page.
+
+# Contentful
+
+## Data Model
+
+- site
+  - title
+  - description
+  - styleClasses - added to `<body></body>`
+  - canonicalLink - should be the hostname, used to construct a link for every page (based off path)
+  - twitterUsername - username of the page (or site's) author
+  - favicon - upload of the favicon
+
+## Integration with Netlify
+
+- Create a webhook in Netlify, copy the url
+- Go to `Settings -> Webhooks` in Contentful, paste the url
+
+# Overview
 
 Forked from [Gulp Starter](https://github.com/vigetlabs/gulp-starter.git), then
 stuff was changed and added:
@@ -20,8 +50,6 @@ let's use the main `dev` branch.
 
 ## TODO
 
-[ ] Implement contentful to replace the markdown files using [contentful-data](https://www.npmjs.com/package/contentful-data)
-[ ] Implement [smartcrop.js](https://github.com/jwagner/smartcrop.js) for image centering
 [ ] More robust image overlays that do color grading and correction
 [ ] Go over H5BP optimizations
 
@@ -33,19 +61,6 @@ let's use the main `dev` branch.
 What follows is stuff from the original readme.
 
 --
-
-# ![Gulp Starter](extras/demo/src/images/gulp-starter-logo.png)
-
-[![Build Status](https://travis-ci.org/vigetlabs/gulp-starter.svg?branch=static-server)](https://travis-ci.org/vigetlabs/gulp-starter)
-
-Gulp Starter is a delicious blend of tasks and build tools poured into [Gulp](http://gulpjs.com/) to form a full-featured modern asset pipeline. It can be used as-is as a static site builder, or can be configured and integrated into your own development environment and site or app structure. The [extras](./extras) folder contains configuration details for Rails and Craft, with more to follow. [Check out the compiled demo](http://vigetlabs.github.io/gulp-starter/) and play with [the source files](extras/demo)!
-
-```bash
-git clone https://github.com/vigetlabs/gulp-starter.git MyApp
-cd MyApp
-npm install
-npm start
-```
 
 Features | Tools Used
 ------ | -----
@@ -95,31 +110,6 @@ npm run test
 npm run production
 ```
 
-### Running the Demo
-By default, the files in `src` are pretty minimal. If you're just exploring and would like to play with the [demo](http://vigetlabs.github.io/gulp-starter/) files, the files available in `extras/demo`. Just replace `src` and `config.json` with the ones in `extras/demo`, or simply check out the `demo` branch.
-
-```
-git checkout demo
-npm start
-```
-
-### Starting a fresh project
-If you plan on using this to start a new project, be sure and clear out the `git` data start a fresh history:
-
-```bash
-rm -rf .git && git init
-git commit -m "Initialized with Gulp Starter"
-```
-
-## Configuration
-Directory and top level settings are convienently exposed in `gulpfile.js/config.json`. Use this file to update paths to match the directory structure of your project, and to adjust task options.
-
-All task configuration objects have `src` and `dest` directories specfied. These are relative to `root.src` and `root.dest` respectively. Each configuration also has an extensions array. This is used for file watching, and file deleting/replacing.
-
-**If there is a feature you do not wish to use on your project, simply delete the configuration, and the task will be skipped.**
-
-Not all configuration is exposed here. For advanced task configuration, you can always edit the tasks themselves in `gulpfile.js/tasks`.
-
 ### Start compiling, serving, and watching files
 ```
 npm run gulp
@@ -137,18 +127,6 @@ To run any other existing task, simply add the task name after the `gulp` comman
 npm run gulp production
 ```
 
-## Asset Task Details
-A `README.md` with details about each asset task are available in their respective folders in the `src` directory:
-
-- [JavaScript](src/javascripts)
-- [Stylesheets](src/stylesheets)
-- [HTML](src/html)
-- [Fonts](src/fonts)
-- [Images](src/images)
-- [Icon Font](src/icons#iconfont-task)
-- [SVG Sprite](src/icons#svg-sprite-task)
-- [Static Files (favicons, app icons, etc.)](src/static)
-
 ## Additional Task Details
 
 ### Build production-ready files
@@ -164,13 +142,6 @@ npm run demo
 
 This will start a static server that serves your production files to http://localhost:5000. This is primarily meant as a way to preview your production build locally, not necessarily for use as a live production server.
 
-### Run JavaScript Tests
-```
-npm run test
-```
-Test files located in `__tests__` folders are picked up and run using
-[Karma](http://karma-runner.github.io/0.12/index.html), [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), and [Sinon](http://sinonjs.org/). The test script right now first compiles a production build, and then, if successful runs Karma. This is nice when using something like [Travis CI](https://travis-ci.org/vigetlabs/gulp-starter) in that if an error occurs during the build step, Travis alerts me that it failed. To pass, the files have to compile properly AND pass the JS tests.
-
 ### Deploy to gh-pages
 ```
 npm run deploy
@@ -182,32 +153,3 @@ GitHub Pages isn't the most robust of hosting solutions (you'll eventually run i
 [Surge.sh](http://surge.sh/) might be a good alternative for production-ready static hosting to check out, and is just as easy to deploy to. Where ever you're deploying to, all you need to do is `npm run gulp production` and transfer the contents of the `public` folder to your server however you see fit.
 
 For non-static sites (Rails, Craft, etc.), make sure the `production` task runs as part of your deploy process.
-
-## Notable changes from 1.0
-- Full asset pipeline and static html compilation
-- `gulpfile.js` is now a directory
-- update directory structure
-- Replaced Browserify with [Webpack](http://webpack.github.io/docs/webpack-for-browserify-users.html)!
-  - Async CommonJS module requires
-  - Automatically splits out shared dependencies
-- New `html` task w/ Nunjucks templating/compiling
-- Replace CoffeeScript with ES6 ([Babel.js](http://babeljs.io/))
-- New `server` task to test production files locally
-- New `deploy` task to deploy the public directory to gh-pages
-- New `rev` task that revisions filenames and compress css and js
-- Use `gulp-watch` instead of `gulp.watch` (correctly handles new files)
-- New `production` task runs tests, compression + filename revisioning
-- Remove old examples and extraneous dependencies
-- Upgrades dependencies
-- Added example Travis CI integration that runs karma tests and production build
-- Add SVG sprite implementation from @synapticism in #100
-
-Original Blog Post: https://www.viget.com/articles/gulp-browserify-starter-faq
-
-***
-
-<a href="http://code.viget.com">
-  <img src="http://code.viget.com/github-banner.png" alt="Code At Viget">
-</a>
-
-Visit [code.viget.com](http://code.viget.com) to see more projects from [Viget.](https://viget.com)
