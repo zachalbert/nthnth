@@ -96,7 +96,7 @@ figure {
 
   figcaption {
     @extend .text-small;
-    background-color: rgba(palette(neutral, C5), 0.03);
+    background-color: rgba(palette(neutral, C5), 0.17);
     padding: $lead-half $lead-half $lead-single;
   }
 }

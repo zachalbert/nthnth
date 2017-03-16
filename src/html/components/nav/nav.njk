@@ -5,7 +5,9 @@
  #   {{ nav() }}
  #}
 
-{% macro nav() %}
+{% macro nav(
+  page
+  ) %}
 
 <nav class="nav nav--top nav--fixed nav--off-canvas-sm">
   <div class="nav__body">
@@ -19,11 +21,11 @@
         </div>
       </div>
       <ul class="nav__links">
-        <li><a href="/faq.html">FAQ</a></li>
-        <li><a href="/elements.html">Elements</a></li>
-        <li><a href="/components.html">Components</a></li>
-        <li><a href="/layouts.html">Layouts</a></li>
-        <li><a href="/colorGen.html">Color</a></li>
+        <li><a {% if page == '/faq.html' %} class="is-active"{% endif %} href="/faq.html">FAQ</a></li>
+        <li><a {% if page == '/elements.html' %} class="is-active"{% endif %} href="/elements.html">Elements</a></li>
+        <li><a {% if page == '/components.html' %} class="is-active"{% endif %} href="/components.html">Components</a></li>
+        <li><a {% if page == '/layouts.html' %} class="is-active"{% endif %} href="/layouts.html">Layouts</a></li>
+        <li><a {% if page == '/colorGen.html' %} class="is-active"{% endif %} href="/colorGen.html">Color</a></li>
       </ul>
       <div class="nav__overlay"></div>
     </div>

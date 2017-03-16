@@ -28,6 +28,7 @@
     color: $font-color-button-neutral;
     &:hover {
       background: $bg-color-button-neutral-hover;
+      color: $font-color-button-neutral;
     }
   }
   &--primary {
@@ -35,6 +36,7 @@
     color: $font-color-button-primary;
     &:hover {
       background: $bg-color-button-primary-hover;
+      color: $font-color-button-primary;
     }
   }
   &--secondary {
@@ -42,6 +44,7 @@
     color: $font-color-button-secondary;
     &:hover {
       background: $bg-color-button-secondary-hover;
+      color: $font-color-button-secondary;
     }
   }
   &--accent {
@@ -49,6 +52,7 @@
     color: $font-color-button-accent;
     &:hover {
       background: $bg-color-button-accent-hover;
+      color: $font-color-button-accent;
     }
   }
 }

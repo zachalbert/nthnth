@@ -16,14 +16,22 @@
       background: transparentize((darken($theme-color-accent, 70%)),.3);
     }
   }
-  &--light {
-    background: palette(neutral, C3);
+  &--primary {
+    background: $theme-color-primary;
+    color: white;
+
+    &::after {
+      background: transparentize((darken($theme-color-primary, 70%)),.3);
+    }
   }
-  &--lighter {
+  &--neutral-1 {
+    background: palette(neutral, C1);
+  }
+  &--neutral-2 {
     background: palette(neutral, C2);
   }
-  &--lightest {
-    background: palette(neutral, C1);
+  &--neutral-3 {
+    background: palette(neutral, C3);
   }
   &--hero {
     padding-top: ( $padding-section * 2 ) + $size-nav-logo + $padding-navbar;

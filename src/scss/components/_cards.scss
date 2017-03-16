@@ -32,14 +32,29 @@
   &--small {
     padding: $lead-half;
   }
-  &--lightest {
+  &--neutral-1 {
     background-color: palette(neutral, C1);
   }
-  &--lighter {
+  &--neutral-2 {
     background-color: palette(neutral, C2);
   }
-  &--light {
+  &--neutral-3 {
     background-color: palette(neutral, C3);
+  }
+  &--primary {
+    background-color: $theme-color-primary;
+    #{$inlineCopyTags}{
+      color: white;
+      opacity: .8;
+    }
+    #{$headlineCopyTags}{
+      color: white;
+      opacity: 1;
+    }
+    #{$bodyCopyTags}{
+      color: white;
+      opacity: .8;
+    }
   }
   &--accent {
     background-color: $theme-color-accent;
@@ -78,14 +93,13 @@
   box-shadow: inset 0 1px 0 palette(neutral, C2);
 }
 
-.card__head + .card__block.card__block--lightest, .card__block--lightest + .card__block--separated {
-  box-shadow: inset 0 1px 0 0 darken(palette(neutral, C1),10%);
+//adding a darker border when two neutral, accent or primary blocks are stacked
+
+.card__head + .card__block.card__block--neutral-2, .card__block--neutral-2 + .card__block--separated {
+  box-shadow: inset 0 1px 0 0 rgba($theme-color-neutral, .3);
 }
-.card__head + .card__block.card__block--lighter, .card__block--lighter + .card__block--separated {
-  box-shadow: inset 0 1px 0 0 darken(palette(neutral, C2),10%);
-}
-.card__head + .card__block.card__block--light, .card__block--light + .card__block--separated {
-  box-shadow: inset 0 1px 0 0 darken(palette(neutral, C3),10%);
+.card__head + .card__block.card__block--primary, .card__block--primary + .card__block--separated {
+  box-shadow: inset 0 1px 0 0 $theme-color-primary-dark;
 }
 .card__head + .card__block.card__block--accent, .card__block--accent + .card__block--separated {
   box-shadow: inset 0 1px 0 0 $theme-color-accent-dark;

@@ -8,7 +8,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: palette(neutral, C4);
+    background: $bg-color-nav-overlay;
     z-index: 5;
     opacity: 0;
     display: none;
@@ -27,7 +27,7 @@
   .nav__menu-toggle {
     &:before {
       content: "\e969" !important;
-      color: palette(neutral, C2);
+      color: $font-color-nav-menu-toggle;
       transform: rotate(180deg);
       transition: all 0.35s ease-out;
       display: block;
@@ -80,7 +80,7 @@
         content: '';
         width: 100%;
         height: $height-navbar-link-active-line;
-        bottom: -($size-nav-logo/2);
+        bottom: -(($height-navbar - ($padding-navbar*2))/2);
         left: 0;
         position: absolute;
       }
@@ -136,6 +136,7 @@
       background: $bg-color-nav-off-canvas;
       bottom: 0;
       display: block;
+      padding: 0;
       position: fixed;
       right: 0;
       transform: translateX(100%);
@@ -145,7 +146,17 @@
       li {
         display: block;
         line-height: $line-height * 1.5;
-        margin-bottom: $lead-half;
+        padding: 0;
+      }
+      a {
+        display: block;
+        padding: 0 $lead-single;
+        position: relative;
+        width: 100%;
+        &:hover {
+          background-color: $bg-color-nav-off-canvas-link-hover;
+          transition: .33s;
+        }
       }
       a.is-active {
         color: $font-color-navbar-link-active;
@@ -153,7 +164,7 @@
           width: $height-navbar-link-active-line;
           height: 100%;
           bottom: 0;
-          left: -$lead-half;
+          left: 0;
         }
       }
       .button {
@@ -161,10 +172,10 @@
       }
     }
     .nav__menu-toggle {
-      color: $theme-color-accent;
+      color: $font-color-nav-menu-toggle;
       cursor: pointer;
       display: block;
-      padding: 0 $lead-half;
+      padding: $lead-half;
       z-index: 15;
       &:before {
         font-family: 'juicons' !important;

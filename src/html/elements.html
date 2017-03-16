@@ -4,7 +4,7 @@
 
 {% block content %}
 
-{{ nav() }}
+{{ nav(page="/elements.html") }}
 
 {% call section(
   bgURL = "https://source.unsplash.com/featured/1920x1080",
@@ -66,12 +66,21 @@
           {% endraw %}
         {% endcall %}
 
-        {{ subtitle('Tertiary') }}
-        {{ button(type='tertiary') }}
+        {{ subtitle('Accent') }}
+        {{ button(type='accent') }}
 
         {% call code() %}
           {% raw %}
-          {{ button( type="tertiary" ) }}
+          {{ button( type="accent" ) }}
+          {% endraw %}
+        {% endcall %}
+
+        {{ subtitle('Neutral') }}
+        {{ button(type='neutral') }}
+
+        {% call code() %}
+          {% raw %}
+          {{ button( type="neutral" ) }}
           {% endraw %}
         {% endcall %}
 

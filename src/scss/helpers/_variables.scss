@@ -34,14 +34,14 @@ $body-font-size:     $type-scale-3;
 /*------------------------------------*\
   MAIN COLORS
 \*------------------------------------*/
-$theme-color-neutral:               palette(neutral, C3);
-$theme-color-neutral-dark:          palette(neutral, C4);
-$theme-color-primary:               palette(teal, C6);
-$theme-color-primary-dark:          palette(teal, C8);
-$theme-color-secondary:             palette(cyan, C6);
-$theme-color-secondary-dark:        palette(cyan, C8);
-$theme-color-accent:                palette(orange, C6);
-$theme-color-accent-dark:           palette(orange, C6);
+$theme-color-neutral:               palette(neutral, C5);
+$theme-color-neutral-dark:          palette(neutral, C7);
+$theme-color-primary:               palette(indigo, C5);
+$theme-color-primary-dark:          palette(indigo, C7);
+$theme-color-secondary:             palette(indigo, C3);
+$theme-color-secondary-dark:        palette(indigo, C5);
+$theme-color-accent:                palette(orange, C5);
+$theme-color-accent-dark:           palette(orange, C7);
 
 /*------------------------------------*\
   ALERT COLORS
@@ -116,26 +116,26 @@ $breakpoint-xl:           1440px;
 /*------------------------------------*\
   THEME RADIUS
 \*------------------------------------*/
-$radius-size-1:         3px;
+$radius-size-1:           3px;
 
 /*------------------------------------*\
   TRANSITIONS
 \*------------------------------------*/
-$transition-on:         all 0.15s ease-in;
-$transition-off:        all 0.25s ease-out;
+$transition-on:           all 0.15s ease-in;
+$transition-off:          all 0.25s ease-out;
 
 /*------------------------------------*\
   SHADOWS
 \*------------------------------------*/
-$shadow-1:                        0 3px 6px rgba(0,0,0,.15);
-$shadow-2:              0 6px 12px rgba(0,0,0,.30);
-$button-shadow:         true;
+$shadow-1:                0 3px 6px rgba(0,0,0,.15);
+$shadow-2:                0 6px 12px rgba(0,0,0,.30);
+$button-shadow:           true;
 
 /*------------------------------------*\
   GRADIENTS
 \*------------------------------------*/
-$theme-color-gradient-start:        rgba($theme-color-accent, 0.5);
-$theme-color-gradient-end:          rgba($theme-color-accent-dark, 0.75);
+$theme-color-gradient-start:        rgba($theme-color-primary, 0.5);
+$theme-color-gradient-end:          rgba($theme-color-primary-dark, 0.75);
 
 /*------------------------------------*\
   BASE FONTS
@@ -182,7 +182,7 @@ $font-color-page-subheading:        $font-color-body;
 /*------------------------------------*\
   SECTIONS
 \*------------------------------------*/
-$border-color-section:              palette(neutral, C1);
+$border-color-section:              palette(neutral, C2);
 $padding-section:                   $lead-triple;
 
 /*------------------------------------*\
@@ -199,16 +199,19 @@ $font-color-alert:                  rgba(255,255,255,.8);
 /*------------------------------------*\
   NAVS
 \*------------------------------------*/
-$size-nav-logo:                     40px;
-$padding-navbar:                    $lead-half;
-$height-navbar:                     84px; /* TODO: This is a magic number, prone to breaking. Need something more bulletproof. */
-$bg-color-navbar:                   white;
-$font-color-navbar-link:            $theme-color-accent;
-$font-color-navbar-link-hover:      $theme-color-accent-dark;
-$font-color-navbar-link-active:     palette(neutral, C5);
-$height-navbar-link-active-line:    5px;
-$bg-color-navbar-link-active-line:  $theme-color-accent;
-$bg-color-nav-off-canvas:           palette(neutral, C9);
+$size-nav-logo:                       40px;
+$padding-navbar:                      $lead-half;
+$height-navbar:                       84px; /* TODO: This is a magic number, prone to breaking. Need something more bulletproof. */
+$bg-color-navbar:                     white;
+$font-color-navbar-link:              $theme-color-accent;
+$font-color-navbar-link-hover:        $theme-color-accent-dark;
+$font-color-navbar-link-active:       palette(neutral, C5);
+$height-navbar-link-active-line:      5px;
+$bg-color-navbar-link-active-line:    $theme-color-accent;
+$bg-color-nav-off-canvas:             palette(neutral, C9);
+$bg-color-nav-overlay:                palette(neutral, C9);
+$font-color-nav-menu-toggle:          $theme-color-accent;
+$bg-color-nav-off-canvas-link-hover:  palette(neutral, C10);
 
 $width-side-nav:                    200px;
 $width-side-nav-collapsed:          50px;
