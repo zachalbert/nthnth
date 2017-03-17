@@ -19,6 +19,7 @@
   }
   &--textarea {
     height: $line-height * 4;
+    resize: none;
   }
   &--select {
     height: $line-height * 1.5;

@@ -87,6 +87,38 @@
       {% endcall %}
     {% endcall %}
 
+    {{ anchor('forms') }}
+    {% call section() %}
+      {% call columns() %}
+        {{ title('Forms') }}
+        {{ subtitle(level = 5, 'For inputing junk.')}}
+
+        {{ subtitle('Text Input') }}
+        {{ textInput(fullWidth=false, id="email-address", label="Full Name", placeholder="eg., Rick Sanchez", type="text") }}
+
+        {% call code() %}
+          {% raw %}
+          // text inputs are full width by default…
+          {{ textInput(fullWidth="false", id="email-address", label="Full Name", placeholder="eg., Rick Sanchez", type="text") }}
+
+          {% endraw %}
+        {% endcall %}
+
+        {{ subtitle('Textarea') }}
+        {{ textarea(id="Message", label="Message") }}
+
+        {% call code() %}
+          {% raw %}
+          {{ textarea(id="message", label="Full Name") }}
+
+          {% endraw %}
+        {% endcall %}
+
+      {% endcall %}
+    {% endcall %}
+
+
+
   </div>
 
 </div>

@@ -1,0 +1,37 @@
+{##
+ # Text input component
+ #
+ # @param {string}  [errorText="Please enter your Full Name"] - When an error occurs this will be what the user sees
+ # @param {boolean} [fullWidth=false] - Controls whether or not the input is full width...
+ # @param {string}  [helpText='People will see your full name in the forum'] - When the user needs help/assurance use this param
+ # @param {string}  [icon='person'] - If used, the icon will appear on the top right of the input (juicon)
+ # @param {string}  [id="full-name"]
+ # @param {string}  [label="Full Name"] - How the user knows what they're supposed to fill in
+ # @param {string}  [placeholder="Rick Sanchez"] - When an example is helpful
+ # @param {type}    [type="text"] - text, email, number, tel, password, etc...
+ # @param {string}  [value] - When the field should be populated by default
+ #
+ # @example
+ # {{ textInput(id="email-address", label="Full Name", placeholder="eg., Rick Sanchez", type="text") }}
+ #}
+
+{% macro textInput(
+  errorText,
+  fullWidth = true,
+  helpText,
+  icon,
+  id,
+  label,
+  placeholder,
+  type = "text",
+  value
+) %}
+
+{% if label %}<label for="{{id}}" class="label">{{label}}</label>{% endif %}
+<div class="form-element-wrap">
+  {% if icon %}<div class="icon icon--{{icon}}"></div>{% endif %}
+  <input type="{{type}}" id="{{id}}" class="form-element form-element--text{{' form-element--fw' if fullWidth}}" placeholder="{{placeholder}}"/>
+  {% if helpText %}<div class="caption">{{helpText}}</div>{% endif %}
+</div>
+
+{% endmacro %}
