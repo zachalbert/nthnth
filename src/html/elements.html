@@ -142,6 +142,34 @@
           {% endraw %}
         {% endcall %}
 
+        {{ subtitle('Checkboxes') }}
+        <section>
+          <form>
+          {{ checkbox(
+            name="Yay",
+            array=[
+              {
+                label:"one"
+              },
+              {
+                label:"two",
+                default: true
+              },
+              {
+                label:"three"
+              }
+            ]
+            ) }}
+          </form>
+        </section>
+
+        {% call code() %}
+          {% raw %}
+          {{ checkbox( name="Yay",array=[{label:"one"},{label:"two",default: true},{label:"three"}]) }}
+
+          {% endraw %}
+        {% endcall %}
+
       {% endcall %}
     {% endcall %}
 
