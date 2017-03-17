@@ -17,7 +17,7 @@ body {
 }
 
 ::selection {
-  background: $theme-color-accent;
+  background: $base-color-accent;
   color: white;
   text-shadow: none;
 }
@@ -38,7 +38,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid $theme-color-accent;
+  border-top: 1px solid $base-color-accent;
   margin: 1em 0;
   padding: 0;
 }

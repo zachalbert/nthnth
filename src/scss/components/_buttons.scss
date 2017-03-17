@@ -1,6 +1,6 @@
 .button {
   box-sizing: border-box;
-  border-radius: $radius-size-1;
+  border-radius: $border-radius-1;
   cursor: pointer;
   display: inline-block;
   font-family: $display-stack;
@@ -21,38 +21,38 @@
     width: 100%;
   }
   &--elevated {
-    @include shadow-1;
+    box-shadow: $box-shadow-1;
   }
   &--neutral {
-    background: $bg-color-button-neutral;
-    color: $font-color-button-neutral;
+    background: $button-neutral-bg-color;
+    color: $button-neutral-font-color;
     &:hover {
-      background: $bg-color-button-neutral-hover;
-      color: $font-color-button-neutral;
+      background: $button-neutral-bg-color-hover;
+      color: $button-neutral-font-color;
     }
   }
   &--primary {
-    background: $bg-color-button-primary;
-    color: $font-color-button-primary;
+    background: $button-primary-bg-color;
+    color: $button-primary-font-color;
     &:hover {
-      background: $bg-color-button-primary-hover;
-      color: $font-color-button-primary;
+      background: $button-primary-bg-color-hover;
+      color: $button-primary-font-color;
     }
   }
   &--secondary {
-    background: $bg-color-button-secondary;
-    color: $font-color-button-secondary;
+    background: $button-secondary-bg-color;
+    color: $button-secondary-font-color;
     &:hover {
-      background: $bg-color-button-secondary-hover;
-      color: $font-color-button-secondary;
+      background: $button-secondary-bg-color-hover;
+      color: $button-secondary-font-color;
     }
   }
   &--accent {
-    background: $bg-color-button-accent;
-    color: $font-color-button-accent;
+    background: $button-accent-bg-color;
+    color: $button-accent-font-color;
     &:hover {
-      background: $bg-color-button-accent-hover;
-      color: $font-color-button-accent;
+      background: $button-accent-bg-color-hover;
+      color: $button-accent-font-color;
     }
   }
 }

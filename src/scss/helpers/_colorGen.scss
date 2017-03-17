@@ -36,7 +36,7 @@ $pink-red:        hsl(340, 100%, 50%);
 $red-pink:        hsl(350, 100%, 50%);
 $red-red:         hsl(360, 100%, 50%);
 
-$theme-color-accent:              #f6682F;
+$base-color-accent:              #f6682F;
 
 @function newHue($newHue, $baseHue){
   @if $baseHue >= hue($red) and $baseHue < hue($orange-red) { //if primary is red
@@ -68,7 +68,7 @@ $theme-color-accent:              #f6682F;
 
 //Need to know what type of color we're going to be adjusting
 //Need to know what color we're starting from so we can adjust accordingly
-@function getColor($colorType, $fromPrimaryColor: $theme-color-accent ) {
+@function getColor($colorType, $fromPrimaryColor: $base-color-accent ) {
 
   //Need to get the hue of the starting color so we can adjust its value to the desired colortype's hue range
   $baseHue:         hue($fromPrimaryColor);
@@ -141,7 +141,7 @@ $theme-color-accent:              #f6682F;
   width: 100%;
 }
 .swatch--primary {
-  background: $theme-color-accent;
+  background: $base-color-accent;
 }
 .swatch--accent-hard {
   background: getColor("accent-hard");

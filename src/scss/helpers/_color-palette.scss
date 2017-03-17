@@ -1,6 +1,6 @@
-/*------------------------------------*\
+/*------------------------------------------------------------------------*\
   COLORS
-\*------------------------------------*/
+\*------------------------------------------------------------------------*/
 
 $red-hue:       0;
 $orange-hue:    30;
@@ -179,4 +179,28 @@ $palettes: (
 
 @function palette($palette, $tone: 'neutral') {
   @return map-get(map-get($palettes, $palette), $tone);
+}
+
+
+
+
+
+
+
+$color-sizes: ();
+$current-size: 12px;
+
+@for $i from 1 through 10 {
+ $size: ($i: $current-size);
+ $current-size: $current-size * 1.5;
+ $color-sizes: map-merge($color-sizes, $size);
+}
+
+@function color-size($key) {
+  @if map-has-key($color-sizes, $key) {
+    @return map-get($color-sizes, $key);
+  }
+
+  @warn "Unknown font-size '#{$key}'";
+  @return null;
 }

@@ -106,15 +106,15 @@ h5,
 /* BODY */
 
 p {
-  // color: $body-font-color;
+  // color: $display-font-color;
 }
 
 a {
-  color: $font-color-link;
+  color: $link-font-color;
   transition: $transition-off;
 
   &:hover {
-    color: $font-color-link-hover;
+    color: $link-font-color-hover;
     transition: $transition-on;
     text-decoration: none;
   }
@@ -142,7 +142,7 @@ tt {
 tt {
   padding: 0.3rem 0.5rem;
   background: $font-color-muted;
-  border-radius: $radius-size-1;
+  border-radius: $border-radius-1;
   margin: 0 0.1rem;
   line-height: 1;
 }
@@ -175,7 +175,7 @@ small,
 
 .meta-text {
   @extend .text-small;
-  color: $theme-color-accent;
+  color: $base-color-accent;
   line-height: $line-height;
 }
 

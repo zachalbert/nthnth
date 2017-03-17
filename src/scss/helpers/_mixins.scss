@@ -1,7 +1,7 @@
 /* INCLUDES BUTTON SHADOWS IF TRUE IN _vars.scss */
 @mixin shadow-1($bool: $button-shadow){
   @if $bool == true {
-    box-shadow: $shadow-1;
+    box-shadow: $box-shadow-1;
   } else {
     box-shadow: none;
   }

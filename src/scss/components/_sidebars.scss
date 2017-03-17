@@ -24,16 +24,16 @@
     }
 
     .flexible-container__side {
-      width: $width-side-nav-collapsed;
-      min-width: $width-side-nav-collapsed;
+      width: $nav-side-width-collapsed;
+      min-width: $nav-side-width-collapsed;
     }
 
     .sidebar--fixed {
-      width: $width-side-nav-collapsed !important;
+      width: $nav-side-width-collapsed !important;
     }
 
     .sidebar__nav-link .text {
-      left: -$width-side-nav;
+      left: -$nav-side-width;
     }
 
     .sidebar__closer__trigger {
@@ -48,7 +48,7 @@
 
 .sidebar {
   padding-top: $lead-half;
-  background: $bg-color-sidebar;
+  background: $nav-side-bg-color;
   position: relative;
 
   ul {
@@ -58,13 +58,13 @@
 
   &--fixed {
     z-index: 50;
-    width: $width-side-nav !important;
+    width: $nav-side-width !important;
     margin-left: 0 !important;
   }
 
   &__nav-link {
     @extend .clear;
-    color: $font-color-sidebar-link;
+    color: $nav-side-link-font-color;
     display: block;
     text-decoration: none;
     text-align: center;
@@ -81,31 +81,31 @@
 
     .icon {
       font-size: 80%;
-      width: $width-side-nav-collapsed;
-      background: $bg-color-sidebar;
+      width: $nav-side-width-collapsed;
+      background: $nav-side-bg-color;
       position: relative;
       z-index: 2;
     }
 
     .text {
-      width: $width-side-nav - $width-side-nav-collapsed;
+      width: $nav-side-width - $nav-side-width-collapsed;
       text-align: left;
       position: absolute;
       z-index: 1;
-      left: $width-side-nav-collapsed;
+      left: $nav-side-width-collapsed;
     }
 
     &:hover,
     &:hover .icon,
     &:hover .text {
-      background: $bg-color-sidebar-link-hover;
-      color: $font-color-sidebar-link-hover;
+      background: $nav-side-link-bg-color-hover;
+      color: $nav-side-link-font-color-hover;
       transition: $transition-on;
     }
 
     &:hover {
       .text {
-        left: $width-side-nav-collapsed;
+        left: $nav-side-width-collapsed;
       }
     }
   }
@@ -122,7 +122,7 @@
       left: 0;
       bottom: 0;
       pointer-events: all;
-      padding-right: $width-side-nav - $width-side-nav-collapsed;
+      padding-right: $nav-side-width - $nav-side-width-collapsed;
     }
   }
 }

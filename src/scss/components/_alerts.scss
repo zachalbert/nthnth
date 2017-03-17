@@ -1,6 +1,6 @@
 .alert {
-  border-radius: $radius-size-1;
-  color: $font-color-alert;
+  border-radius: $border-radius-1;
+  color: $alert-font-color;
   font-family: $display-stack;
   padding: $lead-half;
   position: relative;
@@ -23,15 +23,15 @@
     }
   }
   &--error {
-    background: $bg-color-alert-error;
+    background: $alert-error-bg-color;
   }
   &--warning {
-    background: $bg-color-alert-warning;
+    background: $alert-warning-bg-color;
   }
   &--info {
-    background: $bg-color-alert-info;
+    background: $alert-info-bg-color;
   }
   &--success {
-    background: $bg-color-alert-success;
+    background: $alert-success-bg-color;
   }
 }
