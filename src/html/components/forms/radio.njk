@@ -1,13 +1,25 @@
+{##
+ # Radio component
+ #
+ # @param {string}    [name="Yay"]
+ # @param {[Object]}  [{label:"two",default: true}]
+ #
+ # @example
+ # {{ radio( name="Yay",array=[{label:"one"},{label:"two",default: true},{label:"three"}]) }}
+ #}
+
 {% macro radio(
   name,
   array = []
 ) %}
-
-{% if array.length > 0 %}
+<ul class="form-element-list">
 {% for i in array %}
-<input type="radio" id="{{ name + '-' + i.label }}" name="{{ name }}" value="Blah"{{ ' checked' if i.default }}>
-<label for="{{ name + '-' + i.label }}">{{ i.label }}</label>
+<li class="form-element-list__item">
+  <label class="label" for="{{ name + '-' + i.label }}">
+    <input type="radio" class="form-element form-element--radio" id="{{ name + '-' + i.label }}" name="{{ name }}" value="Blah"{{ ' checked' if i.default }}>
+    <span class="form-element__option">{{ name + '-' + i.label }}</span>
+  </label>
+</li>
 {% endfor %}
-{% endif %}
-
+</ul>
 {% endmacro %}

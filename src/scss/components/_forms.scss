@@ -111,6 +111,14 @@
     }
   }
 
+  //lists
+  &-list {
+    padding: 0;
+    li {
+      list-style-type: none;
+    }
+  }
+
   &__option {
     font-size: $body-font-size;
     font-weight: $font-weight-normal;
