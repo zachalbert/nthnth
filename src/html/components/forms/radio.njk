@@ -1,0 +1,13 @@
+{% macro radio(
+  name,
+  array = []
+) %}
+
+{% if array.length > 0 %}
+{% for i in array %}
+<input type="radio" id="{{ name + '-' + i.label }}" name="{{ name }}" value="Blah"{{ ' checked' if i.default }}>
+<label for="{{ name + '-' + i.label }}">{{ i.label }}</label>
+{% endfor %}
+{% endif %}
+
+{% endmacro %}

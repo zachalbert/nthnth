@@ -87,6 +87,24 @@
       {% endcall %}
     {% endcall %}
 
+    <section>
+      {{ radio(
+        name="Yay",
+        array=[
+          {
+            label:"one"
+          },
+          {
+            label:"two",
+            default: true
+          },
+          {
+            label:"three"
+          }
+        ]
+        ) }}
+    </section>
+
     {{ anchor('forms') }}
     {% call section() %}
       {% call columns() %}
