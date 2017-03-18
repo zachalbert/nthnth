@@ -1,10 +1,8 @@
 var _                 = require('lodash')
 var Promise           = require("bluebird")
 var config            = require('config')
-var contentful        = require('contentful-management')
+var contentful        = require('contentful')
 var memoize           = require('memoizee')
-
-var locale = config.get("contentful.locale")
 
 // Get some userfriendly names out of the types (can sometimes be ids)
 var getTypeNames = function(result) {
@@ -35,9 +33,7 @@ var buildData = function(space, entries) {
 
   var handleEntry = function(entry) {
     return Promise.reduce(Object.entries(entry.fields),
-      function(acc, [name, field]) {
-        var val = field[locale];
-
+      function(acc, [name, val]) {
         var getLink = function(val) {
           return fns[val.sys.linkType](val.sys.id).then(handleEntry)
         }
@@ -69,20 +65,18 @@ var buildData = function(space, entries) {
 
 var getData = memoize(function(cb) {
   var client = contentful.createClient({
-    "accessToken": config.get("contentful.manageToken"),
-    "resolveLinks": true
+    "space": config.get("contentful.space"),
+    "accessToken": config.get("contentful.accessToken"),
+    "resolveLinks": false
   })
 
-  client.getSpace(config.get("contentful.space")).then(function(space) {
-
-    space.getEntries().then(function(entries) {
-      buildData(space, entries).then(function(data) {
-        var actual = data.reduce(function(acc, [name, val]) {
-          acc[name] = _.get(acc, name, []).concat([val])
-          return acc
-        }, {})
-        cb(undefined, { contentful: actual })
-      })
+  client.getEntries().then(function(entries) {
+    buildData(client, entries).then(function(data) {
+      var actual = data.reduce(function(acc, [name, val]) {
+        acc[name] = _.get(acc, name, []).concat([val])
+        return acc
+      }, {})
+      cb(undefined, { contentful: actual })
     })
   })
 

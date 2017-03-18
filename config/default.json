@@ -1,8 +1,10 @@
 {
   "contentful": {
     "space": "none",
+    "accessToken": "none",
     "manageToken": "none",
-    "locale": "en-US"
+    "locale": "en-US",
+    "refreshDelay": 30
   },
   "debug": true
 }

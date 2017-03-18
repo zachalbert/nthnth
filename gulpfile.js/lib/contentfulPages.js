@@ -32,7 +32,7 @@ var addPages = function() {
   var flush = function(cb) {
     var _this = this;
     contentfulSync(null, function(err, data) {
-      Promise.each(data.contentful.site[0].pages, function(page) {
+      Promise.each(data.contentful.page, function(page) {
         return createFile(page).then(function(fobj) {
           _this.emit('data', fobj)
         })
