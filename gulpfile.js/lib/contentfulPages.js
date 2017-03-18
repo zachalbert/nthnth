@@ -34,6 +34,7 @@ var addPages = function() {
     contentfulSync(null, function(err, data) {
       Promise.each(data.contentful.page, function(page) {
         return createFile(page).then(function(fobj) {
+          fobj.data = { page: page }
           _this.emit('data', fobj)
         })
       }).then(function() { cb() })
