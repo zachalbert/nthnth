@@ -115,25 +115,23 @@
         {% endcall %}
 
         {{ subtitle('Radios') }}
-        <section>
-          <form>
-          {{ radio(
-            name="Yay",
-            array=[
-              {
-                label:"one"
-              },
-              {
-                label:"two",
-                default: true
-              },
-              {
-                label:"three"
-              }
-            ]
-            ) }}
-          </form>
-        </section>
+        <form>
+        {{ radio(
+          name="Yay",
+          array=[
+            {
+              label:"one"
+            },
+            {
+              label:"two",
+              default: true
+            },
+            {
+              label:"three"
+            }
+          ]
+          ) }}
+        </form>
 
         {% call code() %}
           {% raw %}
@@ -143,29 +141,53 @@
         {% endcall %}
 
         {{ subtitle('Checkboxes') }}
-        <section>
-          <form>
-          {{ checkbox(
-            name="Yay",
-            array=[
-              {
-                label:"one"
-              },
-              {
-                label:"two",
-                default: true
-              },
-              {
-                label:"three"
-              }
-            ]
-            ) }}
-          </form>
-        </section>
+        <form>
+        {{ checkbox(
+          name="Yay",
+          array=[
+            {
+              label:"one"
+            },
+            {
+              label:"two",
+              default: true
+            },
+            {
+              label:"three"
+            }
+          ]
+          ) }}
+        </form>
 
         {% call code() %}
           {% raw %}
           {{ checkbox( name="Yay",array=[{label:"one"},{label:"two",default: true},{label:"three"}]) }}
+
+          {% endraw %}
+        {% endcall %}
+
+        {{ subtitle('Selects') }}
+        <form>
+        {{ select(
+          label="State",
+          placeholder="Select a state...",
+          array=[
+            {
+              option:"CA"
+            },
+            {
+              option:"IL"
+            },
+            {
+              option:"NY"
+            }
+          ]
+          ) }}
+        </form>
+
+        {% call code() %}
+          {% raw %}
+          {{ select( label="State", placeholder="Select a state...", array=[{option:"CA"},{option:"IL",default: true},{option:"NY"}]) }}
 
           {% endraw %}
         {% endcall %}

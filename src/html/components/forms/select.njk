@@ -1,0 +1,28 @@
+{##
+ # Select component
+ #
+ # @param {string}    [name="Yay"]
+ # @param {[Object]}  [{label:"two",default: true}]
+ #
+ # @example
+ # {{ select( label="Yay",array=[{option:"one"},{option:"two",default: true},{option:"three"}]) }}
+ #}
+
+{% macro select(
+  label,
+  placeholder = "Select an option...",
+  array = []
+) %}
+<div class="form-element-group">
+  <label class="label">{{ label }}</label>
+  <div class="form-element-wrap">
+    <div class="icon icon--caret-down"></div>
+    <select class="form-element form-element--select form-element--fw">
+      <option value="">{{ placeholder }}</option>
+      {% for i in array %}
+        <option value="{{ i.option }}"{{ ' selected' if i.default }}>{{ i.option }}</option>
+      {% endfor %}
+    </select>
+  </div>
+</div>
+{% endmacro %}
