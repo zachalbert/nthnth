@@ -9,7 +9,6 @@
 {% from 'components/forms/radio.njk'           import radio %}
 {% from 'components/forms/checkbox.njk'        import checkbox %}
 {% from 'components/forms/select.njk'          import select %}
-{% from 'components/helpers/header.njk'        import header %}
 {% from 'components/helpers/repeat__staff.njk' import repeatStaff %}
 {% from 'components/helpers/anchor.njk'        import anchor %}
 {% from 'components/images/image.njk'          import image %}
@@ -20,7 +19,41 @@
 
 <!doctype html>
 <html class="{% block htmlClasses %}{% endblock %}">
-  {{ header(data=contentful.site[0], path=path) }}
+  {% set sitedata = contentful.site[0] %}
+  <head>
+    <link rel="shortcut icon" href="{{ sitedata.favicon.file.url }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_us">
+
+    <title>{% block title %}"asdf"{% endblock %}</title>
+    <meta name="twitter:title" content="{{ sitedata.title }}">
+    <meta property="og:title" content="{{ sitedata.title }}">
+    <meta property="og:site_name" content="{{ sitedata.title }}">
+
+    <meta name="description" content="{{ sitedata.description }}">
+    <meta name="twitter:description" content="{{ sitedata.description }}">
+    <meta property="og:description" content="{{ sitedata.description }}">
+
+    <meta name="twitter:site" content="{{ sitedata.twitterUsername }}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="home" href="{{ getCanonicalLink(sitedata, '') }}">
+    <link rel="canonical" href="{{ getCanonicalLink(sitedata, path) }}">
+    <meta name="dcterms.Identifier" content="{{ getCanonicalLink(sitedata, path) }}">
+    <meta property="og:url" content="{{ getCanonicalLink(sitedata, path) }}">
+
+    {# [Prebrowsing](https://css-tricks.com/prefetching-preloading-prebrowsing/) #}
+    <link rel="preconnect" href="//cdn.jsdelivr.net">
+    {# For demo images #}
+    <link rel="preconnect" href="//source.unsplash.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+
+    <link rel="stylesheet" href="css/styles.css">
+    {% block head %}{% endblock %}
+  </head>
 
   <body class="{{ contentful.site[0].styleClasses | default([]) | join(' ') }}{% block bodyClasses %}{% endblock %}">
 
