@@ -58,7 +58,7 @@
 
   <body class="{{ contentful.site[0].styleClasses | default([]) | join(' ') }}{% block bodyClasses %}{% endblock %}">
 
-    {{ nav( site = sitedata, path = path ) }}
+    {{ nav( cms = contentful, site = sitedata, path = path ) }}
 
     {% block content %}{% endblock %}
 

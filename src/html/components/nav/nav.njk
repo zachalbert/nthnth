@@ -6,6 +6,7 @@
  #}
 
 {% macro nav(
+  cms,
   site,
   path,
   fixed = true,
@@ -24,11 +25,18 @@
       </div>
     </div>
     <ul class="nav__links">
-      <li><a{% if path == 'faq' %} class="is-active"{% endif %} href="/faq.html">FAQ</a></li>
-      <li><a{% if path == 'elements' %} class="is-active"{% endif %} href="/elements.html">Elements</a></li>
-      <li><a{% if path == 'components' %} class="is-active"{% endif %} href="/components.html">Components</a></li>
-      <li><a{% if path == 'layouts' %} class="is-active"{% endif %} href="/layouts.html">Layouts</a></li>
-      <li><a{% if path == 'colorGen' %} class="is-active"{% endif %} href="/colorGen.html">Color</a></li>
+
+      {# Fancy auto-nav, generated from any `page` entry in contentful #}
+      {% for page in cms.page %}
+        <li>
+          <a href="/{{ page.name }}.html"{{ ' class="is-active"' if ( page.name == path ) }}>{{ page.title }}</a>
+        </li>
+      {% endfor %}
+
+      {# Old school, manual nav #}
+      <li><a{% if path == 'components.html' %} class="is-active"{% endif %} href="/components.html">Components</a></li>
+      <li><a{% if path == 'layouts.html' %} class="is-active"{% endif %} href="/layouts.html">Layouts</a></li>
+      <li><a{% if path == 'faq.html' %} class="is-active"{% endif %} href="/faq.html">FAQ</a></li>
     </ul>
     <div class="nav__overlay"></div>
     <div class="nav__menu-toggle"><div class="visuallyhidden">Navigation Menu</div></div>
