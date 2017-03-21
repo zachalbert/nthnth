@@ -213,9 +213,9 @@ $alert-font-color:  rgba(255,255,255,.8);
 /*------------------------------------------------------------------------*\
   NAVS
 \*------------------------------------------------------------------------*/
-$nav-logo-size:                         40px;
+$nav-logo-size:                         $lead-double;
 $navbar-padding:                        $lead-half;
-$navbar-height:                         84px; /* TODO: This is a magic number, prone to breaking. Need something more bulletproof. */
+$navbar-height:                         $nav-logo-size + ($navbar-padding * 2); /* TODO: This is a magic number, prone to breaking. Need something more bulletproof. */
 $navbar-bg-color:                       white;
 $navbar-link-font-color:                $base-color-accent;
 $navbar-link-font-color-hover:          $base-color-accent-dark;

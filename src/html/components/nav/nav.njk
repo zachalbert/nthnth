@@ -6,31 +6,31 @@
  #}
 
 {% macro nav(
-  page
+  page,
+  fixed = true,
+  transparent = false
   ) %}
 
-<nav class="nav nav--top nav--fixed nav--off-canvas">
-  <div class="nav__body">
-    <div class="nav__content">
-      <div class="nav__brand">
-        <div class="nav__logo">
-          <a href="/"><img class="svg" src="images/resolute-logo.svg"></a>
-        </div>
-        <div class="nav__brand-text">
-          NthNth
-        </div>
+<nav class="nav nav--top {{ 'nav--fixed' if fixed }} {{ 'nav--transparent' if transparent }} nav--off-canvas">
+  <div class="nav__container">
+    <div class="nav__brand">
+      <div class="nav__logo">
+        <a href="/"><img class="svg" src="images/resolute-logo.svg"></a>
       </div>
-      <ul class="nav__links">
-        <li><a {% if page == '/faq.html' %} class="is-active"{% endif %} href="/faq.html">FAQ</a></li>
-        <li><a {% if page == '/elements.html' %} class="is-active"{% endif %} href="/elements.html">Elements</a></li>
-        <li><a {% if page == '/components.html' %} class="is-active"{% endif %} href="/components.html">Components</a></li>
-        <li><a {% if page == '/layouts.html' %} class="is-active"{% endif %} href="/layouts.html">Layouts</a></li>
-        <li><a {% if page == '/colorGen.html' %} class="is-active"{% endif %} href="/colorGen.html">Color</a></li>
-      </ul>
-      <div class="nav__overlay"></div>
+      <div class="nav__brand-text">
+        NthNth
+      </div>
     </div>
+    <ul class="nav__links">
+      <li><a {% if page == '/faq.html' %} class="is-active"{% endif %} href="/faq.html">FAQ</a></li>
+      <li><a {% if page == '/elements.html' %} class="is-active"{% endif %} href="/elements.html">Elements</a></li>
+      <li><a {% if page == '/components.html' %} class="is-active"{% endif %} href="/components.html">Components</a></li>
+      <li><a {% if page == '/layouts.html' %} class="is-active"{% endif %} href="/layouts.html">Layouts</a></li>
+      <li><a {% if page == '/colorGen.html' %} class="is-active"{% endif %} href="/colorGen.html">Color</a></li>
+    </ul>
+    <div class="nav__overlay"></div>
+    <div class="nav__menu-toggle"><div class="visuallyhidden">Navigation Menu</div></div>
   </div>
-  <div class="nav__menu-toggle"><div class="visuallyhidden">Navigation Menu</div></div>
 </nav>
 
 {% endmacro %}
