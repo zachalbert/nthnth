@@ -6,6 +6,7 @@
  #}
 
 {% macro nav(
+  site,
   page,
   fixed = true,
   transparent = false
@@ -19,7 +20,7 @@
         <a href="/"><h4 style="line-height: 0.75; text-align: center;">RESOLUTE<br />BUILDERS</h4></a>
       </div>
       <div class="nav__brand-text">
-        NthNth
+        {{ site.title }}
       </div>
     </div>
     <ul class="nav__links">

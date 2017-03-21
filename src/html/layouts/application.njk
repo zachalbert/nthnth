@@ -58,6 +58,8 @@
 
   <body class="{{ contentful.site[0].styleClasses | default([]) | join(' ') }}{% block bodyClasses %}{% endblock %}">
 
+    {{ nav(site = sitedata) }}
+
     {% block content %}{% endblock %}
 
     {% block javascript %}
