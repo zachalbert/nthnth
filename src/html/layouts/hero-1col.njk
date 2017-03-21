@@ -1,0 +1,203 @@
+{% extends 'layouts/application.njk' %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+
+{% call section(
+  bgURL = "https://source.unsplash.com/featured/1920x1080",
+  bgOverlayModifierClass = "dark",
+  class = "section--hero"
+)%}
+  {% call columns(
+    sm = 10,
+    rowClasses = "center-xs text-center"
+  ) %}
+  {{ title('<i class="icon icon--blocks icon--xs"></i>Elements', level = 1) }}
+  {{ subtitle(level = 1, 'Irreducible elements which make up the building blocks for <a href="/components.html">components</a>', type = 'page') }}
+  {% endcall %}
+{% endcall %}
+
+<div class="flexible-container flexible-container--collapsed">
+  <div class="flexible-container__side sidebar fixed-scroll-offset hide-xs">
+
+    <div class="sidebar--fixed">
+      <ul>
+        <li><a data-scroll class="sidebar__nav-link" href="#sections"><i class="icon icon--dashboard"></i><span class="text">Sections</span></a></li>
+        <li><a data-scroll class="sidebar__nav-link" href="#content"><i class="icon icon--grid-uneven"></i><span class="text">Content</span></a></li>
+        <li><a data-scroll class="sidebar__nav-link" href="#features"><i class="icon icon--blocks"></i><span class="text">Features</span></a></li>
+        <li><a data-scroll class="sidebar__nav-link" href="#pricing"><i class="icon icon--documents-group"></i><span class="text">Pricing</span></a></li>
+        <li><a data-scroll class="sidebar__nav-link" href="#cards"><i class="icon icon--profile-landscape"></i><span class="text">Cards</span></a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar__closer"><a href="#" class="sidebar__nav-link sidebar__closer__trigger"><i class="icon icon--chevron-right"></i></a></div>
+
+  </div>
+  <div class="flexible-container__main">
+
+    {{ anchor('buttons') }}
+    {% call section() %}
+      {% call columns() %}
+        {{ title('Buttons') }}
+        {{ subtitle(level = 5, 'For clicking.')}}
+
+        {{ subtitle('Primary') }}
+        {{ button() }}
+
+        {% call code() %}
+          {% raw %}
+          {{ button() }}
+
+          // Alternatively…
+
+          {{ button( type="primary" ) }}
+          {% endraw %}
+        {% endcall %}
+
+        {{ subtitle('Secondary') }}
+        {{ button(type='secondary') }}
+
+        {% call code() %}
+          {% raw %}
+          {{ button( type="secondary" ) }}
+          {% endraw %}
+        {% endcall %}
+
+        {{ subtitle('Accent') }}
+        {{ button(type='accent') }}
+
+        {% call code() %}
+          {% raw %}
+          {{ button( type="accent" ) }}
+          {% endraw %}
+        {% endcall %}
+
+        {{ subtitle('Neutral') }}
+        {{ button(type='neutral') }}
+
+        {% call code() %}
+          {% raw %}
+          {{ button( type="neutral" ) }}
+          {% endraw %}
+        {% endcall %}
+
+      {% endcall %}
+    {% endcall %}
+
+    {{ anchor('forms') }}
+    {% call section() %}
+      {% call columns() %}
+        {{ title('Forms') }}
+        {{ subtitle(level = 5, 'For inputing junk.')}}
+
+        {{ subtitle('Text Input') }}
+        {{ textInput(fullWidth=false, id="email-address", label="Full Name", placeholder="eg., Rick Sanchez", type="text") }}
+
+        {% call code() %}
+          {% raw %}
+          // text inputs are full width by default…
+          {{ textInput(fullWidth="false", id="email-address", label="Full Name", placeholder="eg., Rick Sanchez", type="text") }}
+
+          {% endraw %}
+        {% endcall %}
+
+        {{ subtitle('Textarea') }}
+        {{ textarea(id="Message", label="Message") }}
+
+        {% call code() %}
+          {% raw %}
+          {{ textarea(id="message", label="Full Name") }}
+
+          {% endraw %}
+        {% endcall %}
+
+        {{ subtitle('Radios') }}
+        <form>
+        {{ radio(
+          name="Yay",
+          array=[
+            {
+              label:"one"
+            },
+            {
+              label:"two",
+              default: true
+            },
+            {
+              label:"three"
+            }
+          ]
+          ) }}
+        </form>
+
+        {% call code() %}
+          {% raw %}
+          {{ radio( name="Yay",array=[{label:"one"},{label:"two",default: true},{label:"three"}]) }}
+
+          {% endraw %}
+        {% endcall %}
+
+        {{ subtitle('Checkboxes') }}
+        <form>
+        {{ checkbox(
+          name="Yay",
+          array=[
+            {
+              label:"one"
+            },
+            {
+              label:"two",
+              default: true
+            },
+            {
+              label:"three"
+            }
+          ]
+          ) }}
+        </form>
+
+        {% call code() %}
+          {% raw %}
+          {{ checkbox( name="Yay",array=[{label:"one"},{label:"two",default: true},{label:"three"}]) }}
+
+          {% endraw %}
+        {% endcall %}
+
+        {{ subtitle('Selects') }}
+        <form>
+        {{ select(
+          label="State",
+          placeholder="Select a state...",
+          array=[
+            {
+              option:"CA"
+            },
+            {
+              option:"IL"
+            },
+            {
+              option:"NY"
+            }
+          ]
+          ) }}
+        </form>
+
+        {% call code() %}
+          {% raw %}
+          {{ select( label="State", placeholder="Select a state...", array=[{option:"CA"},{option:"IL",default: true},{option:"NY"}]) }}
+
+          {% endraw %}
+        {% endcall %}
+
+      {% endcall %}
+    {% endcall %}
+
+
+
+
+  </div>
+
+</div>
+
+{% endblock %}
