@@ -26,6 +26,10 @@ body {
   text-shadow: none;
 }
 
+iframe {
+  max-width: 100%;
+}
+
 /* IE7 image scaling fix */
 img { -ms-interpolation-mode: bicubic; }
 

@@ -11,7 +11,8 @@
 {% from 'components/forms/select.njk'          import select %}
 {% from 'components/helpers/repeat__staff.njk' import repeatStaff %}
 {% from 'components/helpers/anchor.njk'        import anchor %}
-{% from 'components/images/image.njk'          import image %}
+{% from 'components/media/image.njk'           import image %}
+{% from 'components/media/calendar.njk'        import calendar %}
 {% from 'components/nav/nav.njk'               import nav %}
 {% from 'components/text/title.njk'            import title %}
 {% from 'components/text/subtitle.njk'         import subtitle %}
@@ -27,7 +28,7 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_us">
 
-    <title>{% block title %}"asdf"{% endblock %}</title>
+    <title>{% block title %}{{ sitedata.title }}{% endblock %}</title>
     <meta name="twitter:title" content="{{ sitedata.title }}">
     <meta property="og:title" content="{{ sitedata.title }}">
     <meta property="og:site_name" content="{{ sitedata.title }}">

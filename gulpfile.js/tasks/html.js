@@ -1,20 +1,20 @@
-var config         = require('../config')
+var config          = require('../config')
 if(!config.tasks.html) return
 
-var browserSync    = require('browser-sync')
-var theConfig      = require('config')
-var contentfulSync = require("../lib/contentfulSync")
+var browserSync     = require('browser-sync')
+var theConfig       = require('config')
+var contentfulSync  = require("../lib/contentfulSync")
 var contentfulPages = require("../lib/contentfulPages")
-var data           = require('gulp-data')
-var faker          = require('gulp-faker');
-var fs             = require('fs')
-var gulp           = require('gulp')
-var gulpif         = require('gulp-if')
-var handleErrors   = require('../lib/handleErrors')
-var prettify       = require('gulp-jsbeautifier')
-var path           = require('path')
-var render         = require('gulp-nunjucks-render')
-var exclude        = path.normalize('!**/{' + config.tasks.html.excludeFolders.join(',') + '}/**')
+var data            = require('gulp-data')
+var faker           = require('gulp-faker');
+var fs              = require('fs')
+var gulp            = require('gulp')
+var gulpif          = require('gulp-if')
+var handleErrors    = require('../lib/handleErrors')
+var prettify        = require('gulp-jsbeautifier')
+var path            = require('path')
+var render          = require('gulp-nunjucks-render')
+var exclude         = path.normalize('!**/{' + config.tasks.html.excludeFolders.join(',') + '}/**')
 
 var paths = {
   src: [
@@ -56,8 +56,15 @@ var htmlTask = function() {
         });
         environment.addGlobal('getCanonicalLink', function(site, path) {
           return `//${ site.canonicalLink }/${ path }`
-        })
+        });
         environment.addGlobal('config', theConfig);
+        environment.addGlobal('getIframeSrc', function(src) {
+          let url       = src.split(';src=')[1];
+          let baseUrl   = 'https://calendar.google.com/calendar/embed?';
+          let styleArgs = 'showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;';
+          let iframeSrc = baseUrl + styleArgs + url;
+          return iframeSrc;
+        })
       }
     }))
     .on('error', handleErrors)

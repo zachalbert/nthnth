@@ -59,6 +59,7 @@ let's use the main `dev` branch.
 
 [ ] More robust image overlays that do color grading and correction
 [ ] Go over H5BP optimizations
+[ ] Sidebar scroller bug: Open dev tools (bottom aligned), then scroll to the bottom of a page with a collapsible sidebar, then close dev tools. The sidebar links will stay pinned to the bottom of the page.
 
 ## Components
 [x] Section
