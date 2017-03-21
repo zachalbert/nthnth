@@ -59,6 +59,7 @@ var htmlTask = function() {
         });
         environment.addGlobal('config', theConfig);
         environment.addGlobal('getIframeSrc', function(src) {
+          // Strip default style parameters on Gcal's embed, and replace them with params that suck less
           let url       = src.split(';src=')[1];
           let baseUrl   = 'https://calendar.google.com/calendar/embed?';
           let styleArgs = 'showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;';
