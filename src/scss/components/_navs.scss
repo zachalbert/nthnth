@@ -120,6 +120,10 @@
 }
 
 .nav__logo {
+  a {
+    text-decoration: none;
+  }
+
   svg, img {
     height: $nav-logo-size;
   }
