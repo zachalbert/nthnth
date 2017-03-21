@@ -1,0 +1,21 @@
+{##
+ # Embed a google calendar. [Instructions here](https://support.google.com/calendar/answer/41207?hl=en)
+ #
+ # @param {string} [source] - The string inside the iframe embed's src attribute
+ #
+ # @example
+ # If you get an iframe tag that looks like this: <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=rkreg.com_jlvt28bnkv2uj6fjv2vllqtss8%40group.calendar.google.com&amp;color=%238C500B&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+ # Copy everything inside src="COPY ALL THIS"
+ # {{ calendar(
+     source='https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=rkreg.com_jlvt28bnkv2uj6fjv2vllqtss8%40group.calendar.google.com&amp;color=%238C500B&amp;ctz=America%2FLos_Angeles'
+   ) }}
+ #}
+
+{% macro calendar(
+  source
+) %}
+
+{# <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=rkreg.com_jlvt28bnkv2uj6fjv2vllqtss8%40group.calendar.google.com&amp;color=%238C500B&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe> #}
+<iframe src="{{ getIframeSrc(source) }}" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+{% endmacro %}
