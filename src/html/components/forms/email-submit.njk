@@ -1,0 +1,39 @@
+{##
+ # Email submit component
+ #
+ # @param {string}  [errorText="Please enter a valuid email address"] - When an error occurs this will be what the user sees
+ # @param {string}  [id="submitEmail"]
+ # @param {string}  [label="Email Address"] - Will not be visible if no value is present
+ # @param {string}  [placeholder="Rick Sanchez"] - When an example is helpful
+ # @param {string}  [text] - When the field should be populated by default
+ #
+ # @example
+ # {{ emailSubmit() }}
+ #}
+
+ {% from 'components/button/button.njk'         import button %}
+
+
+{% macro emailSubmit(
+  errorText = "Please enter a valid email address",
+  id = "submitEmail",
+  label,
+  placeholder="Email address"
+) %}
+
+<div class="form-element-group">
+  {% if label %}<label for="{{id}}" class="label">{{label}}</label>{% endif %}
+  <div class="form-element-wrap">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8">
+        <input type="email" id="{{id}}" class="form-element form-element--text form-element--fw" placeholder="{{placeholder}}"/>
+        {% if helpText %}<div class="caption">{{helpText}}</div>{% endif %}
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        {{ button(class="button--full", type="accent", text="Submit") }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endmacro %}

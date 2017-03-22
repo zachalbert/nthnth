@@ -39,6 +39,20 @@
     {{ anchor('sections') }}
 
     {% call section(
+      class  = 'section--separated'
+    ) %}
+    {% call columns() %}
+      {{ title("Get Notified") }}
+      {{ subtitle(level = '5', "We'll send you updates on our progress") }}
+    {% endcall %}
+      {% call row() %}
+        {% call columns( row=false, sm=5 ) %}
+          {{ emailSubmit() }}
+        {% endcall %}
+      {% endcall %}
+  {% endcall %}
+
+    {% call section(
       bgType = 'neutral-1',
       bgType = 'neutral-1',
       class  = 'section--separated'
