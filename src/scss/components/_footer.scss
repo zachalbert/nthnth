@@ -1,0 +1,19 @@
+.footer {
+  background-color: $footer-bg-color;
+  padding: $section-padding 0;
+}
+
+.footer__logo a {
+  color: $footer-brand-font-color;
+  text-decoration: none;
+}
+
+.footer__links {
+  list-style-type: none;
+  padding: 0;
+  a {
+    color: $footer-link-font-color;
+    text-decoration: none;
+  }
+
+}

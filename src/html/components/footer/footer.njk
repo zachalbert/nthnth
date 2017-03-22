@@ -1,0 +1,44 @@
+{##
+ # Main footer
+ #
+ # @example
+ #   {{ footer() }}
+ #}
+
+{% macro footer(
+  cms,
+  site,
+  path,
+  fixed = true,
+  transparent = false
+  ) %}
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__brand">
+      <div class="footer__logo">
+        {# <a href="/"><img class="svg" src="images/GOOD_LOGO_GOES_HERE.svg" alt="Good svg logo goes here plz"></a> PLACEHOLDER FOLLOWS: #}
+        <a href="/"><h4 style="line-height: 0.75;">RESOLUTE<br />BUILDERS</h4></a>
+      </div>
+      <div class="footer__brand-text">
+        {{ site.title }}
+      </div>
+    </div>
+    <ul class="footer__links">
+
+      {# Fancy auto-nav, generated from any `page` entry in contentful #}
+      {% for page in cms.page %}
+        <li>
+          <a href="/{{ page.name }}.html"{{ ' class="is-active"' if ( page.name == path ) }}>{{ page.title }}</a>
+        </li>
+      {% endfor %}
+
+      {# Old school, manual nav #}
+      <li><a{% if path == 'components.html' %} class="is-active"{% endif %} href="/components.html">Components</a></li>
+      <li><a{% if path == 'layouts.html' %} class="is-active"{% endif %} href="/layouts.html">Layouts</a></li>
+      <li><a{% if path == 'faq.html' %} class="is-active"{% endif %} href="/faq.html">FAQ</a></li>
+    </ul>
+  </div>
+</footer>
+
+{% endmacro %}
