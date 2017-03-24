@@ -4,8 +4,12 @@
 
 {% block content %}
 
+{# If a hero component exists on the page… #}
+{% if page.hero %}
+{% set hero = page.hero %}
+
 {% call section(
-  bgURL = "https://source.unsplash.com/featured/1920x1080",
+  bgURL = hero.backgroundMedia.file.url,
   bgOverlayModifierClass = "dark",
   class = "section--hero"
 )%}
@@ -13,10 +17,12 @@
     sm = 10,
     rowClasses = "center-xs text-center"
   ) %}
-  {{ title('<i class="icon icon--blocks icon--xs"></i>Elements', level = 1) }}
-  {{ subtitle(level = 1, 'Irreducible elements which make up the building blocks for <a href="/components.html">components</a>', type = 'page') }}
+  {{ title(hero.title, level = 1) }}
+  {{ subtitle(level = 1, hero.text) }}
   {% endcall %}
 {% endcall %}
+
+{% endif %}
 
 <div class="flexible-container flexible-container--collapsed">
   <div class="flexible-container__side sidebar fixed-scroll-offset hide-xs">
