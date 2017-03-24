@@ -120,6 +120,9 @@
 }
 
 .nav__logo {
+  #{$headlineCopyTags}{
+    font-family: $ui-stack;
+  }
   a {
     text-decoration: none;
   }

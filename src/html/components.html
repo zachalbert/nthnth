@@ -18,6 +18,8 @@
   {% endcall %}
 {% endcall %}
 
+
+
 <div class="flexible-container flexible-container--collapsed">
   <div class="flexible-container__side sidebar fixed-scroll-offset hide-xs">
 
@@ -343,7 +345,6 @@
     </section>
 
     {{ anchor('cards') }}
-
     <section class="section section--separated">
       <div class="container">
         <div class="row center-xs flex-columns">
@@ -383,6 +384,10 @@
         </div>
       </div>
     </section>
+    <!-- {% for radio in contentful.radioGroup[0].options %}
+    {{ radio.label }}
+    {% endfor %} -->
+
     {{ footer( cms = contentful, site = sitedata, path = path ) }}
   </div>
 </div>
