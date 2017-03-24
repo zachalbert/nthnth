@@ -133,11 +133,11 @@
   + .nav__brand-text {
     display: none;
   }
-  #light {
-    fill: white;
+  #Color1, #Color1 path {
+    fill: $base-color-secondary;
   }
-  #dark {
-    fill: $base-color-accent;
+  #Color2, #Color2 path {
+    fill: $base-color-primary-dark;
   }
 }
 
