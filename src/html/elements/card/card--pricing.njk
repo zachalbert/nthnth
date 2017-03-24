@@ -8,9 +8,9 @@
  # {{ card(title="Card title", avatarURL="http://abc.xyz/pic.jpg") }}
  #}
 
-{% from 'components/card/card__block.njk' import cardBlock %}
-{% from 'components/layout/columns.njk' import columns %}
-{% from 'components/button/button.njk' import button %}
+{% from 'elements/card/card__block.njk' import cardBlock %}
+{% from 'elements/layout/columns.njk' import columns %}
+{% from 'elements/button/button.njk' import button %}
 
 {% macro cardPricing(
   data = {},
