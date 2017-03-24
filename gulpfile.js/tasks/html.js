@@ -51,8 +51,8 @@ var htmlTask = function() {
         autoescape: false
       },
       manageEnv: function(environment) {
-        environment.addGlobal('getContext', function() {
-          return this.ctx;
+        environment.addGlobal('getContext', function(name) {
+          return (name) ? this.ctx[name] : this.ctx;
         });
         environment.addGlobal('getCanonicalLink', function(site, path) {
           return `//${ site.canonicalLink }/${ path }`

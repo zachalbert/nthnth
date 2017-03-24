@@ -42,6 +42,15 @@
   </div>
   <div class="flexible-container__main">
 
+    {% if page.components.length > 0 %}
+    {% for item in page.components %}
+      {# {% set component = item.layout %} #}
+      {% set component = 'nav' %}
+      {{ getContext(component)('arg1') }}
+
+    {% endfor %}
+    {% endif %}
+
     {{ anchor('buttons') }}
     {% call section() %}
       {% call columns() %}
