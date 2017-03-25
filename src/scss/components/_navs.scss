@@ -64,10 +64,10 @@
     li, a {
       color: $navbar-link-font-color;
       display: inline-block;
-      font-family: $display-stack;
+      font-family: $ui-stack;
       font-size: $type-scale-2;
-      font-weight: $font-weight-bold;
-      letter-spacing: .5px;
+      font-weight: 600;
+      letter-spacing: 1px;
       text-transform: uppercase;
       text-decoration: none;
       &:hover {
@@ -134,10 +134,10 @@
     display: none;
   }
   #Color1, #Color1 path {
-    fill: $base-color-secondary;
+    fill: white;
   }
   #Color2, #Color2 path {
-    fill: $base-color-primary-dark;
+    fill: $navbar-link-font-color-active;
   }
 }
 

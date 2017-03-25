@@ -88,6 +88,10 @@
     }
 
     .text {
+      font-family: $ui-stack;
+      font-size: $type-scale-2;
+      letter-spacing: 1px;
+      text-transform: uppercase;
       width: $nav-side-width - $nav-side-width-collapsed;
       text-align: left;
       position: absolute;

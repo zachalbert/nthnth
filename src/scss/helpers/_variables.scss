@@ -3,8 +3,8 @@
 \*------------------------------------------------------------------------*/
 $base-color-neutral:          palette(neutral, C5);
 $base-color-neutral-dark:     palette(neutral, C7);
-$base-color-primary:          palette(red-orange, C5);
-$base-color-primary-dark:     palette(red-orange, C7);
+$base-color-primary:          palette(blue-violet, C5);
+$base-color-primary-dark:     palette(blue-violet, C7);
 $base-color-secondary:        palette(orange, C3);
 $base-color-secondary-dark:   palette(orange, C5);
 $base-color-accent:           palette(blue-green, C5);
@@ -21,10 +21,10 @@ $base-color-gradient-end:          rgba($base-color-primary-dark, 0.75);
 /*------------------------------------------------------------------------*\
   BASE FONT STACKS
 \*------------------------------------------------------------------------*/
-$display-stack:   'Source Sans Pro', sans-serif;
+$display-stack:   Haversack-UI,'Source Sans Pro', sans-serif;
 $body-stack:      'Source Serif Pro', serif;
 $mono-stack:      'Source Code Pro', monospace;
-$ui-stack:        Haversack-Beta-Kerned-3, 'Source Sans Pro', sans-serif;
+$ui-stack:        Haversack-UI, 'Source Sans Pro', sans-serif;
 
 
 /*------------------------------------------------------------------------*\
@@ -239,9 +239,10 @@ $nav-side-link-bg-color-hover:      palette(neutral, C10);
 /*------------------------------------------------------------------------*\
   FOOTERS
 \*------------------------------------------------------------------------*/
-$footer-bg-color:           palette(neutral, C8);
-$footer-brand-font-color:   palette(neutral, C6);
-$footer-link-font-color:    palette(neutral, C6);
+$footer-bg-color:                   palette(neutral, C8);
+$footer-brand-font-color:           palette(neutral, C6);
+$footer-link-font-color:            palette(neutral, C6);
+$footer-link-heading-font-color:    palette(neutral, C5);
 
 
 /*------------------------------------------------------------------------*\

@@ -1,9 +1,9 @@
 {##
- # Main footer
- #
- # @example
- #   {{ footer() }}
- #}
+# Main footer
+#
+# @example
+#   {{ footer() }}
+#}
 
 {% macro footer(
   cms,
@@ -13,32 +13,47 @@
   transparent = false
   ) %}
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer__brand">
-      <div class="footer__logo">
-        {# <a href="/"><img class="svg" src="images/GOOD_LOGO_GOES_HERE.svg" alt="Good svg logo goes here plz"></a> PLACEHOLDER FOLLOWS: #}
-        <a href="/"><h4 style="line-height: 0.75;">RESOLUTE<br />BUILDERS</h4></a>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          {# <a href="/"><img class="svg" src="images/GOOD_LOGO_GOES_HERE.svg" alt="Good svg logo goes here plz"></a> PLACEHOLDER FOLLOWS: #}
+          <a href="/"><img class="svg" src="images/resolute-logo2.svg" alt="Good svg logo goes here plz"></a>
+        </div>
       </div>
-      <div class="footer__brand-text">
-        {{ site.title }}
+      <div class="row">
+        {# Fancy auto-nav, generated from any `page` entry in contentful #}
+        <div class="col-xs-12 col-sm-3">
+          <h4 class="footer__link-heading">Company</h4>
+          <ul class="footer__links">
+            {% for page in cms.page %}
+            {% if page.category[0].name == "general" %}
+            <li>
+              <a href="/{{ page.name }}.html"{{ ' class="is-active"' if ( page.name == path ) }}>{{ page.title }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-3">
+          <h4 class="footer__link-heading">Resources</h4>
+          <ul class="footer__links">
+            {% for page in cms.page %}
+            {% if page.category[0].name != "general" %}
+            <li>
+              <a href="/{{ page.name }}.html"{{ ' class="is-active"' if ( page.name == path ) }}>{{ page.title }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+            {# Old school, manual nav #}
+            <li><a{% if path == 'components.html' %} class="is-active"{% endif %} href="/components.html">Components</a></li>
+            <li><a{% if path == 'layouts.html' %} class="is-active"{% endif %} href="/layouts.html">Layouts</a></li>
+            <li><a{% if path == 'faq.html' %} class="is-active"{% endif %} href="/faq.html">FAQ</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <ul class="footer__links">
+      <div class="caption text-muted">&copy; {{ site.title }}</div>
 
-      {# Fancy auto-nav, generated from any `page` entry in contentful #}
-      {% for page in cms.page %}
-        <li>
-          <a href="/{{ page.name }}.html"{{ ' class="is-active"' if ( page.name == path ) }}>{{ page.title }}</a>
-        </li>
-      {% endfor %}
+    </footer>
 
-      {# Old school, manual nav #}
-      <li><a{% if path == 'components.html' %} class="is-active"{% endif %} href="/components.html">Components</a></li>
-      <li><a{% if path == 'layouts.html' %} class="is-active"{% endif %} href="/layouts.html">Layouts</a></li>
-      <li><a{% if path == 'faq.html' %} class="is-active"{% endif %} href="/faq.html">FAQ</a></li>
-    </ul>
-  </div>
-</footer>
-
-{% endmacro %}
+    {% endmacro %}
