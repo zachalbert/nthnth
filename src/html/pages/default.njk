@@ -1,0 +1,13 @@
+{% extends 'layouts/1col.njk' %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{# Used when you haven't defined a layout from a CMS page type #}
+{% block pageContent %}
+{% call section() %}
+  {% call columns() %}
+    {{ title(page.title) }}
+    <p>Make sure you've created a template within {{ code('src/html/pages/')}} whose filename matches the {{ code('layout') }} field within contentful.</p>
+  {% endcall %}
+{% endcall %}
+{% endblock %}

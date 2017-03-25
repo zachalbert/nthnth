@@ -31,11 +31,6 @@
           <a href="/{{ page.name }}.html"{{ ' class="is-active"' if ( page.name == path ) }}>{{ page.title }}</a>
         </li>
       {% endfor %}
-
-      {# Old school, manual nav #}
-      <li><a{% if path == 'components.html' %} class="is-active"{% endif %} href="/components.html">Components</a></li>
-      <li><a{% if path == 'layouts.html' %} class="is-active"{% endif %} href="/layouts.html">Layouts</a></li>
-      <li><a{% if path == 'faq.html' %} class="is-active"{% endif %} href="/faq.html">FAQ</a></li>
     </ul>
     <div class="nav__overlay"></div>
     <div class="nav__menu-toggle"><div class="visuallyhidden">Navigation Menu</div></div>

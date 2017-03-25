@@ -11,12 +11,13 @@ var readFile = Promise.promisify(require("fs").readFile);
 var through = require('through2');
 
 var createFile = function(data) {
+
   var fpath = path.join(
     __dirname,
     "../../",
     config.root.src,
     config.tasks.html.src,
-    `layouts/${data.layout}.njk`)
+    ( data.layout ? `pages/${data.layout}.njk` : `pages/default.njk` ))
   return readFile(fpath, "utf8").then(function(content) {
     return new File({
       path: data.name,

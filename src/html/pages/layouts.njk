@@ -1,0 +1,29 @@
+{% extends 'layouts/2col-sidebarflex-left.njk' %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block hero %}
+  {% if page.hero %}
+  {% set hero = page.hero %}
+
+  {% call section(
+    bgURL = hero.backgroundMedia.file.url,
+    bgOverlayModifierClass = "light",
+    class = "section--hero"
+  )%}
+    {% call columns(
+      sm = 10,
+      rowClasses = "center-xs text-center"
+    ) %}
+    {{ title(hero.title, level = 1) }}
+    {{ subtitle(level = 1, hero.text) }}
+    {% endcall %}
+  {% endcall %}
+  {% endif %}
+{% endblock %}
+
+{% block pageContent %}
+
+<h3>Layout stuff</h3>
+
+{% endblock %}
