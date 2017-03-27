@@ -2,8 +2,39 @@
 
 {% block layout %}
 
-{# If there's a hero component, put it here right after nav (defined in application.njk) #}
-{% block hero %}{% endblock %}
+{% block hero %}
+
+  {% if page.hero %}
+    {% set hero = page.hero %}
+
+    {% call section(
+      bgURL = hero.backgroundMedia.file.url,
+      bgOverlayModifierClass = hero.backgroundOverlay,
+      class = "section--hero text-center"
+    ) %}
+
+      {% call columns() %}
+        {{ title(hero.title, level = 1) }}
+        {{ subtitle(hero.text, level = 1) }}
+
+        {% if hero.cta.length > 0 %}
+          {% for cta in hero.cta %}
+
+            {{ button(
+              text = cta.buttonText,
+              type = cta.type,
+              URL  = cta.url,
+              helpText = cta.helpText
+            )}}
+
+          {% endfor %}
+        {% endif %}
+
+      {% endcall %}
+
+    {% endcall %}
+  {% endif %}
+{% endblock %}
 
 {% block pageContent %}{% endblock %}
 
