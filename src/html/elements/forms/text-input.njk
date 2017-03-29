@@ -31,7 +31,7 @@
   {% if label %}<label for="{{id}}" class="label">{{label}}</label>{% endif %}
   <div class="form-element-wrap">
     {% if icon %}<div class="icon icon--{{icon}}"></div>{% endif %}
-    <input type="{{type}}" id="{{id}}" class="form-element form-element--text{{' form-element--fw' if fullWidth}}" placeholder="{{placeholder}}"/>
+    <input type="{{type}}" id="{{id}}" class="form-element form-element--text{{' form-element--fw' if fullWidth}}{{' form-element--icon' if icon}}" placeholder="{{placeholder}}"/>
     {% if helpText %}<div class="caption">{{helpText}}</div>{% endif %}
   </div>
 </div>

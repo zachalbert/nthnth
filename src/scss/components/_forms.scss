@@ -28,6 +28,11 @@
   &--fw {
     width: 100%;
   }
+  //has icon
+  &--icon {
+    padding-right: $lead-single*1.5;
+  }
+
   //checkboxes & radios
   &--check, &--radio {
     appearance: none;
@@ -37,7 +42,6 @@
     display: inline-block;
     height: $line-height;
     outline: none !important;
-    margin: 0;
     vertical-align: bottom;
     width: $line-height;
     position: relative;
@@ -120,6 +124,7 @@
   }
 
   &__option {
+    font-family: $body-stack;
     font-size: $body-font-size;
     font-weight: $font-weight-normal;
     text-transform: none;
@@ -147,13 +152,12 @@
   .icon {
     font-size: $type-scale-2;
     line-height: $lead-single;
-    padding: .25rem 1rem;
+    padding: $lead-single/4 $lead-half;
     pointer-events: none;
     position: absolute;
     right: 0;
     text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
   }
 }
 
