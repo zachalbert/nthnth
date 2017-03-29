@@ -38,17 +38,35 @@
 
 <div class="flexible-container flexible-container--collapsed">
   <div class="flexible-container__side sidebar fixed-scroll-offset hide-xs">
+  
+    {{ sidebar(anchors = [
+        {
+          "title":  "Sections",
+          "Id":     "sections",
+          "icon":   "dashboard"
+        },
+        {
+          "title":  "Content",
+          "Id":     "content",
+          "icon":   "grid-uneven"
+        },
+        {
+          "title":  "Features",
+          "Id":     "features",
+          "icon":   "star"
+        },
+        {
+          "title":  "Pricing",
+          "Id":     "pricing",
+          "icon":   "usd"
+        },
+        {
+          "title":  "Cards",
+          "Id":     "cards",
+          "icon":   "profile-landscape"
+        }
 
-    {# TODO: Componentize this sidebar #}
-    <div class="sidebar--fixed">
-      <ul>
-        <li><a data-scroll class="sidebar__nav-link" href="#sections"><i class="icon icon--dashboard"></i><span class="text">Sections</span></a></li>
-        <li><a data-scroll class="sidebar__nav-link" href="#content"><i class="icon icon--grid-uneven"></i><span class="text">Content</span></a></li>
-        <li><a data-scroll class="sidebar__nav-link" href="#features"><i class="icon icon--blocks"></i><span class="text">Features</span></a></li>
-        <li><a data-scroll class="sidebar__nav-link" href="#pricing"><i class="icon icon--documents-group"></i><span class="text">Pricing</span></a></li>
-        <li><a data-scroll class="sidebar__nav-link" href="#cards"><i class="icon icon--profile-landscape"></i><span class="text">Cards</span></a></li>
-      </ul>
-    </div>
+      ]) }}
 
     <div class="sidebar__closer"><a href="#" class="sidebar__nav-link sidebar__closer__trigger"><i class="icon icon--chevron-right"></i></a></div>
 

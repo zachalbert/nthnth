@@ -1,0 +1,33 @@
+{##
+ # Sidebar
+ #
+ # @example
+ # {{ sidebar(anchors = [
+ #  {
+ #   title:  "Sections",
+ #   Id:     "sections",
+ #   icon:   "dashboard"
+ #   }
+ #  ])
+ # }}
+ #
+ #}
+
+{% macro sidebar(
+  fixed = true,
+  anchors = []
+  ) %}
+
+<div class="sidebar--fixed">
+  <ul>
+    {% for anchor in anchors %}
+      <li>
+        <a data-scroll class="sidebar__nav-link" href="# {{ anchor.Id }}">{% if anchor.icon %}<i class="icon icon--{{ anchor.icon }}"></i>{% endif %}<span class="text">{{ anchor.title }}</span></a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="sidebar__closer"><a href="#" class="sidebar__nav-link sidebar__closer__trigger"><i class="icon icon--chevron-right"></i></a></div>
+
+{% endmacro %}
