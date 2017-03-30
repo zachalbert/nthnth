@@ -6,6 +6,26 @@
 
 {{ anchor('sections') }}
 
+
+
+{# BEGIN STARTER COMPONENT #}
+
+{% call section(
+  class  = 'section--separated'
+) %}
+
+  {% call columns() %}
+
+    {{ starter(argument1 = "Argument 1", argument2 = "Argument 2") }}
+
+  {% endcall %}
+
+{% endcall %}
+
+{# END STARTER COMPONENT #}
+
+
+
 {% call section(
   class  = 'section--separated'
 ) %}
@@ -20,8 +40,9 @@
   {% endcall %}
 {% endcall %}
 
+
+
 {% call section(
-  bgType = 'neutral-1',
   bgType = 'neutral-1',
   class  = 'section--separated'
 ) %}
@@ -66,6 +87,8 @@
   {% endcall %}
 {% endcall %}
 
+
+
 {% call section(
   class = 'section--separated'
 ) %}
@@ -81,6 +104,8 @@
   {% endcall %}
 {% endcall %}
 
+
+
 {% call section(
   bgType = 'neutral-1',
   bgType = 'neutral-1',
@@ -92,6 +117,8 @@
     {{ subtitle(level = '5', '<faker-lorem-sentences/>', class='strip-bottom') }}
   {% endcall %}
 {% endcall %}
+
+
 
 {% call section(
   class  = 'section--separated'
@@ -106,6 +133,8 @@
   {% endcall %}
 {% endcall %}
 
+
+
 {% call section(
   bgType = 'neutral-1',
   bgType = 'neutral-1',
@@ -119,6 +148,8 @@
   {% endcall %}
   {{ image(source="https://source.unsplash.com/random/1024x512", full=true, description="Lorem ipsum dolor sit amet", width="1024", height="512", class="") }}
 {% endcall %}
+
+
 
 {% call section(
   class  = 'section--separated'
@@ -142,7 +173,11 @@
   {% endcall %}
 {% endcall %}
 
+
+
 {{ anchor('content') }}
+
+
 
 {% call section(
   bgType = 'neutral-1',
@@ -158,6 +193,8 @@
   {% endcall %}
 {% endcall %}
 
+
+
 {% call section(
   class  = 'section--separated'
 ) %}
@@ -167,6 +204,8 @@
     <audio src="https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" class="media mejs__player"></audio>
   {% endcall %}
 {% endcall %}
+
+
 
 {% call section(
   bgType = 'neutral-1',
@@ -180,6 +219,8 @@
   {% endcall %}
 {% endcall %}
 
+
+
 {% call section(
   class  = 'section--separated'
 ) %}
@@ -191,9 +232,10 @@
       source='https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=rkreg.com_jlvt28bnkv2uj6fjv2vllqtss8%40group.calendar.google.com&amp;color=%238C500B&amp;ctz=America%2FLos_Angeles'
     )}}
 
-
   {% endcall %}
 {% endcall %}
+
+
 
 {% call section(
   class  = 'section--separated'
@@ -208,6 +250,8 @@
     {% endcall %}
   {% endcall %}
 {% endcall %}
+
+
 
 {% call section(
   bgType = 'neutral-1',
@@ -225,7 +269,11 @@
   {% endcall %}
 {% endcall %}
 
+
+
 {{ anchor('features') }}
+
+
 
 {% call section(
   class  = 'section--separated'
@@ -273,6 +321,8 @@
   {% endcall %}
 {% endcall %}
 
+
+
 {% call section(
   bgType = 'neutral-1',
   bgType = 'neutral-1',
@@ -300,7 +350,12 @@
   {% endcall %}
 {% endcall %}
 
+
+
 {{ anchor('pricing') }}
+
+
+{# TODO: componentize #}
 
 <section class="section section--separated section--neutral-1">
   <div class="container">
@@ -313,7 +368,12 @@
   </div>
 </section>
 
+
+
 {{ anchor('cards') }}
+
+
+
 <section class="section section--separated">
   <div class="container">
     <div class="row center-xs flex-columns">
