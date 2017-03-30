@@ -73,11 +73,7 @@ h5,
   }
 
   &__subtitle {
-    @extend .h2;
-    font-size: $type-scale-3;
-    font-style: italic;
-    font-weight: $font-weight-normal;
-    line-height: $line-height;
+    @extend .text-normal;
     text-align: center;
   }
 }
@@ -101,10 +97,6 @@ h5,
 }
 
 /* BODY */
-
-p {
-  // color: $display-font-color;
-}
 
 a {
   color: $link-font-color;
@@ -144,17 +136,14 @@ tt {
   line-height: 1;
 }
 
-.caption {
-  color: $font-color-muted;
-  font-family: $display-stack;
-  font-size: $type-scale-1;
-  font-weight: $font-weight-bold;
-  letter-spacing: .5px;
-  line-height: $line-height;
-  text-transform: uppercase;
-}
-
 /* MODIFIERS */
+
+.text-normal {
+  font-family: $body-stack;
+  font-size: $type-scale-3;
+  font-weight: $font-weight-normal;
+  line-height: $line-height;
+}
 
 small,
 .text-small {
