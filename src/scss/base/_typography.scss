@@ -16,7 +16,7 @@ body {
 em     { font-weight: $font-weight-light; }
 strong { font-weight: $font-weight-bold; }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4 {
   font-family: $display-stack;
 }
 
@@ -24,7 +24,6 @@ h1, h2, h3, h4, h5, h6 {
 
 h1,
 .h1 {
-  //color: $display-font-color;
   font-weight: $font-weight-bold;
   line-height: $line-height * 2.5;
   font-size: $type-scale-6;
@@ -35,7 +34,6 @@ h1,
 
 h2,
 .h2 {
-  //color: $display-font-color;
   font-weight: $font-weight-bold;
   font-size: $type-scale-5;
   line-height: $line-height*2;
@@ -45,7 +43,6 @@ h2,
 
 h3,
 .h3 {
-  //color: $display-font-color;
   font-weight: $font-weight-bold;
   font-size: $type-scale-4;
   line-height: $line-height*1.5;
@@ -161,7 +158,7 @@ tt {
 
 small,
 .text-small {
-  font-family: $display-stack;
+  font-family: $body-stack;
   font-size: $type-scale-1;
   color: $font-color-muted;
   text-transform: uppercase;
