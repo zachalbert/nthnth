@@ -1,0 +1,33 @@
+{##
+ # Starter component. Use this as a template for creating new components.
+ #
+ # This block documents what the component can do, and what arguments it can take.
+ #
+ # @param {string} [argument1] - First argument
+ # @param {string} [argument2] - Second argument
+ # @param {string} [argument3] - Third argument
+ #
+ # @example
+ # {{ starter(argument1="Value") }}
+ #}
+
+{# Include any elements or componenents you need here #}
+{% from 'elements/text/title.njk' import title %}
+{% from 'elements/text/subtitle.njk' import subtitle %}
+
+{# BEGIN MACRO #}
+
+{% macro starter(
+  argument1,
+  argument2 = "This is a default value, which will be overridden by the value in the macro call",
+  argument3 = "This is a default value, which will be used"
+) %}
+
+{{ title("Starter component") }}
+{{ subtitle(argument2, level = 5)}}
+
+<p class="text-center">
+  You can also include standard HTML inside components.
+</p>
+
+{% endmacro %}

@@ -1,25 +1,29 @@
-{% from 'elements/layout/section.njk'           import section %}
-{% from 'elements/layout/row.njk'               import row %}
-{% from 'elements/layout/columns.njk'           import columns %}
+{# Elements #}
 {% from 'elements/button/button.njk'            import button %}
-{% from 'components/card/card.njk'              import card %}
-{% from 'components/card/card--pricing.njk'     import cardPricing %}
-{% from 'components/footer/footer.njk'          import footer %}
+{% from 'elements/forms/checkbox.njk'           import checkbox %}
 {% from 'elements/forms/textarea.njk'           import textarea %}
 {% from 'elements/forms/text-input.njk'         import textInput %}
 {% from 'elements/forms/radio.njk'              import radio %}
-{% from 'elements/forms/checkbox.njk'           import checkbox %}
-{% from 'components/sidebars/sidebar.njk'       import sidebar %}
 {% from 'elements/forms/select.njk'             import select %}
-{% from 'components/forms/email-submit.njk'     import emailSubmit %}
-{% from 'elements/helpers/repeat__staff.njk'    import repeatStaff %}
 {% from 'elements/helpers/anchor.njk'           import anchor %}
-{% from 'elements/media/image.njk'              import image %}
+{% from 'elements/helpers/repeat__staff.njk'    import repeatStaff %}
+{% from 'elements/layout/columns.njk'           import columns %}
+{% from 'elements/layout/row.njk'               import row %}
+{% from 'elements/layout/section.njk'           import section %}
 {% from 'elements/media/calendar.njk'           import calendar %}
-{% from 'components/nav/nav.njk'                import nav %}
-{% from 'elements/text/title.njk'               import title %}
-{% from 'elements/text/subtitle.njk'            import subtitle %}
+{% from 'elements/media/image.njk'              import image %}
 {% from 'elements/text/code.njk'                import code %}
+{% from 'elements/text/subtitle.njk'            import subtitle %}
+{% from 'elements/text/title.njk'               import title %}
+
+{# Components #}
+{% from 'components/card/card.njk'              import card %}
+{% from 'components/card/card--pricing.njk'     import cardPricing %}
+{% from 'components/footer/footer.njk'          import footer %}
+{% from 'components/forms/email-submit.njk'     import emailSubmit %}
+{% from 'components/misc/starter.njk'           import starter %}
+{% from 'components/nav/nav.njk'                import nav %}
+{% from 'components/sidebars/sidebar.njk'       import sidebar %}
 
 <!doctype html>
 <html class="{% block htmlClasses %}{% endblock %}">
