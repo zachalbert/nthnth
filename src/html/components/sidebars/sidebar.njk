@@ -22,7 +22,7 @@
   <ul>
     {% for anchor in anchors %}
       <li>
-        <a data-scroll class="sidebar__nav-link" href="# {{ anchor.Id }}">{% if anchor.icon %}<i class="icon icon--{{ anchor.icon }}"></i>{% endif %}<span class="text">{{ anchor.title }}</span></a>
+        <a data-scroll class="sidebar__nav-link" href="#{{ anchor.Id }}">{% if anchor.icon %}<i class="icon icon--{{ anchor.icon }}"></i>{% endif %}<span class="text">{{ anchor.title }}</span></a>
       </li>
     {% endfor %}
   </ul>
