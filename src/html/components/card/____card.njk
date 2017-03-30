@@ -1,0 +1,41 @@
+{##
+ # Set up card UI
+ #
+ # @param {string} [title] - Larger heading at the top of the card
+ # @param {string} [avatarURL] - Image URL that will appear next to the title, if present
+ #
+ # @example
+ # {{ card(title="Card title", avatarURL="http://abc.xyz/pic.jpg") }}
+ #}
+
+{% from 'components/card/card__block.njk' import cardBlock %}
+
+{% macro card(
+  title,
+  avatarURL
+) %}
+
+<div class="card">
+
+  {% if avatarURL or title %}
+    <div class="card__head">
+      {% if avatarURL %}
+        <div class="card__image card__image--avatar">
+          <img src="{{avatarURL}}"/>
+        </div>
+      {% endif %}
+
+      {% if title %}
+        <h3 class="card__title">{{title}}</h3>
+      {% endif %}
+
+    </div>
+  {% endif %}
+
+  {% call cardBlock() %}
+    {{ caller() }}
+  {% endcall %}
+
+</div>
+
+{% endmacro %}

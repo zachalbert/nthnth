@@ -1,8 +1,8 @@
 {
   "contentful": {
-    "space": "g4u24h1d3en6",
-    "accessToken": "11074babe73772987909a59f76eb49bd6c847599d04181087892d6c1049ed1d7",
-    "manageToken": "6cf1f30917257c004491ade80efb5b3f33f4ac44c0f83b79cabe7b9c28c9a3a0",
+    "space": "",
+    "accessToken": "",
+    "manageToken": "",
     "locale": "en-US",
     "refreshDelay": 30
   },

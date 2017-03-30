@@ -7,16 +7,14 @@
  # @example
  # {{ card(title="Card title", avatarURL="http://abc.xyz/pic.jpg") }}
  #}
-
+{% from 'components/card/card.njk' import card %}
 {% from 'components/card/card__block.njk' import cardBlock %}
 
-{% macro card(
+{% macro cardPerson(
 ) %}
 
-<div class="card">
-
-  {{ caller() }}
-
-</div>
+{% call card() %}
+  
+{% endcall %}
 
 {% endmacro %}

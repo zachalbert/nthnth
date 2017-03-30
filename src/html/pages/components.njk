@@ -230,6 +230,9 @@
 {% call section(
   class  = 'section--separated'
 ) %}
+
+{{ cardPerson() }}
+
   {% call row( class='center-xs flex-columns') %}
     {% call columns( row=false, xs=12, sm=5 ) %}
       <h4><faker-name-jobTitle/></h4>
